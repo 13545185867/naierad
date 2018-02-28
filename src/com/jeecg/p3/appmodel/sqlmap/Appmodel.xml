@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.appmodel.entity.Appmodel">
+
+	<!-- Result Map-->
+	<resultMap id="Appmodel" type="com.jeecg.p3.appmodel.entity.Appmodel" >
+		<result column="id" property="id" jdbcType="INTEGER"/>
+		<result column="apporder" property="apporder" jdbcType="INTEGER"/>
+		<result column="tag" property="tag" jdbcType="VARCHAR"/>
+		<result column="code" property="code" jdbcType="VARCHAR"/>
+		<result column="dictinfoid" property="dictinfoid" jdbcType="INTEGER"/>
+		<result column="newacturl" property="newacturl" jdbcType="VARCHAR"/>
+		<result column="active" property="active" jdbcType="VARCHAR"/>
+		<result column="appname" property="appname" jdbcType="VARCHAR"/>
+		<result column="appmodelcol1" property="appmodelcol1" jdbcType="VARCHAR"/>
+		<result column="appmodelcol2" property="appmodelcol2" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.apporder != null and query.apporder != ''" >
+	  		 		/* 排序 */
+			    	AND a.apporder =  #{query.apporder,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.tag != null and query.tag != ''" >
+	  		 		/* 模块标签 */
+			    	AND a.tag =  #{query.tag,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.code != null and query.code != ''" >
+	  		 		/* 模块代码 */
+			    	AND a.code =  #{query.code,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.dictinfoid != null and query.dictinfoid != ''" >
+	  		 		/* 模块所属类型ID */
+			    	AND a.dictinfoid =  #{query.dictinfoid,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.newacturl != null and query.newacturl != ''" >
+	  		 		/* 活动新增地址 */
+			    	AND a.newacturl =  #{query.newacturl,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.active != null and query.active != ''" >
+	  		 		/* 模块是否启用 */
+			    	AND a.active =  #{query.active,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.appname != null and query.appname != ''" >
+	  		 		/*  */
+			    	AND a.appname =  #{query.appname,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.appmodelcol1 != null and query.appmodelcol1 != ''" >
+	  		 		/*  */
+			    	AND a.appmodelcol1 =  #{query.appmodelcol1,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.appmodelcol2 != null and query.appmodelcol2 != ''" >
+	  		 		/*  */
+			    	AND a.appmodelcol2 =  #{query.appmodelcol2,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.appmodel.entity.Appmodel.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  appmodel   /* 应用模块表 */  
+					(	
+                       apporder                         /* 排序 */ 
+                     ,tag                           /* 模块标签 */ 
+                     ,code                          /* 模块代码 */ 
+                     ,dictinfoid                    /* 模块所属类型ID */ 
+                     ,newacturl                     /* 活动新增地址 */ 
+                     ,active                        /* 模块是否启用 */ 
+                     ,appname                  /*  */ 
+                     ,appmodelcol1                  /*  */ 
+                     ,appmodelcol2                  /*  */ 
+					)
+			values (
+                      #{apporder,jdbcType=INTEGER}                         /* 排序 */ 
+                     ,#{tag,jdbcType=VARCHAR}                           /* 模块标签 */ 
+                     ,#{code,jdbcType=VARCHAR}                          /* 模块代码 */ 
+                     ,#{dictinfoid,jdbcType=INTEGER}                    /* 模块所属类型ID */ 
+                     ,#{newacturl,jdbcType=VARCHAR}                     /* 活动新增地址 */ 
+                     ,#{active,jdbcType=VARCHAR}                        /* 模块是否启用 */ 
+                     ,#{appname,jdbcType=VARCHAR}                  /*  */ 
+                     ,#{appmodelcol1,jdbcType=VARCHAR}                  /*  */ 
+                     ,#{appmodelcol2,jdbcType=VARCHAR}                  /*  */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.appmodel.entity.Appmodel.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   appmodel  	/* 应用模块表 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="apporder != null">
+		    		 		/* 排序 */ 
+	    		 			apporder = #{apporder,jdbcType=INTEGER},
+						 </if>
+						 <if test="tag != null">
+		    		 		/* 模块标签 */ 
+	    		 			tag = #{tag,jdbcType=VARCHAR},
+						 </if>
+						 <if test="code != null">
+		    		 		/* 模块代码 */ 
+	    		 			code = #{code,jdbcType=VARCHAR},
+						 </if>
+						 <if test="dictinfoid != null">
+		    		 		/* 模块所属类型ID */ 
+	    		 			dictinfoid = #{dictinfoid,jdbcType=INTEGER},
+						 </if>
+						 <if test="newacturl != null">
+		    		 		/* 活动新增地址 */ 
+	    		 			newacturl = #{newacturl,jdbcType=VARCHAR},
+						 </if>
+						 <if test="active != null">
+		    		 		/* 模块是否启用 */ 
+	    		 			active = #{active,jdbcType=VARCHAR},
+						 </if>
+						 <if test="appname != null">
+		    		 		/*  */ 
+	    		 			appname = #{appname,jdbcType=VARCHAR},
+						 </if>
+						 <if test="appmodelcol1 != null">
+		    		 		/*  */ 
+	    		 			appmodelcol1 = #{appmodelcol1,jdbcType=VARCHAR},
+						 </if>
+						 <if test="appmodelcol2 != null">
+		    		 		/*  */ 
+	    		 			appmodelcol2 = #{appmodelcol2,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.appmodel.entity.Appmodel.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Appmodel">
+		   SELECT   
+                   a.id                            /* 模块ID */ 
+                  ,a.apporder                         /* 排序 */ 
+                  ,a.tag                           /* 模块标签 */ 
+                  ,a.code                          /* 模块代码 */ 
+                  ,a.dictinfoid                    /* 模块所属类型ID */ 
+                  ,a.newacturl                     /* 活动新增地址 */ 
+                  ,a.active                        /* 模块是否启用 */ 
+                  ,a.appname                  /*  */ 
+                  ,a.appmodelcol1                  /*  */ 
+                  ,a.appmodelcol2                  /*  */ 
+		   FROM   appmodel      AS a      /* 应用模块表 */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.appmodel.entity.Appmodel.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM appmodel 	/* 应用模块表 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.appmodel.entity.Appmodel.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  appmodel      AS a      /* 应用模块表 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.appmodel.entity.Appmodel.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Appmodel">
+		    SELECT 
+                   a.id                            /* 模块ID */ 
+                  ,a.apporder                         /* 排序 */ 
+                  ,a.tag                           /* 模块标签 */ 
+                  ,a.code                          /* 模块代码 */ 
+                  ,a.dictinfoid                    /* 模块所属类型ID */ 
+                  ,a.newacturl                     /* 活动新增地址 */ 
+                  ,a.active                        /* 模块是否启用 */ 
+                  ,a.appname                  /*  */ 
+                  ,a.appmodelcol1                  /*  */ 
+                  ,a.appmodelcol2                  /*  */ 
+		FROM   	 appmodel      AS a      /* 应用模块表 */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation1">
+		<trim  suffixOverrides="," >
+				 <if test=" apporder != null and  apporder != ''" >
+	  		 		/* 排序 */
+			    	AND b.apporder =  #{ apporder,jdbcType=INTEGER}
+				 </if>
+				 <if test=" tag != null and  tag != ''" >
+	  		 		/* 模块标签 */
+			    	AND b.tag =  #{ tag,jdbcType=VARCHAR}
+				 </if>
+				 <if test=" code != null and  code != ''" >
+	  		 		/* 模块代码 */
+			    	AND b.code =  #{ code,jdbcType=VARCHAR}
+				 </if>
+				 <if test=" dictinfoid != null and  dictinfoid != ''" >
+	  		 		/* 模块所属类型ID */
+			    	AND b.dictinfoid =  #{ dictinfoid,jdbcType=INTEGER}
+				 </if>
+				 <if test=" newacturl != null and  newacturl != ''" >
+	  		 		/* 活动新增地址 */
+			    	AND b.newacturl =  #{ newacturl,jdbcType=VARCHAR}
+				 </if>
+				 <if test=" active != null and  active != ''" >
+	  		 		/* 模块是否启用 */
+			    	AND b.active =  #{ active,jdbcType=VARCHAR}
+				 </if>
+				 <if test=" appname != null and  appname != ''" >
+	  		 		/*  */
+			    	AND b.appname =  #{ appname,jdbcType=VARCHAR}
+				 </if>
+				 <if test=" appmodelcol1 != null and  appmodelcol1 != ''" >
+	  		 		/*  */
+			    	AND b.appmodelcol1 =  #{ appmodelcol1,jdbcType=VARCHAR}
+				 </if>
+				 <if test=" appmodelcol2 != null and  appmodelcol2 != ''" >
+	  		 		/*  */
+			    	AND b.appmodelcol2 =  #{ appmodelcol2,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+		<select id="queryAppList" parameterType="Object"  resultMap="Appmodel">
+		
+	select concat(d.dictname,b.appname,'服务') as appmodelcol1 ,a.id  as dictinfoid,b.appname   ,a.price as appmodelcol2 ,b.apporder from  serviceprice a , appmodel b ,dictinfo d  where  a.modelid = b.id and d.id = a.servicetype and b.active = '1' <include refid="wherecontation1"/> order by apporder asc
+	
+	</select>
+	
+
+	
+	
+</mapper>

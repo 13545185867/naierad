@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="Keywords" content="友房网">
+    <meta name="description" content="友房网">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>友房网</title>
+    <link href="$!{basePath}/content/jlb/css/registernew.css" rel="stylesheet" type="text/css">
+    <style>
+	.jlbhd-grxx img{
+		float: left;margin: 0px 5px 0px 0px;width:48%;	
+		height: 150px;
+	}
+	</style>
+  </head>
+<body>
+	<!--提示弹出层 begin-->
+		<div class="fwmyd_bg" id="fydDIV" style="display: none;">
+		</div>
+	<!--提示弹出层 end-->
+	<div class="header">
+	<div class="headerwrap">
+		<div class="goback">
+			<a href="javascript:history.go(-1)"><img src="$!{basePath}/content/jlb/img/goback.png" border="0" title="返回上一页"></a>
+		</div>
+		<div class="reglogo">
+						<!--<a href="" class="logo" boss="source"></a>-->
+		</div>
+		<div class="linkright">
+		</div>
+	</div>
+  </div>
+  <div class="regCon">
+    <div class="hd">
+      <h1 class="biaoti">会员活动</h1>
+      			#if("$!{vipuser}" eq "true")
+	    			<img src="$!{basePath}/content/jlb/img/vip.png" class="vipage2">
+	    		#end
+		    </div>
+    <div class="bd">
+      <div id="reg-s1" style="display:block;">
+	
+	          <form method="post" id="baomingForm1"> 
+				<div class="row">
+					<div class="col-center">
+					  <div class="jlbhd-picture">
+						<img class="img-circle" src="$!{basePath}/content/jlb/img/mfjlbhd.jpg">
+					  </div>
+					  <div class="jlbhd-grxx">
+						<h3><strong>$!{info.title}</strong></h3>
+						 <p>
+							<strong>时间：</strong>$!dateTool.format("yyyy-MM-dd HH:mm:ss",$!{info.activitytime})					</p>
+						<p>
+							<strong>地点：</strong>$!{info.addr} </p>
+						<p>
+							<strong>限定人数：</strong>$!{info.totalpepole}人</p>
+						<p>
+							<strong>剩余名额：</strong> $!{info.remainpepole}人 </p>
+													<p>
+							<strong>浏览次数：</strong> $!{info.viewcount}次 </p>
+						<p>
+							<strong>报名截止：</strong>$!dateTool.format("yyyy-MM-dd HH:mm:ss",$!{info.endtime})	</p>
+						<p>
+						 <p>
+							<strong>活动要求：</strong> $!{info.ruletip}
+						 </p>
+							<strong>活动内容：</strong>
+							<p>
+							$!{info.content}
+							</p>
+
+					</div>
+					</div>
+				</div>
+			<input type="hidden" value="$!{info.id}" name="activityid" id="activityid">
+            <div class="col-btn">
+				 <div class="jlbhd-btnck">
+					<input name="submit" type="submit" id="dosubmit" #if($!{expire} eq "0")  #if($!{booked} eq "1") value="取消报名" data="cancel" #else value="报名" data="ok" #end class="btn-doc btn-solid register-submit fll" #else   value="报名已结束" data="timeout" class="btn-doc btn-end register-submit fll" #end>				</div>				 
+            </div>
+        </form>
+				
+      </div>
+    </div>
+  </div>
+ <div id="footer">
+    <div class="footer-w">
+      <span class="zbj"></span>
+    </div>
+  </div>
+  <div class="dbdh">
+	<span class="footer1">
+		<a href="$!{basePath}/jlb/tomember.html">
+			<img src="$!{basePath}/content/jlb/img/foot_1off.png">
+			<p>首页</p>
+		</a>
+	</span>
+	<span class="footer2">
+		<a href="$!{basePath}/jlb/hotlist.html">
+			<img src="$!{basePath}/content/jlb/img/foot_2.png">
+			<p class="pink">会员活动</p>
+		</a>
+	</span>
+	<span class="footer3">
+		<a href="$!{basePath}/jlb/tovip.html">
+			<img src="$!{basePath}/content/jlb/img/foot_3off.png">
+			<p>个人中心</p>
+		</a>
+	</span>
+  </div>
+
+	<!-- photoswipe -->
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+	<!-- Background of PhotoSwipe. 
+		 It's a separate element, as animating opacity is faster than rgba(). -->
+	<div class="pswp__bg"></div>
+
+	<!-- Slides wrapper with overflow:hidden. -->
+	<div class="pswp__scroll-wrap">
+
+		<!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+		<!-- don't modify these 3 pswp__item elements, data is added later on. -->
+		<div class="pswp__container">
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+		</div>
+
+		<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+		<div class="pswp__ui pswp__ui--hidden">
+
+			<div class="pswp__top-bar">
+
+				<!--  Controls are self-explanatory. Order can be changed. -->
+
+				<div class="pswp__counter"></div>
+
+				<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+				<button class="pswp__button pswp__button--share" title="Share"></button>
+
+				<!-- <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> -->
+
+				<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+				<div class="pswp__preloader">
+					<div class="pswp__preloader__icn">
+					  <div class="pswp__preloader__cut">
+						<div class="pswp__preloader__donut"></div>
+					  </div>
+					</div>
+				</div>
+			</div>
+
+			<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+				<div class="pswp__share-tooltip"></div> 
+			</div>
+
+			<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+			</button>
+
+			<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+			</button>
+
+			<div class="pswp__caption">
+				<div class="pswp__caption__center"></div>
+			</div>
+
+		  </div>
+
+		</div>
+
+</div>
+<!-- photoswipe end-->
+  		
+
+</body>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/jquery.min.js"></script> 
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/tip.js"></script>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/dialog.js"></script>
+<link href="$!{basePath}/content/jlb/css/dialog_simp.css" rel="stylesheet" type="text/css" />
+
+
+<link rel="stylesheet" href="$!{basePath}/content/jlb/photoswipe/css/photoswipe.css"> 
+<link rel="stylesheet" href="$!{basePath}/content/jlb/photoswipe/css/default-skin/default-skin.css"> 
+<script src="$!{basePath}/content/jlb/photoswipe/js/photoswipe.min.js"></script> 
+<script src="$!{basePath}/content/jlb/photoswipe/js/photoswipe-ui-default.min.js"></script>
+
+<script>				
+
+var openPhotoSwipe = function() {
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    // build items array
+    var items = [];
+    $(".jlbhd-grxx img").each(function(){
+    	var temp = {};
+    	temp['src'] = $(this).attr('src');
+    	temp['w'] = 500;
+    	temp['h'] = 500;
+    	items.push(temp);
+    });
+
+    
+    // define options (if needed)
+    var options = {
+             // history & focus options are disabled on CodePen        
+        history: false,
+        focus: false,
+
+        showAnimationDuration: 0,
+        hideAnimationDuration: 0
+        
+    };
+    
+    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+    gallery.init();
+};
+
+</script>
+
+<script>
+		var nomember = '1';
+			#if("$!{vipuser}" eq "true")
+			nomember = '0';
+			#end
+			#if("$!{info.isvipparty}" eq "0")
+			nomember = '0';
+			#end
+			var serverroot="$!{basePath}";
+			var id = "$!{info.id}";
+			var count ="$!{info.viewcount}";
+</script>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/actbook.js"></script>
+</html>

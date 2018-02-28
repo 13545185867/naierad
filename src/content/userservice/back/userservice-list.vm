@@ -1,0 +1,115 @@
+#parse("content/base/back/common/macro.vm")
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<form role="form" class="form-inline" action="$!{basePath}/userservice/back/userservice/list.html" method="post"  id="formSubmit">
+				<div  class="col-md-10" style="width:100%">
+								<div class="panel panel-default">
+								  <div class="panel-heading">砍价活动配置列表</div>
+								  <div class="panel-body">
+								  		<div class="search">
+															 <div class="form-group col-sm-3">
+															    <label for="userid" class="control-label col-sm-3 line34">用户ID</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="userid" id="userid" value="$!{userservice.userid}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="serviceid" class="control-label col-sm-3 line34">服务ID</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="serviceid" id="serviceid" value="$!{userservice.serviceid}" class="form-control">
+															  	</div>
+															 </div>
+															<div class="form-group col-sm-3">
+															    <label for="starttime" class="control-label col-sm-3 line34">服务开始时间</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="starttime" id="starttime" value="$!dateTool.format('yyyy-MM-dd',$!{userservice.starttime})" class="form-control">
+															  	</div>
+															 </div>
+															<div class="form-group col-sm-3">
+															    <label for="endtime" class="control-label col-sm-3 line34">服务截止时间</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="endtime" id="endtime" value="$!dateTool.format('yyyy-MM-dd',$!{userservice.endtime})" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="createcount" class="control-label col-sm-3 line34">可创建活动次数</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="createcount" id="createcount" value="$!{userservice.createcount}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="userservicecol0" class="control-label col-sm-3 line34"></label>
+															     <div class="col-sm-8">
+															    <input type="text" name="userservicecol0" id="userservicecol0" value="$!{userservice.userservicecol0}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="userservicecol1" class="control-label col-sm-3 line34"></label>
+															     <div class="col-sm-8">
+															    <input type="text" name="userservicecol1" id="userservicecol1" value="$!{userservice.userservicecol1}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="userservicecol2" class="control-label col-sm-3 line34"></label>
+															     <div class="col-sm-8">
+															    <input type="text" name="userservicecol2" id="userservicecol2" value="$!{userservice.userservicecol2}" class="form-control">
+															  	</div>
+															 </div>
+											  <button type="submit" class="btn btn-primary">搜  索</button>
+											  <div class="clearfix"></div>
+								  		</div>
+								  		<div id="legend">
+								          <legend  class="le"><button type="button" class="btn btn-primary" onclick="doUrl('$!{basePath}/userservice/back/userservice/toAdd.html')" >新增</button></legend> 
+								        </div>
+								        <table class="table table-striped">
+									        <thead>
+													<th>用户ID</th>
+													<th>服务ID</th>
+													<th>服务开始时间</th>
+													<th>服务截止时间</th>
+													<th>可创建活动次数</th>
+													<th></th>
+													<th></th>
+													<th></th>
+						                			<th>操作</th>
+									        </thead>
+									        <tobody>
+									    	  #if($!{pageInfos})
+								                #foreach($!{info} in $!{pageInfos})
+									            	<tr>			
+																	<td>$!{info.userid}</td>
+																	<td>$!{info.serviceid}</td>
+																	<td>$!dateTool.format("yyyy-MM-dd",$!{info.starttime})</td>
+																	<td>$!dateTool.format("yyyy-MM-dd",$!{info.endtime})</td>
+																	<td>$!{info.createcount}</td>
+																	<td>$!{info.userservicecol0}</td>
+																	<td>$!{info.userservicecol1}</td>
+																	<td>$!{info.userservicecol2}</td>
+										                <td class="last">
+							                			<a href="javascript:doUrl('$!{basePath}/userservice/back/userservice/toEdit.html?id=$!{info.id}')" >编辑</a>
+							                			<a href="javascript:delData('$!{basePath}/userservice/back/userservice/doDelete.html?id=$!{info.id}')">删除</a>
+							                			<a href="javascript:doUrl('$!{basePath}/userservice/back/userservice/toDetail.html?id=$!{info.id}')">详情</a>
+						                				</td>
+									           		</tr>
+									             #end
+									    	 #end
+									         </tobody>
+									    </table>
+										<div class="text-right">
+											<!--公用翻页代码-->
+							                #set($attr='formSubmit')
+							            	#showPageList($pageInfos $attr)
+							                <!--END公用翻页代码-->
+										</div>
+								  </div>	
+								</div>
+				</div>  
+				</form>
+		</div>
+	</div>
+</body>
+</html>

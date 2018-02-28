@@ -1,0 +1,197 @@
+#parse("content/base/back/common/macro.vm")
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<link href="$!{basePath}/content/system/css/zTreeStyle/zTreeStyle.css$!{version}" rel="stylesheet" type="text/css" />
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<form role="form" class="form-inline" action="$!{basePath}/website/back/colContent/list.html" method="post"  id="formSubmit">
+				<div  class="col-md-10" style="width:100%">
+								<div class="panel panel-default">
+								  <div class="panel-heading">网站信息列表</div>
+								  <div class="panel-body">
+								  		<div class="search">
+															 <div class="form-group col-sm-3">
+															    <label for="colId" class="control-label col-sm-3 line34">选择栏目</label>
+															     <div class="col-sm-8">
+															        <input readonly type="text" value=""  id="colId" class="form-control" onclick="showMenu();"/>
+												       <input hidden  value="$!{colContent.colId}" name="colId" id="pId" />
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="title" class="control-label col-sm-3 line34">标题</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="title" id="title" value="$!{colContent.title}" class="form-control">
+															  	</div>
+															 </div>
+															  
+															 <div class="form-group col-sm-3">
+															    <label for="descipt" class="control-label col-sm-3 line34">描述</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="descipt" id="descipt" value="$!{colContent.descipt}" class="form-control">
+															  	</div>
+															 </div>
+															<div class="form-group col-sm-3">
+															    <label for="createdate" class="control-label col-sm-3 line34">创建时间</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="createdate" id="createdate" value="$!dateTool.format('yyyy-MM-dd',$!{colContent.createdate})" class="form-control">
+															  	</div>
+															 </div>
+															  
+															 <div class="form-group col-sm-3">
+															    <label for="source" class="control-label col-sm-3 line34">来源</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="source" id="source" value="$!{colContent.source}" class="form-control">
+															  	</div>
+															 </div>
+															  
+											  <button type="submit" class="btn btn-primary">搜  索</button>
+											  <div class="clearfix"></div>
+								  		</div>
+								  		<div id="legend">
+								          <legend  class="le"><button type="button" class="btn btn-primary" onclick="doUrl('$!{basePath}/website/back/colContent/toAdd.html')" >新增</button></legend> 
+								        </div>
+								        <table class="table table-striped">
+									        <thead>
+													<th>标题</th>
+													<th>描述</th>
+													<th>创建时间</th>
+													<th>来源</th>
+						                			<th>操作</th>
+									        </thead>
+									        <tobody>
+									    	  #if($!{pageInfos})
+								                #foreach($!{info} in $!{pageInfos})
+									            	<tr>			
+																	<td>$!{info.title}</td>
+																	<td>$!{info.descipt}</td>
+																	<td>$!dateTool.format("yyyy-MM-dd",$!{info.createdate})</td>
+																	<td>$!{info.source}</td>
+										                <td class="last">
+							                			<a href="javascript:doUrl('$!{basePath}/website/back/colContent/toEdit.html?id=$!{info.id}')" >编辑</a>
+							                			<a href="javascript:delData('$!{basePath}/website/back/colContent/doDelete.html?id=$!{info.id}')">删除</a>
+							                			<a href=" $!{basePath}/detail.html?id=$!{info.id} " target="_blank">详情</a>
+						                				</td>
+									           		</tr>
+									             #end
+									    	 #end
+									         </tobody>
+									    </table>
+										<div class="text-right">
+											<!--公用翻页代码-->
+							                #set($attr='formSubmit')
+							            	#showPageList($pageInfos $attr)
+							                <!--END公用翻页代码-->
+										</div>
+								  </div>	
+								</div>
+				</div>  
+				</form>
+		</div>
+	</div>
+			 <div id="menuContent" class="menuContent" style="display:none; position: absolute;">
+	<ul id="treeDemo" class="ztree" style="margin-top:0; width:160px;"></ul>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="$!{basePath}/content/system/js/zTree/jquery.ztree.core.js$!{version}"></script>
+<script type="text/javascript" src="$!{basePath}/content/system/js/zTree/jquery.ztree.excheck.js$!{version}"></script>
+<script type="text/javascript" src="$!{basePath}/content/system/js/zTree/jquery.ztree.exedit.js$!{version}"></script>
+ 
+
+<script >
+var IDMark_A = "_a";
+
+function showMenu() {
+var cityObj = $("#colId");
+var cityOffset = $("#colId").offset();
+   if($("#menuContent").is(':hidden')){
+     $("#menuContent").css({left:cityOffset.left + "px", top:cityOffset.top + cityObj.outerHeight() + "px"}).slideDown("fast");
+	}else{
+	  $("#menuContent").fadeOut("fast");
+	}
+    $("body").bind("mousedown", onBodyDown);
+}
+function hideMenu() {
+	$("#menuContent").fadeOut("fast");
+	$("body").unbind("mousedown", onBodyDown);
+}
+function onBodyDown(event) {
+	if (!(event.target.id == "colId" || event.target.id == "menuContent" || $(event.target).parents("#menuContent").length>0)) {
+		hideMenu();
+	}
+}
+var setting = {
+			check: {
+				enable: true,
+				chkStyle: "radio",
+				radioType: "all"
+			},
+			view: {
+			    addHoverDom: addHoverDom,
+				removeHoverDom: removeHoverDom,
+				dblClickExpand: false
+			},
+			data: {
+				simpleData: {
+					enable: true,
+					idKey: "id",
+					pIdKey: "pId",
+					rootPId: null
+				}
+			},
+			callback: {
+				onClick: onClick,
+				onCheck: onCheck
+			}
+		};
+function onClick(e, treeId, treeNode) {
+   var tree = zTree.getZTreeObj("treeDemo");
+	tree.checkNode(treeNode, !treeNode.checked, null, true);
+	return false;
+}
+function onCheck(e, treeId, treeNode) {
+	var tree = zTree.getZTreeObj("treeDemo"),
+	nodes = tree.getCheckedNodes(true),
+	v = "",vid = "";
+	for (var i=0, l=nodes.length; i<l; i++) {
+		v += nodes[i].name + ",";
+		vid += nodes[i].id + ",";
+	}
+	if (v.length > 0 ) v = v.substring(0, v.length-1);
+	if (vid.length > 0 ) vid = vid.substring(0, vid.length-1);
+	$("#colId").val(v);
+	$("#pId").val(vid);
+}
+function addHoverDom(treeId, treeNode) {
+	if (treeNode.parentNode && treeNode.parentNode.id!=1) return;
+	var aObj = $("#" + treeNode.tId + IDMark_A);
+		if ($("#diyBtn_"+treeNode.id).length>0) return;
+		var editStr = "<span id='diyBtn_" +treeNode.id+ "'>编码:"+treeNode.id+"</span>";
+		aObj.after(editStr);
+}
+function removeHoverDom(treeId, treeNode) {
+		$("#diyBtn_"+treeNode.id).unbind().remove();
+		$("#diyBtn_space_" +treeNode.id).unbind().remove();
+}
+var zNodes;
+$(document).ready(function(){
+	jQuery.ajax({  
+	        async : false,  
+	        cache:false,  
+	        type: 'POST',  
+	        dataType : "json",  
+	        url: '$!{basePath}/website/back/colPage/getColTree.do',//请求的action路径  
+	        error: function () {//请求失败处理函数  
+	            alert('请求失败');  
+	        },  
+	        success:function(data){ //请求成功后处理函数。    
+	            zNodes = data;   //把后台封装好的简单Json格式赋给zNodes  
+	        }  
+	    });  
+	zTree.init($("#treeDemo"), setting, zNodes);
+	var node = zTree.getZTreeObj("treeDemo").getNodeByParam("id", $("#pId").val());
+	$("#colId").val(node.name);
+});
+</script> 	

@@ -1,0 +1,132 @@
+#parse("content/base/back/common/macromobile.vm")
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="Keywords" content="友房网">
+    <meta name="description" content="友房网">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>友房网</title>
+    <link href="$!{basePath}/content/jlb/css/registernew.css" rel="stylesheet" type="text/css">
+    <link href="$!{basePath}/plug-in/css/bootstrap.css" rel="stylesheet">
+    <link href="$!{basePath}/plug-in/css/style.css" rel="stylesheet">
+    <link href="$!{basePath}/plug-in/css/zTreeStyle/zTreeStyle.css" type="text/css" rel="stylesheet"/>
+	<link href="$!{basePath}/plug-in/css/mycss/kongjian.css" rel="stylesheet">
+
+##    引入js文件
+    <script type="text/javascript" src="$!{basePath}/plug-in/js/iFrameResize.js"></script>
+	<script type="text/javascript" src="$!{basePath}/plug-in/js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="$!{basePath}/plug-in/js/respond.min.js"></script>
+	<script type="text/javascript" src="$!{basePath}/plug-in/js/bootstrap.js"></script>
+	<script type="text/javascript" src="$!{basePath}/plug-in/js/common.js"></script>
+	<script type="text/javascript" src="$!{basePath}/plug-in/js/jquery.form.js"></script>
+	<script type="text/javascript" src="$!{basePath}/plug-in/js/scrollNav.js"></script>
+	<script type="text/javascript" src="$!{basePath}/plug-in/js/My97DatePicker/WdatePicker.js" language="javascript"></script>
+  </head>
+ 
+<body>
+	<!--提示弹出层 begin-->
+		<div class="fwmyd_bg" id="fydDIV" style="display: none;">
+		</div>
+	<!--提示弹出层 end-->
+	<div class="header" style="margin-bottom: 0px; height: 48px;line-height: 48px;">
+	<div class="headerwrap">
+		<div class="goback">
+			<!--<a href="javascript:history.go(-1)"><img src="$!{basePath}/content/jlb/img/goback.png" border="0" title="返回上一页"></a>-->
+		</div>
+		<div class="reglogo">
+						<!--<a href="" class="logo" boss="source"></a>-->
+		</div>
+		<div class="linkright">
+		</div>
+	</div>
+  </div>
+  <div class="regCon">
+    <div class="hd">
+      <h1 class="biaoti" style="line-height: 0px;">活动列表</h1>
+      			#if("$!{vipuser}" eq "true")
+	    			<img src="$!{basePath}/content/jlb/img/vip.png" class="vipage2">
+	    		#end
+		    </div>
+    <div class="page__bd">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+	               			<form role="form" class="form-inline" action="$!{basePath}/jlb/messagelist.html" method="post"  id="formSubmit">
+ <input type="hidden" name="areaid" value="$!{areaid}"/>
+  <input type="hidden" name="type" value="$!{type}"/>
+  #if($!{pageInfos})
+    #foreach($!{info} in $!{pageInfos})
+	#if($!{info.leadpic} eq "")
+	<a href="#if($!{type} eq "0")$!{basePath}/jlb/activitydetail.html?id=$!{info.id} #else $!{basePath}/jlb/tonoticeDetail.html?id=$!{info.id} #end" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">$!{info.title}</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a>
+	#end
+	#if(  "$!{info.leadpic}" ne ""  && $!{info.leadpicviewtype} eq "0" )
+				<a href="#if($!{type} eq "0")$!{basePath}/jlb/activitydetail.html?id=$!{info.id} #else $!{basePath}/jlb/tonoticeDetail.html?id=$!{info.id} #end" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__hd">	
+							<img class="weui-media-box__thumb" src="$!{basePath}/upload/img/jlb/$!{info.leadpic}" alt="">	
+						</div>									
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">$!{info.title}</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+				</a>
+	#end
+
+	#if( "$!{info.leadpic}" ne "" && $!{info.leadpicviewtype} eq "1" )
+				<a href="#if($!{type} eq "0")$!{basePath}/jlb/activitydetail.html?id=$!{info.id} #else $!{basePath}/jlb/tonoticeDetail.html?id=$!{info.id} #end" class="article_link clearfix">
+					<h3 class="dotdot line3 ">
+						$!{info.title}
+					</h3>
+					<div class="list_img_holder_large ">
+						<img src="$!{basePath}/upload/img/jlb/$!{info.leadpic}">
+					</div>
+				</a>
+	#end
+
+    #end
+ #end
+						<div class="text-center">
+											<!--公用翻页代码-->
+							                #set($attr='formSubmit')
+							            	#showPageListMobile($pageInfos $attr)
+							                <!--END公用翻页代码-->
+										</div>
+</form>
+								
+            </div>
+		 </div>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="footer-w">
+      <span class="zbj"></span>
+    </div>
+  </div>
+  <div class="dbdh">
+	<span class="footer1">
+		<a href="$!{basePath}/jlb/tomember.html">
+			<img src="$!{basePath}/content/jlb/img/foot_1off.png">
+			<p  style="margin :0px 0px">首页</p>
+		</a>
+	</span>
+	<span class="footer2">
+		<a href="$!{basePath}/jlb/hotlist.html">
+			<img src="$!{basePath}/content/jlb/img/foot_2.png">
+			<p class="pink"  style="margin :0px 0px">会员活动</p>
+		</a>
+	</span>
+	<span class="footer3">
+		<a href="$!{basePath}/jlb/tovip.html">
+			<img src="$!{basePath}/content/jlb/img/foot_3off.png">
+			<p  style="margin :0px 0px">个人中心</p>
+		</a>
+	</span>
+  </div>
+</body>
+
+</html>

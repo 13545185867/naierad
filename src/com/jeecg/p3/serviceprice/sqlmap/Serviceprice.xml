@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.serviceprice.entity.Serviceprice">
+
+	<!-- Result Map-->
+	<resultMap id="Serviceprice" type="com.jeecg.p3.serviceprice.entity.Serviceprice" >
+		<result column="id" property="id" jdbcType="INTEGER"/>
+		<result column="modelid" property="modelid" jdbcType="VARCHAR"/>
+		<result column="servicetype" property="servicetype" jdbcType="VARCHAR"/>
+		<result column="price" property="price" jdbcType="DECIMAL"/>
+		<result column="servicepricecol0" property="servicepricecol0" jdbcType="VARCHAR"/>
+		<result column="servicepricecol1" property="servicepricecol1" jdbcType="VARCHAR"/>
+		<result column="servicepricecol2" property="servicepricecol2" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.modelid != null and query.modelid != ''" >
+	  		 		/* 模块ID */
+			    	AND s.modelid =  #{query.modelid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.servicetype != null and query.servicetype != ''" >
+	  		 		/* 购买类型 */
+			    	AND s.servicetype =  #{query.servicetype,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.price != null and query.price != ''" >
+	  		 		/* 价格 */
+			    	AND s.price =  #{query.price,jdbcType=DECIMAL}
+				 </if>
+				 <if test="query.servicepricecol0 != null and query.servicepricecol0 != ''" >
+	  		 		/*  */
+			    	AND s.servicepricecol0 =  #{query.servicepricecol0,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.servicepricecol1 != null and query.servicepricecol1 != ''" >
+	  		 		/*  */
+			    	AND s.servicepricecol1 =  #{query.servicepricecol1,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.servicepricecol2 != null and query.servicepricecol2 != ''" >
+	  		 		/*  */
+			    	AND s.servicepricecol2 =  #{query.servicepricecol2,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.serviceprice.entity.Serviceprice.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  serviceprice   /* 服务报价表 */  
+					(	
+                      modelid                       /* 模块ID */ 
+                     ,servicetype                   /* 购买类型 */ 
+                     ,price                         /* 价格 */ 
+                     ,servicepricecol0              /*  */ 
+                     ,servicepricecol1              /*  */ 
+                     ,servicepricecol2              /*  */ 
+					)
+			values (
+                      #{modelid,jdbcType=VARCHAR}                       /* 模块ID */ 
+                     ,#{servicetype,jdbcType=VARCHAR}                   /* 购买类型 */ 
+                     ,#{price,jdbcType=DECIMAL}                         /* 价格 */ 
+                     ,#{servicepricecol0,jdbcType=VARCHAR}              /*  */ 
+                     ,#{servicepricecol1,jdbcType=VARCHAR}              /*  */ 
+                     ,#{servicepricecol2,jdbcType=VARCHAR}              /*  */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.serviceprice.entity.Serviceprice.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   serviceprice  	/* 服务报价表 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="modelid != null">
+		    		 		/* 模块ID */ 
+	    		 			modelid = #{modelid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="servicetype != null">
+		    		 		/* 购买类型 */ 
+	    		 			servicetype = #{servicetype,jdbcType=VARCHAR},
+						 </if>
+						 <if test="price != null">
+		    		 		/* 价格 */ 
+	    		 			price = #{price,jdbcType=DECIMAL},
+						 </if>
+						 <if test="servicepricecol0 != null">
+		    		 		/*  */ 
+	    		 			servicepricecol0 = #{servicepricecol0,jdbcType=VARCHAR},
+						 </if>
+						 <if test="servicepricecol1 != null">
+		    		 		/*  */ 
+	    		 			servicepricecol1 = #{servicepricecol1,jdbcType=VARCHAR},
+						 </if>
+						 <if test="servicepricecol2 != null">
+		    		 		/*  */ 
+	    		 			servicepricecol2 = #{servicepricecol2,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.serviceprice.entity.Serviceprice.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Serviceprice">
+select  a.id,a.modelid                       /* 模块ID */ 
+                  ,a.servicetype                   /* 购买类型 */ 
+                  ,a.price                         /* 价格 */ 
+                  ,a.servicepricecol1              /*  */ 
+                  ,a.servicepricecol2      ,        /*  */  concat(d.dictname,b.appname,'服务') as servicepricecol0   from  serviceprice a , appmodel b ,dictinfo d  where  a.modelid = b.id and d.id = a.servicetype
+		 and a.id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.serviceprice.entity.Serviceprice.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM serviceprice 	/* 服务报价表 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.serviceprice.entity.Serviceprice.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  serviceprice      AS s      /* 服务报价表 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.serviceprice.entity.Serviceprice.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Serviceprice">
+		    SELECT 
+                   s.id                            /*  */ 
+                  ,s.modelid                       /* 模块ID */ 
+                  ,s.servicetype                   /* 购买类型 */ 
+                  ,s.price                         /* 价格 */ 
+                  ,s.servicepricecol0              /*  */ 
+                  ,s.servicepricecol1              /*  */ 
+                  ,s.servicepricecol2              /*  */ 
+		FROM   	 serviceprice      AS s      /* 服务报价表 */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+</mapper>

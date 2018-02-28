@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="Keywords" content="友房网">
+    <meta name="description" content="友房网">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>友房网</title>
+    <link href="$!{basePath}/content/jlb/css/registernew.css" rel="stylesheet" type="text/css">
+  </head>
+<body>
+  <div class="regCon">
+    <div class="bd">
+      <div id="reg-s1" style="display:block;">
+        <form method="post" id="baomingForm">
+          <ul>
+			<input type="hidden" value="$!{OPERATE_ACTIVITY_USER.openid}" name="memberid" id="memberid">
+			<input type="hidden" value="$!{activityid}" name="activityid" id="activityid">
+            <li class="clearfix">
+            	<span class="txt2">总人数：</span>
+            	<input type="text" class="ipt wd240" value="1" name="familynum" id="familynum">
+            </li>
+			<li class="clearfix">
+            	<span class="txt2">备注：</span>
+            	<input type="text" class="ipt wd240" value="" name="remark" id="remark">
+            </li>
+          </ul>
+            <div class="clearfix">
+              <input name="submit" type="submit" id="dosubmit" value="报名" class="btn-doc btn-solid register-submit fll">
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<script>
+var serverroot = "$!{basePath}";
+</script>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/jquery.min.js"></script>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/tip.js"></script>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/actbook.js"></script>
+
+</body></html>

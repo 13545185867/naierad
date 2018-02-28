@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">详情</div>
+				  	<div class="panel-body">
+				   		<form class="form-horizontal" role="form">
+							  <fieldset disabled>
+							  																 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">阿里短信签名ID</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{messagetemplate.alimessagesinid}" name="alimessagesinid" id="alimessagesinid" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">阿里短信模板ID</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{messagetemplate.alimessagetempid}" name="alimessagetempid" id="alimessagetempid" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">创建时间</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{messagetemplate.templatename}" name="templatename" id="templatename" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">是否已删除0,1代表已删除</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{messagetemplate.isdelete}" name="isdelete" id="isdelete" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">0通知短信
+1营销短信</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{messagetemplate.type}" name="type" id="type" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;"></label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{messagetemplate.messagetemplatecol}" name="messagetemplatecol" id="messagetemplatecol" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;"></label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{messagetemplate.templatecontent}" name="templatecontent" id="templatecontent" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;"></label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{messagetemplate.attr1}" name="attr1" id="attr1" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;"></label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{messagetemplate.attr2}" name="attr2" id="attr2" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;"></label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{messagetemplate.attr3}" name="attr3" id="attr3" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;"></label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{messagetemplate.attr4}" name="attr4" id="attr4" class="form-control" />
+													    </div>
+													  </div>
+							  </fieldset>
+							  			<div class="form-group mno">
+											<div class="col-sm-offset-1 col-sm-6">
+												<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/messageHelp/back/messagetemplate/list.html')">返回</button>
+        									 </div>
+        							    </div>
+						</form>
+					</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

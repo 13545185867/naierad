@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">详情</div>
+				  	<div class="panel-body">
+				   		<form class="form-horizontal" role="form">
+							  <fieldset disabled>
+							  																 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">服务ID</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{order.serviceid}" name="serviceid" id="serviceid" class="form-control" />
+													    </div>
+													  </div>
+													  <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">订单生成时间</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!dateTool.format("yyyy-MM-dd",$!{order.createtime})" name="createtime" id="createtime" class="form-control" />
+													    </div>
+													  </div>
+													  <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">订单过期时间</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!dateTool.format("yyyy-MM-dd",$!{order.expiretime})" name="expiretime" id="expiretime" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">订单价格</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{order.price}" name="price" id="price" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">是否已删除 </label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{order.isdelete}" name="isdelete" id="isdelete" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">支付状态</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{order.paystatus}" name="paystatus" id="paystatus" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">支付结果</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{order.payresult}" name="payresult" id="payresult" class="form-control" />
+													    </div>
+													  </div>
+													  <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">支付时间</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!dateTool.format("yyyy-MM-dd",$!{order.paytime})" name="paytime" id="paytime" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">支付人openid</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{order.payuserid}" name="payuserid" id="payuserid" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">支付地址</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{order.paycodeurl}" name="paycodeurl" id="paycodeurl" class="form-control" />
+													      <img alt="二维码" id="codel-img" src="$!{basePath}/qrcode/getQRCode.html?url=$!{payurl}">
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;"></label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{order.ordercol0}" name="ordercol0" id="ordercol0" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;"></label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{order.ordercol1}" name="ordercol1" id="ordercol1" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;"></label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{order.ordercol2}" name="ordercol2" id="ordercol2" class="form-control" />
+													    </div>
+													  </div>
+							  </fieldset>
+							  			<div class="form-group mno">
+											<div class="col-sm-offset-1 col-sm-6">
+												<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/order/back/order/list.html')">返回</button>
+        									 </div>
+        							    </div>
+						</form>
+					</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

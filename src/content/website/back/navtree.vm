@@ -1,0 +1,218 @@
+	    <link href="$!{basePath}/plug-in/css/bootstrap.css" rel="stylesheet">
+ 
+		<table class="webHeaderTable J_webHeaderTable" cellpadding="0" cellspacing="0" id="webHeaderTable">
+			<tbody><tr>
+				<td align="center" class="J_webHeaderTable webHeaderTd fk-moduleZoneWrap">
+<div id="fk-webHeaderZone" class=" ">
+						<div id="webTop" class=" ">
+<img src="$!{basePath}/content/files/logo03.png" style="/* margin-left:8%; *//* margin-top:20px; */">
+					</div><div class="form form315 formIndex1 formStyle86 formInZone  siteEditor " style="position: absolute;top: 0px;left: 800px;width: 124px;height: 45px;">
+<div class="lightModuleOuterContent lightModuleOuterContent315">
+ 
+<span style="">
+<span style="line-height: 20px;">
+	<p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;">
+		<span style="font-family: 微软雅黑; font-size: 18px; color: rgb(255, 101, 55);">18872098899</span>
+	</p>
+	<p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;">
+		<span style="font-family: 微软雅黑; font-size: 16px; color: rgb(255, 101, 55);">0712 -7180399</span>
+	</p>
+</span>
+</span> 
+ </div> 
+</div>
+<div class="form form315 formIndex1 formStyle86 formInZone  siteEditor " style="position: absolute;top: 0;left: 950px;width: 150px;height: 45px;">
+<div class="lightModuleOuterContent lightModuleOuterContent315">
+    <img src="$!{basePath}/content/files/onlineshop.png">
+    
+</div>
+</div>
+						
+
+<div style="position: absolute;top: 12px;left: 754px;width: 28px;height: 35px;">
+<div class="lightModuleOuterContent lightModuleOuterContent314"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_314" class="float_in_img J_defImage " src="$!{basePath}/content/files/phone.png" alt="phone" style="margin-top: 0px; margin-left: 0px; height: 35px;"></div></div></a>
+</div></div>
+</div> </div>
+   <div class="content">
+	<ul class="venus-menu">
+	#foreach($entry in $OPERATE_WEB_MENU_TREE.entrySet())
+					#if($entry.value)   
+						#if("$cruid" eq "$!{entry.key.id}")
+						 <li class= "active" style="">
+						 #else
+						 <li  style="">
+						 #end
+						 #if("$!{entry.key.type}" eq "2")
+						 <a href="${entry.key.url}?colid=${entry.key.id}&pid=${entry.key.parentid}"> 
+						 #end 
+						#if("$!{entry.key.type}" eq "3")
+						 <a href="${entry.key.url}">  
+						 #end 
+						 #if("$!{entry.key.type}" eq "1")
+						 <a> 
+						 #end 
+						 ${entry.key.name}</a>
+						<ul style="display: none;" class="">
+			#foreach($sub in $entry.value )	
+				#foreach($subnav in $sub.entrySet() )		
+														#if($subnav.value)
+														<li style="">
+														 #if("$!{subnav.key.type}" eq "2")
+						 <a href="${subnav.key.url}?colid=${subnav.key.id}&pid=${subnav.key.parentid}"> 
+						 #end 
+						#if("$!{subnav.key.type}" eq "3")
+						 <a href="${subnav.key.url}">  
+						 #end 
+						 #if("$!{subnav.key.type}" eq "1")
+						 <a> 
+						 #end
+														${subnav.key.name}</a>
+										                  	<ul style="display: none;" class="">
+															#foreach($subnav1 in $subnav.value )
+																<li>
+																    					 		 #if("$!{subnav1.type}" eq "2")
+						 <a href="${subnav1.url}?colid=${subnav1.id}&pid=${subnav1.parentid}"> 
+						 #end 
+						#if("$!{subnav1.type}" eq "3")
+						 <a href="${subnav1.url}">  
+						 #end 
+						 #if("$!{subnav1.type}" eq "1")
+						 <a> 
+						 #end
+																    
+													                      ${subnav1.name} 
+										                  			</a>
+								                  				</li>
+															#end
+															</ul>
+														</li>
+														#else
+														 <li style="">
+														 		 #if("$!{subnav.key.type}" eq "2")
+						 <a href="${subnav.key.url}?colid=${subnav.key.id}&pid=${subnav.key.parentid}"> 
+						 #end 
+						#if("$!{subnav.key.type}" eq "3")
+						 <a href="${subnav.key.url}">  
+						 #end 
+						 #if("$!{subnav.key.type}" eq "1")
+						 <a> 
+						 #end
+						 ${subnav.key.name}</a></li>
+														#end
+				#end
+			 #end
+	 			</ul>		
+			</li>
+			   			#else
+							#if("$cruid" eq "$!{entry.key.id}")
+						 <li class= "active" style="">
+						 #else
+						 <li  style="">
+						 #end 
+						 #if("$!{entry.key.type}" eq "2")
+						 <a href="${entry.key.url}?colid=${entry.key.id}&pid=${entry.key.parentid}"> 
+						 #end 
+						#if("$!{entry.key.type}" eq "3")
+						 <a href="${entry.key.url}">  
+						 #end 
+						 #if("$!{entry.key.type}" eq "1")
+						 <a> 
+						 #end 
+						 ${entry.key.name}</a></li>
+			          #end
+  #end
+	</ul>
+</div>
+  </td>
+			</tr>
+		</tbody></table>
+ 
+  <div class="cndns-right">
+    
+    <div class="cndns-right-meau meau-sev">
+        <a href="javascript:" class="cndns-right-btn">
+            <span class="demo-icon"></span>
+            <p>
+                在线<br>
+                客服
+            </p>
+        </a>
+        <div class="cndns-right-box">
+            <div class="box-border">
+                <div class="sev-t">
+                    <span class="demo-icon"></span>
+                    <p>在线客服<i>服务时间：8:30-18:00</i></p>
+                    <div class="clear"></div>
+                </div>
+                <div class="sev-b">
+                    <h4>选择客服马上在线沟通：</h4>
+                    <ul id="zixunUl">
+                        <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=89228803&site=qq&menu=yes">耐尔广告</a></li> 
+                        <li><a href="javascript:void(0);">耐尔加工厂</a></li> 
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <span class="arrow-right"></span>
+            </div>
+        </div>
+    </div>
+    <div class="cndns-right-meau meau-contact">
+        <a href="javascript:" class="cndns-right-btn">
+            <span class="demo-icon"></span>
+            <p>
+                客服<br>
+                热线
+            </p>
+        </a>
+        <div class="cndns-right-box">
+            <div class="box-border">
+                <div class="sev-t">
+                    <span class="demo-icon"></span>
+                    <p>0712-7180399<br>18872098899<br><i>7*24小时客服服务热线</i></p>
+                    <div class="clear"></div>
+                </div>
+                <span class="arrow-right"></span>
+            </div>
+        </div>
+    </div>
+    <div class="cndns-right-meau meau-code">
+        <a href="javascript:" class="cndns-right-btn">
+            <span class="demo-icon"></span>
+            <p>
+                关注<br>
+                微信
+            </p>
+        </a>
+        <div class="cndns-right-box">
+            <div class="box-border">
+                <div class="sev-t">
+                    <img src="$!{basePath}/content/files/qrcode.jpg">
+                    <i>关注官方微信</i>
+                </div>
+                <span class="arrow-right"></span>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+ 
+<script type="text/javascript">
+//置顶图标显示
+$('#top-back').hide()
+$(window).scroll(function(){
+	 if($(this).scrollTop() > 350){
+		$("#top-back").fadeIn();
+	 }
+	 else{
+		$("#top-back").fadeOut();
+	 }
+  })	
+//置顶事件
+function topBack(){
+  $('body,html').animate({scrollTop:0},300);
+}
+</script>
+  

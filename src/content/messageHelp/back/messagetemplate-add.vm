@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">新增</div>
+					<div class="panel-body">
+						<form class="form-horizontal" role="form" id="dailogForm" action="$!{basePath}/messageHelp/back/messagetemplate/doAdd.html" method="POST">
+					  		<input type="hidden" id="btn_sub" class="btn_sub" />
+					  							 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">模版名称</label>
+													    <div class="col-sm-8">
+													      <input type="text" value="$!{messagetemplate.templatename}" name="templatename" id="templatename" class="form-control" />
+													    </div>
+													</div>
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">阿里短信签名ID</label>
+													    <div class="col-sm-8">
+													      <input type="text" value="$!{messagetemplate.alimessagesinid}" name="alimessagesinid" id="alimessagesinid" class="form-control" />
+													    </div>
+													</div>
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">阿里短信模板ID</label>
+													    <div class="col-sm-8">
+													      <input type="text" value="$!{messagetemplate.alimessagetempid}" name="alimessagetempid" id="alimessagetempid" class="form-control" />
+													    </div>
+													</div>
+
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">是否已删除0,1代表已删除</label>
+													    <div class="col-sm-8">
+													      <input type="text" value="$!{messagetemplate.isdelete}" name="isdelete" id="isdelete" class="form-control" />
+													    </div>
+													</div>
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">模版类型</label>
+													      <div class="col-sm-8">
+													    通知短信 <input type="radio"  id="type" name="type" value="0" #if("$!{messagetemplate.type}"== "0") checked #end class="form-control" >
+													   推广短信<input type="radio" id="type" name="type" value="1" #if("$!{messagetemplate.type}"== "1") checked #end class="form-control"  >
+													    </div>
+													</div>
+												 
+													
+
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">签名</label>
+													    <div class="col-sm-8">
+													      <input type="text" value="$!{messagetemplate.attr1}" name="attr1" id="attr1" class="form-control" />
+													    </div>
+													</div>
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">商品或服务</label>
+													    <div class="col-sm-8">
+													      <input type="text" value="$!{messagetemplate.attr2}" name="attr2" id="attr2" class="form-control" />
+													    </div>
+													</div>
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">联系方式</label>
+													    <div class="col-sm-8">
+													      <input type="text" value="$!{messagetemplate.attr3}" name="attr3" id="attr3" class="form-control" />
+													    </div>
+													</div>
+													
+												 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">模板内容</label>
+													    <div class="col-sm-8">
+													     
+													    <textarea  name="templatecontent" id="templatecontent" placeholder="变量格式：{name} ；
+ 示例：尊敬的 {name}，您的快递已在飞奔的路上，将在今天 送达您的手里，请留意查收。" rows="4" type="text" maxlength="500" height="100%"  class="form-control" ></textarea>
+													    
+													    </div>
+													</div>
+										<div class="form-group mno">
+											<div class="col-sm-offset-1 col-sm-6">
+												<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/messageHelp/back/messagetemplate/list.html')">返回</button>
+	        									<button type="button" class="btn btn-primary" id="formSubmit">提交</button>
+        									 </div>
+        								</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="$!{basePath}/plug-in/js/Validform_v5.3.2.js"></script> 
+<script type="text/javascript" src="$!{basePath}/plug-in/js/forminit.p3.js"></script> 

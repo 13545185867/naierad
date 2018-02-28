@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <title>短信服务管理控制台</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="data-spm" content="5176">
+    <meta name="aplus-waiting" content="MAN">
+    <link rel="shortcut icon" href="https://www.aliyun.com/favicon.ico" type="image/x-icon">
+ </head>
+<body data-spm="8992070" class="has-console-sidebar sidebar-expand" style=""> 
+ 
+<style>
+     .b-main .b-module-navi {
+        top: 50px !important;
+    }
+</style>
+
+
+<link rel="stylesheet" type="text/css" href="./群发助手_files/app.css">
+
+
+
+<div class="b-module-body"><div class="b-body-container"><div><div class="b-module-header mb-xl"><span class="title mr-xl">添加短信模版</span><button type="button" class="next-btn next-btn-secondary next-btn-small"><!-- react-text: 3768 -->返回上层<!-- /react-text --></button><div class="pull-right"></div></div><div class="h-divider mb-xl"></div><div class="b-add-voice-tips mb-xl"></div><div style="max-width: 880px; padding-top: 12px;"><form class="next-form next-form-left ver next-form-medium" style="line-height: 28px;" action="$!{basePath}/messageHelp/back/messagetemplate/doAdd.html" method="POST"><div class="next-form-item next-row" label="模版类型:" required=""><label for="bizType" required="" class="next-col-6 next-form-item-label">模版类型:</label><div class="next-col-14 next-form-item-control">
+<div id="bizType" class="next-radio-group">
+<div><label class=""><span class="next-radio  checked"><span class="next-radio-inner unpress"></span><input type="radio"  name="type" value="0"  ></span><span class="next-radio-label"><span class="mr-xxl">通知短信</span></span></label></div>
+<div><label class=""><span class="next-radio "><span class="next-radio-inner unpress"></span><input type="radio"  name="type" value="1"  ></span><span class="next-radio-label"><span>推广短信</span></span></label></div>
+</div><!-- react-text: 3806 --> <!-- /react-text --><div class=""></div><!-- react-text: 3808 --> <!-- /react-text --></div></div>
+<div class="next-form-item next-row" required="" label="模版名称:"><label for="templateName" required="" class="next-col-6 next-form-item-label">模版名称:</label><div class="next-col-14 next-form-item-control"><span class="next-input next-input-single next-input-medium"><input type="text" placeholder="请输入名称 不超过30个字符" name="templatename" id="templatename" value="" maxlength="30" height="100%"><span class="next-input-control"><span class="next-input-len"><!-- react-text: 3816 -->0<!-- /react-text --><!-- react-text: 3817 -->/<!-- /react-text --><!-- react-text: 3818 -->30<!-- /react-text --></span></span></span><!-- react-text: 3819 --> <!-- /react-text --><div class=""></div><!-- react-text: 3821 --> <!-- /react-text --></div></div>
+
+<div class="next-form-item next-row" required="" label="模版名称:"><label for="templateName" required="" class="next-col-6 next-form-item-label">阿里云签名ID:</label><div class="next-col-14 next-form-item-control"><span class="next-input next-input-single next-input-medium"><input type="text" placeholder="请输入名称 不超过30个字符" id="alimessagesinid" name="alimessagesinid" value="" maxlength="30" height="100%"><span class="next-input-control"><span class="next-input-len"><!-- react-text: 3816 -->0<!-- /react-text --><!-- react-text: 3817 -->/<!-- /react-text --><!-- react-text: 3818 -->30<!-- /react-text --></span></span></span><!-- react-text: 3819 --> <!-- /react-text --><div class=""></div><!-- react-text: 3821 --> <!-- /react-text --></div></div>
+
+<div class="next-form-item next-row" required="" label="模版名称:"><label for="templateName" required="" class="next-col-6 next-form-item-label">阿里云模版ID:</label><div class="next-col-14 next-form-item-control"><span class="next-input next-input-single next-input-medium"><input type="text" placeholder="请输入名称 不超过30个字符"  id="alimessagetempid" name="alimessagetempid" value="" maxlength="30" height="100%"><span class="next-input-control"><span class="next-input-len"><!-- react-text: 3816 -->0<!-- /react-text --><!-- react-text: 3817 -->/<!-- /react-text --><!-- react-text: 3818 -->30<!-- /react-text --></span></span></span><!-- react-text: 3819 --> <!-- /react-text --><div class=""></div><!-- react-text: 3821 --> <!-- /react-text --></div></div>
+
+<div class="next-form-item next-row" required="" label="模版内容:" style="margin-bottom: 0px;"><label for="templateContent" required="" class="next-col-6 next-form-item-label">模版内容:</label><div class="next-col-14 next-form-item-control"><span class="next-input next-input-multiple"><textarea data-meta="Field"  name="templatecontent" id="templatecontent" placeholder="变量格式：${name}；
+ 示例：尊敬的${name}，您的快递已在飞奔的路上，将在今天${time}送达您的手里，请留意查收。" rows="4" type="text" maxlength="500" height="100%"></textarea><span class="next-input-control"><span class="next-input-len"><!-- react-text: 3829 -->0<!-- /react-text --><!-- react-text: 3830 -->/<!-- /react-text --><!-- react-text: 3831 -->500<!-- /react-text --></span></span></span><!-- react-text: 3832 --> <!-- /react-text --><div class=""></div><!-- react-text: 3834 --> <!-- /react-text --></div></div>
+ 
+  
+ <div class="next-form-item next-row" label=""><label class="next-col-6 next-form-item-label"></label><div class="next-col-14 next-form-item-control"><button  type="submit" class="next-btn next-btn-secondary next-btn-medium mr"><!-- react-text: 3864 -->确定<!-- /react-text --></button><div class=""></div><!-- react-text: 3869 --> <!-- /react-text --></div></div></form></div><!-- react-empty: 3879 --><!-- react-empty: 3880 --><!-- react-empty: 3881 --><!-- react-empty: 3882 --></div></div></div>
+
+
+
+
+ 

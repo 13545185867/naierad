@@ -1,0 +1,73 @@
+<div id="page-wrapper" class="gray-bg dashbard-1">
+    <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header" style="height: 60px;width:auto"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                <form role="search" class="navbar-form-custom" method="post" action="search_results.html" style="width: 250px;">
+                    <div class="form-group">
+                        <input type="text" placeholder="捷微H5平台" class="form-control" name="top-search" id="top-search">
+                    </div>
+                </form>
+            </div>
+            <ul class="nav navbar-top-links navbar-right">
+                   
+                    <li>
+						<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <span><i class="fa fa-question-circle" style="color:#1ab394"></i> 客服中心<b class="caret"></b></span>
+                        </a>
+						<ul class="dropdown-menu dropdown-alerts" style="margin-left:0;width:auto">
+                            <li><a href="http://www.h5huodong.com/system/back/article/toIndex.html" target="_blank"><i class="fa fa-book" style="color:#1ab394"></i> <b>在线文档</b></a></li>
+							<li><a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=7a7591c2f1fe96c73585e1759cbb43b69a8d4ade9de4d569db31d8decab47c22"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="捷微H5营销活动群①" title="捷微H5营销活动群①"></a></li>
+                        </ul>
+					</li>
+                    <li class="dropdown hidden-xs">
+                    	<a class="dropdown hidden-xs" href="#">
+                           <span><i class="fa fa-wechat" style="color:#1ab394"></i> 公众号：$!{jwidname}</span>
+                        </a>
+                    </li>
+					<li class="dropdown hidden-xs">
+                    	<a class="dropdown hidden-xs" href="#">
+                               <span ><strong class="font-bold"><i class="fa fa-user" style="color:#1ab394"></i> 欢迎您，$!{userid}</strong></span>
+                        </a>
+                    </li>
+                    
+                      <li class="dropdown hidden-xs">
+                        <a class="" aria-expanded="false" href="$!{basePath}/system/logout.html">
+                            <i class="fa fa fa-sign-out" style="color:#1ab394"></i> 退出
+                        </a>
+                    </li>
+                </ul>
+        </nav>
+    </div>
+    <div class="row content-tabs">
+        <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i>
+        </button>
+        <nav class="page-tabs J_menuTabs">
+            <div class="page-tabs-content">
+                <a href="javascript:;" class="active J_menuTab" data-id="$!{basePath}/system/back/home.html">首页</a>
+            </div>
+        </nav>
+        <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
+        </button>
+        <div class="btn-group roll-nav roll-right">
+            <button class="dropdown J_tabClose" data-toggle="dropdown">关闭操作<span class="caret"></span>
+
+            </button>
+            <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                <li class="J_tabShowActive"><a>定位当前选项卡</a>
+                </li>
+                <li class="divider"></li>
+                <li class="J_tabCloseAll"><a>关闭全部选项卡</a>
+                </li>
+                <li class="J_tabCloseOther"><a>关闭其他选项卡</a>
+                </li>
+            </ul>
+        </div>
+        <!-- <a href="$!{basePath}/system/logout.html" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a> -->
+    </div>
+    <div class="row J_mainContent" id="content-main">
+        <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="$!{basePath}/system/back/home.html" frameborder="0" data-id="$!{basePath}/system/back/home.html" seamless=""></iframe>
+    </div>
+    <div class="footer">
+        <div class="pull-right"> <font color="red"> QQ 交流群：</font><a href="https://jq.qq.com/?_wv=1027&k=42XOHaZ" target="_blank"> <font color="red">413534092</font></a>  &nbsp;&nbsp;&nbsp;&nbsp;|   &nbsp;&nbsp; ©<a href="http://h5huodong.com/" target="_blank">捷微H5官网</a></div>
+    </div>
+</div>

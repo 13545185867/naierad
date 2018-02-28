@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.messageLog.entity.SendMessageLog">
+
+	<!-- Result Map-->
+	<resultMap id="SendMessageLog" type="com.jeecg.p3.messageLog.entity.SendMessageLog" >
+		<result column="id" property="id" jdbcType="VARCHAR"/>
+		<result column="ip" property="ip" jdbcType="VARCHAR"/>
+		<result column="userid" property="userid" jdbcType="VARCHAR"/>
+		<result column="mac" property="mac" jdbcType="VARCHAR"/>
+		<result column="phonenum" property="phonenum" jdbcType="VARCHAR"/>
+		<result column="sendtime" property="sendtime" jdbcType="TIMESTAMP"/>
+		<result column="status" property="status" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.ip != null and query.ip != ''" >
+	  		 		/*  */
+			    	AND sml.ip =  #{query.ip,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.userid != null and query.userid != ''" >
+	  		 		/*  */
+			    	AND sml.userid =  #{query.userid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.mac != null and query.mac != ''" >
+	  		 		/*  */
+			    	AND sml.mac =  #{query.mac,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.phonenum != null and query.phonenum != ''" >
+	  		 		/*  */
+			    	AND sml.phonenum =  #{query.phonenum,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.sendtime != null and query.sendtime != ''" >
+	  		 		/*  */
+			    	AND sml.sendtime =  #{query.sendtime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.status != null and query.status != ''" >
+	  		 		/*  */
+			    	AND sml.status =  #{query.status,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.messageLog.entity.SendMessageLog.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  send_message_log   /*  */  
+					(	
+                      id                            /*  */ 
+                     ,ip                            /*  */ 
+                     ,userid                        /*  */ 
+                     ,mac                           /*  */ 
+                     ,phonenum                      /*  */ 
+                     ,sendtime                      /*  */ 
+                     ,status                        /*  */ 
+					)
+			values (
+                      #{id,jdbcType=VARCHAR}                            /*  */ 
+                     ,#{ip,jdbcType=VARCHAR}                            /*  */ 
+                     ,#{userid,jdbcType=VARCHAR}                        /*  */ 
+                     ,#{mac,jdbcType=VARCHAR}                           /*  */ 
+                     ,#{phonenum,jdbcType=VARCHAR}                      /*  */ 
+                     ,#{sendtime,jdbcType=TIMESTAMP}                      /*  */ 
+                     ,#{status,jdbcType=VARCHAR}                        /*  */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.messageLog.entity.SendMessageLog.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   send_message_log  	/*  */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="ip != null">
+		    		 		/*  */ 
+	    		 			ip = #{ip,jdbcType=VARCHAR},
+						 </if>
+						 <if test="userid != null">
+		    		 		/*  */ 
+	    		 			userid = #{userid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="mac != null">
+		    		 		/*  */ 
+	    		 			mac = #{mac,jdbcType=VARCHAR},
+						 </if>
+						 <if test="phonenum != null">
+		    		 		/*  */ 
+	    		 			phonenum = #{phonenum,jdbcType=VARCHAR},
+						 </if>
+						 <if test="sendtime != null">
+		    		 		/*  */ 
+	    		 			sendtime = #{sendtime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="status != null">
+		    		 		/*  */ 
+	    		 			status = #{status,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.messageLog.entity.SendMessageLog.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="SendMessageLog">
+		   SELECT   
+                   sml.id                            /*  */ 
+                  ,sml.ip                            /*  */ 
+                  ,sml.userid                        /*  */ 
+                  ,sml.mac                           /*  */ 
+                  ,sml.phonenum                      /*  */ 
+                  ,sml.sendtime                      /*  */ 
+                  ,sml.status                        /*  */ 
+		   FROM   send_message_log      AS sml      /*  */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.messageLog.entity.SendMessageLog.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM send_message_log 	/*  */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.messageLog.entity.SendMessageLog.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  send_message_log      AS sml      /*  */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.messageLog.entity.SendMessageLog.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="SendMessageLog">
+		    SELECT 
+                   sml.id                            /*  */ 
+                  ,sml.ip                            /*  */ 
+                  ,sml.userid                        /*  */ 
+                  ,sml.mac                           /*  */ 
+                  ,sml.phonenum                      /*  */ 
+                  ,sml.sendtime                      /*  */ 
+                  ,sml.status                        /*  */ 
+		FROM   	 send_message_log      AS sml      /*  */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+		<!-- 查询条件 -->
+	<sql id="whereORcontation">
+		<trim  suffixOverrides="," >
+						 <if test="sendtime != null and sendtime != ''" >
+	  		 		/*  */
+			    	and sml.sendtime >=  #{sendtime,jdbcType=TIMESTAMP} and (
+				 </if>
+				 <if test="ip != null and ip != ''" >
+	  		 		/*  */
+			    	sml.ip =  #{ip,jdbcType=VARCHAR}
+				 </if>
+				 <if test="userid != null and userid != ''" >
+	  		 		/*  */
+			    	OR sml.userid =  #{userid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="mac != null and mac != ''" >
+	  		 		/*  */
+			    	OR sml.mac =  #{mac,jdbcType=VARCHAR}
+				 </if>
+				 <if test="phonenum != null and phonenum != ''" >
+	  		 		/*  */
+			    	OR sml.phonenum =  #{phonenum,jdbcType=VARCHAR}
+				 </if>
+
+				 <if test="status != null and status != ''" >
+	  		 		/*  */
+			    	OR sml.status =  #{status,jdbcType=VARCHAR}
+				 </if>
+				 <if test="sendtime != null and sendtime != ''" >
+				 )
+				 </if>
+		</trim>
+	</sql>
+	
+	
+		<select id="queryByIPMACPHONE" parameterType="Object"  resultMap="SendMessageLog">
+		    SELECT 
+                   sml.id                            /*  */ 
+                  ,sml.ip                            /*  */ 
+                  ,sml.userid                        /*  */ 
+                  ,sml.mac                           /*  */ 
+                  ,sml.phonenum                      /*  */ 
+                  ,sml.sendtime                      /*  */ 
+                  ,sml.status                        /*  */ 
+		FROM   	 send_message_log      AS sml      /*  */ 
+		WHERE 1=1
+		   <include refid="whereORcontation"/> 
+	</select>
+	
+</mapper>

@@ -1,0 +1,41 @@
+@charset "utf-8";
+* {padding:0; margin:0;}
+.box-reg { width:80%; background:#fff; border:1px solid #bbb; border-radius:5px; margin:10px auto;font-family:'微软雅黑'; position:fixed; margin-left:10%; z-index:9998;max-height: 80%;top: 50%;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
+.box-reg h4 { background:#e84424; color:#fff; text-align:center; padding:10px;font-size:18px;}
+.box-reg h5 {font-size:15px; padding:20px 20px 0 20px;background: #fff;position: relative;z-index: 11;}
+.box-reg .reg-list  li {font-size:14px; list-style:none; margin:5px 0;position:relative;}
+.box-reg .reg-list p{margin-left: 20px;margin-right: 20px;}
+.box-reg .reg-list  label {display:inline-block;vertical-align:middle; margin-right:10px;}
+.box-reg .reg-list span { color:#ec522d; font-size:12px;}
+.box-reg .reg-list .input { height:24px; line-height:24px; padding-left:3px; background:#eee; border:1px solid #bbb; vertical-align:middle;width:100%;font-size:14px;}
+.box-reg .hide { position:absolute !important; left:auto; top:2px; color:#eb502c; font-size:12px;width: auto;background: transparent;height: auto;right: 12px;z-index: 10;}
+#header{ z-index:9999;}
+.reg-list-par{max-height: 270px;margin-top:-42px;overflow-y: auto;}
+.reg-list{height: 100%;margin-top:50px;}
+.cube-close{position: absolute;width: 24px;height:24px;background: url(../img/cubeclose.png) center no-repeat;background-size: 24px 24px;top:-12px;right:-12px;z-index: 111;}
+.btn-sub{margin-bottom: 0;margin-top: 15px;}
+.btn-sub input{background:#e63f21; width:100%; height:42px; border:none; cursor:pointer; color:#fff; text-align:center; font-size:16px;font-family:'微软雅黑';}
+.fwmyd_bg{
+    position: fixed;
+   top: 0px;
+   left: 0px;
+   right:0px;
+   bottom:0px;
+	background: rgba(0,0,0,0.7); 
+	z-index: 99999; 
+}
+.fwmyd{
+    position:fixed; 
+	left:30%;
+	top:180px;
+	z-index:99999999;
+	width:40%; 
+	background-color:#fff; 
+	border: 1px solid #dedede;
+	border-radius: 5px;
+} 
+.fwmyd .bgyj{
+   font-size:16px;
+   text-align:center;
+   padding:15px 10px;
+} 

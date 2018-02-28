@@ -1,0 +1,314 @@
+   <!DOCTYPE html>
+<html><head>
+<style class="vjs-styles-defaults">
+ * {
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+}
+.sl_items {
+    width: 324px;
+    margin-left: 15px;
+    float: left;
+    margin-right: 15px;
+    text-align: left;
+	margin: 0 auto;
+}
+
+.sl_top {
+    width: 324px;
+    height: 186px;
+}.sl_items p {
+    font-size: 14px;
+    line-height: 26px;
+    color: #2b2b2b;
+    margin-bottom: 0;
+    padding: 0 16px;
+    height: 80px;
+    overflow: hidden;
+}.sl_text {
+    height: 80px;
+    margin-top: 24px;
+}.sl_button {
+    text-align: center;
+    width: 100%;
+}.sl_items .sb_button {
+    width: 290px;
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 65px;
+    height: 36px;
+    line-height: 36px;
+}
+ 
+a:link, a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+ 
+.sb_button {
+    color: #ffffff;
+    font-size: 14px;
+    background-color: #ff6637;
+    width: 300px;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    margin: 60px 0;
+}.sl_items .sb_button:hover {
+    width: 286px;
+    height: 32px;
+    line-height: 32px;
+}
+.sb_button:hover {
+    color: #ff6637;
+    background: none;
+    border: 2px solid #ff6637;
+    height: 36px;
+    line-height: 36px;
+    width: 296px
+}
+    </style> 
+<title>广告资源 大悟县耐尔广告有限公司</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="format-detection" content="telephone=no,email=no,address=no">
+<meta name="renderer" content="webkit"> 
+<meta name="mobile-agent" content="format=html5;url=www.naierad.com">
+<meta name="keywords" content="大悟|大悟县|大悟耐尔|大悟县耐尔|大悟县广告|大悟广告|耐尔广告|大悟县耐尔广告有限公司|耐尔|广告|喷绘|写真|设计印刷|程序开发|宣传车|水晶/发光字|广告招牌|LED电子屏">
+<meta name="description" content="大悟耐尔广告有限公司是一家集设计、制作、代理、发布为一体的专业化广告服务商，专业从事写真喷绘、展览工程、户内外广告制作项目。一流的技术工人,先进的生产设备使我们走在了行业的前列。专注印刷行业12年，设计80多个行业，服务超过90000多个客户，完善的售前-售中-售后定制服务。">
+ 
+<link rel="icon" href="$!{basePath}/content/files/1.ico" type="image/x-icon" />
+<link type="text/css" href="$!{basePath}/content/files/base2.min.css" rel="stylesheet">
+<link type="text/css" href="$!{basePath}/content/files/fkTheme.min.css" rel="stylesheet" id="jzThemeFrame">
+ <link type="text/css" href="$!{basePath}/content/files/floatBtn1.min.css" rel="stylesheet">
+
+<link type="text/css" href="$!{basePath}/content/files/style.css" rel="stylesheet">
+
+<script type="text/javascript" src="$!{basePath}/content/files/jQuery-1.10.1.min.js"></script>
+<script type="text/javascript" src="$!{basePath}/content/files/script.js"></script>
+
+ <style type="text/css" id="contentAnimationStyle">#module339 .formMiddleContent339{overflow:hidden !important;}
+#module339 .formMiddleContent339 .listPhotosList{overflow:hidden !important;}</style><style type="text/css" id="styleBannerBg">.webBannerTable{background:none !important;}
+.webBanner{background:none !important;}</style><style type="text/css" id="styleWebSite">#bannerV2 .fk-inBannerListZone{width:1200px;}
+#bannerV2 .fk-inBannerListZone{margin-left:-600px;}</style><style type="text/css" id="stylebacktotop">.fk_siteBackToTop{display:none;}
+.fk_siteBackToTop{cursor:pointer;}
+.fk_siteBackToTop{z-index:9030;}
+.fk_siteBackToTop{right:40px;}
+.fk_siteBackToTop{bottom:50px;}
+.fk_siteBackToTop:hover{background-image:url($!{basePath}/content/files/05_hover.png);}
+.fk_siteBackToTop{position:fixed;}
+.fk_siteBackToTop{width:50px;}
+.fk_siteBackToTop{height:50px;}
+.fk_siteBackToTop{margin:1px;}
+.fk_siteBackToTop{background-image:url($!{basePath}/content/files/05.png);}</style></head>
+<body class="g_body" style="min-width: 1200px;">
+ 
+	<div id="siteBackToTop_small_box" class="fk_siteBackToTop" title="回到顶部" _style="secondStyle_05" style="right: 40px; bottom: 50px; display: none; opacity: 1;"></div><div id="g_main" class="g_main g_col2 ">
+	<div id="web" class="g_web ">
+#set($cruid = 10) 
+ #parse("content/website/back/navtree.vm")
+		<table class="webBannerTable J_webBannerTable" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td align="center" class="fk-moduleZoneWrap">
+					
+					
+					<div id="webBanner" class="webBanner">
+						<table class="bannerTable" cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td class="bannerLeft"></td>
+								<td class="bannerCenter" align="center" valign="top">
+											
+											<div style="visibility:hidden;" class="fk-inBannerListZone-tmp">
+
+												
+											</div>	
+									<div class="bannerTop"></div>
+<div id="bannerV2" class="banner extBanner" style="height: 300px; background: none; overflow: hidden;">	
+<div></div><div class="switchGroup switchGroup_bannerV2 billboard billboard1" style="width: 100%; position: relative; height: 300px; overflow: hidden; margin: 0px auto;"><div class="J_billboardItem billboard_item arrowImg billboardItem_1 billboardAnim billboardItem_1_start billboardItem_1_on" style="width: 100%; height: 720px; animation-duration: 1500ms; display: block;overflow:hidden;">
+<div class="J_bannerItem f-bannerItem" title="" style="width: 100%; height: 300px; cursor: default; background-position: 50% 50%; background-repeat: no-repeat; overflow: hidden; display: block; outline: none; margin: 0px auto; position: relative; z-index: 1; background-size: cover; background-image: url(&quot;$!{basePath}/content/files/adresource.jpg&quot;);">
+<div id="fk-inBannerListZone-0"  style="text-align: left;" class="elemZone elemZoneModule fk-moduleZone fk-inBannerListZone forms sideForms J_moduleZone ">
+<div class="fk-inBannerListZoneBg fk-elemZoneBg J_zoneContentBg elemZoneBg"></div>
+</div>
+</div>
+</div>
+
+</div></div>
+
+								</td>
+								<td class="bannerRight"></td>
+							</tr>
+						</tbody></table>
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+ 
+
+	<div id="fullmeasureTopForms" class="fullmeasureContainer forms fk-fullmeasureForms fullmeasureForms fullmeasureTopForms">
+			<div id="module467" class="form form467 formIndex1 formStyle80 fk-formFullmeasure " title="">
+<div class="fillContentRelative" style="position: relative; z-index: -1; height: 428px; width: 100%; display: none;"></div><div style="position: static;" class="fullmeasureOuterContentPage fullmeasureOuterContentPage1 J_fullmeasurePageShow" page="1">			<div class="fullmeasureOuterContentBg fullmeasureOuterContentBg467 fullmeasureStyle0"></div><div class="fullmeasureOuterContent fullmeasureOuterContent442">
+<div class="fullmeasureContent fullmeasureContent442" id="fullmeasureContent442_1" moduleid="442"><div id="module443" class="form form443 formStyle87 fk-formPack  formIndex1" style="height: 2730px;">
+<div class="J_packContent f-packContent f-packContent443 elemZone elemZoneModule" id="fk-packContent443">
+<div id=" " class=" " title="" style="margin-top: 52px;  width: 1200px;height: 66px;animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent444"> <strong style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px; text-align: center; display: block;"><span style="font-family: 微软雅黑;"><span style="color: rgb(255, 101, 55); font-size: 50px;">广告位</span></span><span style="color: rgb(198, 198, 198); font-size: 24px; background-color: transparent; font-family: 微软雅黑; font-weight: normal;">Our</span><span style="color: rgb(198, 198, 198); font-size: 24px; background-color: transparent; font-family: 微软雅黑; font-weight: normal;">Resource</span></strong> </div>
+</div>
+
+
+ 
+<div style="height: 660px;">
+<ul style="display:flex;display:-webkit-flex;-webkit-justify-content: center;
+            width:100%;
+            height:230px; 
+            justify-content: center;">
+<li style="
+            width:600px;
+            height:230px;margin: 60px 30px;justify-content: center;"> 
+<p style="font-family: 微软雅黑;
+    font-size: 15px;
+    color: #000000;
+    line-height: 35px;
+    position: relative;
+    top: -10px;
+    ">
+户外大型广告位覆盖大悟各乡镇，跨街广告位都位于各乡镇主干街道，能够精准锁定消费群体！使其不得不看的广告，零距离观看，广告更直接，更有效！它能不受扰地锁定目标受众群体，直接、快速、准确地传达广告信息，是各公司生意渠道和商品促销的高效渠道！
+</p>
+<img src="$!{basePath}/content/files/ap07.jpg" style="
+    position: relative;width:100%;display:block;
+top:50px;     
+">
+</li>
+<li style="width:498px;
+            height:230px; padding-top:30px">
+<img src="$!{basePath}/content/files/ap00.jpg" width="498px">
+ 
+</li>
+</ul> 
+</div>
+<div style="height: 590px; ">
+<ul style="display:flex;display:-webkit-flex;-webkit-justify-content: center;
+            width:100%;
+            height:230px; 
+            justify-content: center;">
+<li style="
+            width:550px;
+            height:230px;margin: 60px 30px;"> 
+
+<img src="$!{basePath}/content/files/ap01.jpg" style="
+    position: relative;
+     
+">
+
+<span style="background-color:#ff6637;height:100px;width: 400px;display:block;margin:0px;padding:30px 20px;position:relative;right: -251px;top:30px;font-size:17px;color:#ffffff;">发展大道与迎宾大道十字路口处T型广告位<br>108平方*2面 216平方 15万/年
+    
+    </span>
+</li>
+<li style="width:550px;
+            height:230px;margin:30px 30px;">
+    <span style="  background-color:#ff6637;height:100px;width:350px;display:block;margin:0px;padding:30px 20px;position:relative;left:-73px;top:30px;font-size:17px;color:#ffffff">大悟县城关镇一桥西侧T型广告位 <br>108平方*2面 216平方  18万/年
+    
+    </span>
+<img src="$!{basePath}/content/files/ap02.jpg" style="display:block;position:relative ;top:60px;">
+ 
+</li>
+</ul> 
+</div>
+<div style="height: 590px; ">
+<ul style="display:flex;display:-webkit-flex;-webkit-justify-content: center;
+            width:100%;
+            height:230px; 
+            justify-content: center;">
+<li style="
+            width:550px;
+            height:230px;margin: 60px 30px;"> 
+
+<img src="$!{basePath}/content/files/ap03.jpg" style="
+    position: relative;
+     
+">
+
+<span style="  background-color:#ff6637;height:100px;width:350px;display:block;margin:0px;padding:30px 20px;position:relative;right:-271px;top:30px;font-size:17px;color:#ffffff">城区楼顶广告牌二桥东侧三岔路口处<br>300平方  21万/年
+    
+    </span>
+</li>
+<li style="width:550px;
+            height:230px;margin:30px 30px;">
+    <span style="  background-color:#ff6637;height:100px;width:350px;display:block;margin:0px;padding:30px 20px;position:relative;left:-73px;top:30px;font-size:17px;color:#ffffff">一桥东侧陵园社区楼顶三面翻广告牌<br>150平方 10万/年
+    
+    </span>
+<img src="$!{basePath}/content/files/ap04.jpg" style="display:block;position:relative ;top:60px;">
+ 
+</li>
+</ul> 
+</div>
+
+<div style="height: 616px; ">
+<ul style="display:flex;display:-webkit-flex;-webkit-justify-content: center;
+            width:100%;
+            height:100%; 
+            justify-content: center;">
+<li style="
+            width:550px;
+            height:230px;margin: 60px 30px;"> 
+
+
+<span style="  background-color:#ff6637;height:100px;width:350px;display:block;margin:0px;padding:30px 20px;position:relative;right:-271px;top:100px;font-size:17px;color:#ffffff">京珠高速出口十字路口处<br>150平方   13万/年
+    
+    </span>
+    
+    
+<img src="$!{basePath}/content/files/ap05.png" style="
+    position: relative;top:120px;
+     
+">
+</li>
+<li style="width:550px;
+            height:230px;margin:30px 30px;">
+    
+<img src="$!{basePath}/content/files/ap06.jpg" style="display:block;position:relative ;top:30px;">
+ 
+</li>
+</ul> 
+</div>
+
+ 
+<div>
+</div>
+
+</div>
+
+
+</div>
+</div></div>
+<div class="clearfloat clearfloat467"></div>
+</div></div>
+ 
+
+ 
+ 
+ </div>
+
+
+
+
+
+ #parse("content/website/back/foot.vm")
+ 
+<link type="text/css" href="$!{basePath}/content/files/fontsIco.min.css" rel="stylesheet">
+ 
+	<script type="text/javascript">
+		$(document).ready(function(){
+		 
+			$(window).scroll(function() {
+				if ($(window).scrollTop() > 800)
+					$('#siteBackToTop_small_box').show();
+				else
+					$('#siteBackToTop_small_box').hide();
+			});
+			$('#siteBackToTop_small_box').click(function() {
+				$('html, body').animate({scrollTop: 0}, 1000);
+			});
+		});
+	</script>
+</body></html>

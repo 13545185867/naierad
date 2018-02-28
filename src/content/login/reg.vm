@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <meta name="description" content="微俱聚有娱，领先的微信游戏平台，朋友圈游戏平台，互动营销、微信运营首选平台">
+    <meta name="keywords" content="微信游戏、朋友圈游戏、微信运营、微信推广、互动推广、互动营销">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>有娱-微信活动，微信游戏领跑者，微信互动游戏，朋友圈游戏、互动营销推荐平台</title>
+    <link rel="icon" href="http://static.resource.youyu.weijuju.com/image/page/index/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="$!{basePath}/login_reg_files/jquery-ui-1.10.0.custom.min.css">
+	<link rel="stylesheet" href="$!{basePath}/login_reg_files/newlogin.css">
+	     <script> 
+    var serverroot="$!{basePath}";
+    </script>
+	<script type="text/javascript" src="$!{basePath}/login_reg_files/jquery-1.7.2.min.js "></script>
+	<script type="text/javascript" src="$!{basePath}/login_reg_files/jquery-ui-1.10.0.custom.min.js "></script>
+	<script type="text/javascript" src="$!{basePath}/login_reg_files/jquery-migrate.js "></script>
+	<script type="text/javascript" src="$!{basePath}/login_reg_files/jquery.watermark.js "></script>
+	<script type="text/javascript" src="$!{basePath}/login_reg_files/jquery.form.js "></script>
+	<script type="text/javascript" src="$!{basePath}/login_reg_files/omvalidate.min.js "></script>
+	<script type="text/javascript" src="$!{basePath}/login_reg_files/jquery.deparam.js "></script>
+	<script type="text/javascript" src="$!{basePath}/login_reg_files/newvild.js "></script>
+	<script type="text/javascript" src="$!{basePath}/login_reg_files/newlogin.js "></script>
+	<script type="text/javascript" src="$!{basePath}/login_reg_files/jquery.cookie.min.js "></script>
+	 
+
+    <style>
+        #reg-select {
+            display: none;
+        }
+
+        .overlay {
+            display: none;
+        }
+
+        #imgPlay {
+            width: 430px;
+            height: 450px;
+        }
+
+        #imgPlay .imgs img {
+            height: 450px;
+            width: 430px;
+        }
+    </style>
+ </head>
+<body>
+<div class="wrapper">
+    <div class="left_img" style="background-image: url($!{basePath}/login_reg_files/leftBg.jpg);background-repeat:no-repeat"></div>
+    <a class="pageLogo" href="#"></a>
+    <div class="right_content">
+    	<p id="chrome_download_tips" style="position: absolute;bottom: 15px;text-align: center;width: 100%;color: #000;font-size: 13px;display: none;">为了更好的体验，建议使用Chrome浏览器</a></p>
+	    <ul class="right_nav">
+	    	<li><a href="./index.html">登录</a></li>
+	    	<li class="active" style="position: relative;">
+	    		<a href="javascript:;">注册</a>
+	    	</li>
+	    </ul>
+        <!--main-->
+        <div class="main">
+            <!-- 注册信息填写  -->
+            <div class="register">
+                <div id="registerDiv">
+                    <!-- 第一页 -->
+                    <div class="page1" id="regPage">
+                        <div class="register_title blue_tip"><span style="color: #fe9542;font-weight: bold;">注册即送百元现金红包</span></div>
+                        <!-- 原有代码--><input type="hidden" name="messageuuid" id="GCode" value="$!{messageuuid}">
+                        <ul class="register_form">
+                            <li class="clear">
+                            	<span wmwrap="true" style="position: relative;" class="span_watermark"> <label style="position: absolute; left: 3px; top: 0px; display: block; cursor: text; width: auto; color: rgb(149, 156, 168);">请输入手机号</label>
+										<input class="input_code " type="text" id="loginName" checktype="mobile" maxlength="100" oldvalue="">
+								</span>
+								<label id="loginNameMessageLabel" class="error_info" message="请输入正确的手机号"></label>
+							</li>
+
+ 							<li class="clear" style="margin-bottom: 10px;"><span wmwrap="true" style="position: relative;" class="span_watermark"> <label style="position: absolute; left: 3px; top: 0px; display: block; cursor: text; width: auto; color: rgb(149, 156, 168);">请输入短信验证码</label>
+										<input class="input_code " type="text" id="captcha" checktype="captcha" maxlength="6">
+								</span> <label id="captchaMessageLabel" class="error_info" message="请输入正确的验证码"></label>
+                            	<a href="javascript:void (0)" id="sendCaptcha" title="获取验证码" class="button_yellow">获取验证码</a>
+                            </li>
+                           
+                        </ul>
+                      	<p style="text-align: center;color: rgb(149, 156, 168);">验证手机号（该手机号同时作为登录账号） <span>
+                       <a href="javascript:void (0)" id="captchaHelp" title="查看帮助">查看帮助</a>
+							</span>
+							</p>
+						<p class="submit_error_tip submit_error_tip1"></p>
+                        <div class="register_submit clear">
+                            <a id="checkCaptcha" href="javascript:void (0)" title="提交" class="button_blue" style="">提交</a>
+							<span class="register_login">
+									已有帐号，<a href="./index.html" title="直接登录">直接登录</a>
+							</span>
+                        </div>
+                    </div>
+                    <!-- 第二页 -->
+                    <div class="page2" id="regPage" style="display: none;">
+                       
+                        <div class="register_tip">完善信息</div>
+                        <form id="registerForm" action="$!{basePath}/system/doReg.html" method="post">
+                            <input type="hidden" name="isScreen" value="false">
+                            <input type="hidden" name="phone" value=""> <input type="hidden" name="captcha" value=""> <input type="hidden" name="action" value="reg">
+                            <ul class="register_form ui-buttonset" style="margin-top: 10px;" id="registerFormat">
+                                <li class="clear"><span wmwrap="true" style="position: relative;" class="span_watermark"> <label style="position: absolute; left: 3px; top: 0px; display: block; cursor: text; width: auto; color: rgb(149, 156, 168);">请填写邮箱</label>
+											<input class="input_code " type="text" id="email" checktype="email" maxlength="100" name="email">
+									</span> <label id="companyMessageLabel" class="error_info" message="请填写可以联系到您的邮箱地址"></label></li>
+                                <li class="clear"><span wmwrap="true" style="position: relative;" class="span_watermark"> <label style="position: absolute; left: 3px; top: 0px; display: inline; cursor: text; width: auto; color: rgb(149, 156, 168);">请输入您的姓名</label>
+											<input class="input_code" type="text" id="userName" checktype="userName" maxlength="24" name="username">
+									</span> <label id="userNameMessageLabel" class="error_info" message="请输入您的姓名"></label></li>
+                               
+                             
+                                <li class="clear password_li"><span wmwrap="true" style="position: relative;" class="span_watermark"> <label style="position: absolute; left: 3px; top: 0px; display: block; cursor: text; width: auto; color: rgb(149, 156, 168);">设置登录密码</label>
+											<input class="input_code " type="password" id="password" checktype="password" maxlength="16" name="password">
+									</span> <label style="top: 10px; width: 140px;" id="passwordMessageLabel" class="error_info" message="6-16位数字、字母下划线"></label></li>
+                                <li class="clear"><span wmwrap="true" style="position: relative;" class="span_watermark"> <label style="position: absolute; left: 3px; top: 0px; display: block; cursor: text; width: auto; color: rgb(149, 156, 168);">再次输入密码</label>
+											<input class="input_code " type="password" id="repassword" iscp="password" maxlength="16" name="repassword">
+									</span> <label id="repasswordMessageLabel" class="error_info" message="两次输入密码不一样"></label></li>
+                                                   
+                                <li class="clear tiaokuan_checkbox" id="pn-check" style="margin-left:-7px">
+                                    <input type="checkbox" id="tiaokuan_checkbox" class="ui-helper-hidden-accessible" value="on" checked="checked">
+                                    <label style="border: 0;" for="tiaokuan_checkbox" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left ui-corner-right ui-state-active" role="button" aria-pressed="false">
+                                           <a class="ui-button-text" style="color: #1bb2e9; margin-left: 35px;padding-left: 0px!important;" href="http://static.resource.youyu.weijuju.com/pdf/%E6%9C%89%E5%A8%B1%E5%B9%B3%E5%8F%B0%E6%9C%8D%E5%8A%A1%E6%9D%A1%E6%AC%BE.pdf?v=201701" target="_blank">《有娱平台服务条款》</a></label>
+                                </li>
+                            </ul>
+                        </form>
+                        <p class="submit_error_tip submit_error_tip2"></p>
+                        <div class="register_submit clear" style="margin-top: 20px;">
+                            <input type="hidden" id="agreementStatus" value="true">
+                            <a id="submitApplication" href="javascript:void (0)" title="完成" class="button_blue" style="">同意条款并注册</a>
+                            <span class="register_login">
+								已有帐号，<a href="./index.html" title="直接登录">直接登录</a>
+							</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            			    <div class="right_bottom">
+			    	<a class="back_index" href="http://www.byhua.com/">返回首页</a>
+			    </div>
+        </div>
+    </div>
+</div>
+<div id="cli_dialog_div"></div>
+<div id="cover"></div>
+<div id="popupLayer_popup_layer" class="ui-front">
+    <a href="javascript:void(0)" class="jmp-link-at-top">&nbsp;</a> <input class="jmp-link-at-top">
+    <div class="pop_up">
+        <h4>
+            <span>没有收到验证码怎么办？</span>
+        </h4>
+        <div class="pop_content clear">
+            <div class="pop_content_text">
+                <p>亲爱的用户，验证码短信/邮件正常都会在数秒钟内发送，如果您未收到短信/邮件，请参照如下常见情况进行解决：</p>
+
+                <p>1、由于您的手机或邮箱软件设定了某些安全设置，验证码短信/邮件可能被拦截进了垃圾箱。请打开垃圾箱查看，并将百花号码添加为白名单。</p>
+
+                <p>2、由于运营商通道故障造成了短信/邮件发送时间延迟，请耐心稍候片刻或点击重新获取验证码。</p>
+
+                <p>3、关于手机号验证，目前支持移动、联通和电信的所有号码，暂不支持国际及港澳台地区号码。</p>
+
+                <p>
+                    如果您尝试了上述方式后均未解决，或存有其他疑问，请通过热线电话<span style="color: #2898e0;">13545185867</span>或<span style="color: #2898e0;">18612818853</span>获取客户协助。
+                </p>
+            </div>
+            <a class="pop_close" id="pop_close" href="javascript:void(0)">确定</a>
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="jmp-link-at-bottom" style="position: absolute; left: -9999px; bottom: -1px;">&nbsp;</a> <input class="jmp-link-at-bottom" style="position: absolute; left: -9999px; top: -1px;">
+</div>
+
+
+
+</body></html>

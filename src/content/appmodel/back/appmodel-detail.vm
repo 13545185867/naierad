@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">详情</div>
+				  	<div class="panel-body">
+				   		<form class="form-horizontal" role="form">
+							  <fieldset disabled>
+							  																 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">排序</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{appmodel.apporder}" name="apporder" id="apporder" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">模块标签</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{appmodel.tag}" name="tag" id="tag" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">模块代码</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{appmodel.code}" name="code" id="code" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">模块所属类型ID</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{appmodel.dictinfoid}" name="dictinfoid" id="dictinfoid" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">活动新增地址</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{appmodel.newacturl}" name="newacturl" id="newacturl" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">模块是否启用</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{appmodel.active}" name="active" id="active" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">模块名称</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{appmodel.appname}" name="appname" id="appname" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;"></label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{appmodel.appmodelcol1}" name="appmodelcol1" id="appmodelcol1" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;"></label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{appmodel.appmodelcol2}" name="appmodelcol2" id="appmodelcol2" class="form-control" />
+													    </div>
+													  </div>
+							  </fieldset>
+							  			<div class="form-group mno">
+											<div class="col-sm-offset-1 col-sm-6">
+												<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/appmodel/back/appmodel/list.html')">返回</button>
+        									 </div>
+        							    </div>
+						</form>
+					</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

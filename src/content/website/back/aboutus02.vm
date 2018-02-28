@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html><head>
+<title>关于我们 大悟县耐尔广告有限公司</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="format-detection" content="telephone=no,email=no,address=no">
+<meta name="renderer" content="webkit"> 
+<meta name="mobile-agent" content="format=html5;url=www.naierad.com">
+<meta name="keywords" content="大悟|大悟县|大悟耐尔|大悟县耐尔|大悟县广告|大悟广告|耐尔广告|大悟县耐尔广告有限公司|耐尔|广告|喷绘|写真|设计印刷|程序开发|宣传车|水晶/发光字|广告招牌|LED电子屏">
+<meta name="description" content="大悟耐尔广告有限公司是一家集设计、制作、代理、发布为一体的专业化广告服务商，专业从事写真喷绘、展览工程、户内外广告制作项目。一流的技术工人,先进的生产设备使我们走在了行业的前列。专业化的服务团队，提供24小时服务，能够高效率的完成工作，并负责取送安装。我们用良好的信誉，为广大客户提供优质、高效、专业的服务。">
+ 
+<link rel="icon" href="$!{basePath}/content/files/1.ico" type="image/x-icon" />
+<link type="text/css" href="$!{basePath}/content/files/base2.min.css" rel="stylesheet">
+<link type="text/css" href="$!{basePath}/content/files/fkTheme.min.css" rel="stylesheet" id="jzThemeFrame">
+ <link type="text/css" href="$!{basePath}/content/files/floatBtn1.min.css" rel="stylesheet">
+
+<link type="text/css" href="$!{basePath}/content/files/style.css" rel="stylesheet">
+
+<script type="text/javascript" src="$!{basePath}/content/files/jQuery-1.10.1.min.js"></script>
+<script type="text/javascript" src="$!{basePath}/content/files/script.js"></script>
+
+ <style type="text/css" id="contentAnimationStyle">#module339 .formMiddleContent339{overflow:hidden !important;}
+#module339 .formMiddleContent339 .listPhotosList{overflow:hidden !important;}</style><style type="text/css" id="styleBannerBg">.webBannerTable{background:none !important;}
+.webBanner{background:none !important;}</style><style type="text/css" id="styleWebSite">#bannerV2 .fk-inBannerListZone{width:1200px;}
+#bannerV2 .fk-inBannerListZone{margin-left:-600px;}</style><style type="text/css" id="stylebacktotop">.fk_siteBackToTop{display:none;}
+.fk_siteBackToTop{cursor:pointer;}
+.fk_siteBackToTop{z-index:9030;}
+.fk_siteBackToTop{right:40px;}
+.fk_siteBackToTop{bottom:50px;}
+.fk_siteBackToTop:hover{background-image:url($!{basePath}/content/files/05_hover.png);}
+.fk_siteBackToTop{position:fixed;}
+.fk_siteBackToTop{width:50px;}
+.fk_siteBackToTop{height:50px;}
+.fk_siteBackToTop{margin:1px;}
+.fk_siteBackToTop{background-image:url($!{basePath}/content/files/05.png);}</style></head>
+<body class="g_body" style="min-width: 1200px;">
+ 
+ 
+	<div id="siteBackToTop_small_box" class="fk_siteBackToTop" title="回到顶部" _style="secondStyle_05" style="right: 40px; bottom: 50px; display: none; opacity: 1;"></div><div id="g_main" class="g_main g_col2 ">
+	<div id="web" class="g_web ">
+		#set($cruid = 17) 
+ #parse("content/website/back/navtree.vm")
+ 
+		<table class="webBannerTable J_webBannerTable" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td align="center" class="fk-moduleZoneWrap">
+					
+					
+					<div id="webBanner" class="webBanner">
+						<table class="bannerTable" cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td class="bannerLeft"></td>
+								<td class="bannerCenter" align="center" valign="top">
+											
+											<div style="visibility:hidden;" class="fk-inBannerListZone-tmp">
+
+												
+											</div>	
+									<div class="bannerTop"></div>
+<div id="bannerV2" class="banner extBanner" style="height: 300px; background: none; overflow: hidden;">	
+<div></div><div class="switchGroup switchGroup_bannerV2 billboard billboard1" style="width: 100%; position: relative; height: 300px; overflow: hidden; margin: 0px auto;"><div class="J_billboardItem billboard_item arrowImg billboardItem_1 billboardAnim billboardItem_1_start billboardItem_1_on" style="width: 100%; height: 720px; animation-duration: 1500ms; display: block;overflow:hidden;">
+<div class="J_bannerItem f-bannerItem" title="" style="width: 100%; height: 300px; cursor: default; background-position: 50% 50%; background-repeat: no-repeat; overflow: hidden; display: block; outline: none; margin: 0px auto; position: relative; z-index: 1; background-size: cover; background-image: url(&quot;$!{basePath}/content/files/aboutner.jpg&quot;);">
+<div id="fk-inBannerListZone-0" _sys="1" _banid="AD0I7_eXBhACGAAgsNzTxQUouaaqyAQwgA84kAM" style="text-align: left;" class="elemZone elemZoneModule fk-moduleZone fk-inBannerListZone forms sideForms J_moduleZone ">
+<div class="fk-inBannerListZoneBg fk-elemZoneBg J_zoneContentBg elemZoneBg"></div>
+</div>
+</div>
+</div>
+
+</div></div>
+
+								</td>
+								<td class="bannerRight"></td>
+							</tr>
+						</tbody></table>
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+ 
+		<div id="fullmeasureTopForms" class="fullmeasureContainer forms fk-fullmeasureForms fullmeasureForms fullmeasureTopForms">
+			<div id="module467"  class="form form467 formIndex1 formStyle80 fk-formFullmeasure " title=""  >
+<div class="fillContentRelative" style="position: relative; z-index: -1; height: 428px; width: 100%; display: none;"></div><div style="position: static;" class="fullmeasureOuterContentPage fullmeasureOuterContentPage1 J_fullmeasurePageShow" page="1">			<div class="fullmeasureOuterContentBg fullmeasureOuterContentBg467 fullmeasureStyle0"></div><div class="fullmeasureOuterContent fullmeasureOuterContent442">
+<div class="fullmeasureContent fullmeasureContent442" id="fullmeasureContent442_1" moduleid="442"><div class="fullmeasureContentBg fullmeasureContentBg442"></div><div id="module443"   class="form form443 formStyle87 fk-formPack  formIndex1" style="height: 658px;" >
+<div class="J_packContent f-packContent f-packContent443 elemZone elemZoneModule" id="fk-packContent443"><div class="fk-elemZoneBg J_zoneContentBg elemZoneBg f-packContentBg f-packContentBg443"></div>
+<div id="module444" bannertitle="文本" _moduletype="1" _modulestyle="86" _moduleid="444" class="form form444 formStyle86 siteEditor" title=""  style="position: absolute; top: 52px; left: 1px; width: 1200px; height: 66px; animation: none;"  >
+<div class="lightModuleOuterContent lightModuleOuterContent444"> <strong style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px; text-align: center; display: block;"><span style="font-family: 微软雅黑;"><span style="color: rgb(255, 101, 55); font-size: 50px;">关于我们</span></span><span style="color: rgb(198, 198, 198); font-size: 24px; background-color: transparent; font-family: 微软雅黑; font-weight: normal;">In</span><span style="color: rgb(198, 198, 198); font-size: 24px; background-color: transparent; font-family: 微软雅黑; font-weight: normal;">troduce</span></strong><div><div> 
+</div></div></div>
+</div>
+<div id="module445" bannertitle="图片"  class="form form445 formStyle79" title="" _sys="0" _banid="" style="position: absolute; top: 208px; left: 1px; width: 470px; height: 460px; animation: none;" >
+<div class="lightModuleOuterContent lightModuleOuterContent445"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_445" class="float_in_img J_defImage " src="$!{basePath}/content/files/kuang-gray.jpg" alt="kuang-gray" style="margin-top: 0px; margin-left: 0px; height: 460px;"></div></div></a>
+</div></div>
+</div>
+<div id="module446" bannertitle="图片"  class="form form446 formStyle79" title="" style="position: absolute; top: 223px; left: 17px; width: 440px; height: 430px; animation: none;"  >
+<div class="lightModuleOuterContent lightModuleOuterContent446"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_446" class="float_in_img J_defImage " src="$!{basePath}/content/files/about01.png" alt="about01" style="margin-top: 0px; margin-left: 0px; height: 430px;"></div></div></a>
+</div></div>
+</div>
+<div id="module447" bannertitle="文本" _moduletype="1" _modulestyle="86" _moduleid="447" class="form form447 formStyle86 siteEditor" title=""  style="position: absolute; top: 225px; left: 584px;  width: 488px; height: 385px; animation: none;padding-top:100px;" >
+<div class="lightModuleOuterContent lightModuleOuterContent447" style="text-align:left;"> <p style="text-align:justify;"><span  style="font-family:微软雅黑;font-size:15px;color:#000000;line-height: 35px;" >  &nbsp;&nbsp;&nbsp;&nbsp;大悟耐尔广告有限公司成立于2016年。我们是集设计、制作、代理、发布为一体的专业化广告服务商，专业从事写真喷绘、展览工程、户内外广告制作项目。公司拥有一支专业化的服务团队，提供24小时服务，能够高效率的完成工作，并负责取送安装。我们用良好的信誉，为广大客户提供优质、高效、专业的服务。
+公司秉承“严谨、创新、准确、高效、诚信”的服务理念，坚持“客户至上，锐意进取”的服务原则，在行业中树立了良好的形象，赢得了诸多客户的依赖。
+ </span></p><div><div> 
+</div></div></div>
+</div>
+</div></div>
+</div></div>
+<div class="clearfloat clearfloat467"></div>
+</div></div>
+
+<div class="fullmeasureOuterContent fullmeasureOuterContent385">
+<div class="fullmeasureContent fullmeasureContent385" id="fullmeasureContent385_1" moduleid="385"><div class="fullmeasureContentBg fullmeasureContentBg385"></div><div id="module386"  class="form form386 formStyle87 fk-formPack  formIndex1"   title=""  style="height: 356px;"  >
+<div class="J_packContent f-packContent f-packContent386 elemZone elemZoneModule" id="fk-packContent386"><div class="fk-elemZoneBg J_zoneContentBg elemZoneBg f-packContentBg f-packContentBg386"></div>
+<div id="module387" bannertitle="图片" _moduletype="1" _modulestyle="79" _moduleid="387" class="form form387 formStyle79" title=""  style="position: absolute; top: 85px; left: 178px; width: 112px; height: 112px; animation: none;"  >
+<div class="lightModuleOuterContent lightModuleOuterContent387"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_387" class="float_in_img J_defImage " src="$!{basePath}/content/files/youshi_price.png" alt="youshi_price" style="margin-top: 0px; margin-left: 0px; height: 112px;"></div></div></a>
+</div></div>
+</div>
+<div id="module388" bannertitle="图片" class="form form388 formStyle79" title="" _sys="0" _banid="" style="position: absolute; top: 84px; left: 542px; width: 112px; height: 112px; animation: none;"  >
+<div class="lightModuleOuterContent lightModuleOuterContent388"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_388" class="float_in_img J_defImage " src="$!{basePath}/content/files/youshi_tec.png" alt="youshi_tec" style="margin-top: 0px; margin-left: 0px; height: 112px;"></div></div></a>
+</div></div>
+</div>
+<div id="module389" bannertitle="图片" class="form form389 formStyle79" title=""  style="position: absolute; top: 85px; left: 913px; width: 112px; height: 112px; animation: none;"  >
+<div class="lightModuleOuterContent lightModuleOuterContent389"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_389" class="float_in_img J_defImage " src="$!{basePath}/content/files/youshi_speed.png" alt="youshi_speed" style="margin-top: 0px; margin-left: 0px; height: 112px;"></div></div></a>
+</div></div>
+</div>
+<div id="module390"  class="form form390 formStyle86 siteEditor" title="" _sys="0" _banid="" style="position: absolute; top: 214px; left: 86px; width: 300px; height: 76px; animation: none;"  >
+<div class="lightModuleOuterContent lightModuleOuterContent390"> <span style="line-height: 25px;"><div style="text-align: center;"><font color="#353535"><span style="font-size: 16px;">价格低廉</span></font><br style=""></div><div style="text-align: center;"><font color="#353535" style=""><span style="font-size: 14px;"><font color="#a9a9a9" style="color: rgb(169, 169, 169);"><div style=""><div>专业大方的包装定制设计</div><div>给您的产品提供不一样的感觉</div></div></font></span></font></div></span><div><div> 
+</div></div></div>
+</div>
+<div id="module391" bannertitle="文本" _moduletype="1" _modulestyle="86" _moduleid="391" class="form form391 formStyle86 siteEditor" title="" _sys="0" _banid="" style="position: absolute; top: 213px; left: 449px; width: 300px; height: 76px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent391"> <span style="line-height: 25px;"><div style="text-align: center;"><font color="#353535"><span style="font-size: 16px;">技术先进</span></font><br style=""></div><div style="text-align: center;"><div style="font-size: 14px;"><font color="#a9a9a9"><div>画册设计印刷</div><div>为您的企业展示提供专业服务</div></font></div></div></span><div><div> 
+</div><div><div></div>
+</div></div></div>
+</div>
+<div id="module392" bannertitle="文本" _moduletype="1" _modulestyle="86" _moduleid="392" class="form form392 formStyle86 siteEditor" title=""  style="position: absolute; top: 212px; left: 820px; width: 300px; height: 76px; animation: none;"  >
+<div class="lightModuleOuterContent lightModuleOuterContent392"> <span style="line-height: 25px;"><div style="text-align: center;"><font color="#353535"><span style="font-size: 16px;">技术先进</span></font><br style=""></div><div style="text-align: center;"><div style="font-size: 14px;"><font color="#a9a9a9"><div>画册设计印刷</div><div>为您的企业展示提供专业服务</div></font></div></div></span><div><div> 
+</div><div><div></div>
+</div><div><div></div>
+</div></div></div>
+</div>
+</div></div>
+</div></div>
+
+<table id="webContainerTable" class="webContainerTable" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td align="center">
+					<div id="webContainer" class="webContainer">
+						<div id="container" class="container">
+	<table class="containerTop" cellpadding="0" cellspacing="0">
+		<tbody><tr valign="top">
+			<td class="left"></td>
+			<td class="center"></td>
+			<td class="right"></td>
+		</tr>
+	</tbody></table>
+
+	<table class="containerMiddle" cellpadding="0" cellspacing="0">
+		<tbody><tr valign="top">
+			<td id="containerMiddleLeft" class="containerMiddleLeft">
+					
+					
+					
+					
+			</td>
+
+			<td class="containerMiddleCenter">
+				<div id="containerMiddleCenterTop" class="containerMiddleCenterTop">
+					
+				</div>
+
+				<div id="containerForms" class="containerForms">
+					<div id="topForms" class="column forms mainForms topForms" style="display:none">
+						
+					</div>
+
+					<table class="containerFormsMiddle" cellpadding="0" cellspacing="0">
+						<tbody><tr>
+							<td valign="top" id="containerFormsLeft" class="containerFormsLeft" style="display:none">
+								<div class="containerFormsLeftTop">
+								</div>
+								<div id="leftForms" class="column forms sideForms leftForms">
+									
+								</div>
+								<div class="containerFormsLeftBottom">
+								</div>
+							</td>
+
+							<td valign="top" id="containerFormsCenter" class="containerFormsCenter">
+					
+								<div id="centerTopForms" class="column forms mainForms centerTopForms">
+									<div id="module323"  class="form form323 formIndex1 formStyle35 layoutModule  formStyle35_2  fk-formCol " title="" >
+<table class="formTop formTop323" cellpadding="0" cellspacing="0"><tbody><tr><td class="left"></td><td class="center"></td><td class="right"></td></tr></tbody></table>
+<table class=" formMiddle formMiddle323" style="" cellpadding="0" cellspacing="0"><tbody><tr>
+<td class="formMiddleLeft formMiddleLeft323"></td>
+<td class="formMiddleCenter formMiddleCenter323  f-colFormMiddleCenter " valign="top">
+<div class="formMiddleContent formMiddleContent323 multiColFormMiddleContent f-colFormMiddleContent  fk-formContentOtherPadding" tabstyle="0">
+<div class="mulMColContent" id="mulMColContent323"><table width="100%" border="0" cellspacing="0" class="mulMColContentTable" cellpadding="0"><tbody><tr><td class=" mulColLayout mulColPadding" style="width:448px;"><div id="mulMCol323_cid_1" class="mulMColList"><div id="module324" _moduletype="1" _modulestyle="1" _moduleid="324" class="form form324 formStyle1 formInMulMCol " title=""  >
+<table class="formTop formTop324" cellpadding="0" cellspacing="0"><tbody><tr><td class="left"></td><td class="center"></td><td class="right"></td></tr></tbody></table>
+<table class=" formMiddle formMiddle324" style="" cellpadding="0" cellspacing="0"><tbody><tr>
+<td class="formMiddleLeft formMiddleLeft324"></td>
+<td class="formMiddleCenter formMiddleCenter324 " valign="top">
+<div class="formMiddleContent formMiddleContent324 fk-formContentOtherPadding" tabstyle="0">
+<div class="richContent richContent0"><p style="text-align:justify;"><span style="font-family:微软雅黑;font-size:24px;color:#E4393C;"><br></span></p><p style="text-align:justify;"><span style="font-family:微软雅黑;font-size:24px;color:#E4393C;">我们的设备</span></p><p><br></p><p style="text-align:justify;"><span style="font-family:微软雅黑;font-size:15px;color:#000000;">&nbsp;&nbsp;&nbsp;&nbsp;先进的生产设备使我们走在了行业的前列。
+公司拥有多台武藤压电、Nova高精度写真机，最高精度1440dpi，最宽幅面可达1.6m，日产量500余平米。</span></p></div></div>
+</td>
+<td class="formMiddleRight formMiddleRight324"></td>
+</tr></tbody></table>
+<table class="formBottom formBottom324" cellpadding="0" cellspacing="0"><tbody><tr><td class="left left324"></td><td class="center center324"></td><td class="right right324"></td></tr></tbody></table>
+<div class="clearfloat clearfloat324"></div>
+</div>
+</div><div class="mulModuleColStyleLine" style="right:9px;"></div></td><td class="mulColLayout" style=""><div id="mulMCol323_cid_2" class="mulMColList"><div id="module325" _moduletype="1" _modulestyle="88" _moduleid="325" class="form form325 formStyle88 formInMulMCol " title=""  >
+<table class="formTop formTop325" cellpadding="0" cellspacing="0"><tbody><tr><td class="left"></td><td class="center"></td><td class="right"></td></tr></tbody></table>
+<table class=" formMiddle formMiddle325" style="" cellpadding="0" cellspacing="0"><tbody><tr>
+<td class="formMiddleLeft formMiddleLeft325"></td>
+<td class="formMiddleCenter formMiddleCenter325 " valign="top">
+<div class="formMiddleContent formMiddleContent325 fk-formContentOtherPadding" tabstyle="0">
+<div class="listPhotosList">
+<div class="clearfloat"></div>
+<div id="photoForms325" style="overflow:hidden;" class="J_photoForms photoForms" picwidth="340" picheight="300">
+<div photoid="0" photoname="" photodisc="" class="J_photoForm photoForm" style="width: 340px; height: 310px;" faiwidth="343" faiheight="300">
+<div class="J_sortDiv"><div id="photoListmachine_01" photoname="" photodisc="" check="3" tmppic="machine_01" _lide="" class="J_listPhotoImg imgDiv" style="width:340px;height:300px;">
+<table cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td>
+<div class="J_photoImgPanel" style="width: 340px; height: 300px; position: relative; overflow: hidden;">
+<img iwidth="343" iheight="300" picsca="2" class="J_photoImg photoImg" src="$!{basePath}/content/files/machine_01.jpg" alt="" style="width: 343px; height: 300px; margin-left: -1.5px;">
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="parametersDiv">
+<div class="J_listDesc photoParameters firstLine  " title="" style="text-align: center; height: auto;">
+</div>
+</div>
+</div>
+</div>
+<div photoid="1" photoname="" photodisc="" class="J_photoForm photoForm" style="width: 340px; height: 310px;" faiwidth="343" faiheight="300">
+<div class="J_sortDiv"><div id="photoListAD0IzcyDBhACGAAg-MiQxAUo7ZfdjQUw1wI4rAI" photoname="" photodisc="" check="3" tmppic="AD0IzcyDBhACGAAg-MiQxAUo7ZfdjQUw1wI4rAI" _lide="" class="J_listPhotoImg imgDiv" style="width:340px;height:300px;">
+<table cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td>
+<div class="J_photoImgPanel" style="width: 340px; height: 300px; position: relative; overflow: hidden;">
+<img iwidth="343" iheight="300" picsca="2" class="J_photoImg photoImg" src="$!{basePath}/content/files/machine_02.jpg" alt="" style="width: 343px; height: 300px; margin-left: -1.5px;">
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="parametersDiv">
+<div class="J_listDesc photoParameters firstLine  " title="" style="text-align: center; height: auto;">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearfloat"></div>
+</div>
+</div>
+</td>
+<td class="formMiddleRight formMiddleRight325"></td>
+</tr></tbody></table>
+<table class="formBottom formBottom325" cellpadding="0" cellspacing="0"><tbody><tr><td class="left left325"></td><td class="center center325"></td><td class="right right325"></td></tr></tbody></table>
+<div class="clearfloat clearfloat325"></div>
+</div>
+</div></td></tr></tbody></table></div></div>
+</td>
+<td class="formMiddleRight formMiddleRight323"></td>
+</tr></tbody></table>
+<table class="formBottom formBottom323" cellpadding="0" cellspacing="0"><tbody><tr><td class="left left323"></td><td class="center center323"></td><td class="right right323"></td></tr></tbody></table>
+<div class="clearfloat clearfloat323"></div>
+</div>
+
+
+
+
+								</div>
+								<div class="containerFormsCenterMiddle J_containerFormsCenterMiddle">
+									<div id="middleLeftForms" class="column forms mainForms middleLeftForms" style="display:none">
+									
+									</div>
+									<div id="middleRightForms" class="column forms mainForms middleRightForms" style="display:none">
+									
+									</div>	
+									<div class="clearfloat"></div>
+								</div>
+								<div id="centerBottomForms" class="column forms mainForms centerBottomForms" style="display:none">
+									
+								</div>
+							</td>
+
+							<td valign="top" id="containerFormsRight" class="containerFormsRight" style="display:none">
+								<div class="containerFormsRightTop">
+								</div>
+								<div id="rightForms" class="column forms sideForms rightForms">
+									
+								</div>
+								<div class="containerFormsRightBottom">
+								</div>
+							</td>
+						</tr>
+					</tbody></table>
+
+					<div id="bottomForms" class="column forms mainForms bottomForms" style="display:none">
+						
+					</div>
+
+					<div id="containerPlaceholder" class="containerPlaceholder"></div>
+					
+				</div>
+
+				<div id="containerMiddleCenterBottom" class="containerMiddleCenterBottom">
+				</div>
+
+			</td>
+
+			<td id="containerMiddleRight" class="containerMiddleRight"></td>
+		</tr>
+	</tbody></table>
+	
+	<table class="containerBottom" cellpadding="0" cellspacing="0">
+		<tbody><tr valign="top">
+			<td class="left"></td>
+			<td class="center"></td>
+			<td class="right"></td>
+		</tr>
+	</tbody></table>
+</div>
+
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+
+<table id="webContainerTable" class="webContainerTable" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td align="center">
+					<div id="webContainer" class="webContainer">
+						<div id="container" class="container">
+	<table class="containerTop" cellpadding="0" cellspacing="0">
+		<tbody><tr valign="top">
+			<td class="left"></td>
+			<td class="center"></td>
+			<td class="right"></td>
+		</tr>
+	</tbody></table>
+
+	<table class="containerMiddle" cellpadding="0" cellspacing="0">
+		<tbody><tr valign="top">
+			<td id="containerMiddleLeft" class="containerMiddleLeft">
+					
+					
+					
+					
+			</td>
+
+			<td class="containerMiddleCenter">
+				<div id="containerMiddleCenterTop" class="containerMiddleCenterTop">
+					
+				</div>
+
+				<div id="containerForms" class="containerForms">
+					<div id="topForms" class="column forms mainForms topForms" style="display:none">
+						
+					</div>
+
+					<table class="containerFormsMiddle" cellpadding="0" cellspacing="0">
+						<tbody><tr>
+							<td valign="top" id="containerFormsLeft" class="containerFormsLeft" style="display:none">
+								<div class="containerFormsLeftTop">
+								</div>
+								<div id="leftForms" class="column forms sideForms leftForms">
+									
+								</div>
+								<div class="containerFormsLeftBottom">
+								</div>
+							</td>
+
+							<td valign="top" id="containerFormsCenter" class="containerFormsCenter">
+					
+								<div id="centerTopForms" class="column forms mainForms centerTopForms">
+									<div id="module357" _indexclass="formIndex1" _moduletype="1" _modulestyle="87" _moduleid="357" class="form form357 formIndex1 formStyle87 fk-formPack " style="height: 924px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="0" _inpopupzone="0" _autoheight="0" _global="false" _independent="false">
+<div class="J_packContent f-packContent f-packContent357 elemZone elemZoneModule" id="fk-packContent357"><div class="fk-elemZoneBg J_zoneContentBg elemZoneBg f-packContentBg f-packContentBg357"></div>
+<div id="module359" bannertitle="文本" _moduletype="1" _modulestyle="86" _moduleid="359" class="form form359 formStyle86 siteEditor " title="" _sys="0" _banid="" style="position: absolute; top: 199px;   width: 100%; height: 96px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="357" _inpopupzone="0" _autoheight="0" _global="false" _independent="false">
+<div class="lightModuleOuterContent lightModuleOuterContent359"> <span style="font-size: 14px;"><font style="color: rgb(53, 53, 53);" color="#353535"><span style="line-height: 24px;"><div style="text-align: center;"><p style="font-family:微软雅黑;font-size:15px;color:#000000;">我们秉承“严谨、创新、准确、高效、诚信”的服务理念，坚持“客户至上，锐意进取”的服务原则，在行业中树立了良好的形象，赢得了诸多客户的依赖。 我们是一支专业化的服务团队，提供24小时服务，能够高效率的完成工作，并负责取送安装。我们用良好的信誉，为广大客户提供优质、高效、专业的服务。</p></div> </span></font></span></div> 
+</div>
+<div id="module444" bannertitle="文本" _moduletype="1" _modulestyle="86" _moduleid="444" class="form form444 formStyle86 siteEditor" title="" _sys="0" _banid="" style="position: absolute; top: 52px; left: 1px; width: 1200px; height: 66px; animation: none;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="443" _inpopupzone="0" _autoheight="0" _global="false" _independent="false">
+<div class="lightModuleOuterContent lightModuleOuterContent444"> <strong style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px; text-align: center; display: block;"><span style="font-family: 微软雅黑;"><span style="color: rgb(255, 101, 55); font-size: 50px;">我们的团队</span></span><span style="color: rgb(198, 198, 198); font-size: 24px; background-color: transparent; font-family: 微软雅黑; font-weight: normal;">our team</span></strong><div><div> 
+</div></div></div>
+</div>
+<div id="module360" _moduletype="1" _modulestyle="88" _moduleid="360" class="form form360 formStyle88" title="" _sys="0" _banid="" style="position: absolute; top: 350px; ; width: 100%; height: 514px; margin-left: 125px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="357" _inpopupzone="0" _autoheight="0" _global="false" _independent="false">
+<table class="formTop formTop360" cellpadding="0" cellspacing="0"><tbody><tr><td class="left"></td><td class="center"></td><td class="right"></td></tr></tbody></table>
+<table class=" formMiddle formMiddle360" style="height:514px; " cellpadding="0" cellspacing="0"><tbody><tr>
+<td class="formMiddleLeft formMiddleLeft360"></td>
+<td class="formMiddleCenter formMiddleCenter360 " valign="top">
+<div class="formMiddleContent formMiddleContent360 fk-formContentOtherPadding" tabstyle="0" style="height: 504px; overflow-y: hidden;">
+<div class="listPhotosList">
+<div class="clearfloat"></div>
+<div id="photoForms360" style="overflow:hidden;" class="J_photoForms photoForms" picwidth="300" picheight="395">
+<div photoid="0" photoname="" photodisc="Coco" class="J_photoForm photoForm" style="width: 300px; margin: 5px 13px 5px 12px; padding: 0px; height: 424px;" faiwidth="304" faiheight="400">
+<div class="J_sortDiv"><div id="photoListAD0I_PnABRACGAAgotWbwAUolb2cCjDAAjilAw" photoname="" photodisc="Coco" check="3" tmppic="AD0I_PnABRACGAAgotWbwAUolb2cCjDAAjilAw" _lide="" class="J_listPhotoImg imgDiv" style="width:300px;height:395px;">
+<table cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td>
+<div class="J_photoImgPanel" style="width: 300px; height: 395px; position: relative; overflow: hidden;">
+<img iwidth="320" iheight="421" picsca="2" class="J_photoImg photoImg imageEffectsAnimate_Magnify" src="$!{basePath}/content/files/tuandui01.jpg" alt="Coco" style="width: 300.238px; height: 395px; margin-right: 0px; margin-bottom: 0px; margin-left: -0.118765px;" _initwidth="300" _initheight="395" fk_fixed="1">
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="parametersDiv">
+<div class="J_listDesc photoParameters firstLine  " title="Coco" style="text-align: center; height: auto;">Coco
+</div>
+</div>
+</div>
+</div>
+<div photoid="1" photoname="" photodisc="Anna" class="J_photoForm photoForm" style="width: 300px; margin: 5px 13px 5px 12px; padding: 0px; height: 424px;" faiwidth="304" faiheight="400">
+<div class="J_sortDiv"><div id="photoListAD0I_PnABRACGAAgydWbwAUo1onisQYwwAI4pQM" photoname="" photodisc="Anna" check="3" tmppic="AD0I_PnABRACGAAgydWbwAUo1onisQYwwAI4pQM" _lide="" class="J_listPhotoImg imgDiv" style="width:300px;height:395px;">
+<table cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td>
+<div class="J_photoImgPanel" style="width: 300px; height: 395px; position: relative; overflow: hidden;">
+<img iwidth="320" iheight="421" picsca="2" class="J_photoImg photoImg imageEffectsAnimate_Magnify" src="$!{basePath}/content/files/tuandui01.jpg" alt="Anna" style="width: 300.238px; height: 395px; margin-right: 0px; margin-bottom: 0px; margin-left: -0.118765px;" _initwidth="300" _initheight="395" fk_fixed="1">
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="parametersDiv">
+<div class="J_listDesc photoParameters firstLine  " title="Anna" style="text-align: center; height: auto;">Anna
+</div>
+</div>
+</div>
+</div>
+<div photoid="2" photoname="" photodisc="Jone" class="J_photoForm photoForm" style="width: 300px; margin: 5px 13px 5px 12px; padding: 0px; height: 424px;" faiwidth="304" faiheight="400">
+<div class="J_sortDiv"><div id="photoListAD0I_PnABRACGAAg3oiYwAUoj6amTTDeAjjMAw" photoname="" photodisc="Jone" check="3" tmppic="AD0I_PnABRACGAAg3oiYwAUoj6amTTDeAjjMAw" _lide="" class="J_listPhotoImg imgDiv" style="width:300px;height:395px;">
+<table cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td>
+<div class="J_photoImgPanel" style="width: 300px; height: 395px; position: relative; overflow: hidden;">
+<img iwidth="350" iheight="460" picsca="2" class="J_photoImg photoImg imageEffectsAnimate_Magnify" src="$!{basePath}/content/files/tuandui01.jpg" alt="Jone" style="width: 300.543px; height: 395px; margin-right: 0px; margin-bottom: 0px; margin-left: -0.271739px;" _initwidth="300" _initheight="395">
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="parametersDiv">
+<div class="J_listDesc photoParameters firstLine  " title="Jone" style="text-align: center; height: auto;">Jone
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearfloat"></div>
+</div>
+</div>
+</td>
+<td class="formMiddleRight formMiddleRight360"></td>
+</tr></tbody></table>
+<table class="formBottom formBottom360" cellpadding="0" cellspacing="0"><tbody><tr><td class="left left360"></td><td class="center center360"></td><td class="right right360"></td></tr></tbody></table>
+<div class="clearfloat clearfloat360"></div>
+</div>
+<div id="module361" bannertitle="文本" _moduletype="1" _modulestyle="86" _moduleid="361" class="form form361 formStyle86 siteEditor " title="" _sys="0" _banid="" style="position: absolute; top: 792px; left: 136px; width: 159px; height: 26px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="357" _inpopupzone="0" _autoheight="0" _global="false" _independent="false">
+<div class="lightModuleOuterContent lightModuleOuterContent361"> <span style="font-size: 16px;"><font style="color: rgb(0, 0, 0);" color="#000000">高级产品拍摄师</font></span></div> 
+</div>
+<div id="module362" bannertitle="文本" _moduletype="1" _modulestyle="86" _moduleid="362" class="form form362 formStyle86 siteEditor " title="" _sys="0" _banid="" style="position: absolute; top: 792px; left: 472px; width: 105px; height: 26px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="357" _inpopupzone="0" _autoheight="0" _global="false" _independent="false">
+<div class="lightModuleOuterContent lightModuleOuterContent362"> <font color="#000000"><span style="font-size: 16px;">网络营销顾问</span></font></div></div>
+ 
+<div id="module363" bannertitle="文本" _moduletype="1" _modulestyle="86" _moduleid="363" class="form form363 formStyle86 siteEditor " title="" _sys="0" _banid="" style="position: absolute; top: 793px; left: 784px; width: 138px; height: 26px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="357" _inpopupzone="0" _autoheight="0" _global="false" _independent="false">
+<div class="lightModuleOuterContent lightModuleOuterContent363"> <span style="font-size: 16px;"><font style="color: rgb(0, 0, 0);" color="#000000">高级</font></span><font color="#000000"><span style="font-size: 16px;">品牌营销顾问</span></font></div> 
+</div>
+</div></div>
+
+
+								</div>
+								<div class="containerFormsCenterMiddle J_containerFormsCenterMiddle">
+									<div id="middleLeftForms" class="column forms mainForms middleLeftForms" style="display:none">
+									
+									</div>
+									<div id="middleRightForms" class="column forms mainForms middleRightForms" style="display:none">
+									
+									</div>	
+									<div class="clearfloat"></div>
+								</div>
+								<div id="centerBottomForms" class="column forms mainForms centerBottomForms" style="display:none">
+									
+								</div>
+							</td>
+
+							<td valign="top" id="containerFormsRight" class="containerFormsRight" style="display:none">
+								<div class="containerFormsRightTop">
+								</div>
+								<div id="rightForms" class="column forms sideForms rightForms">
+									
+								</div>
+								<div class="containerFormsRightBottom">
+								</div>
+							</td>
+						</tr>
+					</tbody></table>
+
+					<div id="bottomForms" class="column forms mainForms bottomForms" style="display:none">
+						
+					</div>
+
+					<div id="containerPlaceholder" class="containerPlaceholder"></div>
+					
+				</div>
+
+				<div id="containerMiddleCenterBottom" class="containerMiddleCenterBottom">
+				</div>
+
+			</td>
+
+			<td id="containerMiddleRight" class="containerMiddleRight"></td>
+		</tr>
+	</tbody></table>
+	
+	<table class="containerBottom" cellpadding="0" cellspacing="0">
+		<tbody><tr valign="top">
+			<td class="left"></td>
+			<td class="center"></td>
+			<td class="right"></td>
+		</tr>
+	</tbody></table>
+</div>
+
+
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+ </div>
+		
+	
+ #parse("content/website/back/foot.vm")
+ 
+<link type="text/css" href="$!{basePath}/content/files/fontsIco.min.css" rel="stylesheet">
+ 
+	<script type="text/javascript">
+		$(document).ready(function(){
+		 
+			$(window).scroll(function() {
+				if ($(window).scrollTop() > 800)
+					$('#siteBackToTop_small_box').show();
+				else
+					$('#siteBackToTop_small_box').hide();
+			});
+			$('#siteBackToTop_small_box').click(function() {
+				$('html, body').animate({scrollTop: 0}, 1000);
+			});
+		});
+	</script>
+</body></html>
+  

@@ -1,0 +1,144 @@
+#parse("content/base/back/common/macro.vm")
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<form role="form" class="form-inline" action="$!{basePath}/messageHelp/back/messagesendtask/list.html" method="post"  id="formSubmit">
+				<div  class="col-md-10" style="width:100%">
+								<div class="panel panel-default">
+								  <div class="panel-heading">砍价活动配置列表</div>
+								  <div class="panel-body">
+								  		<div class="search">
+															 <div class="form-group col-sm-3">
+															    <label for="senduser" class="control-label col-sm-3 line34"></label>
+															     <div class="col-sm-8">
+															    <input type="text" name="senduser" id="senduser" value="$!{messagesendtask.senduser}" class="form-control">
+															  	</div>
+															 </div>
+															<div class="form-group col-sm-3">
+															    <label for="sendtime" class="control-label col-sm-3 line34">发送时间</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="sendtime" id="sendtime" value="$!dateTool.format('yyyy-MM-dd',$!{messagesendtask.sendtime})" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="sendtype" class="control-label col-sm-3 line34">0待发送 1发送成功  2发送失败</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="sendtype" id="sendtype" value="$!{messagesendtask.sendtype}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="phonenum" class="control-label col-sm-3 line34">电话号码</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="phonenum" id="phonenum" value="$!{messagesendtask.phonenum}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="messagetype" class="control-label col-sm-3 line34">短信类型：0通知短信，1营销短信</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="messagetype" id="messagetype" value="$!{messagesendtask.messagetype}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="messagetxt" class="control-label col-sm-3 line34">短信内容</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="messagetxt" id="messagetxt" value="$!{messagesendtask.messagetxt}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="messagesign" class="control-label col-sm-3 line34">短信签名</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="messagesign" id="messagesign" value="$!{messagesendtask.messagesign}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="messagetemplateid" class="control-label col-sm-3 line34"></label>
+															     <div class="col-sm-8">
+															    <input type="text" name="messagetemplateid" id="messagetemplateid" value="$!{messagesendtask.messagetemplateid}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="checkresult" class="control-label col-sm-3 line34">0未审核 1审核通过  2审核未通过</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="checkresult" id="checkresult" value="$!{messagesendtask.checkresult}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="attr1" class="control-label col-sm-3 line34"></label>
+															     <div class="col-sm-8">
+															    <input type="text" name="attr1" id="attr1" value="$!{messagesendtask.attr1}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="attr2" class="control-label col-sm-3 line34"></label>
+															     <div class="col-sm-8">
+															    <input type="text" name="attr2" id="attr2" value="$!{messagesendtask.attr2}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="attr3" class="control-label col-sm-3 line34"></label>
+															     <div class="col-sm-8">
+															    <input type="text" name="attr3" id="attr3" value="$!{messagesendtask.attr3}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="attr4" class="control-label col-sm-3 line34"></label>
+															     <div class="col-sm-8">
+															    <input type="text" name="attr4" id="attr4" value="$!{messagesendtask.attr4}" class="form-control">
+															  	</div>
+															 </div>
+											  <button type="submit" class="btn btn-primary">搜  索</button>
+											  <div class="clearfix"></div>
+								  		</div>
+								  		<div id="legend">
+								          <legend  class="le"><button type="button" class="btn btn-primary" onclick="doUrl('$!{basePath}/messageHelp/back/messagesendtask/toAdd.html')" >新增</button></legend> 
+								        </div>
+								        <table class="table table-striped">
+									        <thead>
+													<th>发送时间</th>
+													<th>发送设置</th>
+													<th>号码数量</th>
+													<th>短信类型</th>
+													<th>短信内容</th>
+													<th>短信签名</th>
+													<th>审核状态</th>
+													<th>发送状态</th>
+						                			<th>操作</th>
+									        </thead>
+									        <tobody>
+									    	  #if($!{pageInfos})
+								                #foreach($!{info} in $!{pageInfos})
+																	<td>$!dateTool.format("yyyy-MM-dd",$!{info.sendtime})</td>
+																	<td>#if("$!{info.attr4}"== "1")定时发送 #else 立即发送 #end</td>
+																	<td>$!{info.phonenum}个</td>
+																	<td>#if("$!{info.messagetype}" eq 1)推广短信 #else 短信通知 #end</td>
+																	<td>$!{info.messagetxt}</td>
+																	<td>$!{info.messagesign}</td>
+																	<td>#if("$!{info.checkresult}" eq 0)未审核#else #if("$!{info.checkresult}" eq 1)审核通过 #else审核未通过#end #end</td>
+																	<td>#if("$!{info.sendtype}" eq 0)待发送#else #if("$!{info.sendtype}" eq 1)发送成功 #else 发送失败#end #end</td>
+										                <td class="last">
+							                			<a href="javascript:doUrl('$!{basePath}/messageHelp/back/messagesendtask/toEdit.html?id=$!{info.id}')" >编辑</a>
+							                			<a href="javascript:delData('$!{basePath}/messageHelp/back/messagesendtask/doDelete.html?id=$!{info.id}')">删除</a>
+							                			<a href="javascript:doUrl('$!{basePath}/messageHelp/back/messagesendtask/toDetail.html?id=$!{info.id}')">详情</a>
+						                				</td>
+									           		</tr>
+									             #end
+									    	 #end
+									         </tobody>
+									    </table>
+										<div class="text-right">
+											<!--公用翻页代码-->
+							                #set($attr='formSubmit')
+							            	#showPageList($pageInfos $attr)
+							                <!--END公用翻页代码-->
+										</div>
+								  </div>	
+								</div>
+				</div>  
+				</form>
+		</div>
+	</div>
+</body>
+</html>

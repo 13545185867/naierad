@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.noticeandnews.entity.Noticeandnews">
+
+	<!-- Result Map-->
+	<resultMap id="Noticeandnews" type="com.jeecg.p3.noticeandnews.entity.Noticeandnews" >
+		<result column="id" property="id" jdbcType="VARCHAR"/>
+		<result column="areaid" property="areaid" jdbcType="INTEGER"/>
+		<result column="title" property="title" jdbcType="VARCHAR"/>
+		<result column="content" property="content" jdbcType="VARCHAR"/>
+		<result column="isdelete" property="isdelete" jdbcType="VARCHAR"/>
+		<result column="creatteime" property="createtime" jdbcType="TIMESTAMP"/>
+		<result column="createuser" property="createuser" jdbcType="VARCHAR"/>
+		<result column="isvipview" property="isvipview" jdbcType="VARCHAR"/>
+		<result column="isvipparty" property="isvipparty" jdbcType="VARCHAR"/>
+		<result column="leadpic" property="leadpic" jdbcType="VARCHAR"/>
+		<result column="leadpicviewtype" property="leadpicviewtype" jdbcType="VARCHAR"/>
+		<result column="type" property="type" jdbcType="VARCHAR"/>
+		<result column="viewcount" property="viewcount" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.areaid != null and query.areaid != ''" >
+	  		 		/* 所属区域ID */
+			    	AND n.areaid =  #{query.areaid,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.title != null and query.title != ''" >
+	  		 		/*  */
+			    	AND n.title like concat('%',#{query.title,jdbcType=VARCHAR},'%')
+				 </if>
+				 <if test="query.content != null and query.content != ''" >
+	  		 		/*  */
+			    	AND n.content like concat('%',#{query.content,jdbcType=VARCHAR},'%')
+				 </if>
+				 <if test="query.isdelete != null and query.isdelete != ''" >
+	  		 		/*  */
+			    	AND n.isdelete =  #{query.isdelete,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.createtime != null and query.createtime != ''" >
+	  		 		/*  */
+			    	AND n.createtime =  #{query.createtime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.createuser != null and query.createuser != ''" >
+	  		 		/*  */
+			    	AND n.createuser =  #{query.createuser,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.isvipview != null and query.isvipview != ''" >
+	  		 		/*  */
+			    	AND n.isvipview =  #{query.isvipview,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.isvipparty != null and query.isvipparty != ''" >
+	  		 		/*  */
+			    	AND n.isvipparty =  #{query.isvipparty,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.leadpic != null and query.leadpic != ''" >
+	  		 		/* 主题图片 */
+			    	AND n.leadpic =  #{query.leadpic,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.leadpicviewtype != null and query.leadpicviewtype != ''" >
+	  		 		/* 主题图显示方式 */
+			    	AND n.leadpicviewtype =  #{query.leadpicviewtype,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.type != null and query.type != ''" >
+	  		 		/* 类型：1文章 2视频 3通知公告 */
+			    	AND n.type =  #{query.type,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.noticeandnews.entity.Noticeandnews.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  noticeandnews   /* 公告与资讯 */  
+					(	
+                      id                            /*  */ 
+                     ,areaid                        /* 所属区域ID */ 
+                     ,title                         /*  */ 
+                     ,content                       /*  */ 
+                     ,isdelete                      /*  */ 
+                     ,createtime                     /*  */ 
+                     ,createuser                    /*  */ 
+                     ,isvipview                     /*  */ 
+                     ,isvipparty                    /*  */ 
+                     ,leadpic                       /* 主题图片 */ 
+                     ,leadpicviewtype               /* 主题图显示方式 */ 
+                     ,type                          /* 类型：1文章 2视频 3通知公告 */ 
+					)
+			values (
+                      #{id,jdbcType=VARCHAR}                            /*  */ 
+                     ,#{areaid,jdbcType=INTEGER}                        /* 所属区域ID */ 
+                     ,#{title,jdbcType=VARCHAR}                         /*  */ 
+                     ,#{content,jdbcType=VARCHAR}                       /*  */ 
+                     ,#{isdelete,jdbcType=VARCHAR}                      /*  */ 
+                     ,#{createtime,jdbcType=TIMESTAMP}                     /*  */ 
+                     ,#{createuser,jdbcType=VARCHAR}                    /*  */ 
+                     ,#{isvipview,jdbcType=VARCHAR}                     /*  */ 
+                     ,#{isvipparty,jdbcType=VARCHAR}                    /*  */ 
+                     ,#{leadpic,jdbcType=VARCHAR}                       /* 主题图片 */ 
+                     ,#{leadpicviewtype,jdbcType=VARCHAR}               /* 主题图显示方式 */ 
+                     ,#{type,jdbcType=VARCHAR}                          /* 类型：1文章 2视频 3通知公告 */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.noticeandnews.entity.Noticeandnews.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   noticeandnews  	/* 公告与资讯 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="areaid != null">
+		    		 		/* 所属区域ID */ 
+	    		 			areaid = #{areaid,jdbcType=INTEGER},
+						 </if>
+						 <if test="title != null">
+		    		 		/*  */ 
+	    		 			title = #{title,jdbcType=VARCHAR},
+						 </if>
+						 <if test="content != null">
+		    		 		/*  */ 
+	    		 			content = #{content,jdbcType=VARCHAR},
+						 </if>
+						 <if test="isdelete != null">
+		    		 		/*  */ 
+	    		 			isdelete = #{isdelete,jdbcType=VARCHAR},
+						 </if>
+						 <if test="createtime != null">
+		    		 		/*  */ 
+	    		 			createtime = #{createtime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="isvipview != null">
+		    		 		/*  */ 
+	    		 			isvipview = #{isvipview,jdbcType=VARCHAR},
+						 </if>
+						 <if test="isvipparty != null">
+		    		 		/*  */ 
+	    		 			isvipparty = #{isvipparty,jdbcType=VARCHAR},
+						 </if>
+						 <if test="leadpic != null">
+		    		 		/* 主题图片 */ 
+	    		 			leadpic = #{leadpic,jdbcType=VARCHAR},
+						 </if>
+						 <if test="leadpicviewtype != null">
+		    		 		/* 主题图显示方式 */ 
+	    		 			leadpicviewtype = #{leadpicviewtype,jdbcType=VARCHAR},
+						 </if>
+						 <if test="type != null">
+		    		 		/* 类型：1文章 2视频 3通知公告 */ 
+	    		 			type = #{type,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}			and createuser = #{createuser}	/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.noticeandnews.entity.Noticeandnews.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Noticeandnews">
+		   SELECT   
+                   n.id                            /*  */ 
+                  ,n.areaid                        /* 所属区域ID */ 
+                  ,n.title                         /*  */ 
+                  ,n.content                       /*  */ 
+                  ,n.isdelete                      /*  */ 
+                  ,n.createtime                     /*  */ 
+                  ,n.createuser                    /*  */ 
+                  ,n.isvipview                     /*  */ 
+                  ,n.isvipparty                    /*  */ 
+                  ,n.leadpic                       /* 主题图片 */ 
+                  ,n.leadpicviewtype               /* 主题图显示方式 */ 
+                  ,n.type                          /* 类型：1文章 2视频 3通知公告 */ 
+                  ,v.viewcount
+		   FROM   noticeandnews      AS n      /* 公告与资讯 */ 
+		     /* 会员活动 */  left join viewcount v on n.id = v.resourceid
+		   WHERE
+				n.id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.noticeandnews.entity.Noticeandnews.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM noticeandnews 	/* 公告与资讯 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.noticeandnews.entity.Noticeandnews.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  noticeandnews      AS n      /* 公告与资讯 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.noticeandnews.entity.Noticeandnews.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Noticeandnews">
+		    SELECT 
+                   n.id                            /*  */ 
+                  ,n.areaid                        /* 所属区域ID */ 
+                  ,n.title                         /*  */ 
+                  ,n.content                       /*  */ 
+                  ,n.isdelete                      /*  */ 
+                  ,n.createtime                     /*  */ 
+                  ,n.createuser                    /*  */ 
+                  ,n.isvipview                     /*  */ 
+                  ,n.isvipparty                    /*  */ 
+                  ,n.leadpic                       /* 主题图片 */ 
+                  ,n.leadpicviewtype               /* 主题图显示方式 */ 
+                  ,n.type                          /* 类型：1文章 2视频 3通知公告 */ 
+		FROM   	 noticeandnews      AS n      /* 公告与资讯 */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/> order by createtime desc
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+		<select id="queryActAndNEWList" parameterType="Object"  resultMap="Noticeandnews">
+select * from ( (select n.id as id,n.title as title,n.leadpic as leadpic,n.leadpicviewtype as leadpicviewtype,n.createtime as createtime ,d.dictname as createuser,d.dictcode as content   from noticeandnews n left join dictinfo d on n.type=d.dictcode where n.isdelete ='0' and d.typeid =6 	 <if test="query.areaid != null and query.areaid != ''" >
+	  		 		/* 所属区域ID */
+			    	AND n.areaid =  #{query.areaid,jdbcType=INTEGER}
+				 </if>)  UNION 
+( select a.id as id ,a.title as title,a.leadpic as leadpic,a.leadpicviewtype as leadpicviewtype,a.createtime as createtime,'活动' as createuser,'0' as content    from activity a  where a.isdelete='0'  	 <if test="query.areaid != null and query.areaid != ''" >
+	  		 		/* 所属区域ID */
+			    	AND a.areaid =  #{query.areaid,jdbcType=INTEGER}
+				 </if>  )) temp
+		 order by temp.createtime desc
+		 		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+		</select>
+</mapper>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">新增</div>
+					<div class="panel-body">
+						<form class="form-horizontal" role="form" id="dailogForm" action="$!{basePath}/serviceprice/back/serviceprice/doAdd.html" method="POST">
+					  		<input type="hidden" id="btn_sub" class="btn_sub" />
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">模块ID</label>
+													    <div class="col-sm-8">
+													  <select name="modelid" id="modelid"  value="请选择应用" class="form-control" >
+			       										#if($!{appmodelpageInfos})
+										                #foreach($!{info} in $!{appmodelpageInfos})
+														<option value="$!{info.id}" >$!{info.appname}</option>
+											             #end
+											    	 	#end
+												      </select>
+													      
+													    </div>
+													</div>
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">购买类型</label>
+													    <div class="col-sm-8">
+													    <select name="servicetype" id="servicetype"  value="请选择购买类型" class="form-control" >
+			       										#if($!{dictinfpageInfos})
+										                #foreach($!{info} in $!{dictinfpageInfos})
+														<option value="$!{info.id}" >$!{info.dictname}</option>
+											             #end
+											    	 	#end
+												      </select>
+													    </div>
+													</div>
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">价格(单位：元)</label>
+													    <div class="col-sm-8">
+													      <input type="text" value="$!{serviceprice.price}" name="price" id="price" class="form-control" />
+													    </div>
+													</div>
+										<div class="form-group mno">
+											<div class="col-sm-offset-1 col-sm-6">
+												<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/serviceprice/back/serviceprice/list.html')">返回</button>
+	        									<button type="button" class="btn btn-primary" id="formSubmit">提交</button>
+        									 </div>
+        								</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="$!{basePath}/plug-in/js/Validform_v5.3.2.js"></script> 
+<script type="text/javascript" src="$!{basePath}/plug-in/js/forminit.p3.js"></script> 

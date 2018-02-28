@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow: hidden;"><!--<![endif]--><!-- BEGIN HEAD --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Metro风格响应式后台管理系统模板MetroAdmin - JS代码网</title>
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   <meta content="" name="description">
+   <meta content="Mosaddek" name="author">
+   <link href="$!{basePath}/plug-in/css/bootstrap.min.css" rel="stylesheet">
+   <link href="$!{basePath}/plug-in/css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="$!{basePath}/plug-in/css/font-awesome.css" rel="stylesheet">
+   <link href="$!{basePath}/plug-in/css/style-main.css" rel="stylesheet">
+   <link href="$!{basePath}/plug-in/css/style-responsive.css" rel="stylesheet">
+   <link href="$!{basePath}/plug-in/css/style-default.css" rel="stylesheet" id="style_color">
+   
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="fixed-top">
+   <!-- BEGIN HEADER -->
+   <div id="header" class="navbar navbar-inverse navbar-fixed-top">
+       <!-- BEGIN TOP NAVIGATION BAR -->
+       <div class="navbar-inner">
+           <div class="container-fluid">
+               <!--BEGIN SIDEBAR TOGGLE-->
+               <div class="sidebar-toggle-box hidden-phone">
+                   <div class="icon-reorder tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+               </div>
+               <!--END SIDEBAR TOGGLE-->
+               <!-- BEGIN LOGO -->
+               <a class="brand" href="">
+                   <img src="/P3-Web/content/system/logo.png" alt="Metro Lab">
+               </a>
+               <!-- END LOGO -->
+               <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+               <a class="btn btn-navbar collapsed" id="main_menu_trigger" data-toggle="collapse" data-target=".nav-collapse">
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="arrow"></span>
+               </a>
+               <!-- END RESPONSIVE MENU TOGGLER -->
+               <div id="top_menu" class="nav notify-row">
+                   <!-- BEGIN NOTIFICATION -->
+                   <ul class="nav top-menu">
+                       <!-- BEGIN SETTINGS -->
+                       <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                               <i class="icon-tasks"></i>
+                               <span class="badge badge-important">6</span>
+                           </a>
+                           <ul class="dropdown-menu extended tasks-bar">
+                               <li>
+                                   <p>你有6条任务</p>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <div class="task-info">
+                                         <div class="desc">控制台</div>
+                                         <div class="percent">44%</div>
+                                       </div>
+                                       <div class="progress progress-striped active no-margin-bot">
+                                           <div class="bar" style="width: 44%;"></div>
+                                       </div>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <div class="task-info">
+                                           <div class="desc">数据库更新</div>
+                                           <div class="percent">65%</div>
+                                       </div>
+                                       <div class="progress progress-striped progress-success active no-margin-bot">
+                                           <div class="bar" style="width: 65%;"></div>
+                                       </div>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <div class="task-info">
+                                           <div class="desc">手机开发进度</div>
+                                           <div class="percent">87%</div>
+                                       </div>
+                                       <div class="progress progress-striped progress-info active no-margin-bot">
+                                           <div class="bar" style="width: 87%;"></div>
+                                       </div>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <div class="task-info">
+                                           <div class="desc">手机App进度</div>
+                                           <div class="percent">33%</div>
+                                       </div>
+                                       <div class="progress progress-striped progress-warning active no-margin-bot">
+                                           <div class="bar" style="width: 33%;"></div>
+                                       </div>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <div class="task-info">
+                                           <div class="desc">控制台</div>
+                                           <div class="percent">90%</div>
+                                       </div>
+                                       <div class="progress progress-striped progress-danger active no-margin-bot">
+                                           <div class="bar" style="width: 90%;"></div>
+                                       </div>
+                                   </a>
+                               </li>
+                               <li class="external">
+                                   <a href="#">查看所有任务</a>
+                               </li>
+                           </ul>
+                       </li>
+                       <!-- END SETTINGS -->
+                       
+                       <!-- END INBOX DROPDOWN -->
+                       <!-- BEGIN NOTIFICATION DROPDOWN -->
+                       <li class="dropdown" id="header_notification_bar">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                               <i class="icon-bell-alt"></i>
+                               <span class="badge badge-warning">7</span>
+                           </a>
+                           <ul class="dropdown-menu extended notification">
+                               <li>
+                                   <p>你有7条提示信息</p>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <span class="label label-important"><i class="icon-bolt"></i></span>
+                                       Server #3 overloaded.
+                                       <span class="small italic">34 mins</span>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <span class="label label-warning"><i class="icon-bell"></i></span>
+                                       Server #10 not respoding.
+                                       <span class="small italic">1 Hours</span>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <span class="label label-important"><i class="icon-bolt"></i></span>
+                                       Database overloaded 24%.
+                                       <span class="small italic">4 hrs</span>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <span class="label label-success"><i class="icon-plus"></i></span>
+                                       New user registered.
+                                       <span class="small italic">Just now</span>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <span class="label label-info"><i class="icon-bullhorn"></i></span>
+                                       Application error.
+                                       <span class="small italic">10 mins</span>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">See all notifications</a>
+                               </li>
+                           </ul>
+                       </li>
+                       <!-- END NOTIFICATION DROPDOWN -->
+
+                   </ul>
+               </div>
+               <!-- END  NOTIFICATION -->
+               <div class="top-nav ">
+                   <ul class="nav pull-right top-menu">
+                       <!-- BEGIN SUPPORT -->
+                       <li class="dropdown mtop5">
+
+                           <a class="dropdown-toggle element" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Chat">
+                               <i class="icon-comments-alt"></i>
+                           </a>
+                       </li>
+                       <li class="dropdown mtop5">
+                           <a class="dropdown-toggle element" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Help">
+                               <i class="icon-headphones"></i>
+                           </a>
+                       </li>
+                       <!-- END SUPPORT -->
+                       <!-- BEGIN USER LOGIN DROPDOWN -->
+                       <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                               <img src="/P3-Web/content/system/default_family.jpg" style="border-radius: 50px;width:35px;height:35px;" alt="">
+                              $!{logoTitle.logo} <span class="username">微信公众号：$!{jwidname} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 欢迎您&nbsp$!{username} </span>
+                               <b class="caret"></b>
+                           </a>
+                           <ul class="dropdown-menu extended logout">
+                               <li><a href="#"><i class="icon-user"></i>我的资料</a></li>
+                               <li><a href="#"><i class="icon-cog"></i>我的设置</a></li>
+                               <li><a href="$!{basePath}/system/logout.html"><i class="icon-key"></i>退出</a></li>
+                           </ul>
+                       </li>
+                       <!-- END USER LOGIN DROPDOWN -->
+                   </ul>
+                   <!-- END TOP NAVIGATION MENU -->
+               </div>
+           </div>
+       </div>
+       <!-- END TOP NAVIGATION BAR -->
+   </div>
+   <!-- END HEADER -->
+   <!--beagin modal fade-->
+   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+	   aria-labelledby="myModalLabel" aria-hidden="true">
+	   <div class="modal-dialog">
+	      <div class="modal-content">
+	         <div class="modal-header">
+	            <button type="button" class="close" data-dismiss="modal" 
+	               aria-hidden="true">×
+	            </button>
+	            <h4 class="modal-title" id="myModalLabel">
+	               模态框（Modal）标题
+	            </h4>
+	         </div>
+	         	         <iframe src="#" id="bindacount" width="100%" height="400px" style="display:none"></iframe>
+	         <div class="modal-body" id="myModalContent"  style="word-break:break-all">
+	         系统检测 到您还未绑定公共号，若不绑定已认证的服务号和订阅号，你将无法创建关注后参加的活动
+	       <a href="javascript:void(0);" onclick="tobind()">  点击绑定进行绑定操作</a>
+
+	         点击关闭，取消绑定
+	         
+	            按下 ESC 按钮退出。
+	         </div>
+	         <div class="modal-footer">
+	            <button type="button" class="btn btn-default" 
+	               data-dismiss="modal">关闭
+	            </button>
+	            <button type="button" class="btn btn-primary" style="display:none;">
+	              复制
+	            </button>
+	         </div>
+	      </div><!-- /.modal-content -->
+	   </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<!--end modal fade-->
+
+   <!-- BEGIN CONTAINER -->
+   <div id="container" class="row-fluid">
+      <!-- BEGIN SIDEBAR -->
+      <div class="sidebar-scroll" tabindex="5000" style="overflow: hidden; outline: none;">
+        <div id="sidebar" class="nav-collapse collapse">
+
+         <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+         <div class="navbar-inverse">
+            <form class="navbar-search visible-phone">
+               <input type="text" class="search-query" placeholder="Search">
+            </form>
+         </div>
+         <!-- END RESPONSIVE QUICK SEARCH FORM -->
+         <!-- BEGIN SIDEBAR MENU -->
+          <ul class="sidebar-menu">
+              <li class="sub-menu active">
+                  <a class="" href="">
+                      <i class="icon-dashboard"></i>
+                      <span>控制台</span>
+                  </a>
+              </li>
+               #foreach($entry in $OPERATE_WEB_MENU_TREE.entrySet())
+					#if($entry.value)
+						 <li class="sub-menu">
+						    <a href="javascript:;" class="">
+			                      <i class="icon-fire"></i>
+			                      <span>${entry.key.authName}</span>
+			                      <span class="arrow"></span>
+                  			</a>
+						  <ul class="sub">
+								#foreach($sub in $entry.value)
+								<li><a class="" href="$!{basePath}${sub.authContr}" target="mainFrame">${sub.authName}</a></li>
+								#end
+						  </ul>
+						  </li>
+					#else
+						<li class="sub-menu">
+						    <a href="$!{basePath}${entry.key.authContr}" class="" target="mainFrame">
+			                      <i class="icon-fire"></i>
+			                      <span>${entry.key.authName}</span>
+			                      <span class="arrow"></span>
+                  			</a>
+                  		</li>
+					#end
+			   #end
+          </ul>
+         <!-- END SIDEBAR MENU -->
+      </div>
+      </div>
+      <!-- END SIDEBAR -->
+      <!-- BEGIN PAGE -->  
+      <div id="main-content">
+         <!-- BEGIN PAGE CONTAINER-->
+         <div class="container-fluid">
+
+         </div>
+         <!-- END PAGE CONTAINER-->
+      </div>
+      <!-- END PAGE -->  
+   </div>
+   <!-- END CONTAINER -->
+
+   <!-- BEGIN FOOTER -->
+   <div id="footer">
+       2017 © 百花网络科技有限公司.
+   </div>
+   <!-- END FOOTER -->
+
+      <script src="$!{basePath}/plug-in/js/jquery-1.8.3.min.js"></script>
+   <script src="$!{basePath}/plug-in/js/jquery.nicescroll.js" type="text/javascript"></script>
+   <script src="$!{basePath}/plug-in/js/jquery-ui-1.9.2.custom.min.js"></script>
+   <script src="$!{basePath}/plug-in/js/jquery.slimscroll.min.js"></script>
+   <script src="$!{basePath}/plug-in/js/bootstrap.min.home.js"></script>
+   <script src="$!{basePath}/plug-in/js/jquery.scrollTo.min.js"></script>
+   <script src="$!{basePath}/plug-in/js/common-scripts.js"></script>
+
+   <div id="ascrail2000" class="nicescroll-rails" style="width: 5px; z-index: 100; background: rgb(64, 64, 64); cursor: default; position: fixed; top: 60px; left: 175px; height: 613px; opacity: 0;"><div style="position: relative; top: 0px; float: right; width: 5px; height: 596px; background-color: rgb(74, 139, 194); background-clip: padding-box; border-radius: 0px;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails" style="height: 5px; z-index: 100; background: rgb(64, 64, 64); top: 668px; left: 0px; position: fixed; cursor: default; display: none; width: 175px; opacity: 0;"><div style="position: relative; top: 0px; height: 5px; width: 180px; background-color: rgb(74, 139, 194); background-clip: padding-box; border-radius: 0px;"></div></div><div id="ascrail2001" class="nicescroll-rails" style="width: 8px; z-index: 1000; background: rgb(64, 64, 64); cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; opacity: 0;"><div style="position: relative; top: 0px; float: right; width: 8px; height: 171px; background-color: rgb(74, 139, 194); background-clip: padding-box; border-radius: 0px;"></div></div><div id="ascrail2001-hr" class="nicescroll-rails" style="height: 8px; z-index: 1000; background: rgb(64, 64, 64); position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;"><div style="position: relative; top: 0px; height: 8px; width: 1366px; background-color: rgb(74, 139, 194); background-clip: padding-box; border-radius: 0px;"></div></div>
+   <!--script for this page only-->
+
+</body></html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+  <script type="text/javascript"  charset="utf-8" src="$!{basePath}/ueditor/ueditor.config.js"></script>
+  <script type="text/javascript"  charset="utf-8" src="$!{basePath}/ueditor/ueditor.all.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="$!{basePath}/ueditor/lang/zh-cn/zh-cn.js"></script>
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">编辑</div>
+				<div class="panel-body">
+					<form class="form-horizontal" role="form" id="dailogForm" action="$!{basePath}/noticeandnews/back/noticeandnews/doEdit.html" method="POST">
+						 <input type="hidden" id="btn_sub" class="btn_sub" />
+						 <input type="hidden" value="$!{noticeandnews.id}" name="id" id="id" />
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">所属区域</label>
+												    <div class="col-sm-8">
+												  <select name="areaid" id="areaid"  value="$!{noticeandnews.areaid}" class="form-control"  datatype="*">
+													      <option value="" >请选择文章所属板块</option>
+													       	#if($!{areaInfos})
+													                #foreach($!{info} in $!{areaInfos})
+													               	 <option value="$!{info.dictcode}" #if("$!{noticeandnews.areaid}" eq $!{info.dictcode})selected#end>$!{info.dictname}</option>
+														             #end
+													    	 	#end
+													      </select>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">标题</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{noticeandnews.title}" name="title" id="title" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">是否已删除</label>
+												    <div class="col-sm-8">
+											 <select name="isdelete" id="isdelete"  value="$!{noticeandnews.isdelete}" class="form-control"  datatype="*">
+															    <option value="0" #if('0' eq $!{noticeandnews.isdelete})selected#end>可用状态</option>
+															    <option value="1" #if('1' eq $!{noticeandnews.isdelete})selected#end>删除状态</option>
+															    </select>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">创建人</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{noticeandnews.createuser}" name="createuser" id="createuser" class="form-control" disabled/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">是否VIP才能查看</label>
+												    <div class="col-sm-8">
+												      	 <select name="isvipview" id="isvipview"  value="$!{noticeandnews.isvipview}" class="form-control"  datatype="*">
+															    <option value="" >设置查看权限</option>
+															    <option value="0" #if('0' eq $!{noticeandnews.isvipview})selected#end>所有会员有可查看</option>
+															    <option value="1" #if('1' eq $!{noticeandnews.isvipview})selected#end>只有VIP才可查看</option>
+														</select>	
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">是否VIP才能参加</label>
+												    <div class="col-sm-8">
+											  <select name="isvipparty" id="isvipparty"  value="$!{noticeandnews.isvipparty}" class="form-control"  datatype="*">
+															    <option value="" >设置参加权限</option>
+															    <option value="0" #if('0' eq $!{noticeandnews.isvipparty})selected#end>所有会员有可参加</option>
+															    <option value="1" #if('1' eq $!{noticeandnews.isvipparty})selected#end>只有VIP才可参加</option>
+															    </select>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">主题图片</label>
+												       <input type="hidden" value="$!{noticeandnews.leadpic}" name="leadpic" id="leadpic">  
+													     <div class="col-sm-8">
+												        <div id="fileQueue" style="width:200px;"></div>   
+													    <input type="file" name="uploadify" id="uploadify" />   
+													    <div id="pic_view_div" style="width:150px; height:180px">  
+													         <img src="$!{basePath}/upload/img/jlb/$!{noticeandnews.leadpic}" width="150" height="180" id="pic_view">  
+													    </div> 
+													     </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">主题图显示方式</label>
+												    <div class="col-sm-8">
+									 <select name="leadpicviewtype" id="leadpicviewtype"  value="$!{noticeandnews.leadpicviewtype}" class="form-control"  >
+															    <option value="" >设置图片显示方式</option>
+															    <option value="0" #if('0' eq $!{noticeandnews.leadpicviewtype})selected#end>微信中小图标列表显示 </option>
+															    <option value="1" #if('1' eq $!{noticeandnews.leadpicviewtype})selected#end>微信中大图标列表显示</option>
+										 </select>			      
+												      
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">类型 </label>
+												    <div class="col-sm-8">
+														 <select name="type" id="type"  value="$!{noticeandnews.type}" class="form-control"  datatype="*">
+													       <option value="" >请选择文章类型</option>
+													      	#if($!{typeInfos})
+													                #foreach($!{info} in $!{typeInfos})
+													               	 <option value="$!{info.dictcode}" #if("$!{noticeandnews.type}" eq $!{info.dictcode})selected#end>$!{info.dictname}</option>
+														             #end
+													    	 	#end
+													     </select>
+												    </div>
+												</div>
+												
+												<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">内容</label>
+													    <div class="col-sm-8">
+													       <textarea name="content" id="content" datatype="*">$!{noticeandnews.content}</textarea>
+															<script type="text/javascript">
+													        var editor = UE.getEditor('content');
+													    </script>
+													    </div>
+													</div>
+									<div class="form-group mno">
+											<div class="col-sm-offset-1 col-sm-6">
+												<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/noticeandnews/back/noticeandnews/list.html')">返回</button>
+	        									<button type="button" class="btn btn-primary" id="formSubmit">提交</button>
+        									 </div>
+        							</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="$!{basePath}/plug-in/js/Validform_v5.3.2.js"></script> 
+<script type="text/javascript" src="$!{basePath}/plug-in/js/forminit.p3.js"></script>  
+<script src="$!{basePath}/content/system/js/jquery.uploadify.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="$!{basePath}/content/system/css/uploadify.css">
+<script >
+$(function(){
+    $("#uploadify").uploadify({  
+        'swf'            : '$!{basePath}/content/system/js/uploadify.swf',  
+        'uploader'       : '$!{basePath}/system/back/jwSystemProject/doUpload.html',
+        'queueID'        : 'fileQueue',  
+        'auto'           : true,  
+        'multi'          : true,  
+        'buttonCursor'   : 'hand',  
+        'fileObjName'    : 'file',  
+        'buttonText'     : '上传图片',  
+        'height'         : '25',  
+        'progressData'   : 'percentage',  
+        'fileTypeDesc'   : '支持格式:jpg/gif/jpeg/png/bmp.',    
+        'fileTypeExts': '*.jpg;*.gif;*.jpeg;*.png;*.bmp',//允许的格式         
+        onUploadStart : function(file) {
+
+        },
+        onUploadSuccess  : function(file,data,response) {  
+            //设置图片预览  
+            var a =  JSON.parse(data);
+            $("#leadpic").val(a.obj);  
+            $("#pic_view").attr("src",'$!{basePath}/upload/img/jlb/' + a.obj);  
+        }  
+    });  
+});
+</script>	

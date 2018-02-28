@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.order.entity.Order">
+
+	<!-- Result Map-->
+	<resultMap id="ServiceOrder" type="com.jeecg.p3.order.entity.Order" >
+		<result column="id" property="id" jdbcType="VARCHAR"/>
+		<result column="serviceid" property="serviceid" jdbcType="INTEGER"/>
+		<result column="createtime" property="createtime" jdbcType="TIMESTAMP"/>
+		<result column="expiretime" property="expiretime" jdbcType="TIMESTAMP"/>
+		<result column="price" property="price" jdbcType="DECIMAL"/>
+		<result column="creator" property="creator" jdbcType="VARCHAR"/>
+		<result column="isdelete" property="isdelete" jdbcType="INTEGER"/>
+		<result column="paystatus" property="paystatus" jdbcType="INTEGER"/>
+		<result column="payresult" property="payresult" jdbcType="VARCHAR"/>
+		<result column="paytime" property="paytime" jdbcType="TIMESTAMP"/>
+		<result column="payuserid" property="payuserid" jdbcType="VARCHAR"/>
+		<result column="paycodeurl" property="paycodeurl" jdbcType="VARCHAR"/>
+		<result column="ordercol0" property="ordercol0" jdbcType="VARCHAR"/>
+		<result column="ordercol1" property="ordercol1" jdbcType="VARCHAR"/>
+		<result column="ordercol2" property="ordercol2" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.serviceid != null " >
+	  		 		/* 服务ID */
+			    	AND o.serviceid =  #{query.serviceid,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.createtime != null and query.createtime != ''" >
+	  		 		/* 订单生成时间 */
+			    	AND o.createtime =  #{query.createtime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.expiretime != null and query.expiretime != ''" >
+	  		 		/* 订单过期时间 */
+			    	AND o.expiretime =  #{query.expiretime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.price != null and query.price != ''" >
+	  		 		/* 订单价格 */
+			    	AND o.price =  #{query.price,jdbcType=DECIMAL}
+				 </if>
+				 <if test="query.creator != null and query.creator != ''" >
+	  		 		/* 订单发起人 */
+			    	AND o.creator =  #{query.creator,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.isdelete != null " >
+	  		 		/* 是否已删除  */
+			    	AND o.isdelete =  #{query.isdelete,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.paystatus != null " >
+	  		 		/* 支付状态 */
+			    	AND o.paystatus =  #{query.paystatus,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.payresult != null and query.payresult != ''" >
+	  		 		/* 支付结果 */
+			    	AND o.payresult =  #{query.payresult,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.paytime != null and query.paytime != ''" >
+	  		 		/* 支付时间 */
+			    	AND o.paytime =  #{query.paytime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.payuserid != null and query.payuserid != ''" >
+	  		 		/* 支付人openid */
+			    	AND o.payuserid =  #{query.payuserid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.paycodeurl != null and query.paycodeurl != ''" >
+	  		 		/* 支付地址 */
+			    	AND o.paycodeurl =  #{query.paycodeurl,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.ordercol0 != null and query.ordercol0 != ''" >
+	  		 		/*  */
+			    	AND o.ordercol0 =  #{query.ordercol0,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.ordercol1 != null and query.ordercol1 != ''" >
+	  		 		/*  */
+			    	AND o.ordercol1 =  #{query.ordercol1,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.ordercol2 != null and query.ordercol2 != ''" >
+	  		 		/*  */
+			    	AND o.ordercol2 =  #{query.ordercol2,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.order.entity.Order.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object"   keyProperty="id" useGeneratedKeys="true" >
+	  INSERT  INTO  serviceorder   /* 订单表 */  
+					(	
+					id,
+                       serviceid                     /* 服务ID */ 
+                     ,createtime                    /* 订单生成时间 */ 
+                     ,expiretime                    /* 订单过期时间 */ 
+                     ,price                         /* 订单价格 */ 
+                     ,creator                       /* 订单发起人 */ 
+                     ,isdelete                      /* 是否已删除  */ 
+                     ,paystatus                     /* 支付状态 */ 
+                     ,payresult                     /* 支付结果 */ 
+                     ,paytime                       /* 支付时间 */ 
+                     ,payuserid                     /* 支付人openid */ 
+                     ,paycodeurl                    /* 支付地址 */ 
+                     ,ordercol0                     /*  */ 
+                     ,ordercol1                     /*  */ 
+                     ,ordercol2                     /*  */ 
+					)
+			values (
+                     #{id,jdbcType=VARCHAR}
+                     , #{serviceid,jdbcType=INTEGER}                     /* 服务ID */ 
+                     ,#{createtime,jdbcType=TIMESTAMP}                    /* 订单生成时间 */ 
+                     ,#{expiretime,jdbcType=TIMESTAMP}                    /* 订单过期时间 */ 
+                     ,#{price,jdbcType=DECIMAL}                         /* 订单价格 */ 
+                     ,#{creator,jdbcType=VARCHAR}                       /* 订单发起人 */ 
+                     ,#{isdelete,jdbcType=INTEGER}                      /* 是否已删除  */ 
+                     ,#{paystatus,jdbcType=INTEGER}                     /* 支付状态 */ 
+                     ,#{payresult,jdbcType=VARCHAR}                     /* 支付结果 */ 
+                     ,#{paytime,jdbcType=TIMESTAMP}                       /* 支付时间 */ 
+                     ,#{payuserid,jdbcType=VARCHAR}                     /* 支付人openid */ 
+                     ,#{paycodeurl,jdbcType=VARCHAR}                    /* 支付地址 */ 
+                     ,#{ordercol0,jdbcType=VARCHAR}                     /*  */ 
+                     ,#{ordercol1,jdbcType=VARCHAR}                     /*  */ 
+                     ,#{ordercol2,jdbcType=VARCHAR}                     /*  */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.order.entity.Order.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   serviceorder  	/* 订单表 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="serviceid != null">
+		    		 		/* 服务ID */ 
+	    		 			serviceid = #{serviceid,jdbcType=INTEGER},
+						 </if>
+						 <if test="createtime != null">
+		    		 		/* 订单生成时间 */ 
+	    		 			createtime = #{createtime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="expiretime != null">
+		    		 		/* 订单过期时间 */ 
+	    		 			expiretime = #{expiretime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="price != null">
+		    		 		/* 订单价格 */ 
+	    		 			price = #{price,jdbcType=DECIMAL},
+						 </if>
+						 <if test="creator != null">
+		    		 		/* 订单发起人 */ 
+	    		 			creator = #{creator,jdbcType=VARCHAR},
+						 </if>
+						 <if test="isdelete != null">
+		    		 		/* 是否已删除  */ 
+	    		 			isdelete = #{isdelete,jdbcType=INTEGER},
+						 </if>
+						 <if test="paystatus != null">
+		    		 		/* 支付状态 */ 
+	    		 			paystatus = #{paystatus,jdbcType=INTEGER},
+						 </if>
+						 <if test="payresult != null">
+		    		 		/* 支付结果 */ 
+	    		 			payresult = #{payresult,jdbcType=VARCHAR},
+						 </if>
+						 <if test="paytime != null">
+		    		 		/* 支付时间 */ 
+	    		 			paytime = #{paytime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="payuserid != null">
+		    		 		/* 支付人openid */ 
+	    		 			payuserid = #{payuserid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="paycodeurl != null">
+		    		 		/* 支付地址 */ 
+	    		 			paycodeurl = #{paycodeurl,jdbcType=VARCHAR},
+						 </if>
+						 <if test="ordercol0 != null">
+		    		 		/*  */ 
+	    		 			ordercol0 = #{ordercol0,jdbcType=VARCHAR},
+						 </if>
+						 <if test="ordercol1 != null">
+		    		 		/*  */ 
+	    		 			ordercol1 = #{ordercol1,jdbcType=VARCHAR},
+						 </if>
+						 <if test="ordercol2 != null">
+		    		 		/*  */ 
+	    		 			ordercol2 = #{ordercol2,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.order.entity.Order.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="ServiceOrder">
+		   SELECT   
+                   o.id                            /* 订单ID */ 
+                  ,o.serviceid                     /* 服务ID */ 
+                  ,o.createtime                    /* 订单生成时间 */ 
+                  ,o.expiretime                    /* 订单过期时间 */ 
+                  ,o.price                         /* 订单价格 */ 
+                  ,o.creator                       /* 订单发起人 */ 
+                  ,o.isdelete                      /* 是否已删除  */ 
+                  ,o.paystatus                     /* 支付状态 */ 
+                  ,o.payresult                     /* 支付结果 */ 
+                  ,o.paytime                       /* 支付时间 */ 
+                  ,o.payuserid                     /* 支付人openid */ 
+                  ,o.paycodeurl                    /* 支付地址 */ 
+                  ,o.ordercol0                     /*  */ 
+                  ,o.ordercol1                     /*  */ 
+                  ,o.ordercol2                     /*  */ 
+		   FROM   serviceorder      AS o      /* 订单表 */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.order.entity.Order.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM serviceorder 	/* 订单表 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.order.entity.Order.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  serviceorder      AS o      /* 订单表 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.order.entity.Order.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="ServiceOrder">
+		    SELECT 
+                   o.id                            /* 订单ID */ 
+                  ,o.serviceid                     /* 服务ID */ 
+                  ,o.createtime                    /* 订单生成时间 */ 
+                  ,o.expiretime                    /* 订单过期时间 */ 
+                  ,o.price                         /* 订单价格 */ 
+                  ,o.creator                       /* 订单发起人 */ 
+                  ,o.isdelete                      /* 是否已删除  */ 
+                  ,o.paystatus                     /* 支付状态 */ 
+                  ,o.payresult                     /* 支付结果 */ 
+                  ,o.paytime                       /* 支付时间 */ 
+                  ,o.payuserid                     /* 支付人openid */ 
+                  ,o.paycodeurl                    /* 支付地址 */ 
+                  ,s.ordercol0                     /*  */ 
+                  ,o.ordercol1                     /*  */ 
+                  ,o.ordercol2                     /*  */ 
+		FROM   	 serviceorder      AS o    ,(select concat(d.dictname,b.appname,'服务') as ordercol0 ,a.id  from  serviceprice a , appmodel b ,dictinfo d  where  a.modelid = b.id and d.id = a.servicetype
+		) as s  /* 订单表 */ 
+		WHERE 1=1 and s.id = o.serviceid
+		   <include refid="wherecontation"/> order by createtime desc
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+</mapper>

@@ -1,0 +1,246 @@
+#parse("content/base/back/common/macro.vm")
+ <!DOCTYPE html>
+<html><head>
+<style class="vjs-styles-defaults">
+#module479 .fullmeasureOuterContentPage1 .fullmeasureOuterContentBg479 {
+    background: url($!{basePath}/content/files/bigred.jpg) no-repeat top;
+}
+ * {
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+}
+.sl_items {
+    width: 324px;
+    margin-left: 15px;
+    float: left;
+    margin-right: 15px;
+    text-align: left;
+	margin: 0 auto;
+}
+
+.sl_top {
+    width: 324px;
+    height: 186px;
+}.sl_items p {
+    font-size: 14px;
+    line-height: 26px;
+    color: #2b2b2b;
+    margin-bottom: 0;
+    padding: 0 16px;
+    height: 80px;
+    overflow: hidden;
+}.sl_text {
+    height: 80px;
+    margin-top: 24px;
+}.sl_button {
+    text-align: center;
+    width: 100%;
+}.sl_items .sb_button {
+    width: 290px;
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 65px;
+    height: 36px;
+    line-height: 36px;
+}
+ 
+sl_button a:link, sl_button a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+ 
+.sb_button {
+    color: #ffffff;
+    font-size: 14px;
+    background-color: #ff6637;
+    width: 300px;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    margin: 60px 0;
+} 
+.sl_items .sb_button:hover {
+    width: 286px;
+    height: 32px;
+    line-height: 32px;
+}
+.sb_button:hover {
+    color: #ff6637;
+    background: none;
+    border: 2px solid #ff6637;
+    height: 36px;
+    line-height: 36px;
+    width: 296px
+}
+    </style> 
+<title>客户案例 大悟县耐尔广告有限公司</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="format-detection" content="telephone=no,email=no,address=no">
+<meta name="renderer" content="webkit"> 
+<meta name="mobile-agent" content="format=html5;url=www.naierad.com">
+<meta name="keywords" content="大悟|大悟县|大悟耐尔|大悟县耐尔|大悟县广告|大悟广告|耐尔广告|大悟县耐尔广告有限公司|耐尔|广告|喷绘|写真|设计印刷|程序开发|宣传车|水晶/发光字|广告招牌|LED电子屏">
+<meta name="description" content="大悟耐尔广告有限公司是一家集设计、制作、代理、发布为一体的专业化广告服务商，专业从事写真喷绘、展览工程、户内外广告制作项目。一流的技术工人,先进的生产设备使我们走在了行业的前列。专注印刷行业12年，设计80多个行业，服务超过90000多个客户，完善的售前-售中-售后定制服务。">
+ 
+<link rel="icon" href="$!{basePath}/content/files/1.ico" type="image/x-icon" />
+<link type="text/css" href="$!{basePath}/content/files/base2.min.css" rel="stylesheet">
+<link type="text/css" href="$!{basePath}/content/files/fkTheme.min.css" rel="stylesheet" id="jzThemeFrame">
+ <link type="text/css" href="$!{basePath}/content/files/floatBtn1.min.css" rel="stylesheet">
+
+<link type="text/css" href="$!{basePath}/content/files/style.css" rel="stylesheet">
+
+<script type="text/javascript" src="$!{basePath}/content/files/jQuery-1.10.1.min.js"></script>
+<script type="text/javascript" src="$!{basePath}/content/files/script.js"></script>
+
+ <style type="text/css" id="contentAnimationStyle">#module339 .formMiddleContent339{overflow:hidden !important;}
+#module339 .formMiddleContent339 .listPhotosList{overflow:hidden !important;}</style><style type="text/css" id="styleBannerBg">.webBannerTable{background:none !important;}
+.webBanner{background:none !important;}</style><style type="text/css" id="styleWebSite">#bannerV2 .fk-inBannerListZone{width:1200px;}
+#bannerV2 .fk-inBannerListZone{margin-left:-600px;}</style><style type="text/css" id="stylebacktotop">.fk_siteBackToTop{display:none;}
+.fk_siteBackToTop{cursor:pointer;}
+.fk_siteBackToTop{z-index:9030;}
+.fk_siteBackToTop{right:40px;}
+.fk_siteBackToTop{bottom:50px;}
+.fk_siteBackToTop:hover{background-image:url($!{basePath}/content/files/05_hover.png);}
+.fk_siteBackToTop{position:fixed;}
+.fk_siteBackToTop{width:50px;}
+.fk_siteBackToTop{height:50px;}
+.fk_siteBackToTop{margin:1px;}
+.fk_siteBackToTop{background-image:url($!{basePath}/content/files/05.png);}</style></head>
+<body class="g_body" style="min-width: 1200px;">
+ 
+	<div id="siteBackToTop_small_box" class="fk_siteBackToTop" title="回到顶部" _style="secondStyle_05" style="right: 40px; bottom: 50px; display: none; opacity: 1;"></div><div id="g_main" class="g_main g_col2 ">
+	<div id="web" class="g_web ">
+		#set($cruid = 13) 
+ #parse("content/website/back/navtree.vm")
+		<table class="webBannerTable J_webBannerTable" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td align="center" class="fk-moduleZoneWrap">
+					
+					
+					<div id="webBanner" class="webBanner">
+						<table class="bannerTable" cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td class="bannerLeft"></td>
+								<td class="bannerCenter" align="center" valign="top">
+											
+											<div style="visibility:hidden;" class="fk-inBannerListZone-tmp">
+
+												
+											</div>	
+									<div class="bannerTop"></div>
+<div id="bannerV2" class="banner extBanner" style="height: 300px; background: none; overflow: hidden;">	
+<div></div><div class="switchGroup switchGroup_bannerV2 billboard billboard1" style="width: 100%; position: relative; height: 300px; overflow: hidden; margin: 0px auto;"><div class="J_billboardItem billboard_item arrowImg billboardItem_1 billboardAnim billboardItem_1_start billboardItem_1_on" style="width: 100%; height: 720px; animation-duration: 1500ms; display: block;overflow:hidden;">
+<div class="J_bannerItem f-bannerItem" title="" style="width: 100%; height: 300px; cursor: default; background-position: 50% 50%; background-repeat: no-repeat; overflow: hidden; display: block; outline: none; margin: 0px auto; position: relative; z-index: 1; background-size: cover; background-image: url(&quot;$!{basePath}/content/files/case_banner.jpg&quot;);">
+<div id="fk-inBannerListZone-0"  style="text-align: left;" class="elemZone elemZoneModule fk-moduleZone fk-inBannerListZone forms sideForms J_moduleZone ">
+<div class="fk-inBannerListZoneBg fk-elemZoneBg J_zoneContentBg elemZoneBg"></div>
+</div>
+</div>
+</div>
+
+</div></div>
+
+								</td>
+								<td class="bannerRight"></td>
+							</tr>
+						</tbody></table>
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+ 
+		<div id="fullmeasureTopForms" class="fullmeasureContainer forms fk-fullmeasureForms fullmeasureForms fullmeasureTopForms">
+			<div class="fullmeasureOuterContent fullmeasureOuterContent494">
+					<form role="form" class="form-inline" action="$!{basePath}/case.html?colid=$!{SEL_NAV}" method="post"  id="formSubmit">
+<div class="fullmeasureContent fullmeasureContent494" id="fullmeasureContent494_1" moduleid="494"><div class="fullmeasureContentBg fullmeasureContentBg494"></div><div  class="form form495 formStyle87 fk-formPack  formIndex1"  style="height: 1039px;" >
+<div class="J_packContent f-packContent f-packContent495 elemZone elemZoneModule" id="fk-packContent495"><div class="fk-elemZoneBg J_zoneContentBg elemZoneBg f-packContentBg f-packContentBg495"></div>
+	<div  class="form form469 formStyle86 siteEditor" style="position: absolute; top: 49px; left: 0px; width: 1200px; height: 79px; animation: none;" >
+		<div class="lightModuleOuterContent lightModuleOuterContent469">
+			<div class="fk-editor simpleText   ">
+					<div style="text-align: center;">
+					<strong style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;">
+					<span style="font-family: 微软雅黑;"><span style="color: rgb(255, 101, 55); font-size: 50px;">典型案例</span></span>
+					</strong>
+					<span style="color: rgb(0, 0, 0); font-size: 12px;"><span style="font-size: 60px;"></span><span style="font-size: 24px; color: rgb(198, 198, 198);">C</span><span style="font-size: 24px; color: rgb(198, 198, 198);">ase</span></span>
+					<br>
+					</div>
+		 	</div>
+		 </div>
+	</div>
+
+<div id="module440"   class="form form440 formStyle88" style="position: absolute; top: 166px; left: -6px; width: 1200px; height:852px; animation: none;display: flex; display: -webkit-flex; justify-content: center; flex-wrap: wrap;"  >
+ 
+	                  #if($!{pageInfos})
+						  #foreach($!{info} in $!{pageInfos})
+		                	<div class="sl_items">
+								<img class="sl_top" src="$!{basePath}/upload/img/jlb/$!{info.leadpic}">
+								<div class="sl_text"><p>$!{info.title}</p></div>
+								<div class="sl_button">
+									<a class="sb_button" href="$!{basePath}/detail.html?id=$!{info.id}" >阅读案例</a>
+								</div>
+						 	</div>
+						#end
+					  #end
+
+</div>
+
+</div></div>
+</div></div>
+<div class="text-center"  style="padding-bottom: 30px;">
+											<!--公用翻页代码-->
+							                #set($attr='formSubmit')
+							            	#showPageList($pageInfos $attr)
+							                <!--END公用翻页代码-->
+ </div>
+ </form>
+
+<div id="module479" class="form form479 formIndex2 formStyle80 fk-formFullmeasure " title="" style="" _inpack="0" fmslidestyle="0" fmpage="1" iscarousel="0" displaytime="4" carouselspeed="1">
+<div class="fillContentRelative" style="position: relative; z-index: -1; height: 248px; width: 100%; display: none;"></div><div style="position: static;" class="fullmeasureOuterContentPage fullmeasureOuterContentPage1 J_fullmeasurePageShow" page="1">			<div class="fullmeasureOuterContentBg fullmeasureOuterContentBg479 fullmeasureStyle0"></div><div class="fullmeasureOuterContent fullmeasureOuterContent479">
+<div class="fullmeasureContent fullmeasureContent479" id="fullmeasureContent479_1" moduleid="479"><div class="fullmeasureContentBg fullmeasureContentBg479"></div><div id="module478" class="form form478 formStyle87 fk-formPack  formIndex1" style="height: 248px;">
+<div class="J_packContent f-packContent f-packContent478 elemZone elemZoneModule" id="fk-packContent478"><div class="fk-elemZoneBg J_zoneContentBg elemZoneBg f-packContentBg f-packContentBg478"></div>
+<div id="module476" class="form form476 formStyle86 siteEditor" title="" style="position: absolute; top: 72px; left: 7px; width: 438px; height: 114px; animation: none;"  >
+<div class="lightModuleOuterContent lightModuleOuterContent476"><div class="fk-editor simpleText   "><font style="color: rgb(255, 255, 255); line-height: 50px;" color="rgba(255,255,255,1)"> <strong><span style="font-size: 40px;"><font face="微软雅黑, Microsoft YaHei">更好的服务于各大行业</font></span></strong> <p style="font-size: 12px;"><span style="font-size: 20px;"><font face="微软雅黑, Microsoft YaHei">我们创新，更好，更快，更完善。</font></span></p></font><div><div></div>
+</div></div></div>
+</div>
+<div id="module477" bannertitle="按钮" class="form form477 formStyle81" title="" style="position: absolute; top: 99px; left: 875px; width: 226px; border: 10px solid transparent; margin-top: -10px; margin-left: -10px; height: 57px; animation: none;"  >
+<div class="lightModuleOuterContent lightModuleOuterContent477"><div class="J_floatBtnBox floatBtnBox floatBtnStyle101 fk-newAM-FloatBtnStyle101"><a id="module477FlBtn" href="./product.html?colid=3&amp;pid=2" target="_blank" class="middle floatBtn" style="cursor: pointer;border-radius: 26px 26px 26px 26px;background: #ffffff;color:#ff6637;font-size:16px;">点击查看</a></div></div>
+</div>
+</div></div>
+</div></div>
+<div class="clearfloat clearfloat479"></div>
+</div></div>
+
+<div id="module431" class="form form431 formStyle87 fk-formPack  formIndex1" style="height: 683px;">
+<div class="J_packContent f-packContent f-packContent431 elemZone elemZoneModule" id="fk-packContent431">
+<div id="module432" class=" " style=" width: 1200px;padding-top: 50px;height: 66px;animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent432"> <div style="text-align: center;"><strong style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><span style="font-family: 微软雅黑;"><span style="color: rgb(255, 101, 55); font-size: 50px;">合作伙伴</span></span></strong><span style="color: rgb(0, 0, 0); font-size: 12px;"><span style="font-size: 24px; color: rgb(198, 198, 198);">Partner</span></span><br></div></div>
+</div>
+  
+<div id="module435" class="form  " title="" style="position: relative; width: 1052px;height: 623px; animation: none;margin: 0 auto;display: block;">
+<div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_435" class="float_in_img J_defImage " src="$!{basePath}/content/files/partner.png" alt="fw02" style="width: 1010px;margin-top: 0px;margin-left: 0px;height: 623px;"></div>
+</div>
+  
+</div>
+</div>
+
+
+ #parse("content/website/back/foot.vm")
+ 
+<link type="text/css" href="$!{basePath}/content/files/fontsIco.min.css" rel="stylesheet">
+ 
+	<script type="text/javascript">
+		$(document).ready(function(){
+		 
+			$(window).scroll(function() {
+				if ($(window).scrollTop() > 800)
+					$('#siteBackToTop_small_box').show();
+				else
+					$('#siteBackToTop_small_box').hide();
+			});
+			$('#siteBackToTop_small_box').click(function() {
+				$('html, body').animate({scrollTop: 0}, 1000);
+			});
+		});
+	</script>
+</body></html>

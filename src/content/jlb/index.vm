@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://club.meifang.com/hyzm_club/mfclub8888/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>友房网会员招募</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <link rel="stylesheet" type="text/css" href="$!{basePath}/content/jlb/css/zhaomu.css">
+    <style type="text/css">
+	    body{background-color:#fff;}
+		.wrap{ padding:0;}
+        .title { line-height:23px;}
+		.footer .purchase {background-color: #009875;}
+		.price .discount {color: #009875;}
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+ <div class="content">
+     <img src="$!{basePath}/content/jlb/img/02.png" alt="" style="width: 100%;">
+	 <img src="$!{basePath}/content/jlb/img/07.png" alt="" style="position: absolute; bottom: 4px;left:0px;width: 100%;">
+	 <img src="$!{basePath}/content/jlb/img/01.png" alt="" style="width: 100%;">
+     <div class="title">
+         已投资项目回报说明
+     </div>
+	 <p><img src="$!{basePath}/content/jlb/img/bg.jpg" alt="" style="width: 100%;"></p>
+	 <div class="title">
+         康老师
+     </div>
+     <div class="tabcont" style="overflow:hidden;">
+		 <p><img src="$!{basePath}/content/jlb/img/khjj.jpg" alt="" style="width: 100%;">
+		 </p><div class="rightpart">
+			 <img src="$!{basePath}/content/jlb/img/kh.jpg" alt="">
+		 </div>
+		 <p>在全国拥有数十套不动产，拥有多家上市房地产公司股票。
+		 最著名的言论有：
+		 房产投资就是参与国家建设并分享国家快速发展带来的红利机会；
+		 投资房产就是对房产周边确定性的国家配套资源做提前介入的手段，
+		 就是捕捉未来城市公共配套设施的增加带来的财富性机会；
+		 房产就是国家财富的民间体现，
+		 房价的本质就是房子周边的各种公共配套设施的价值总和，
+		 周边配套主要有五大支柱：教育、医疗、交通、产业以及商业。</p>
+     </div>
+	 <div class="title"  >
+          四大核心服务
+     </div>
+	 <div class="tabcont2">
+		<p><em>1.</em> 免费参加俱乐部在全国范围内的线下活动。</p>
+		<p><em>2.</em> 获得俱乐部各分站专业投资分析师一对一的在线指导服务。</p>
+		<p><em>3.</em> 跟随康老师提前在全国范围内布局价值洼地，享受房产升值带来的财富。</p> 
+		<p><em>4.</em> 尊享友房网大管家一站式服务，包括成本价装修、免费代理出租、免费转让等服务，
+		全面解决异地投资带来的资产管理问题。</p>
+     </div>
+	 <div class="title">
+         三大衍生服务
+     </div>
+	 <div class="tabcont3">
+	    <div class="line"></div>
+		<p class="dyg"><img src="$!{basePath}/content/jlb/img/zb.jpg" alt=""><em>1. 免费获得俱乐部内部分享的房产投资报告</em><img src="$!{basePath}/content/jlb/img/yb.jpg" alt=""></p>
+		<p>2. 免费获得相关的房产金融咨询服务和法律咨询服务</p>
+		<p>3. 免费在会员系统观看康老师及其他资深投资人士的视频以及康老师对政策的最新解读。</p> 
+	 </div>
+     <p><img src="$!{basePath}/content/jlb/img/zxln.jpg" alt="" style="width: 100%;"></p>
+	 <div class="tabcont4">
+		 <p>1. 友房网康老师投资俱乐部VIP会员服务费：1000元/2年。</p>
+		 <p>2. VIP会员不限次数享受上述四大核心服务以及三大衍生服务。</p> 
+	 </div>
+	 <div class="tabcont5">
+		<p>选友房，投好房!</p>
+		<p>友房网康老师投资俱乐部</p>
+		<p>全国房产投资爱好者的聚集圣地</p>
+		<p>最专业的分析、最前沿的政策解读</p>
+		<p>布局的近千套不动产已有可观的财富回报</p>
+		<p>为您的投资保驾护航，让您的财富不断增值</p>
+	 </div>
+ </div>
+</div>
+
+
+<div class="footer">
+#if($!{OPERATE_ACTIVITY_USER.mobile} eq "")
+    <div class="price">
+        <span class="discount">¥1000/2年</span>
+    </div>
+    <div class="purchase"><a id="injoin" href="$!{basePath}/jlb/toreg.html">立即加入</a></div>    
+#else
+    <div class="purchase"><a id="injoin" href="$!{basePath}/jlb/toreg.html">立即进入</a></div>   
+#end
+</div>
+<script src="$!{basePath}/content/jlb/js/jweixin-1.2.0.js"></script>
+<script src="$!{basePath}/content/jlb/js/jquery.min.js"></script>
+
+<script type="text/javascript">
+wx.config({debug: false,appId: '$!{appid}',timestamp: ${timestamp},nonceStr:'${noncestr}',signature:'${signature}',jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','chooseWXPay','hideOptionMenu','closeWindow','hideMenuItems','chooseImage','previewImage','uploadImage','downloadImage']});
+</script>
+<script type="text/javascript">
+
+	 wx.ready(function(){
+         var shareData = {
+            title:'友房网投资俱乐部会员招募',
+            desc:"友房网投资俱乐部会员招募火热进行中，详情点击查看！",
+            link:window.location.href,
+            imgUrl:"http://17387d727x.iok.la/P3-Web/content/jlb/img/meifang.jpg"
+         }
+         
+        wx.onMenuShareTimeline({
+            title: shareData.title,
+            link: shareData.link,
+            imgUrl: shareData.imgUrl,
+            success: function () { 
+            },
+            cancel: function () { 
+            }
+        });
+        wx.onMenuShareAppMessage({
+            title: shareData.title, // 分享标题
+            desc: shareData.desc, // 分享描述
+            link: shareData.link, // 分享链接
+            imgUrl: shareData.imgUrl, // 分享图标
+            type: '', 
+            dataUrl: '',
+            success: function () { 
+            },
+            cancel: function () { 
+            }
+        });
+        wx.onMenuShareQQ({
+            title: shareData.title,
+            desc: shareData.desc,
+            link: shareData.link,
+            imgUrl: shareData.imgUrl,
+            success: function () { 
+            },
+            cancel: function () { 
+            }
+        });
+    });
+	
+	
+	
+</script>
+<script>
+     $(function(){
+		var gongzhonghao = '';
+		var url = window.location.href;
+
+		if(url != 'http://club.meifang.com/hyzm_club.html'){
+			if(url.charAt(url.length-1) == '/'){
+				url = url.substr(0,url.length-1);
+			}
+			var lastIndex = url.lastIndexOf("/");
+			gongzhonghao = url.substr(lastIndex+1);
+		}else{
+	
+			gongzhonghao = '';
+		}
+	
+		$("#injoin").attr("href","$!{basePath}/jlb/toreg.html");
+	
+	});
+</script>
+</body></html>

@@ -1,0 +1,83 @@
+#parse("content/base/back/common/macro.vm")
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<form role="form" class="form-inline" action="$!{basePath}/messageHelp/back/messagephonecategory/list.html" method="post"  id="formSubmit">
+				<div  class="col-md-10" style="width:100%">
+								<div class="panel panel-default">
+								  <div class="panel-heading">砍价活动配置列表</div>
+								  <div class="panel-body">
+								  		<div class="search">
+															 <div class="form-group col-sm-3">
+															    <label for="categoryname" class="control-label col-sm-3 line34"></label>
+															     <div class="col-sm-8">
+															    <input type="text" name="categoryname" id="categoryname" value="$!{messagephonecategory.categoryname}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="isdelete" class="control-label col-sm-3 line34">0,1代表已删除)</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="isdelete" id="isdelete" value="$!{messagephonecategory.isdelete}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="creatuser" class="control-label col-sm-3 line34">用户ID</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="creatuser" id="creatuser" value="$!{messagephonecategory.creatuser}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="categorycol" class="control-label col-sm-3 line34"></label>
+															     <div class="col-sm-8">
+															    <input type="text" name="categorycol" id="categorycol" value="$!{messagephonecategory.categorycol}" class="form-control">
+															  	</div>
+															 </div>
+											  <button type="submit" class="btn btn-primary">搜  索</button>
+											  <div class="clearfix"></div>
+								  		</div>
+								  		<div id="legend">
+								          <legend  class="le"><button type="button" class="btn btn-primary" onclick="doUrl('$!{basePath}/messageHelp/back/messagephonecategory/toAdd.html')" >新增</button></legend> 
+								        </div>
+								        <table class="table table-striped">
+									        <thead>
+													<th></th>
+													<th>0,1代表已删除)</th>
+													<th>用户ID</th>
+													<th></th>
+						                			<th>操作</th>
+									        </thead>
+									        <tobody>
+									    	  #if($!{pageInfos})
+								                #foreach($!{info} in $!{pageInfos})
+									            	<tr>			
+																	<td>$!{info.categoryname}</td>
+																	<td>$!{info.isdelete}</td>
+																	<td>$!{info.creatuser}</td>
+																	<td>$!{info.categorycol}</td>
+										                <td class="last">
+							                			<a href="javascript:doUrl('$!{basePath}/messageHelp/back/messagephonecategory/toEdit.html?id=$!{info.id}')" >编辑</a>
+							                			<a href="javascript:delData('$!{basePath}/messageHelp/back/messagephonecategory/doDelete.html?id=$!{info.id}')">删除</a>
+							                			<a href="javascript:doUrl('$!{basePath}/messageHelp/back/messagephonecategory/toDetail.html?id=$!{info.id}')">详情</a>
+						                				</td>
+									           		</tr>
+									             #end
+									    	 #end
+									         </tobody>
+									    </table>
+										<div class="text-right">
+											<!--公用翻页代码-->
+							                #set($attr='formSubmit')
+							            	#showPageList($pageInfos $attr)
+							                <!--END公用翻页代码-->
+										</div>
+								  </div>	
+								</div>
+				</div>  
+				</form>
+		</div>
+	</div>
+</body>
+</html>

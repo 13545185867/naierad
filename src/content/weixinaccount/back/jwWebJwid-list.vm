@@ -1,0 +1,61 @@
+#parse("content/base/back/common/macro.vm")
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<form role="form" class="form-inline" action="$!{basePath}/weixinaccount/back/jwWebJwid/list.html" method="post"  id="formSubmit">
+				<div  class="col-md-10" style="width:100%">
+								<div class="panel panel-default">
+								  <div class="panel-heading">砍价活动配置列表</div>
+								  <div class="panel-body">
+								 
+								        <table class="table table-striped">
+									        <thead>
+													<th>原始ID</th>
+													<th>中文名称</th>
+													<th>Token</th>
+													<th>英文名称</th>
+													<th>邮箱</th>
+													<th>描述</th>
+													<th>APPID</th>
+													<th>APP密钥</th>
+													<th>类型  </th>
+						                			<th>操作</th>
+									        </thead>
+									        <tobody>
+									    	  #if($!{pageInfos})
+								                #foreach($!{info} in $!{pageInfos})
+									            	<tr>			
+																	<td>$!{info.jwid}</td>
+																	<td>$!{info.name}</td>
+																	<td>$!{info.accounttoken}</td>
+																	<td>$!{info.accountnumber}</td>
+																	<td>$!{info.accountemail}</td>
+																	<td>$!{info.accountdesc}</td>
+																	<td>$!{info.accountappid}</td>
+																	<td>$!{info.accountappsecret}</td>
+																	<td>#if("0" == "$!{jwWebJwid.accounttype}")订阅号 
+																	#else
+																	服务号
+																	#end</td>
+																	
+										                <td class="last">
+							                			<a href="javascript:doUrl('$!{basePath}/weixinaccount/back/jwWebJwid/toEdit.html?id=$!{info.id}')" >编辑</a>
+							                			<a href="javascript:delData('$!{basePath}/weixinaccount/back/jwWebJwid/doDelete.html?id=$!{info.id}')">删除</a>
+							                			<a href="javascript:doUrl('$!{basePath}/weixinaccount/back/jwWebJwid/toDetail.html?id=$!{info.id}')">详情</a>
+						                				</td>
+									           		</tr>
+									             #end
+									    	 #end
+									         </tobody>
+									    </table>
+								  </div>	
+								</div>
+				</div>  
+				</form>
+		</div>
+	</div>
+</body>
+</html>

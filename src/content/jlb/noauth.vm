@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--headTrap<body></body><head></head><html></html>--><html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+
+        <title>系统提示</title>
+        
+<link   rel="stylesheet" type="text/css" href="$!{basePath}/content/jlb/css/weui.min.css"/>
+<link  rel="stylesheet" type="text/css" href="$!{basePath}/content/jlb/css/w_safe3301b4.css"/>
+    </head>
+    <body id="" class="zh_CN ">
+        
+<div class="page_msg_t extra_t">
+    <div class="icon_area"><i class="icon_msg warn"></i></div>
+    <div class="text_area_t">
+		<div class="text">
+					<h1 class="title"> 非付费用户，无权查看！
+						</h1>
+				</div>
+ 
+ 
+		<p class="tips"> <a href="$!{basePath}/content/jlb/memberruletip.html">点击升级为付费用户</a> </p>
+    </div>
+</div>
+<div class="page_msg_t js_result" style="display:none">
+    <i class="ic suc"></i>
+    <div class="text_area_t">
+		<div class="text">
+			<h1 class="title"></h1>
+		</div>
+    </div>
+    <div class="opr_area">
+        <p class="btn_area">
+            <a href="javascript:" class="btn btn_primary" id="js_allow">确定</a>
+        </p>
+    </div>
+</div>
+
+
+    </body>
+     </html>
+

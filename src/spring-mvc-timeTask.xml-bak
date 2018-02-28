@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd"
+	>
+
+
+	<!-- 定时任务配置 scheduler 方式 注解 暂时不支持动态更新 
+	<context:component-scan base-package="org.jeecgframework.core.timer" />
+	 <context:component-scan base-package="com.jeecg.p3.oauth2.task" />
+default-autowire="byName" default-lazy-init="false"-->
+
+	<bean id="weixinAccountTokenTask" class="com.jeecg.p3.oauth2.task.WeixinAccountTokenTask"></bean>
+	
+	
+	<bean id="quartzManagerBean" class="com.quartz.QuartzManager">
+        <property name="scheduler" ref="schedulerManager" />
+    </bean>
+    <bean id="quartzManagerJobDetail"
+        class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="quartzManagerBean" />
+        <property name="targetMethod" value="reScheduleJob" />
+        <property name="concurrent" value="false" />
+    </bean>
+    <!-- 主定时计划 -->
+    <bean id="quartzManagerTrigger"
+        class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+        <property name="jobDetail" ref="quartzManagerJobDetail" />
+        <!-- 延时1分钟 执行任务 -->
+        <property name="startDelay" value="1000" />
+        <!-- 任务执行周期 5分钟 -->
+        <property name="repeatInterval" value="6000" />
+    </bean>
+    <!-- 总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序  -->
+    <bean id="schedulerManager" lazy-init="false" autowire="no"
+        class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="quartzManagerTrigger" />
+            </list>
+        </property>
+    </bean>
+
+</beans>

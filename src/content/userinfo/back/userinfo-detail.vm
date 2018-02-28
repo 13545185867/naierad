@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">详情</div>
+				  	<div class="panel-body">
+				   		<form class="form-horizontal" role="form">
+							  <fieldset disabled>
+							  																 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">微信ID</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{userinfo.openid}" name="openid" id="openid" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">图像</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{userinfo.headpic}" name="headpic" id="headpic" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">微信名称</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{userinfo.nickname}" name="nickname" id="nickname" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">省份</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{userinfo.province}" name="province" id="province" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">城市</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{userinfo.city}" name="city" id="city" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">性别</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{userinfo.sex}" name="sex" id="sex" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">国家</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{userinfo.country}" name="country" id="country" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">关注状态 </label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{userinfo.subscribe}" name="subscribe" id="subscribe" class="form-control" />
+													    </div>
+													  </div>
+													  <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">关注公众号时间</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!dateTool.format("yyyy-MM-dd",$!{userinfo.subscribeTime})" name="subscribeTime" id="subscribeTime" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">真实姓名</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{userinfo.realname}" name="realname" id="realname" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">联系地址</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{userinfo.addr}" name="addr" id="addr" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">会员编号</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{userinfo.code}" name="code" id="code" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">职业</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{userinfo.profession}" name="profession" id="profession" class="form-control" />
+													    </div>
+													  </div>
+													  <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;"></label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!dateTool.format("yyyy-MM-dd",$!{userinfo.createtime})" name="createtime" id="createtime" class="form-control" />
+													    </div>
+													  </div>
+													 <div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-1 control-label" style="text-align:left;">手机号码</label>
+													    <div class="col-sm-2">
+													      <input type="text" value="$!{userinfo.mobile}" name="mobile" id="mobile" class="form-control" />
+													    </div>
+													  </div>
+							  </fieldset>
+							  			<div class="form-group mno">
+											<div class="col-sm-offset-1 col-sm-6">
+												<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/userinfo/back/userinfo/list.html')">返回</button>
+        									 </div>
+        							    </div>
+						</form>
+					</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

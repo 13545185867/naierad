@@ -1,0 +1,201 @@
+ <div style="height:222px;width:100%; border-top-style: solid;border-width: 2px;border-color: #ff6637;background: #282828;  ">
+ <div class="footer">
+  <div class="commonweb footerWeb">
+    <ul class="clearfix yj_chan" id="wwfootone" style="padding-left:100px;">
+     <li class="li1">
+        <h3>
+          <a href="#">产品与服务</a>
+          <em></em>
+        </h3>
+        <ul class="wwfootdrop er_chan" id="wwfoottwo">
+          
+          <li>
+            <h4>
+              <a href="#">写真喷绘</a>
+              <em></em>
+            </h4>
+            
+          </li>
+          
+          <li>
+            <h4>
+              <a href="#">设计印刷</a>
+              <em></em>
+            </h4>
+            
+          </li>
+          
+          <li>
+            <h4>
+              <a href="#">PVC雕刻</a>
+              <em></em>
+            </h4>
+            
+          </li>
+          
+          
+<li>
+            <h4>
+              <a href="#">LED电子屏</a>
+              <em></em>
+            </h4>
+            
+          </li>
+<li>
+            <h4>
+              <a href="#">广告招牌</a>
+              <em></em>
+            </h4>
+            
+          </li>
+<li>
+            <h4>
+              <a href="#">水晶/发光字</a>
+              <em></em>
+            </h4>
+            
+          </li>
+<li>
+            <h4>
+              <a href="#">程序开发</a>
+              <em></em>
+            </h4>
+            
+          </li>
+          
+        </ul>
+      </li>
+      
+      <li class="li1">
+        <h3>
+          <a href="#">关于耐尔</a>
+          <em></em>
+        </h3>
+        <ul class="wwfootdrop er_chan" id="wwfoottwo">
+          
+          <li>
+            <h4>
+              <a href="#">公司概况</a>
+              <em style="display: none;"></em>
+            </h4>
+            
+          </li>
+          
+          <li>
+            <h4>
+              <a href="#">管理架构</a>
+              <em style="display: none;"></em>
+            </h4>
+            
+          </li>
+          
+          <li>
+            <h4>
+              <a href="#">耐尔团队</a>
+              <em style="display: none;"></em>
+            </h4>
+            
+          </li>
+          
+          <li>
+            <h4>
+              <a href="#">耐尔设备</a>
+              <em></em>
+            </h4>
+            
+          </li>
+    
+        </ul>
+      </li><li class="li1">
+        <h3>
+          <a href="#">广告资源</a>
+          <em></em>
+        </h3>
+        <ul class="wwfootdrop er_chan" id="wwfoottwo">
+          
+          <li>
+            <h4>
+              <a href="#">广告位</a>
+              <em style="display: none;"></em>
+            </h4>
+            
+          </li>
+          
+          <li>
+            <h4>
+              <a href="#">广告车</a>
+              <em style="display: none;"></em>
+            </h4>
+            
+          </li>
+   
+        </ul>
+      </li>
+ 
+      <li class="li1">
+        <h3>
+          <a href="#" class="cur">公司动态</a>
+          
+        </h3>
+        <ul class="wwfootdrop er_chan" id="wwfoottwo">
+          
+          <li>
+            <h4>
+              <a href="#" class="cur">新闻动态</a>
+              
+            </h4>
+            
+          </li>
+          
+          <li>
+            <h4>
+              <a href="#">招聘精英</a>
+              
+            </h4>
+            
+          </li>
+    
+        </ul>
+      </li>
+      
+      <li class="li1">
+        <h3>
+          <a href="#">客户案例</a>
+          
+        </h3>
+        
+      </li>
+<li class="li1">
+        <h3>
+          <a href="#">联系我们</a>
+          
+        </h3>
+        
+      </li>
+  
+      <!--栏目end-->
+    
+      <li class="li2">
+        <p>扫描二维码，关注我们</p>
+        <p class="code-img">
+          <img src="$!{basePath}/content/files/qrcode.jpg">
+        </p>
+        
+<p class="tel">咨询热线：<a href="tel:0712 7180399"> <span style="font-size:17px">0712-7180399</span></a>
+        </p><p class="tel">咨询热线：<a href="tel: 18872098899"> <span style="font-size:17px">&nbsp;18872098899</span></a>
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="footerBottom">
+  <div class="commonweb clearfix">
+     
+    <p class="footer-right">
+      © 2017 大悟县耐尔广告有限公司 版权所有  |  鄂ICP备17025288号-1 |
+    </p>
+  </div>
+</div>
+	</div>
+ 

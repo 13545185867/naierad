@@ -1,0 +1,52 @@
+#parse("content/base/back/common/macro.vm")
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<form role="form" class="form-inline" action="$!{basePath}/activitybookrecord/back/activitybookrecord/list.html" method="post"  id="formSubmit">
+				<div  class="col-md-10" style="width:100%">
+								<div class="panel panel-default">
+								  <div class="panel-heading">报名人员列表</div>
+								  <div class="panel-body">
+								  		<div class="search" style="display:none;">
+															    <input type="hidden" name="activityId" id="activityId" value="$!{activitybookrecord.activityid}" class="form-control">
+								  		</div>
+								  		 
+								        <table class="table table-striped">
+									        <thead>
+													<th></th>
+													<th>姓名</th>
+													<th>报名时间</th>
+													<th>报名人数</th>
+													<th>联系电话</th>
+									        </thead>
+									        <tobody>
+									    	  #if($!{pageInfos})
+								                #foreach($!{info} in $!{pageInfos})
+									            	<tr>			
+									            	<td><img src="$!{info.deatilurl}" style="border-radius: 50px;width:55px;height:55px;"></td>
+																	<td>$!{info.activitytitle}</td>
+																	<td>$!dateTool.format("yyyy-MM-dd HH:mm:ss",$!{info.booktime})</td>
+																	<td>$!{info.bookpersoncount}人</td>
+																	<td>$!{info.openid}</td>
+									           		</tr>
+									             #end
+									    	 #end
+									         </tobody>
+									    </table>
+										<div class="text-right">
+											<!--公用翻页代码-->
+							                #set($attr='formSubmit')
+							            	#showPageList($pageInfos $attr)
+							                <!--END公用翻页代码-->
+										</div>
+								  </div>	
+								</div>
+				</div>  
+				</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow: hidden;"><!--<![endif]--><!-- BEGIN HEAD --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Metro风格响应式后台管理系统模板MetroAdmin - JS代码网</title>
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   <meta content="" name="description">
+   <meta content="Mosaddek" name="author">
+   <link href="./Metro_files/bootstrap.min.css" rel="stylesheet">
+   <link href="./Metro_files/bootstrap-responsive.min.css" rel="stylesheet">
+
+   <link href="./Metro_files/font-awesome.css" rel="stylesheet">
+   <link href="./Metro_files/style.css" rel="stylesheet">
+   <link href="./Metro_files/style-responsive.css" rel="stylesheet">
+   <link href="./Metro_files/style-default.css" rel="stylesheet" id="style_color">
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="fixed-top">
+   <!-- BEGIN HEADER -->
+   <div id="header" class="navbar navbar-inverse navbar-fixed-top">
+       <!-- BEGIN TOP NAVIGATION BAR -->
+       <div class="navbar-inner">
+           <div class="container-fluid">
+               <!--BEGIN SIDEBAR TOGGLE-->
+               <div class="sidebar-toggle-box hidden-phone">
+                   <div class="icon-reorder tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+               </div>
+               <!--END SIDEBAR TOGGLE-->
+               <!-- BEGIN LOGO -->
+               <a class="brand" href="">
+                   <img src="./Metro_files/logo.png" alt="Metro Lab">
+               </a>
+               <!-- END LOGO -->
+               <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+               <a class="btn btn-navbar collapsed" id="main_menu_trigger" data-toggle="collapse" data-target=".nav-collapse">
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="arrow"></span>
+               </a>
+               <!-- END RESPONSIVE MENU TOGGLER -->
+               <div id="top_menu" class="nav notify-row">
+                   <!-- BEGIN NOTIFICATION -->
+                   <ul class="nav top-menu">
+                       <!-- BEGIN SETTINGS -->
+                       <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                               <i class="icon-tasks"></i>
+                               <span class="badge badge-important">6</span>
+                           </a>
+                           <ul class="dropdown-menu extended tasks-bar">
+                               <li>
+                                   <p>你有6条任务</p>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <div class="task-info">
+                                         <div class="desc">控制台</div>
+                                         <div class="percent">44%</div>
+                                       </div>
+                                       <div class="progress progress-striped active no-margin-bot">
+                                           <div class="bar" style="width: 44%;"></div>
+                                       </div>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <div class="task-info">
+                                           <div class="desc">数据库更新</div>
+                                           <div class="percent">65%</div>
+                                       </div>
+                                       <div class="progress progress-striped progress-success active no-margin-bot">
+                                           <div class="bar" style="width: 65%;"></div>
+                                       </div>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <div class="task-info">
+                                           <div class="desc">手机开发进度</div>
+                                           <div class="percent">87%</div>
+                                       </div>
+                                       <div class="progress progress-striped progress-info active no-margin-bot">
+                                           <div class="bar" style="width: 87%;"></div>
+                                       </div>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <div class="task-info">
+                                           <div class="desc">手机App进度</div>
+                                           <div class="percent">33%</div>
+                                       </div>
+                                       <div class="progress progress-striped progress-warning active no-margin-bot">
+                                           <div class="bar" style="width: 33%;"></div>
+                                       </div>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <div class="task-info">
+                                           <div class="desc">控制台</div>
+                                           <div class="percent">90%</div>
+                                       </div>
+                                       <div class="progress progress-striped progress-danger active no-margin-bot">
+                                           <div class="bar" style="width: 90%;"></div>
+                                       </div>
+                                   </a>
+                               </li>
+                               <li class="external">
+                                   <a href="#">查看所有任务</a>
+                               </li>
+                           </ul>
+                       </li>
+                       <!-- END SETTINGS -->
+                       
+                       <!-- END INBOX DROPDOWN -->
+                       <!-- BEGIN NOTIFICATION DROPDOWN -->
+                       <li class="dropdown" id="header_notification_bar">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                               <i class="icon-bell-alt"></i>
+                               <span class="badge badge-warning">7</span>
+                           </a>
+                           <ul class="dropdown-menu extended notification">
+                               <li>
+                                   <p>你有7条提示信息</p>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <span class="label label-important"><i class="icon-bolt"></i></span>
+                                       Server #3 overloaded.
+                                       <span class="small italic">34 mins</span>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <span class="label label-warning"><i class="icon-bell"></i></span>
+                                       Server #10 not respoding.
+                                       <span class="small italic">1 Hours</span>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <span class="label label-important"><i class="icon-bolt"></i></span>
+                                       Database overloaded 24%.
+                                       <span class="small italic">4 hrs</span>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <span class="label label-success"><i class="icon-plus"></i></span>
+                                       New user registered.
+                                       <span class="small italic">Just now</span>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">
+                                       <span class="label label-info"><i class="icon-bullhorn"></i></span>
+                                       Application error.
+                                       <span class="small italic">10 mins</span>
+                                   </a>
+                               </li>
+                               <li>
+                                   <a href="#">See all notifications</a>
+                               </li>
+                           </ul>
+                       </li>
+                       <!-- END NOTIFICATION DROPDOWN -->
+
+                   </ul>
+               </div>
+               <!-- END  NOTIFICATION -->
+               <div class="top-nav ">
+                   <ul class="nav pull-right top-menu">
+                       <!-- BEGIN SUPPORT -->
+                       <li class="dropdown mtop5">
+
+                           <a class="dropdown-toggle element" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Chat">
+                               <i class="icon-comments-alt"></i>
+                           </a>
+                       </li>
+                       <li class="dropdown mtop5">
+                           <a class="dropdown-toggle element" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Help">
+                               <i class="icon-headphones"></i>
+                           </a>
+                       </li>
+                       <!-- END SUPPORT -->
+                       <!-- BEGIN USER LOGIN DROPDOWN -->
+                       <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                               <img src="./Metro_files/default_family.jpg" style="border-radius: 50px;width:35px;height:35px;" alt="">
+                               <span class="username">Jhon Doe</span>
+                               <b class="caret"></b>
+                           </a>
+                           <ul class="dropdown-menu extended logout">
+                               <li><a href="#"><i class="icon-user"></i>我的资料</a></li>
+                               <li><a href="#"><i class="icon-cog"></i>我的设置</a></li>
+                               <li><a href="http://www.js-css.cn/divcss/admin/metro/login.html"><i class="icon-key"></i>退出</a></li>
+                           </ul>
+                       </li>
+                       <!-- END USER LOGIN DROPDOWN -->
+                   </ul>
+                   <!-- END TOP NAVIGATION MENU -->
+               </div>
+           </div>
+       </div>
+       <!-- END TOP NAVIGATION BAR -->
+   </div>
+   <!-- END HEADER -->
+   <!-- BEGIN CONTAINER -->
+   <div id="container" class="row-fluid">
+      <!-- BEGIN SIDEBAR -->
+      <div class="sidebar-scroll" tabindex="5000" style="overflow: hidden; outline: none;">
+        <div id="sidebar" class="nav-collapse collapse">
+
+         <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+         <div class="navbar-inverse">
+            <form class="navbar-search visible-phone">
+               <input type="text" class="search-query" placeholder="Search">
+            </form>
+         </div>
+         <!-- END RESPONSIVE QUICK SEARCH FORM -->
+         <!-- BEGIN SIDEBAR MENU -->
+          <ul class="sidebar-menu">
+              <li class="sub-menu active">
+                  <a class="" href="">
+                      <i class="icon-dashboard"></i>
+                      <span>控制台</span>
+                  </a>
+              </li>
+              <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-book"></i>
+                      <span>短信群发助手</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+				                        <li><a class="" href="qf.html"  target="mainFrame">短信群发</a></li>
+                      <li><a class="" href="mb.html"  target="mainFrame">短信模板</a></li>
+                      <li><a class="" href="yl.html" target="mainFrame">用量详情</a></li>
+                      <li><a class="" href="tj.html" target="mainFrame">服务统计</a></li>
+                     <li><a class="" href="txl.html" target="mainFrame">通讯录</a></li>
+                  </ul>
+              </li>
+			   <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-th"></i>
+                      <span>投票类</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" href="">微信投票</a></li>
+ 
+                  </ul>
+              </li>
+              <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-cogs"></i>
+                      <span>抽奖类</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" href="">大转盘</a></li>
+                      <li><a class="" href="">九宫格</a></li>
+                      <li><a class="" href="">摇一摇</a></li>
+                  </ul>
+              </li>
+              <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-tasks"></i>
+                      <span>营销类</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" href="">助力砍价</a></li>
+                
+                  </ul>
+              </li>
+              <li class="sub-menu">
+                  <a class="" href="javascript:;">
+                      <i class="icon-trophy"></i>
+                      <span>奖品核销</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a href="" class="">通用片段</a></li>
+                      <li><a href="" class="">可拖拽片段</a></li>
+                  </ul>
+              </li>
+              <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-fire"></i>
+                      <span>个人中心</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" href="">个人资料</a></li>
+                      <li><a class="" href="">公众号绑定</a></li>
+					   <li><a class="" href="">我的权益</a></li>
+					                         <li><a class="" href="">我的订单</a></li>
+											  <li><a class="" href="">购买套餐</a></li>
+											   <li><a class="" href="">我的活动</a></li>
+				 <li><a class="" href="">短信余量</a></li>
+                  </ul>
+              </li>
+
+          </ul>
+         <!-- END SIDEBAR MENU -->
+      </div>
+      </div>
+      <!-- END SIDEBAR -->
+      <!-- BEGIN PAGE -->  
+      <div id="main-content">
+         <!-- BEGIN PAGE CONTAINER-->
+         <div class="container-fluid">
+
+		 <iframe frameborder="0" id="mainFrame" name="mainFrame" src="overview.html" style="width:100%;height:530px;padding-top:10px;"></iframe>
+            <!-- BEGIN PAGE HEADER-->   
+     
+         </div>
+         <!-- END PAGE CONTAINER-->
+      </div>
+      <!-- END PAGE -->  
+   </div>
+   <!-- END CONTAINER -->
+
+   <!-- BEGIN FOOTER -->
+   <div id="footer">
+       2017 © 百花网络科技有限公司.
+   </div>
+   <!-- END FOOTER -->
+
+   <!-- BEGIN JAVASCRIPTS -->
+   <!-- Load javascripts at bottom, this will reduce page load time -->
+   <script src="./Metro_files/jquery-1.8.3.min.js"></script>
+   <script src="./Metro_files/jquery.nicescroll.js" type="text/javascript"></script>
+   <script type="text/javascript" src="./Metro_files/jquery-ui-1.9.2.custom.min.js"></script>
+   <script type="text/javascript" src="./Metro_files/jquery.slimscroll.min.js"></script>
+   <script src="./Metro_files/bootstrap.min.js"></script>
+   <script src="./Metro_files/jquery.scrollTo.min.js"></script>
+   <script src="./Metro_files/common-scripts.js"></script>
+   <div id="ascrail2000" class="nicescroll-rails" style="width: 5px; z-index: 100; background: rgb(64, 64, 64); cursor: default; position: fixed; top: 60px; left: 175px; height: 613px; opacity: 0;"><div style="position: relative; top: 0px; float: right; width: 5px; height: 596px; background-color: rgb(74, 139, 194); background-clip: padding-box; border-radius: 0px;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails" style="height: 5px; z-index: 100; background: rgb(64, 64, 64); top: 668px; left: 0px; position: fixed; cursor: default; display: none; width: 175px; opacity: 0;"><div style="position: relative; top: 0px; height: 5px; width: 180px; background-color: rgb(74, 139, 194); background-clip: padding-box; border-radius: 0px;"></div></div><div id="ascrail2001" class="nicescroll-rails" style="width: 8px; z-index: 1000; background: rgb(64, 64, 64); cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; opacity: 0;"><div style="position: relative; top: 0px; float: right; width: 8px; height: 171px; background-color: rgb(74, 139, 194); background-clip: padding-box; border-radius: 0px;"></div></div><div id="ascrail2001-hr" class="nicescroll-rails" style="height: 8px; z-index: 1000; background: rgb(64, 64, 64); position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;"><div style="position: relative; top: 0px; height: 8px; width: 1366px; background-color: rgb(74, 139, 194); background-clip: padding-box; border-radius: 0px;"></div></div>
+   <!--script for this page only-->
+
+</body></html>

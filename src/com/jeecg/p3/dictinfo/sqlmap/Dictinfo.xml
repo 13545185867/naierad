@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.dictinfo.entity.Dictinfo">
+
+	<!-- Result Map-->
+	<resultMap id="Dictinfo" type="com.jeecg.p3.dictinfo.entity.Dictinfo" >
+		<result column="id" property="id" jdbcType="INTEGER"/>
+		<result column="typeid" property="typeid" jdbcType="INTEGER"/>
+		<result column="dictcode" property="dictcode" jdbcType="VARCHAR"/>
+		<result column="dictname" property="dictname" jdbcType="VARCHAR"/>
+		<result column="dictinfocol0" property="dictinfocol0" jdbcType="VARCHAR"/>
+		<result column="dictinfocol1" property="dictinfocol1" jdbcType="VARCHAR"/>
+		<result column="dictinfocol2" property="dictinfocol2" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.typeid != null and query.typeid != ''" >
+	  		 		/* 字典类型ID */
+			    	AND d.typeid =  #{query.typeid,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.dictcode != null and query.dictcode != ''" >
+	  		 		/* 字典代码 */
+			    	AND d.dictcode =  #{query.dictcode,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.dictname != null and query.dictname != ''" >
+	  		 		/* 字典名称 */
+			    	AND d.dictname =  #{query.dictname,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.dictinfocol0 != null and query.dictinfocol0 != ''" >
+	  		 		/*  */
+			    	AND d.dictinfocol0 =  #{query.dictinfocol0,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.dictinfocol1 != null and query.dictinfocol1 != ''" >
+	  		 		/*  */
+			    	AND d.dictinfocol1 =  #{query.dictinfocol1,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.dictinfocol2 != null and query.dictinfocol2 != ''" >
+	  		 		/*  */
+			    	AND d.dictinfocol2 =  #{query.dictinfocol2,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+
+
+	<!-- 查询条件 -->
+	<sql id="wherecontation1">
+		<trim  suffixOverrides="," >
+				 <if test=" typeid != null and  typeid != ''" >
+	  		 		/* 字典类型ID */
+			    	AND d.typeid =  #{ typeid,jdbcType=INTEGER}
+				 </if>
+				 <if test=" dictcode != null and  dictcode != ''" >
+	  		 		/* 字典代码 */
+			    	AND d.dictcode =  #{ dictcode,jdbcType=VARCHAR}
+				 </if>
+				 <if test=" dictname != null and  dictname != ''" >
+	  		 		/* 字典名称 */
+			    	AND d.dictname =  #{ dictname,jdbcType=VARCHAR}
+				 </if>
+				 <if test=" dictinfocol0 != null and  dictinfocol0 != ''" >
+	  		 		/*  */
+			    	AND d.dictinfocol0 =  #{ dictinfocol0,jdbcType=VARCHAR}
+				 </if>
+				 <if test=" dictinfocol1 != null and  dictinfocol1 != ''" >
+	  		 		/*  */
+			    	AND d.dictinfocol1 =  #{ dictinfocol1,jdbcType=VARCHAR}
+				 </if>
+				 <if test=" dictinfocol2 != null and  dictinfocol2 != ''" >
+	  		 		/*  */
+			    	AND d.dictinfocol2 =  #{ dictinfocol2,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.dictinfo.entity.Dictinfo.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  dictinfo   /* 数据字典信息表 */  
+					(	
+                       typeid                        /* 字典类型ID */ 
+                     ,dictcode                      /* 字典代码 */ 
+                     ,dictname                      /* 字典名称 */ 
+                     ,dictinfocol0                  /*  */ 
+                     ,dictinfocol1                  /*  */ 
+                     ,dictinfocol2                  /*  */ 
+					)
+			values (
+                       #{typeid,jdbcType=INTEGER}                        /* 字典类型ID */ 
+                     ,#{dictcode,jdbcType=VARCHAR}                      /* 字典代码 */ 
+                     ,#{dictname,jdbcType=VARCHAR}                      /* 字典名称 */ 
+                     ,#{dictinfocol0,jdbcType=VARCHAR}                  /*  */ 
+                     ,#{dictinfocol1,jdbcType=VARCHAR}                  /*  */ 
+                     ,#{dictinfocol2,jdbcType=VARCHAR}                  /*  */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.dictinfo.entity.Dictinfo.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   dictinfo  	/* 数据字典信息表 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="typeid != null">
+		    		 		/* 字典类型ID */ 
+	    		 			typeid = #{typeid,jdbcType=INTEGER},
+						 </if>
+						 <if test="dictcode != null">
+		    		 		/* 字典代码 */ 
+	    		 			dictcode = #{dictcode,jdbcType=VARCHAR},
+						 </if>
+						 <if test="dictname != null">
+		    		 		/* 字典名称 */ 
+	    		 			dictname = #{dictname,jdbcType=VARCHAR},
+						 </if>
+						 <if test="dictinfocol0 != null">
+		    		 		/*  */ 
+	    		 			dictinfocol0 = #{dictinfocol0,jdbcType=VARCHAR},
+						 </if>
+						 <if test="dictinfocol1 != null">
+		    		 		/*  */ 
+	    		 			dictinfocol1 = #{dictinfocol1,jdbcType=VARCHAR},
+						 </if>
+						 <if test="dictinfocol2 != null">
+		    		 		/*  */ 
+	    		 			dictinfocol2 = #{dictinfocol2,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.dictinfo.entity.Dictinfo.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Dictinfo">
+		   SELECT   
+                   d.id                            /* 字典ID */ 
+                  ,d.typeid                        /* 字典类型ID */ 
+                  ,d.dictcode                      /* 字典代码 */ 
+                  ,d.dictname                      /* 字典名称 */ 
+                  ,d.dictinfocol0                  /*  */ 
+                  ,d.dictinfocol1                  /*  */ 
+                  ,d.dictinfocol2                  /*  */ 
+		   FROM   dictinfo      AS d      /* 数据字典信息表 */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.dictinfo.entity.Dictinfo.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM dictinfo 	/* 数据字典信息表 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.dictinfo.entity.Dictinfo.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  dictinfo      AS d      /* 数据字典信息表 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.dictinfo.entity.Dictinfo.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Dictinfo">
+		    SELECT 
+                   d.id                            /* 字典ID */ 
+                  ,d.typeid                        /* 字典类型ID */ 
+                  ,d.dictcode                      /* 字典代码 */ 
+                  ,d.dictname                      /* 字典名称 */ 
+                  ,d.dictinfocol0                  /*  */ 
+                  ,d.dictinfocol1                  /*  */ 
+                  ,d.dictinfocol2                  /*  */ 
+		FROM   	 dictinfo      AS d      /* 数据字典信息表 */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+	
+		<select id="queryList" parameterType="Object"  resultMap="Dictinfo">
+		    SELECT 
+                   d.id                            /* 字典ID */ 
+                  ,d.typeid                        /* 字典类型ID */ 
+                  ,d.dictcode                      /* 字典代码 */ 
+                  ,d.dictname                      /* 字典名称 */ 
+                  ,d.dictinfocol0                  /*  */ 
+                  ,d.dictinfocol1                  /*  */ 
+                  ,d.dictinfocol2                  /*  */ 
+		FROM   	 dictinfo      AS d      /* 数据字典信息表 */ 
+		WHERE 1=1
+		   <include refid="wherecontation1"/>
+	</select>
+	
+</mapper>

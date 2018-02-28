@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.userservice.entity.Userservice">
+
+	<!-- Result Map-->
+	<resultMap id="Userservice" type="com.jeecg.p3.userservice.entity.Userservice" >
+		<result column="id" property="id" jdbcType="INTEGER"/>
+		<result column="userid" property="userid" jdbcType="VARCHAR"/>
+		<result column="serviceid" property="serviceid" jdbcType="INTEGER"/>
+		<result column="starttime" property="starttime" jdbcType="TIMESTAMP"/>
+		<result column="endtime" property="endtime" jdbcType="TIMESTAMP"/>
+		<result column="createcount" property="createcount" jdbcType="INTEGER"/>
+		<result column="userservicecol0" property="userservicecol0" jdbcType="VARCHAR"/>
+		<result column="userservicecol1" property="userservicecol1" jdbcType="VARCHAR"/>
+		<result column="userservicecol2" property="userservicecol2" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.userid != null and query.userid != ''" >
+	  		 		/* 用户ID */
+			    	AND u.userid =  #{query.userid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.serviceid != null and query.serviceid != ''" >
+	  		 		/* 服务ID */
+			    	AND u.serviceid =  #{query.serviceid,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.starttime != null and query.starttime != ''" >
+	  		 		/* 服务开始时间 */
+			    	AND u.starttime =  #{query.starttime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.endtime != null and query.endtime != ''" >
+	  		 		/* 服务截止时间 */
+			    	AND u.endtime =  #{query.endtime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.createcount != null and query.createcount != ''" >
+	  		 		/* 可创建活动次数 */
+			    	AND u.createcount =  #{query.createcount,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.userservicecol0 != null and query.userservicecol0 != ''" >
+	  		 		/*  */
+			    	AND u.userservicecol0 =  #{query.userservicecol0,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.userservicecol1 != null and query.userservicecol1 != ''" >
+	  		 		/*  */
+			    	AND u.userservicecol1 =  #{query.userservicecol1,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.userservicecol2 != null and query.userservicecol2 != ''" >
+	  		 		/*  */
+			    	AND u.userservicecol2 =  #{query.userservicecol2,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.userservice.entity.Userservice.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  userservice   /* 用户服务详细表 */  
+					(	
+                       userid                        /* 用户ID */ 
+                     ,serviceid                     /* 服务ID */ 
+                     ,starttime                     /* 服务开始时间 */ 
+                     ,endtime                       /* 服务截止时间 */ 
+                     ,createcount                   /* 可创建活动次数 */ 
+                     ,userservicecol0               /*  */ 
+                     ,userservicecol1               /*  */ 
+                     ,userservicecol2               /*  */ 
+					)
+			values (
+                      #{userid,jdbcType=VARCHAR}                        /* 用户ID */ 
+                     ,#{serviceid,jdbcType=INTEGER}                     /* 服务ID */ 
+                     ,#{starttime,jdbcType=TIMESTAMP}                     /* 服务开始时间 */ 
+                     ,#{endtime,jdbcType=TIMESTAMP}                       /* 服务截止时间 */ 
+                     ,#{createcount,jdbcType=INTEGER}                   /* 可创建活动次数 */ 
+                     ,#{userservicecol0,jdbcType=VARCHAR}               /*  */ 
+                     ,#{userservicecol1,jdbcType=VARCHAR}               /*  */ 
+                     ,#{userservicecol2,jdbcType=VARCHAR}               /*  */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.userservice.entity.Userservice.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   userservice  	/* 用户服务详细表 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="userid != null">
+		    		 		/* 用户ID */ 
+	    		 			userid = #{userid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="serviceid != null">
+		    		 		/* 服务ID */ 
+	    		 			serviceid = #{serviceid,jdbcType=INTEGER},
+						 </if>
+						 <if test="starttime != null">
+		    		 		/* 服务开始时间 */ 
+	    		 			starttime = #{starttime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="endtime != null">
+		    		 		/* 服务截止时间 */ 
+	    		 			endtime = #{endtime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="createcount != null">
+		    		 		/* 可创建活动次数 */ 
+	    		 			createcount = #{createcount,jdbcType=INTEGER},
+						 </if>
+						 <if test="userservicecol0 != null">
+		    		 		/*  */ 
+	    		 			userservicecol0 = #{userservicecol0,jdbcType=VARCHAR},
+						 </if>
+						 <if test="userservicecol1 != null">
+		    		 		/*  */ 
+	    		 			userservicecol1 = #{userservicecol1,jdbcType=VARCHAR},
+						 </if>
+						 <if test="userservicecol2 != null">
+		    		 		/*  */ 
+	    		 			userservicecol2 = #{userservicecol2,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.userservice.entity.Userservice.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Userservice">
+		   SELECT   
+                   u.id                            /*  */ 
+                  ,u.userid                        /* 用户ID */ 
+                  ,u.serviceid                     /* 服务ID */ 
+                  ,u.starttime                     /* 服务开始时间 */ 
+                  ,u.endtime                       /* 服务截止时间 */ 
+                  ,u.createcount                   /* 可创建活动次数 */ 
+                  ,u.userservicecol0               /*  */ 
+                  ,u.userservicecol1               /*  */ 
+                  ,u.userservicecol2               /*  */ 
+		   FROM   userservice      AS u      /* 用户服务详细表 */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.userservice.entity.Userservice.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM userservice 	/* 用户服务详细表 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.userservice.entity.Userservice.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  userservice      AS u      /* 用户服务详细表 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.userservice.entity.Userservice.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Userservice">
+		    SELECT 
+                   u.id                            /*  */ 
+                  ,u.userid                        /* 用户ID */ 
+                  ,u.serviceid                     /* 服务ID */ 
+                  ,u.starttime                     /* 服务开始时间 */ 
+                  ,u.endtime                       /* 服务截止时间 */ 
+                  ,u.createcount                   /* 可创建活动次数 */ 
+                  ,u.userservicecol0               /*  */ 
+                  ,u.userservicecol1               /*  */ 
+                  ,u.userservicecol2               /*  */ 
+		FROM   	 userservice      AS u      /* 用户服务详细表 */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+	
+		<select id="queryByRecord" parameterType="Object"  resultMap="Userservice">
+		    SELECT 
+                   u.id                            /*  */ 
+                  ,u.userid                        /* 用户ID */ 
+                  ,u.serviceid                     /* 服务ID */ 
+                  ,u.starttime                     /* 服务开始时间 */ 
+                  ,u.endtime                       /* 服务截止时间 */ 
+                  ,u.createcount                   /* 可创建活动次数 */ 
+                  ,u.userservicecol0               /*  */ 
+                  ,u.userservicecol1               /*  */ 
+                  ,u.userservicecol2               /*  */ 
+		FROM   	 userservice      AS u      /* 用户服务详细表 */ 
+		WHERE    userid =#{userid} and userservicecol0 = #{userservicecol0} and <![CDATA[ ((starttime<= CURRENT_TIMESTAMP() and CURRENT_TIMESTAMP()<=endtime) or createcount>0)]]>
+		  order by id desc
+	</select>
+	
+</mapper>

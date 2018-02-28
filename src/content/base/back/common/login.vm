@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta  http-equiv="Content-Type"  content="text/html; charset=utf-8" />
+#parse("content/base/back/common/head.vm")
+
+</head>
+<body>
+	<div class="header">
+		<div class="pull-left logo">$!{logoTitle.logo}</div>
+	</div>
+	<div class="container" style="min-height: 400px;">
+
+		<div class="loginP">
+			<h1 class="center-block" style="width:290px;font-size:x-large;text-align:center">$!{logoTitle.title1}</h1>
+			<form action="../system/login.html" id="loginform" class="form-signin" role="form" method="post">
+				<input type="hidden" name="jwid" id="jwid" value="">
+				<input type="text" name="username" id="username" class="form-control" placeholder="用户名" required autofocus style="background:url('css/images/u.png') 10px center no-repeat #fff; text-indent:30px;"> <br/>
+				<input type="password" name="password"  id="password"  class="form-control" placeholder="密码" required autofocus style="background:url('css/images/u.png') 10px center no-repeat #fff; text-indent:30px;"> <br/>
+				<label class="checkbox"> 
+				<input type="checkbox" id="rememberme" name="rememberme"  onchange="javascript:setCheckbox(this);" />下次自动登录 </label>
+				<input type="button" class="btn btn-primary" name="Submit2" value="登&nbsp;录"  onclick="javascript:checkUser();"/>
+			</form>
+		</div>
+	</div>
+	
+<!-- Modal -->
+<div class="modal fade" id="addOrUpdateModal" tabindex="-1" role="dialog" aria-labelledby="addOrUpdateModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="width: 50%;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="addOrUpdateModalLabel">title</h4>
+      </div>
+      <div class="modal-body" id="modalDialog">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="dialogFormClose" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" id="dialogFormSubmit" onclick="submitForm();" >确&nbsp;定</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script type="text/javascript">
+	$(function() {
+		if($("#top",parent.document.body).attr("name")!= undefined){
+   			$(parent.location).attr("href","$!{basePath}/system/logout.html");	
+   		}
+	});
+	function setCheckbox(box){
+		var me = box;
+		if(me.checked){
+			box.value=box.name
+		}else{
+			box.value="00";
+		}
+	}
+	function submitForm(){
+		  var jwid = $("#jwid").val();
+	      if(jwid==""){
+	         alert("请选择公众号");
+	         return;
+	      }
+		  document.getElementById('loginform').submit();
+	}
+	
+	function checkUser(){
+		var url = "$!{basePath}/system/checkUser.html";
+		var username = $("#username").val();
+	 	var password = $("#password").val();
+		jQuery.ajax({
+			url : url,
+			type:"post",
+			dataType : "json",
+		    cache: false,
+		    data:{
+		      	 username:username
+		      	,password:password
+		    },
+			success : function(data){
+				if(data.success){		
+					 preLogin('$!{basePath}/system/preLogin.html','请选择公众号');
+				}else{
+					alert(data.msg);
+				}
+			},  
+	        error: function(data, status, e){  
+	      		if(data.status == "401"){
+					alert("没有权限！");
+					return;
+				}else{
+					alert("异常");
+				}
+	       }
+		});
+	}
+	
+	
+	function preLogin(url,title){ 
+		if(url.indexOf('?')>-1){
+	 		url += '&t=' + Math.random(1000);  
+	 	}else{
+	 		url += '?t=' + Math.random(1000);  
+	 	}
+	 	var username = $("#username").val();
+	 	var password = $("#password").val();
+	 	$('#addOrUpdateModalLabel').html(title);
+	 	$('#addOrUpdateModal .modal-body').html(""); 
+		jQuery.ajax({
+	      url: url,
+	      cache: false,
+	      data:{
+	      	username:username
+	      	,password:password
+	      },
+		  dataType: "html",
+	      success: function(data){
+	        $('#addOrUpdateModal .modal-body').html(data); 
+	      },  
+	      error: function(data, status, e){  
+	      		if(data.status == "401"){
+					alert("没有权限！");
+					return;
+				}
+	      }
+	    });
+		$('#addOrUpdateModal').modal({show:true,backdrop:false}); 
+	}
+	
+	function selectJwid(){
+		var jwid = $("#jwid_select").val();
+		$("#jwid").val(jwid);
+	} 
+	
+	function syncJwid(url){
+		if(url.indexOf('?')>-1){
+	 		url += '&t=' + Math.random(1000);  
+	 	}else{
+	 		url += '?t=' + Math.random(1000);  
+	 	}
+	 	var username = $("#username").val();
+	 	var password = $("#password").val();
+	 	//$('#addOrUpdateModal .modal-body').html(""); 
+		jQuery.ajax({
+	      url: url,
+	      cache: false,
+	      data:{
+	      	 username:username
+	      	,password:password
+	      },
+		  dataType: "html",
+	      success: function(data){
+	          $('#addOrUpdateModal .modal-body').html(data); 
+	      	  if(data!=""&&data.indexOf("jwid_select_flag_success")!=-1){
+	          		alert("同步完成");
+	          }else if(data!=""&&data.indexOf("jwid_select_flag_fail")!=-1){
+	          		alert("没有查到分配的公众号");
+	          }else{
+	          	    alert("同步异常");
+	          }
+	      },  
+	      error: function(data, status, e){  
+	      		if(data.status == "401"){
+					alert("没有权限！");
+					return;
+				}else{
+					alert("同步异常");
+				}
+	      }
+	    });
+	}
+	
+	
+</script>
+</body>
+</html>

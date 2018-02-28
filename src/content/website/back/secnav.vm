@@ -1,0 +1,16 @@
+<div class="formTabButtonList formTabButtonList419" id="formTabButtonList419">
+	 #foreach($nav in $OPERATE_WEB_MENU_TREE_SEL)
+		<div class="formTabButton #if("$!{SEL_NAV}" eq "$!{nav.id}")formTabButtonHover #end"> 
+			<div class="formTabLeft  formTabLeftHover"></div>
+			<div class="formTabMiddle"><a href="${nav.url}?colid=${nav.id}&pid=${nav.parentid}">${nav.name}</a></div>
+			<div class="formTabRight formTabRightHover"></div>
+			<div class="tabItemTriangle"></div>
+		</div> 
+	 #end
+</div>
+			
+			
+			
+			
+				
+														

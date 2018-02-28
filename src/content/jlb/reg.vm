@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="Keywords" content="友房网">
+    <meta name="description" content="友房网">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>友房投资俱乐部</title>
+    <link href="$!{basePath}/content/jlb/css/registernew.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript"> 
+		function ScrollImgLeft(){ 
+			var speed=50; 
+			var scroll_begin = document.getElementById("scroll_begin"); 
+			var scroll_end = document.getElementById("scroll_end"); 
+			var scroll_div = document.getElementById("scroll_div"); 
+			scroll_end.innerHTML=scroll_begin.innerHTML; 
+			function Marquee(){ 
+				if(scroll_end.offsetWidth-scroll_div.scrollLeft<=0) 
+				scroll_div.scrollLeft-=scroll_begin.offsetWidth; 
+				else 
+				scroll_div.scrollLeft++; 
+			} 
+			var MyMar=setInterval(Marquee,speed); 
+			scroll_div.ontouchstart=function() {clearInterval(MyMar);} 
+			scroll_div.ontouchend=function() {MyMar=setInterval(Marquee,speed);} 
+		} 
+	 </script>
+  </head>
+<body>
+	<!--提示弹出层 begin-->
+	<div class="fwmyd_bg" id="fydDIV" style="display:none;">
+	</div>
+	<!--提示弹出层 end-->
+	<div class="aui_state_lock aui_state_focus" style="display: none; position: fixed; width: auto; left: 438px; top: 65px; z-index: 10016;">
+		<div class="aui_outer">
+			<table class="aui_border">
+			<tbody>
+			<tr>
+				<td class="aui_nw">
+				</td>
+				<td class="aui_n">
+				</td>
+				<td class="aui_ne">
+				</td>
+			</tr>
+			<tr>
+				<td class="aui_w">
+				</td>
+				<td class="aui_c">
+					<div class="aui_inner">
+						<table class="aui_dialog">
+						<tbody>
+						<tr>
+							<td colspan="2" class="aui_header">
+								<div class="aui_titleBar">
+									<div class="aui_title" style="cursor: auto; display: block;">
+										图片验证
+									</div>
+									<a class="aui_close" href="javascript:/*artDialog*/;" style="display: block;">×</a>
+								</div>
+							</td>
+						</tr>
+						<tr class="tr-content">
+							<td class="aui_icon" style="display: none;">
+								<div class="aui_iconBg" style="background: none;">
+								</div>
+							</td>
+							<td class="aui_main" style="width: auto; height: auto;">
+								<div class="aui_content" style="padding: 20px 25px;">
+									<div class="verifyImage">
+										<div class="con">
+											<input type="text" maxlength="4"><img src="" alt="验证码失败"><span>看不清楚？换一张</span>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="aui_footer">
+								<div class="aui_buttons">
+									<button class=" aui_state_highlight" type="button">确认</button>
+								</div>
+							</td>
+						</tr>
+						</tbody>
+						</table>
+					</div>
+				</td>
+				<td class="aui_e">
+				</td>
+			</tr>
+			<tr>
+				<td class="aui_sw">
+				</td>
+				<td class="aui_s">
+				</td>
+				<td class="aui_se" style="cursor: auto;">
+				</td>
+			</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>	
+	<div class="header">
+	<div class="headerwrap">
+		<div class="goback">
+			<!-- <a href="javascript:history.go(-1)"><img src="$!{basePath}/content/jlb/img/goback.png" border="0" title="返回上一页"></a> -->
+		</div>
+		<div class="reglogo">
+					<!--<a href="" class="logo" boss="source"></a>-->
+		</div>
+		<div class="linkright">
+		</div>
+	</div>
+  </div>
+  <div class="regCon">
+
+    <div class="hd">
+      <h1 class="biaoti">注册账号</h1>
+    </div>
+
+    <div class="bd">
+      <div id="reg-s1" style="display:block;">
+        <form method="post" id="myform">
+		  <br>
+          <ul>
+            <li class="clearfix">
+                        	<input type="hidden" class="ipt wd240" placeholder="请输入姓名" name="messageuuid" id="messageuuid" value="$!{messageuuid}">
+            	<span class="txt">姓名</span>
+            	<input type="text" class="ipt wd240" placeholder="请输入姓名" name="username" id="username">
+            </li>
+		
+            <li class="clearfix">
+            	<span class="txt">手机号码</span>
+            	<input type="text" class="ipt wd240" placeholder="手机号码" name="mobile" id="mobile" maxlength="11">
+            </li>
+            <li class="clearfix">
+            	<span class="txt">短信验证</span>
+            	<input type="text" class="ipt wd174" placeholder="短信验证码" name="mobile_verify" id="mobile_verify">
+				<button onclick="get_verify()" class="btn-verify verify disabled" title="获取验证码" id="GetVerify">获取验证码</button>
+            </li>
+          </ul>
+		  <br>
+            <div class="clearfix">
+				<input type="submit" name="dosubmit" id="dosubmit" value="注册"  class="btn-doc btn-solid register-submit"/>
+			</div>
+        </form>
+		<br>
+		<div class="ydxy">
+			<input type="checkbox" name="protocol" id="protocol" value="" checked="checked"/>
+			<a href="javascript:void(0);" onclick="show_protocol();return false;" class="blue">已阅读并同意《注册协议》</a> 
+			<div id="protocoltip" class="onShow" style="margin-left:10px;">
+			  请阅读协议
+			</div>
+		</div>
+		</div>
+		<br>
+    </div>
+  </div>
+  <div id="footer">
+        <div class="footer-w">
+            <span>©2017 友房网络科技有限公司  琼ICP备12001534号-9</span>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/jquery.min.js"></script> 
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/formvalidator.js" charset="UTF-8"></script> 
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/formvalidatorregex.js" charset="UTF-8"></script>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/dialog.js"></script>
+
+<link href="$!{basePath}/content/jlb/css/dialog_simp.css" rel="stylesheet" type="text/css" />
+<script>
+var serverroot = "$!{basePath}";
+</script>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/tip.js"></script>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/reg.js"></script>
+</html>

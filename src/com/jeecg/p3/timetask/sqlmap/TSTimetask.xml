@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.timetask.entity.TSTimetask">
+
+	<!-- Result Map-->
+	<resultMap id="TSTimetask" type="com.jeecg.p3.timetask.entity.TSTimetask" >
+		<result column="ID" property="id" jdbcType="VARCHAR"/>
+		<result column="CREATE_BY" property="createBy" jdbcType="VARCHAR"/>
+		<result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP"/>
+		<result column="CREATE_NAME" property="createName" jdbcType="VARCHAR"/>
+		<result column="CRON_EXPRESSION" property="cronExpression" jdbcType="VARCHAR"/>
+		<result column="IS_EFFECT" property="isEffect" jdbcType="VARCHAR"/>
+		<result column="IS_START" property="isStart" jdbcType="VARCHAR"/>
+		<result column="TASK_DESCRIBE" property="taskDescribe" jdbcType="VARCHAR"/>
+		<result column="TASK_ID" property="taskId" jdbcType="VARCHAR"/>
+		<result column="UPDATE_BY" property="updateBy" jdbcType="VARCHAR"/>
+		<result column="UPDATE_DATE" property="updateDate" jdbcType="TIMESTAMP"/>
+		<result column="UPDATE_NAME" property="updateName" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.createBy != null and query.createBy != ''" >
+	  		 		/*  */
+			    	AND tst.CREATE_BY =  #{query.createBy,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.createDate != null and query.createDate != ''" >
+	  		 		/*  */
+			    	AND tst.CREATE_DATE =  #{query.createDate,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.createName != null and query.createName != ''" >
+	  		 		/*  */
+			    	AND tst.CREATE_NAME =  #{query.createName,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.cronExpression != null and query.cronExpression != ''" >
+	  		 		/*  */
+			    	AND tst.CRON_EXPRESSION =  #{query.cronExpression,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.isEffect != null and query.isEffect != ''" >
+	  		 		/*  */
+			    	AND tst.IS_EFFECT =  #{query.isEffect,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.isStart != null and query.isStart != ''" >
+	  		 		/*  */
+			    	AND tst.IS_START =  #{query.isStart,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.taskDescribe != null and query.taskDescribe != ''" >
+	  		 		/*  */
+			    	AND tst.TASK_DESCRIBE =  #{query.taskDescribe,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.taskId != null and query.taskId != ''" >
+	  		 		/*  */
+			    	AND tst.TASK_ID =  #{query.taskId,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.updateBy != null and query.updateBy != ''" >
+	  		 		/*  */
+			    	AND tst.UPDATE_BY =  #{query.updateBy,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.updateDate != null and query.updateDate != ''" >
+	  		 		/*  */
+			    	AND tst.UPDATE_DATE =  #{query.updateDate,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.updateName != null and query.updateName != ''" >
+	  		 		/*  */
+			    	AND tst.UPDATE_NAME =  #{query.updateName,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.timetask.entity.TSTimetask.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  t_s_timetask   /*  */  
+					(	
+                      ID                            /*  */ 
+                     ,CREATE_BY                     /*  */ 
+                     ,CREATE_DATE                   /*  */ 
+                     ,CREATE_NAME                   /*  */ 
+                     ,CRON_EXPRESSION               /*  */ 
+                     ,IS_EFFECT                     /*  */ 
+                     ,IS_START                      /*  */ 
+                     ,TASK_DESCRIBE                 /*  */ 
+                     ,TASK_ID                       /*  */ 
+                     ,UPDATE_BY                     /*  */ 
+                     ,UPDATE_DATE                   /*  */ 
+                     ,UPDATE_NAME                   /*  */ 
+					)
+			values (
+                      #{id,jdbcType=VARCHAR}                            /*  */ 
+                     ,#{createBy,jdbcType=VARCHAR}                      /*  */ 
+                     ,#{createDate,jdbcType=TIMESTAMP}                    /*  */ 
+                     ,#{createName,jdbcType=VARCHAR}                    /*  */ 
+                     ,#{cronExpression,jdbcType=VARCHAR}                /*  */ 
+                     ,#{isEffect,jdbcType=VARCHAR}                      /*  */ 
+                     ,#{isStart,jdbcType=VARCHAR}                       /*  */ 
+                     ,#{taskDescribe,jdbcType=VARCHAR}                  /*  */ 
+                     ,#{taskId,jdbcType=VARCHAR}                        /*  */ 
+                     ,#{updateBy,jdbcType=VARCHAR}                      /*  */ 
+                     ,#{updateDate,jdbcType=TIMESTAMP}                    /*  */ 
+                     ,#{updateName,jdbcType=VARCHAR}                    /*  */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.timetask.entity.TSTimetask.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   t_s_timetask  	/*  */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="createBy != null">
+		    		 		/*  */ 
+	    		 			CREATE_BY = #{createBy,jdbcType=VARCHAR},
+						 </if>
+						 <if test="createDate != null">
+		    		 		/*  */ 
+	    		 			CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="createName != null">
+		    		 		/*  */ 
+	    		 			CREATE_NAME = #{createName,jdbcType=VARCHAR},
+						 </if>
+						 <if test="cronExpression != null">
+		    		 		/*  */ 
+	    		 			CRON_EXPRESSION = #{cronExpression,jdbcType=VARCHAR},
+						 </if>
+						 <if test="isEffect != null">
+		    		 		/*  */ 
+	    		 			IS_EFFECT = #{isEffect,jdbcType=VARCHAR},
+						 </if>
+						 <if test="isStart != null">
+		    		 		/*  */ 
+	    		 			IS_START = #{isStart,jdbcType=VARCHAR},
+						 </if>
+						 <if test="taskDescribe != null">
+		    		 		/*  */ 
+	    		 			TASK_DESCRIBE = #{taskDescribe,jdbcType=VARCHAR},
+						 </if>
+						 <if test="taskId != null">
+		    		 		/*  */ 
+	    		 			TASK_ID = #{taskId,jdbcType=VARCHAR},
+						 </if>
+						 <if test="updateBy != null">
+		    		 		/*  */ 
+	    		 			UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+						 </if>
+						 <if test="updateDate != null">
+		    		 		/*  */ 
+	    		 			UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="updateName != null">
+		    		 		/*  */ 
+	    		 			UPDATE_NAME = #{updateName,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.timetask.entity.TSTimetask.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="TSTimetask">
+		   SELECT   
+                   tst.ID                            /*  */ 
+                  ,tst.CREATE_BY                     /*  */ 
+                  ,tst.CREATE_DATE                   /*  */ 
+                  ,tst.CREATE_NAME                   /*  */ 
+                  ,tst.CRON_EXPRESSION               /*  */ 
+                  ,tst.IS_EFFECT                     /*  */ 
+                  ,tst.IS_START                      /*  */ 
+                  ,tst.TASK_DESCRIBE                 /*  */ 
+                  ,tst.TASK_ID                       /*  */ 
+                  ,tst.UPDATE_BY                     /*  */ 
+                  ,tst.UPDATE_DATE                   /*  */ 
+                  ,tst.UPDATE_NAME                   /*  */ 
+		   FROM   t_s_timetask      AS tst      /*  */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	
+	
+	
+		<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.timetask.entity.TSTimetask.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="getByTaskID" parameterType="Object"  resultMap="TSTimetask">
+		   SELECT   
+                   tst.ID                            /*  */ 
+                  ,tst.CREATE_BY                     /*  */ 
+                  ,tst.CREATE_DATE                   /*  */ 
+                  ,tst.CREATE_NAME                   /*  */ 
+                  ,tst.CRON_EXPRESSION               /*  */ 
+                  ,tst.IS_EFFECT                     /*  */ 
+                  ,tst.IS_START                      /*  */ 
+                  ,tst.TASK_DESCRIBE                 /*  */ 
+                  ,tst.TASK_ID                       /*  */ 
+                  ,tst.UPDATE_BY                     /*  */ 
+                  ,tst.UPDATE_DATE                   /*  */ 
+                  ,tst.UPDATE_NAME                   /*  */ 
+		   FROM   t_s_timetask      AS tst      /*  */ 
+		   WHERE
+				TASK_ID = #{taskId}				/* 序号 */ 
+	</select>
+	
+	
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.timetask.entity.TSTimetask.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM t_s_timetask 	/*  */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.timetask.entity.TSTimetask.count
+	开发信息: 
+	处理信息: 列表总数
+	-->  
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  t_s_timetask      AS tst      /*  */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.timetask.entity.TSTimetask.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="TSTimetask">
+		    SELECT 
+                   tst.ID                            /*  */ 
+                  ,tst.CREATE_BY                     /*  */ 
+                  ,tst.CREATE_DATE                   /*  */ 
+                  ,tst.CREATE_NAME                   /*  */ 
+                  ,tst.CRON_EXPRESSION               /*  */ 
+                  ,tst.IS_EFFECT                     /*  */ 
+                  ,tst.IS_START                      /*  */ 
+                  ,tst.TASK_DESCRIBE                 /*  */ 
+                  ,tst.TASK_ID                       /*  */ 
+                  ,tst.UPDATE_BY                     /*  */ 
+                  ,tst.UPDATE_DATE                   /*  */ 
+                  ,tst.UPDATE_NAME                   /*  */ 
+		FROM   	 t_s_timetask      AS tst      /*  */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+	
+		<select id="getAll" parameterType="Object"  resultMap="TSTimetask">
+		    SELECT 
+                   tst.ID                            /*  */ 
+                  ,tst.CREATE_BY                     /*  */ 
+                  ,tst.CREATE_DATE                   /*  */ 
+                  ,tst.CREATE_NAME                   /*  */ 
+                  ,tst.CRON_EXPRESSION               /*  */ 
+                  ,tst.IS_EFFECT                     /*  */ 
+                  ,tst.IS_START                      /*  */ 
+                  ,tst.TASK_DESCRIBE                 /*  */ 
+                  ,tst.TASK_ID                       /*  */ 
+                  ,tst.UPDATE_BY                     /*  */ 
+                  ,tst.UPDATE_DATE                   /*  */ 
+                  ,tst.UPDATE_NAME                   /*  */ 
+		FROM   	 t_s_timetask      AS tst      /*  */ 
+	</select>
+	
+</mapper>

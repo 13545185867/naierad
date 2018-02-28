@@ -1,0 +1,357 @@
+ <!DOCTYPE html>
+<html><head>
+<style class="vjs-styles-defaults">
+	  #module336 .fullmeasureOuterContentPage1 .fullmeasureOuterContentBg336 {
+    background: url($!{basePath}/content/files/bigred.jpg) no-repeat center;
+    background-size: cover;
+}
+ 
+.fullmeasureOuterContentBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+    </style> 
+		<style type="text/css">
+
+		a,img{border:0;}
+		/* flexslider */
+		.flexslider{position:relative;height:700px;overflow:hidden;background:url($!{basePath}/content/files/loading.gif) 50% no-repeat;}
+		.slides{position:relative;z-index:1;    margin: 0;}
+		.slides li{height:700px;}
+		.flex-control-nav{position:absolute;bottom:10px;z-index:2;width:100%;text-align:center;}
+		.flex-control-nav li{display:inline-block;width:14px;height:14px;margin:0 5px;*display:inline;zoom:1;}
+		.flex-control-nav a{display:inline-block;width:14px;height:14px;line-height:40px;overflow:hidden;background:url($!{basePath}/content/files/dot.png) right 0 no-repeat;cursor:pointer;}
+		.flex-control-nav .flex-active{background-position:0 0;}
+
+		.flex-direction-nav{position:absolute;z-index:3;width:100%;top:45%;}
+		.flex-direction-nav li a{display:block;width:71px;height:71px;overflow:hidden;cursor:pointer;position:absolute;border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;    filter: alpha(opacity=50);}
+		.flex-direction-nav li a.flex-prev{left:40px;background:url($!{basePath}/content/files/left.png) center center no-repeat rgba(0,0,0,0.1);}
+		.flex-direction-nav li a.flex-next{right:40px;background:url($!{basePath}/content/files/right.png) center center no-repeat rgba(0,0,0,0.1);}
+	</style>
+<title>大悟县耐尔广告有限公司官方网站</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="format-detection" content="telephone=no,email=no,address=no">
+<meta name="renderer" content="webkit"> 
+<meta name="mobile-agent" content="format=html5;url=www.naierad.com">
+<meta name="keywords" content="大悟|大悟县|大悟耐尔|大悟县耐尔|大悟县广告|大悟广告|耐尔广告|大悟县耐尔广告有限公司|耐尔|广告|喷绘|写真|设计印刷|程序开发|宣传车|水晶/发光字|广告招牌|LED电子屏">
+<meta name="description" content="大悟耐尔广告有限公司是一家集设计、制作、代理、发布为一体的专业化广告服务商，专业从事写真喷绘、展览工程、户内外广告制作项目。一流的技术工人,先进的生产设备使我们走在了行业的前列。">
+  <link rel="icon" href="$!{basePath}/content/files/1.ico" type="image/x-icon">
+<link type="text/css" href="$!{basePath}/content/files/base2.min.css" rel="stylesheet">
+<link type="text/css" href="$!{basePath}/content/files/fkTheme.min.css" rel="stylesheet" id="jzThemeFrame">
+ <link type="text/css" href="$!{basePath}/content/files/floatBtn1.min.css" rel="stylesheet">
+
+<link type="text/css" href="$!{basePath}/content/files/style.css" rel="stylesheet">
+
+<script type="text/javascript" src="$!{basePath}/content/files/jQuery-1.10.1.min.js"></script>
+<script type="text/javascript" src="$!{basePath}/content/files/script.js"></script>  
+ <style type="text/css" id="contentAnimationStyle">
+  * {box-sizing: border-box;}
+#module339 .formMiddleContent339{overflow:hidden !important;}
+#module339 .formMiddleContent339 .listPhotosList{overflow:hidden !important;}</style><style type="text/css" id="styleBannerBg">.webBannerTable{background:none !important;}
+.webBanner{background:none !important;}</style><style type="text/css" id="styleWebSite">#bannerV2 .fk-inBannerListZone{width:1200px;}
+#bannerV2 .fk-inBannerListZone{margin-left:-600px;}</style><style type="text/css" id="stylebacktotop">.fk_siteBackToTop{display:none;}
+.fk_siteBackToTop{cursor:pointer;}
+.fk_siteBackToTop{z-index:9030;}
+.fk_siteBackToTop{right:40px;}
+.fk_siteBackToTop{bottom:50px;}
+.fk_siteBackToTop:hover{background-image:url($!{basePath}/content/files/05_hover.png);}
+.fk_siteBackToTop{position:fixed;}
+.fk_siteBackToTop{width:50px;}
+.fk_siteBackToTop{height:50px;}
+.fk_siteBackToTop{margin:1px;}
+.fk_siteBackToTop{background-image:url($!{basePath}/content/files/05.png);}</style></head>
+<body class="g_body" style="min-width: 1200px;">
+	<div id="siteBackToTop_small_box" class="fk_siteBackToTop" title="回到顶部" _style="secondStyle_05" style="right: 40px; bottom: 50px; display: none; opacity: 1;"></div><div id="g_main" class="g_main g_col2 ">
+	<div id="web" class="g_web ">
+	
+#set($cruid = 1) 
+ #parse("content/website/back/navtree.vm")
+ 
+		<table class="webBannerTable J_webBannerTable" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td align="center" class="fk-moduleZoneWrap">
+					
+					
+					<div id="webBanner" class="webBanner">
+						<table class="bannerTable" cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td class="bannerLeft"></td>
+								<td class="bannerCenter" align="center" valign="top">
+											
+											<div style="visibility:hidden;" class="fk-inBannerListZone-tmp">
+
+												
+											</div>	
+									<div class="bannerTop"></div>
+<div id="bannerV2" class="banner extBanner"  style="height: 700px; background: none; overflow: hidden;">	
+<div></div>	<div class="jq22-container">
+
+		<div class="flexslider">
+			<ul class="slides">
+				<li style="background: url(&quot;$!{basePath}/content/files/banner01.jpg&quot;) 50% 50% / cover no-repeat; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;background-position: 50% 50%;" class=""> 
+				
+				<div   title="" style="position: absolute;top: 50%;left: 50%;width: 738px;height: 216px;margin-top:-108px;margin-left:-369px;"> <img   src="$!{basePath}/content/files/onbanner01.png" alt="onbanner01.png" style="margin-top: 0px; margin-left: 0px; height: 216px;"  > </div>
+				 
+				</li>
+				
+				<li style="background: url(&quot;$!{basePath}/content/files/banner02.jpg&quot;) 50% 50% / cover no-repeat; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" class="">
+				<div   title="" style="position: absolute;top: 50%;left: 50%;width: 738px;height: 216px;margin-top:-108px;margin-left:-369px;"> <img   src="$!{basePath}/content/files/onbanner02.png" alt="onbanner02.png" style="margin-top: 0px; margin-left: 0px;  height: 216px;"  > </div>
+				
+				</li>
+								<li style="background: url(&quot;$!{basePath}/content/files/banner03.jpg&quot;) 50% 50% / cover no-repeat; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" class="">
+				<div   title="" style="position: absolute;top: 50%;left: 50%;width: 738px;height: 216px;margin-top:-108px;margin-left:-369px;"> <img   src="$!{basePath}/content/files/onbanner03.png" alt="onbanner03.png" style="margin-top: 0px; margin-left: 0px;  height: 216px;"   > </div>
+				
+				</li>
+ 
+			</ul>
+		 <ul class="flex-direction-nav"><li><a class="flex-prev" href="#"></a></li><li><a class="flex-next" href="#"></a></li></ul> <ul class="flex-direction-nav"><li><a class="flex-prev" href="#"></a></li><li><a class="flex-next" href="#"></a></li></ul></div>
+		
+	</div></div>
+
+								</td>
+								<td class="bannerRight"></td>
+							</tr>
+						</tbody></table>
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+ 
+		<div id="fullmeasureTopForms" class="fullmeasureContainer forms fk-fullmeasureForms fullmeasureForms fullmeasureTopForms">
+			<div class="fullmeasureOuterContent fullmeasureOuterContent319">
+<div class="fullmeasureContent fullmeasureContent319" id="fullmeasureContent319_1" moduleid="319"><div id="module313" class="form form313 formStyle87 fk-formPack  formIndex1" style="height: 58px;">
+<div id="module318" class="form form318 formStyle39" style="position:absolute;top:10px;left:9px;width:700px;">
+
+<table class=" formMiddle formMiddle318" style="" cellpadding="0" cellspacing="0"><tbody><tr>
+
+<td class="formMiddleCenter formMiddleCenter318 " valign="top">
+<div class="formMiddleContent formMiddleContent318 fk-formContentOtherPadding" tabstyle="0">
+<div id="noticeContainer318" class="noticeContainer  notice-image0"><div id="noticeMarqueeNewParent318" style="position: relative; overflow: hidden; left: 23px; width: 690px;"><div id="noticeMarqueeNewParent318" style="position: relative; overflow: hidden; left: 23px; width: 690px;"><div id="noticeMarquee318" class="noticeMarquee noticeMarqueeRelative" style="left: 0px; top: 0px;">	<table cellpadding="0" cellspacing="0" width="100%">		<tbody><tr><td>&nbsp;</td><td nowrap="">欢迎各位新老顾客前来光顾</td><td>&nbsp;</td>		</tr>	</tbody></table></div></div></div></div></div>
+</td>
+
+</tr></tbody></table>
+
+<div class="clearfloat clearfloat318"></div>
+</div></div>
+</div><div class="clearfloat clearfloat319"></div></div>
+
+
+<div class="media_resources" style="border-top: 1px solid #f1f1f1">
+					<strong style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px; text-align: center; display: block;"><span style="font-family: 微软雅黑;"><span style="color: rgb(255, 101, 55); font-size: 50px;">我们的产品</span></span><span style="color: rgb(198, 198, 198); font-size: 24px; background-color: transparent; font-family: 微软雅黑; font-weight: normal;">Our Products</span></strong>
+					 
+					<ul id="media_resources_list">
+					<li><a href="product.html?colid=3&pid=2"><div class="media_img"><img class="img lazy" src="/content/files/p01.jpg" data-original="txtimg/media1.0.jpg" style="display: block;"><div class="img_title1"><p> </p></div><div class="img_title2"><span>写真喷绘</span> </div></div><div class="bottom_describe"><span>产品属性：室内写真、户外喷绘、高清灯片、车贴...</span> </div></a></li>
+					<li><a href="product.html?colid=4&pid=2"><div class="media_img"><img class="img lazy" src="/content/files/p02.jpg" data-original="txtimg/media2.0.jpg" style="display: block;"><div class="img_title1"><p> </p></div><div class="img_title2"><span>设计印刷</span> </div></div><div class="bottom_describe"><span>产品属性：高档名片、精品画策、宣传单、不干胶...</span> </div></a></li>
+					<li><a href="product.html?colid=8&pid=2"><div class="media_img"><img class="img lazy" src="/content/files/p03.jpg" data-original="txtimg/media3.0.jpg" style="display: block;"><div class="img_title1"><p> </p></div><div class="img_title2"><span>水晶发光字</span><div class="media_icon three"></div></div></div><div class="bottom_describe"><span>产品属性：水晶字、PVC字、发光字、不秀钢字...</span> </div></a></li>
+					<li><a href="product.html?colid=5&pid=2"><div class="media_img"><img class="img lazy" src="/content/files/p04.jpg" data-original="txtimg/media_huwai.jpg" style="display: block;"><div class="img_title1"><p> </p></div><div class="img_title2"><span>广告车</span><div class="media_icon huwai"></div></div></div><div class="bottom_describe"><span>产品属性：LED广告宣传车</span> </div></a></li>
+					<li><a href="product.html?colid=7&pid=2"><div class="media_img"><img class="img lazy" src="/content/files/p05.jpg" data-original="txtimg/media_touying.jpg" style="display: block;"><div class="img_title1"><p> </p></div><div class="img_title2"><span>道路标识牌</span><div class="media_icon touying"></div></div></div><div class="bottom_describe"><span>产品属性：景区导示牌、道路导示牌、市政导示牌...</span></div></a></li>
+					<li><a href="product.html?colid=9&pid=2"><div class="media_img"><img class="img lazy" src="/upload/img/jlb/soft.jpg" data-original="txtimg/media_xianshang.jpg" style="display: block;"><div class="img_title1"><p> </p></div><div class="img_title2"><span>软件开发</span><div class="media_icon online"></div></div></div><div class="bottom_describe"><span>产品属性：</span>网站、系统、公众号、小程序、营销程序开发</div></a>
+					</li>
+					</ul>
+				</div>
+#parse("content/website/back/producttype.vm")
+
+</div></div>
+<div class="clearfloat clearfloat336"></div>
+</div></div>
+
+<div id="module320" class="form form320 formIndex2 formStyle80 fk-formFullmeasure " style="border-top: 1px solid #f1f1f1;
+    border-bottom: none;">
+<div class="fullmeasureOuterContent fullmeasureOuterContent320">
+<div class="fullmeasureContent fullmeasureContent320" id="fullmeasureContent320_1" moduleid="320"><div id="module321" class="form form321 formStyle87 fk-formPack  formIndex1" style="height: 1001px;">
+<div class="J_packContent f-packContent f-packContent321 elemZone elemZoneModule" id="fk-packContent321">
+<div id="module323" class="form form323 formStyle86 siteEditor" style="position: absolute; top: 63px; left: 0px; width: 1200px; height: 66px; animation: none;">
+<div class="fk-editor simpleText   "><strong style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px; text-align: center; display: block;"><span style="font-family: 微软雅黑;"><span style="color: rgb(255, 101, 55); font-size: 50px;">我们的优势</span></span><span style="color: rgb(198, 198, 198); font-size: 24px; background-color: transparent; font-family: 微软雅黑; font-weight: normal;">Our Advantage</span></strong></div>
+</div>
+<div id="module324" class="form form324 formStyle79" title="" style="position: absolute; top: 198px; left: 275px; width: 250px; height: 320px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent324"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_324" class="float_in_img J_defImage " src="$!{basePath}/content/files/changfanggray.jpg" alt="changfanggray" style="margin-top: 0px; margin-left: 0px; height: 320px;"></div></div></a>
+</div></div>
+</div>
+<div id="module325" class="form form325 formStyle79" title="" style="position: absolute; top: 198px; left: 930px; width: 250px; height: 320px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent325"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_325" class="float_in_img J_defImage " src="$!{basePath}/content/files/changfanggray.jpg" alt="changfanggray" style="margin-top: 0px; margin-left: 0px; height: 320px;"></div></div></a>
+</div></div>
+</div>
+<div id="module326" class="form form326 formStyle79" title="" style="position: absolute; top: 587px; left: 23px; width: 250px; height: 320px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent326"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_326" class="float_in_img J_defImage " src="$!{basePath}/content/files/changfanggray.jpg" alt="changfanggray" style="margin-top: 0px; margin-left: 0px; height: 320px;"></div></div></a>
+</div></div>
+</div>
+<div id="module327" class="form form327 formStyle79" title="" style="position: absolute; top: 586px; left: 608px; width: 250px; height: 320px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent327"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_327" class="float_in_img J_defImage " src="$!{basePath}/content/files/changfanggray.jpg" alt="changfanggray" style="margin-top: 0px; margin-left: 0px; height: 320px;"></div></div></a>
+</div></div>
+</div>
+<div id="module328" class="form form328 formStyle86 siteEditor" title="" style="position: absolute; top: 197px; left: 10px; width: 241px; height: 320px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent328"><div class="fk-editor simpleText   "><span style="line-height: 20px;"><p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><strong style=""><span style="font-family: 微软雅黑; font-size: 50px; color: rgb(255, 101, 55);"><span style=""><span style="line-height: 69px;">01</span></span></span></strong></p><p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><span style="font-family: 微软雅黑; font-size: 20px; color: rgb(87, 87, 87);"><span style="line-height: 20px;">丰富的经验</span></span></p><p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><span style="font-size: 14px; font-family: 微软雅黑; color: rgb(165, 165, 165);"><span style="line-height: 25px;">专注广告行业15年，涉及80多个行业，服务超过9000多个客户，完善的售前-售中-售后定制服务，以客户的需求为发展目标，提但是“诚信经营，完美服务”的理念，7x24小时竭诚为客户提供最优质的产品和最优秀的服务，并努力成为最具竟争力的广告服务商。</span></span></p></span><div><div></div>
+</div></div></div>
+</div>
+<div id="module329" class="form form329 formStyle79" title="" style="position: absolute; top: 208px; left: 287px; width: 226px; height: 299px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent329"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_329" class="float_in_img J_defImage " src="$!{basePath}/content/files/mallpic.jpg" alt="mallpic" style="margin-top: 0px; margin-left: 0px; height: 299px;"></div></div></a>
+</div></div>
+</div>
+<div id="module330" class="form form330 formStyle79" title="" style="position: absolute; top: 208px; left: 944px; width: 223px; height: 299px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent330"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_330" class="float_in_img J_defImage " src="$!{basePath}/content/files/printpic.jpg" alt="AD0I6Y3sBBACGAAg3tjizQUoso32xwQw5gE4rAI" style="margin-top: 0px; margin-left: 0px; height: 299px;"></div></div></a>
+</div></div>
+</div>
+<div id="module331" class="form form331 formStyle86 siteEditor" title="" style="position: absolute; top: 196px; left: 566px; width: 340px; height: 320px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent331"><div class="fk-editor simpleText   "><span style="line-height: 20px;"><p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><strong style=""><span style="font-family: 微软雅黑; font-size: 50px; color: rgb(255, 101, 55);"><span style="line-height: 69px;">02</span></span></strong></p><p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><span style="color: rgb(87, 87, 87); font-family: 微软雅黑; font-size: 20px;"><span style="line-height: 20px;">先进的设备</span></span></p><p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><span style="color: rgb(165, 165, 165); font-family: 微软雅黑; font-size: 14px;"><span style="line-height: 25px;">我们拥有生产喷绘写真设备:奥威室内写真机2台、户外写真机2台、大喷机2台、高速条幅机1台、自动覆膜机1台、后期制作人员30人。日产量可达2000平米，可满足客户急单大单的需求。
+大型雕刻机、数控激光光纤切割机、激光焊接机、自动围字机、烤漆房、各种标识标牌设备以及一批技术精湛的技术人员和施工团队。可制作LED发光字、不锈钢发光字、吸塑字、大型亚克力雕刻工程、标识标牌及各种引导牌。</span></span></p></span><div><div></div>
+</div><div><div></div>
+</div></div></div>
+</div>
+<div id="module332" bannertitle="图片" _moduletype="1" _modulestyle="79" _moduleid="332" class="form form332 formStyle79" title="" style="position: absolute; top: 595px; left: 32px; width: 232px; height: 300px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent332"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_332" class="float_in_img J_defImage " src="$!{basePath}/content/files/handteam.jpg" alt="handteam" style="margin-top: 0px; margin-left: 0px; height: 300px;"></div></div></a>
+</div></div>
+</div>
+<div id="module333" bannertitle="图片" _moduletype="1" _modulestyle="79" _moduleid="333" class="form form333 formStyle79" title="" style="position: absolute; top: 599px; left: 618px; width: 230px; height: 300px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent333"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_333" class="float_in_img J_defImage " src="$!{basePath}/content/files/zhaopic.jpg" alt="zhaopic" style="margin-top: 0px; margin-left: 0px; height: 300px;"></div></div></a>
+</div></div>
+</div>
+<div id="module334"  class="form form334 formStyle86 siteEditor" title="" style="position: absolute; top: 587px; left: 294px; width: 271px; height: 320px; animation: none;text-align: center;">
+<div class="lightModuleOuterContent lightModuleOuterContent334"><div class="fk-editor simpleText   "><span style="line-height: 20px;"><p style="text-align: right; color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><strong style=""><span style="font-family: 微软雅黑; font-size: 50px; color: rgb(255, 101, 55);"><span style="line-height: 69px;">03</span></span></strong></p><p style="text-align: right; color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><span style="color: rgb(87, 87, 87); font-family: 微软雅黑; font-size: 20px;"><span style="line-height: 20px;">优秀的团队</span></span></p><p style="text-align: right; color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><span style="color: rgb(165, 165, 165); font-family: 微软雅黑; font-size: 14px;"><span style="line-height: 25px;">拥有近百人的制作团队，项目经理、客服人员、平面设计、设备操作、后期制作、现场安装人员都具有丰富的行业经验和专业技能；结合最新的技术和工艺，精益求精，做到不仅让客户满意，更要让客户感动。</span></span></p></span><div><div></div>
+</div><div><div></div>
+</div></div></div>
+</div>
+<div id="module335" bannertitle="文本" _moduletype="1" _modulestyle="86" _moduleid="335" class="form form335 formStyle86 siteEditor" title="" style="position: absolute; top: 587px; left: 878px; width: 321px; height: 320px; animation: none; ">
+<div class="lightModuleOuterContent lightModuleOuterContent335"><div class="fk-editor simpleText   "><span style="line-height: 20px;"><p style="text-align: right; color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><strong style=""><span style="font-family: 微软雅黑; font-size: 50px; color: rgb(255, 101, 55);"><span style="line-height: 69px;">04</span></span></strong></p><p style="text-align: right; color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><span style="color: rgb(87, 87, 87); font-family: 微软雅黑; font-size: 20px;"><span style="line-height: 20px;">丰富的产品</span></span></p><p style="text-align: right; color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><span style="color: rgb(165, 165, 165); font-family: 微软雅黑; font-size: 14px;"><span style="line-height: 25px;">专注于写真喷绘、户内外高光相纸、展架、易拉宝、宣传单印刷、灯光字、超薄灯箱、LED显示展、PVC雕刻、标识标牌...配合业界最先进，最出色的喷绘及各类广告制作设备，为客户提供7*24小时优质、高效、价格合理的全方位服务。能够为客户提供优质、高效、专业的服务，薄利多销的定价方针将最大实惠让利给顾客，最终达到与客户的双赢。</span></span></p></span><div><div></div>
+</div><div><div></div>
+</div><div><div></div>
+</div></div></div>
+</div>
+</div></div>
+</div></div></div>
+
+
+
+<div class="clearfloat clearfloat336"></div>
+</div></div>
+
+<div class=" form336 formIndex3 formStyle80 fk-formFullmeasure " style="height:327px;  background-size: cover;  background: url($!{basePath}/content/files/11.jpg) no-repeat center;">
+ <div id="module323" class="form" style="position: relative;   left: 0px; width: 1200px; height: 66px; animation: none;margin:0 auto;     top: 130px;">
+<div class="fk-editor simpleText   "><strong style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px; text-align: center; display: block;"><span style="font-family: 微软雅黑;"><span style="color: rgb(255, 101, 55); font-size: 50px;">我们的服务</span></span><span style="color: rgb(198, 198, 198); font-size: 24px; background-color: transparent; font-family: 微软雅黑; font-weight: normal;">Our Service</span></strong></div>
+</div>
+</div>
+
+<div id="module341"    title="" style="height: 686px; width: 1200px;  margin: 0 auto;     position: relative;">
+<div class="J_packContent f-packContent f-packContent341 elemZone elemZoneModule" id="fk-packContent341"> 
+<div id="module342" bannertitle="图片" class="form form342 formStyle79" style="position: absolute; top: 65px; left: 480px; width: 233px; height: 233px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent342"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_342" class="float_in_img J_defImage " src="$!{basePath}/content/files/recent.jpg" alt="recent" style="margin-top: 0px; margin-left: 0px; height: 233px;"></div></div></a>
+</div></div>
+</div>
+<div id="module343" bannertitle="图片" class="form form343 formStyle79" title="" style="position: absolute; top: 65px; left: 20px; width: 233px; height: 233px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent343"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_343" class="float_in_img J_defImage " src="$!{basePath}/content/files/hard.jpg" alt="hard" style="margin-top: 0px; margin-left: 0px; height: 233px;"></div></div></a>
+</div></div>
+</div>
+<div id="module344" bannertitle="图片"  class="form form344 formStyle79" title="" style="position: absolute; top: 65px; left: 919px; width: 233px; height: 233px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent344"><div class="floatImg floatImg_J floatImg_J_special"><a hidefocus="true" class="J_floatImg_jump ">
+<div class="floatImgWrap" style="margin-top: 0px; width: initial; height: initial;"><div class="forMargin" aaa="false&amp;&amp;false&amp;&amp;false" style="width: initial; height: initial; margin-left: 0px; margin-top: 0px; border-radius: 0px;"><img id="float_img_344" class="float_in_img J_defImage " src="$!{basePath}/content/files/perfect.jpg" alt="perfect" style="margin-top: 0px; margin-left: 0px; height: 233px;"></div></div></a>
+</div></div>
+</div>
+<div id="module345" bannertitle="文本" class="form form345 formStyle86 siteEditor" title="" style="position: absolute; top: 329px; left: 33px; width: 253px; height: 325px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent345"><div class="fk-editor simpleText   "><div><div></div>
+</div><span style="line-height: 25px;"><div><br style=""></div><div style="text-align:left;"><span style="line-height: 40px;"><p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><span style="font-family: 微软雅黑; font-size: 25px; color: rgb(205, 204, 204);">MORE &nbsp;Professional</span></p><p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><strong style=""><span style="font-family: 微软雅黑; font-size: 35px; color: rgb(255, 101, 55);"><span style="line-height: 40px;">更专业</span></span></strong></p></span><span style="line-height: 30px;">
+<p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;">
+<span style="font-family: 微软雅黑; font-size: 20px; color: rgb(71, 71, 71);"><img id="float_img_356" class="float_in_img J_defImage " src="$!{basePath}/content/files/star.png" alt="star" style="margin-top: 0px; margin-left: 0px; height: 16px;">先进的技术设备</span>
+</p>
+<p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;">
+<span style="font-family: 微软雅黑; font-size: 20px; color: rgb(71, 71, 71);"><img id="float_img_356" class="float_in_img J_defImage " src="$!{basePath}/content/files/star.png" alt="star" style="margin-top: 0px; margin-left: 0px; height: 16px;">专业技术人员</span>
+</p>
+<p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;">
+<span style="font-family: 微软雅黑; font-size: 20px; color: rgb(71, 71, 71);"><img id="float_img_356" class="float_in_img J_defImage " src="$!{basePath}/content/files/star.png" alt="star" style="margin-top: 0px; margin-left: 0px; height: 16px;">广告类型丰富</span>
+</p>
+</span>
+ 
+ </div></span><div><div></div>
+</div></div></div>
+</div>
+
+ 
+<div id="module350" bannertitle="文本"   class="form form350 formStyle86 siteEditor" title="" style="position: absolute; top: 329px; left: 488px; width: 253px; height: 325px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent350"><div class="fk-editor simpleText   "><div><div></div>
+</div><span style="line-height: 25px;"><div><br style=""></div><div style="text-align:left;">
+<span style="line-height: 40px;"><p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;">
+<span style="color: rgb(205, 204, 204); font-family: 微软雅黑; font-size: 25px;">Cordial</span><br></p>
+<p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><strong style=""><span style="font-family: 微软雅黑; font-size: 35px; color: rgb(255, 101, 55);">
+<span style="line-height: 40px;">更亲切</span></span></strong></p></span>
+<span style="line-height: 30px;">
+<p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;">
+<span style="font-family: 微软雅黑; font-size: 20px; color: rgb(71, 71, 71);"><img id="float_img_356" class="float_in_img J_defImage " src="$!{basePath}/content/files/star.png" alt="star" style="margin-top: 0px; margin-left: 0px; height: 16px;">最优的售前服务</span></p>
+<p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><span style="font-family: 微软雅黑; font-size: 20px; color: rgb(71, 71, 71);"><img id="float_img_356" class="float_in_img J_defImage " src="$!{basePath}/content/files/star.png" alt="star" style="margin-top: 0px; margin-left: 0px; height: 16px;">和蔼的跟进人员</span></p>
+</span>
+<p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><span style="font-family: 微软雅黑; font-size: 20px; color: rgb(71, 71, 71);"><img id="float_img_356" class="float_in_img J_defImage " src="$!{basePath}/content/files/star.png" alt="star" style="margin-top: 0px; margin-left: 0px; height: 16px;">最合适的价钱</span></p>
+ </div></span><div><div></div>
+</div><div><div></div>
+</div><div><div></div>
+</div></div></div>
+</div>
+
+ 
+<div id="module355" bannertitle="文本"   class="form form355 formStyle86 siteEditor" title=""  style="position: absolute; top: 329px; left: 931px; width: 253px; height: 325px; animation: none;">
+<div class="lightModuleOuterContent lightModuleOuterContent355"><div class="fk-editor simpleText   "><div><div></div>
+</div><span style="line-height: 25px;"><div><br style=""></div>
+<div style="text-align:left;"><span style="line-height: 40px;">
+<p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;">
+<span style="color: rgb(205, 204, 204); font-family: 微软雅黑; font-size: 25px;">MORE &nbsp;Intimate</span><br></p>
+<p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"><strong style="">
+<span style="font-family: 微软雅黑; font-size: 35px; color: rgb(255, 101, 55);">
+<span style="line-height: 40px;">更贴心</span></span></strong></p></span>
+<span style="line-height: 30px;">
+<p style=" color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;">
+<span style="font-family: 微软雅黑; font-size: 20px; color: rgb(71, 71, 71);">
+<img id="float_img_356" class="float_in_img J_defImage " src="$!{basePath}/content/files/star.png" alt="star" style="margin-top: 0px; margin-left: 0px; height: 16px;">为您量身定做</span></p>
+<p style=" color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;">
+<span style="font-family: 微软雅黑; font-size: 20px; color: rgb(71, 71, 71);"><img id="float_img_356" class="float_in_img J_defImage " src="$!{basePath}/content/files/star.png" alt="star" style="margin-top: 0px; margin-left: 0px; height: 16px;">只要你需要，我们就会在</span></p></span>
+<p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;">
+<span style="font-family: 微软雅黑; font-size: 20px; color: rgb(71, 71, 71);"><img id="float_img_356" class="float_in_img J_defImage " src="$!{basePath}/content/files/star.png" alt="star" style="margin-top: 0px; margin-left: 0px; height: 16px;">售后服务周到不烦人</span></p>
+ 
+</div></span><div><div></div>
+</div><div><div></div>
+</div><div><div></div>
+</div><div><div></div>
+</div><div><div></div>
+</div></div></div>
+</div>
+
+ 
+</div></div>
+ #parse("content/website/back/foot.vm")
+  
+	<script type="text/javascript" src="$!{basePath}/content/files/jquery.flexslider-min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.flexslider').flexslider({
+				directionNav: true,
+				pauseOnAction: false,
+				slideshowSpeed: 4000
+			});
+			$(window).scroll(function() {
+				if ($(window).scrollTop() > 800)
+					$('#siteBackToTop_small_box').show();
+				else
+					$('#siteBackToTop_small_box').hide();
+			});
+			$('#siteBackToTop_small_box').click(function() {
+				$('html, body').animate({scrollTop: 0}, 1000);
+			});
+		});
+	</script>
+
+</body></html>
+  

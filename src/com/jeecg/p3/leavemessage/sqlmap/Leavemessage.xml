@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.leavemessage.entity.Leavemessage">
+
+	<!-- Result Map-->
+	<resultMap id="Leavemessage" type="com.jeecg.p3.leavemessage.entity.Leavemessage" >
+		<result column="id" property="id" jdbcType="VARCHAR"/>
+		<result column="messagetext" property="messagetext" jdbcType="VARCHAR"/>
+		<result column="mobile" property="mobile" jdbcType="VARCHAR"/>
+		<result column="name" property="name" jdbcType="VARCHAR"/>
+		<result column="fromopenid" property="fromopenid" jdbcType="VARCHAR"/>
+		<result column="issend" property="issend" jdbcType="VARCHAR"/>
+		<result column="createtime" property="createtime" jdbcType="TIMESTAMP"/>
+		<result column="status" property="status" jdbcType="VARCHAR"/>
+		<result column="toopenid" property="toopenid" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.messagetext != null and query.messagetext != ''" >
+	  		 		/* 留言内容 */
+			    	AND l.messagetext =  #{query.messagetext,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.mobile != null and query.mobile != ''" >
+	  		 		/* 留言人手机号码 */
+			    	AND l.mobile =  #{query.mobile,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.name != null and query.name != ''" >
+	  		 		/* 留言人真实姓名 */
+			    	AND l.name =  #{query.name,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.fromopenid != null and query.fromopenid != ''" >
+	  		 		/* 留言人微信ID */
+			    	AND l.fromopenid =  #{query.fromopenid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.issend != null and query.issend != ''" >
+	  		 		/* 是否已向客户发送短信通知 */
+			    	AND l.issend =  #{query.issend,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.createtime != null and query.createtime != ''" >
+	  		 		/* 留言时间 */
+			    	AND l.createtime =  #{query.createtime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.status != null and query.status != ''" >
+	  		 		/* 处理状态（0未处理，1已处理） */
+			    	AND l.status =  #{query.status,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.toopenid != null and query.toopenid != ''" >
+	  		 		/* 留言接收人微信ID */
+			    	AND l.toopenid =  #{query.toopenid,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.leavemessage.entity.Leavemessage.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  leavemessage   /*  */  
+					(	
+                      id                            /*  */ 
+                     ,messagetext                   /* 留言内容 */ 
+                     ,mobile                        /* 留言人手机号码 */ 
+                     ,name                          /* 留言人真实姓名 */ 
+                     ,fromopenid                    /* 留言人微信ID */ 
+                     ,issend                        /* 是否已向客户发送短信通知 */ 
+                     ,createtime                    /* 留言时间 */ 
+                     ,status                        /* 处理状态（0未处理，1已处理） */ 
+                     ,toopenid                      /* 留言接收人微信ID */ 
+					)
+			values (
+                      #{id,jdbcType=VARCHAR}                            /*  */ 
+                     ,#{messagetext,jdbcType=VARCHAR}                   /* 留言内容 */ 
+                     ,#{mobile,jdbcType=VARCHAR}                        /* 留言人手机号码 */ 
+                     ,#{name,jdbcType=VARCHAR}                          /* 留言人真实姓名 */ 
+                     ,#{fromopenid,jdbcType=VARCHAR}                    /* 留言人微信ID */ 
+                     ,#{issend,jdbcType=VARCHAR}                        /* 是否已向客户发送短信通知 */ 
+                     ,#{createtime,jdbcType=TIMESTAMP}                    /* 留言时间 */ 
+                     ,#{status,jdbcType=VARCHAR}                        /* 处理状态（0未处理，1已处理） */ 
+                     ,#{toopenid,jdbcType=VARCHAR}                      /* 留言接收人微信ID */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.leavemessage.entity.Leavemessage.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   leavemessage  	/*  */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="messagetext != null">
+		    		 		/* 留言内容 */ 
+	    		 			messagetext = #{messagetext,jdbcType=VARCHAR},
+						 </if>
+						 <if test="mobile != null">
+		    		 		/* 留言人手机号码 */ 
+	    		 			mobile = #{mobile,jdbcType=VARCHAR},
+						 </if>
+						 <if test="name != null">
+		    		 		/* 留言人真实姓名 */ 
+	    		 			name = #{name,jdbcType=VARCHAR},
+						 </if>
+						 <if test="fromopenid != null">
+		    		 		/* 留言人微信ID */ 
+	    		 			fromopenid = #{fromopenid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="issend != null">
+		    		 		/* 是否已向客户发送短信通知 */ 
+	    		 			issend = #{issend,jdbcType=VARCHAR},
+						 </if>
+						 <if test="createtime != null">
+		    		 		/* 留言时间 */ 
+	    		 			createtime = #{createtime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="status != null">
+		    		 		/* 处理状态（0未处理，1已处理） */ 
+	    		 			status = #{status,jdbcType=VARCHAR},
+						 </if>
+						 <if test="toopenid != null">
+		    		 		/* 留言接收人微信ID */ 
+	    		 			toopenid = #{toopenid,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.leavemessage.entity.Leavemessage.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Leavemessage">
+		   SELECT   
+                   l.id                            /*  */ 
+                  ,l.messagetext                   /* 留言内容 */ 
+                  ,l.mobile                        /* 留言人手机号码 */ 
+                  ,l.name                          /* 留言人真实姓名 */ 
+                  ,l.fromopenid                    /* 留言人微信ID */ 
+                  ,l.issend                        /* 是否已向客户发送短信通知 */ 
+                  ,l.createtime                    /* 留言时间 */ 
+                  ,l.status                        /* 处理状态（0未处理，1已处理） */ 
+                  ,l.toopenid                      /* 留言接收人微信ID */ 
+		   FROM   leavemessage      AS l      /*  */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.leavemessage.entity.Leavemessage.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM leavemessage 	/*  */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.leavemessage.entity.Leavemessage.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  leavemessage      AS l      /*  */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.leavemessage.entity.Leavemessage.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Leavemessage">
+		    SELECT 
+                   l.id                            /*  */ 
+                  ,l.messagetext                   /* 留言内容 */ 
+                  ,l.mobile                        /* 留言人手机号码 */ 
+                  ,l.name                          /* 留言人真实姓名 */ 
+                  ,l.fromopenid                    /* 留言人微信ID */ 
+                  ,l.issend                        /* 是否已向客户发送短信通知 */ 
+                  ,l.createtime                    /* 留言时间 */ 
+                  ,l.status                        /* 处理状态（0未处理，1已处理） */ 
+                  ,l.toopenid                      /* 留言接收人微信ID */ 
+		FROM   	 leavemessage      AS l      /*  */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+</mapper>

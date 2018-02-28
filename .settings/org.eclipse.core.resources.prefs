@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/commons-logging.properties=UTF-8
+encoding//src/db.properties=UTF-8
+encoding//src/p3-cg-config.properties=UTF-8
+encoding//src/p3-web-sysconfig.properties=UTF-8
+encoding/<project>=UTF-8

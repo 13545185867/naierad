@@ -1,0 +1,156 @@
+body {
+    background-color: #fff;
+    color: #565a5c;
+    line-height: 1.5;
+}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, figure, form, fieldset, legend, button, input, textarea, select th, td {
+    margin: 0;
+    padding: 0;
+}
+address, cite, dfn, em, var, i {
+    font-style: normal;
+}
+html, button, input, select, textarea {
+    font-family: 'Microsoft Yahei',tahoma,arial,'宋体',sans-serif;
+}
+ul, ol, li {
+    list-style: none outside none;
+}
+body { width: 100%; overflow: hidden; }
+html, body, .page { height: 100%; }
+.page { background: url(login-bg.jpg) no-repeat 50% 50%; background-size: cover; }
+.bt0 { border-top: 0 !important; }
+.bb0 { border-bottom: 0 !important; }
+.bt1 { border-top: 1px solid #e0e0e0; }
+.bb1 { border-bottom: 1px solid #e0e0e0; }
+.rt1 { border-top-left-radius: 5px; border-top-right-radius: 5px; }
+.rb1 { border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; }
+.lt-ie8-alarm { position: absolute; background-color: #fff; z-index: 999; }
+.lt-ie8-alarm a { text-decoration: underline; color: blue; }
+.bg-wrap { z-index: 1; left: 0; overflow: hidden; position: fixed; top: 0; }
+.page { left: 0; position: absolute; width: 100%; z-index: 2; }
+.btn-doc { border: 1px solid #e5e5e5; display: block; text-align: center; text-decoration: none; cursor: pointer; }
+.btn-solid { color: #fff; background-color: #009875; border-color: #009875; }
+.btn-solid:hover { background-color: #009875; border-color: #009875; }
+.btn-solid:active { background-color: #d9a52b; border-color: #d9a52b; }
+.login-submit { font-size: 20px; height: 48px; line-height: 48px; margin-left: 0; width: 342px; border-radius: 5px; }
+.clearfix:after { width: 100%; height: 0; content: ""; overflow: hidden; visibility: hidden; clear: both; }
+a.logo { display: block; width: 150px; height: 83px; position: fixed; top: 6%; left: 10%; background: url(logo.png) 0 0 no-repeat; }
+.phlogo {width: 156px;height: 110px; background: url(logo.png) 0 0 no-repeat; margin:30px auto 0px;}
+.backgroundsize a.logo { background-image: url(logo.png); background-size: 150px 83px; }
+.login-img { position: absolute;width: 690px;height: 410px; left: 25%; top: 15%; background: #fff\9 !important; background: rgba(255, 255, 255, 0.8); filter: alpha(opacity=90); -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+.login-img img{margin:20px;}
+.login-zone { position: absolute; right: 20%; top: 20%; background: #fff\9 !important; background: rgba(255, 255, 255, 0.8); filter: alpha(opacity=90); -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+.login-zone .zone-title { padding: 22px 20px; }
+.login-zone .zone-wrap { padding: 22px 20px; position: relative; }
+.login-zone .info { margin-bottom: 10px; }
+.login-zone .info p { padding: 1px; background-color: #fff; border: 1px solid #e0e0e0; }
+.login-zone .info p.line { height: 1px; line-height: 1px; background-color: #e0e0e0; padding: 0; border: 0; }
+.login-zone .info p.has-error { border-color: #e35a58; }
+.login-zone .info p.errorline { background-color: #e35a58; }
+.login-zone h2 { display: block; line-height: 18px; font-size: 18px; height: 18px; color: #666666; }
+.login-zone .submit { margin-bottom: 0; *zoom: 1; }
+.login-zone .error-wrap { font-size: 12px; color: #e35a58; }
+.login-zone .error-wrap a { text-decoration: underline; color: #668cc0; }
+.login-zone .ipt { -moz-transition: all 0.3s ease 0s; -webkit-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s; width: 320px; height: 36px; line-height: 36px; padding: 10px; border: 0; font-size: 16px; background-color: #fff; z-index: 3; }
+.login-zone p.color { background-color: #e0e0e0; height: 1px; padding: 0 20px; }
+.login-zone p.color span { background-color: #009875; display: block; height: 1px; width: 73px; }
+.login-zone .icon_link { margin-top: 20px; text-align: center; }
+.login-zone .icon_link .underline, .login-zone .icon_link .underline:link { font-size: 16px; color: #666; text-decoration: underline; }
+.login-zone .icon_link .underline:hover { color: #009875; }
+.login-zone .icon_link .underline:active { color: #cc7d00; }
+.login-zone .icon_link i { margin: 0 6px; }
+.login-zone .icon_pwd { }
+.login-zone a.verify, .login-zone a.verify:link, .login-zone a.verify:hover { top: 10px; right: 10px; margin-left: 8px; width: 85px; position: absolute; height: 36px; line-height: 36px; -webkit-border-radius: 5px; -moz-border-radius: 5px; display: inline-block; text-decoration: none; font-size: 16px; text-align: center; color: #fff; border-radius: 5px; }
+.login-zone a.disabled, .login-zone a.disabled:link, .login-zone a.disabled:hover { background-color: #dad1c7; border-color: #dad1c7; color: #565a5c; cursor: default;}
+.login-zone .info-input-focus { border-color: #009875; }
+.login-footer { position: absolute; bottom: 10%; left: 10%; width: 100%; color: #fff; }
+.login-footer p.tel { height: 40px; line-height: 40px; font-family: arial; font-size: 24px; padding-left: 40px; background: url(hotline-login.png) no-repeat center left; color: #fff; }
+.login-footer p.tel a { color: #fff; text-decoration: none; }
+#footer { position: absolute; bottom: 0; z-index: 99; }
+.backgroundsize .login-footer p.tel { background-image: url(hotline-login-double.png); background-size: 24px 26px; }
+.backgroundsize .login-footer p.tel { background-size: 24px 26px; }
+#verifyCode ,#verifyImage{ position: relative; }
+.customer-service {  /*display:none;*/
+position: absolute; right: 4%; bottom: 15%; width: 37px; z-index: 9; }
+.customer-service li { margin-bottom: 10px; position: relative; height: 37px; width: 37px; }
+.customer-service li a { display: block; height: 37px; width: 37px; }
+.customer-service li a { display: block; height: 37px; outline:none; position: relative; width: 37px; -webkit-transition: .5s all; -moz-transition: .5s all; -ms-transition: .5s all; -o-transition: .5s all; transition: .5s all; -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d; -o-transform-style: preserve-3d; transform-style: preserve-3d; }
+.customer-service li a span { background: url(serviceIcon.png) no-repeat; background: url(serviceIcon2.png) no-repeat\9; background-size: 74px 130px; display: block; height: 37px; position: absolute; left: 0; top: 0; width: 37px; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -ms-backface-visibility: hidden; -o-backface-visibility: hidden; backface-visibility: hidden; }
+.customer-service li a .icon { -webkit-transform: rotateY(0deg); -moz-transform: rotateY(0deg); -ms-transform: rotateY(0deg); -o-transform: rotateY(0deg); transform: rotateY(0deg); z-index: 2; }
+.customer-service li.qq-service a .icon { background-position: 0 0; }
+.customer-service li.tel-service a .icon { background-position: 0 -46px; }
+.customer-service li.wx-service a .icon { background-position: 0 -92px; }
+.customer-service li a .text { -webkit-transform: rotateY(180deg); -moz-transform: rotateY(180deg); -ms-transform: rotateY(180deg); -o-transform: rotateY(180deg); transform: rotateY(180deg); }
+.customer-service li.qq-service a .text { background-position: -37px 0; }
+.customer-service li.tel-service a .text { background-position: -37px -46px; }
+.customer-service li.wx-service a .text { background-position: -37px -92px; }
+.customer-service li .tips { display: none; position: absolute; right: 50px; top: -5px; }
+.customer-service li.tel-service .tips { top: -15px; }
+.customer-service li.wx-service .tips { top: -52px; }
+.customer-service li .tips .con { background: #4d4d4d; border-radius: 3px; padding: 10px; text-align: center; width: 160px; }
+.customer-service li.wx-service .con { height: 117px; width: 117px; }
+.customer-service li .tips .con h2 { color: #fff; font-size: 14px; line-height: 18px; }
+.customer-service li .tips .con h3 { color: #fff; font-size: 12px; line-height: 18px; }
+.customer-service li .tips .arrow-right { width: 0; height: 0; display: block; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 10px solid #4d4d4d; margin-top: -8px; position: absolute; right: -5px; top: 50%; }
+.customer-service li.guide-service a span {width:38px;height:38px;background: url(serviceIcons-6d9d272341.png) no-repeat; background-size: 37.5px 84.5px; background: url(//es-static.xiaojukeji.com/static/web/home/images/serviceIcons2-11cf34624b.png) no-repeat\9; }  
+.customer-service li.guide-service a .icon { background-position: 0 0; }
+.customer-service li.guide-service a .text { background-position: 0px -46px; background-position: 0px -47px\9;}
+.customer-service li:hover a { -webkit-transform: rotateY(180deg); -moz-transform: rotateY(180deg); transform: rotateY(180deg); }
+.customer-service li:hover .tips { display: block; }
+@media screen and (min-width:500px) and (max-width:1000px) {
+  .customer-service { display: none; }
+}
+@media screen and (min-width:500px) and (max-width:800px) and (min-height:800px) {
+  .customer-service { display: none; }
+}
+@media screen and (max-width:500px) {
+  .customer-service { display: none; }
+}
+/*安全改版*/
+.login-zone .zone-title{overflow: hidden;}
+.login-zone h2.disabled {color:#999; cursor: default;}
+.login-zone h2.phone-tab{float: left; cursor: pointer;}
+.login-zone h2.password-tab{float: left; padding-left:40px; cursor: pointer;}
+.login-zone p.color span.right{margin-left: 113px}
+.btn-solid-font { color:#009875; background-color:#fff ; }
+.btn-solid-font:hover { color: #009875; }
+.btn-solid-font:active { color: #d9a52b; }
+.login-zone a.verify-font, .login-zone a.verify-font:link, .login-zone a.verify-font:hover { top: 10px; right: 25px; width: 85px; position: absolute; height: 36px; line-height: 36px; display: inline-block; text-decoration: none; font-size: 16px; text-align: center; margin-left: 25px; outline: none 0; }
+.login-zone a.verify-font.disabled, .login-zone a.verify-font.disabled:link, .login-zone a.verify-font.disabled:hover {color: #565a5c; background: #fff;}
+.login-zone a.vverify-img, .login-zone a.verify-img:link, .login-zone a.verify-img:hover{ top: 10px; right: 25px; width: 85px; position: absolute; height: 36px; line-height: 36px; display: inline-block; text-decoration: none; text-align: center; margin-left: 25px; outline: none 0; }
+.login-zone a.verify-img img{width:83px; max-height:30px; border:1px #f2f2f2 solid; vertical-align: middle; cursor: pointer;}
+.login-zone a.verify-font .linevertical,.login-zone a.verify-img .linevertical{position: absolute; display:inline-block; left:-25px; background-color: #e0e0e0; width:1px; height:26px; top:5px; }
+/* .phqyzm, .phqyzm:link, .phqyzm:hover { top:0px; right: 0; width: 85px; position: absolute; height: 39px; line-height: 36px; display: inline-block; text-decoration: none; font-size: 16px; text-align: center; padding: 0 25px; outline: none 0;}
+ */
+.phqyzm, .phqyzm:link, .phqyzm:hover { top:0px; right: 0; width: 110px; position: absolute; height: 39px; line-height: 36px; display: inline-block; text-decoration: none; font-size: 16px; text-align: center; padding: 0; border: 0;outline: none 0;}
+ .phqyzm:active,.phqyzm:hover {background-color: #f4f4f4;}
+.fgx{position: absolute; display:inline-block; left:0; background-color: #e0e0e0; width:1px; height:26px; top:5px; }
+.yzmys{color: #009875;-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;}
+.zc_login_rbox {width: 342px;height: 48px;margin-top:10px;line-height: 48px;text-align: center;color: #60606c;font-size: 14px;background-color: #fafbfc;border-radius: 5px;border: 1px solid #e9ebee;cursor: pointer;}
+.zc_login_rbox a{color:#6ab0ff;text-decoration:none}
+.zc_login_rbox a:hover{text-decoration:underline}
+.zc_login_phone{float:right;margin-right:4%;line-height: 48px;color: #60606c;font-size: 14px;cursor: pointer;}
+#passwordLoginForm{display:none;}
+#phoneLoginForm{}
+/*页尾*/
+#wrap{margin-bottom: 50px;*margin-bottom: 0px}
+#footer{width:100%; min-width:1000px; height:50px; background:#2c2c2c; line-height:50px; font-size:12px;position: absolute;*position:static;left:0;bottom:0;}
+.footer-w{width:1000px;margin:0 auto;}
+.footer-w span{padding-left:10px;}
+.user-d{float:right; font-size:14px; padding-right:8px;padding-left:22px;}
+.footer-w .tel-d{float: right;color:#bfbfbf;}
+.tel-d em{color: #cdcdcd; font-size: 14px; font-weight: bold;margin-left: 3px;}
+.jlbxt {
+    display: block;
+    width: 160px;
+    height: 83px;
+    position: fixed;
+    top: 20%;
+    left: 10%;
+	font-size:13px;
+}
+.jlbxt-ph {
+    padding-top: 60%;
+	font-size:13px;
+}

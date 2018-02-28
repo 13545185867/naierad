@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.viewcount.entity.Viewcount">
+
+	<!-- Result Map-->
+	<resultMap id="Viewcount" type="com.jeecg.p3.viewcount.entity.Viewcount" >
+		<result column="id" property="id" jdbcType="INTEGER"/>
+		<result column="viewcount" property="viewcount" jdbcType="INTEGER"/>
+		<result column="resourceid" property="resourceid" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.viewcount != null and query.viewcount != ''" >
+	  		 		/* 浏览次数 */
+			    	AND v.viewcount =  #{query.viewcount,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.resourceid != null and query.resourceid != ''" >
+	  		 		/* 资源ID */
+			    	AND v.resourceid =  #{query.resourceid,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.viewcount.entity.Viewcount.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  viewcount   /* 浏览统计 */  
+					(	
+                      id                            /*  */ 
+                     ,viewcount                     /* 浏览次数 */ 
+                     ,resourceid                    /* 资源ID */ 
+					)
+			values (
+                      #{id,jdbcType=INTEGER}                            /*  */ 
+                     ,#{viewcount,jdbcType=INTEGER}                     /* 浏览次数 */ 
+                     ,#{resourceid,jdbcType=VARCHAR}                    /* 资源ID */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.viewcount.entity.Viewcount.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   viewcount  	/* 浏览统计 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="viewcount != null">
+		    		 		/* 浏览次数 */ 
+	    		 			viewcount = #{viewcount,jdbcType=INTEGER},
+						 </if>
+						 <if test="resourceid != null">
+		    		 		/* 资源ID */ 
+	    		 			resourceid = #{resourceid,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.viewcount.entity.Viewcount.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Viewcount">
+		   SELECT   
+                   v.id                            /*  */ 
+                  ,v.viewcount                     /* 浏览次数 */ 
+                  ,v.resourceid                    /* 资源ID */ 
+		   FROM   viewcount      AS v      /* 浏览统计 */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.viewcount.entity.Viewcount.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM viewcount 	/* 浏览统计 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.viewcount.entity.Viewcount.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  viewcount      AS v      /* 浏览统计 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.viewcount.entity.Viewcount.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Viewcount">
+		    SELECT 
+                   v.id                            /*  */ 
+                  ,v.viewcount                     /* 浏览次数 */ 
+                  ,v.resourceid                    /* 资源ID */ 
+		FROM   	 viewcount      AS v      /* 浏览统计 */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+		 <update id="updateCount" parameterType="Object" >
+	  UPDATE   viewcount  	 set viewcount = viewcount+1 
+				WHERE
+	  	 		 		resourceid = #{resourceid}		/* 序号 */ 
+	 </update>
+	
+</mapper>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.website.entity.ColPage">
+
+	<!-- Result Map-->
+	<resultMap id="ColPage" type="com.jeecg.p3.website.entity.ColPage" >
+		<result column="id" property="id" jdbcType="INTEGER"/>
+		<result column="name" property="name" jdbcType="VARCHAR"/>
+		<result column="status" property="status" jdbcType="VARCHAR"/>
+		<result column="type" property="type" jdbcType="INTEGER"/>
+		<result column="sortnum" property="sortnum" jdbcType="INTEGER"/>
+		<result column="parentid" property="parentid" jdbcType="VARCHAR"/>
+		<result column="url" property="url" jdbcType="VARCHAR"/>
+		<result column="descript" property="descript" jdbcType="VARCHAR"/>
+		<result column="column1" property="column1" jdbcType="VARCHAR"/>
+		<result column="column2" property="column2" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.name != null and query.name != ''" >
+	  		 		/* 栏目名称 */
+			    	AND cp.name =  #{query.name,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.status != null and query.status != ''" >
+	  		 		/* 栏目是否可用  0为不可用, 1为可用 */
+			    	AND cp.status =  #{query.status,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.type != null and query.type != ''" >
+	  		 		/* 类型:1标签 2 页面 */
+			    	AND cp.type =  #{query.type,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.sortnum != null and query.sortnum != ''" >
+	  		 		/* 排序 */
+			    	AND cp.sortnum =  #{query.sortnum,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.parentid != null and query.parentid != ''" >
+	  		 		/* 父ID */
+			    	AND cp.parentid =  #{query.parentid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.url != null and query.url != ''" >
+	  		 		/* 页面连接地址 */
+			    	AND cp.url =  #{query.url,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.descript != null and query.descript != ''" >
+	  		 		/*  */
+			    	AND cp.descript =  #{query.descript,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.column1 != null and query.column1 != ''" >
+	  		 		/*  */
+			    	AND cp.column1 =  #{query.column1,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.column2 != null and query.column2 != ''" >
+	  		 		/*  */
+			    	AND cp.column2 =  #{query.column2,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.website.entity.ColPage.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  col_page   /* 页面栏目表 */  
+					(	
+                      id                            /* ID */ 
+                     ,name                          /* 栏目名称 */ 
+                     ,status                        /* 栏目是否可用  0为不可用, 1为可用 */ 
+                     ,type                          /* 类型:1标签 2 页面 */ 
+                     ,sortnum                       /* 排序 */ 
+                     ,parentid                      /* 父ID */ 
+                     ,url                           /* 页面连接地址 */ 
+                     ,descript                      /*  */ 
+                     ,column1                       /*  */ 
+                     ,column2                       /*  */ 
+					)
+			values (
+                      #{id,jdbcType=INTEGER}                            /* ID */ 
+                     ,#{name,jdbcType=VARCHAR}                          /* 栏目名称 */ 
+                     ,#{status,jdbcType=VARCHAR}                        /* 栏目是否可用  0为不可用, 1为可用 */ 
+                     ,#{type,jdbcType=INTEGER}                          /* 类型:1标签 2 页面 */ 
+                     ,#{sortnum,jdbcType=INTEGER}                       /* 排序 */ 
+                     ,#{parentid,jdbcType=VARCHAR}                      /* 父ID */ 
+                     ,#{url,jdbcType=VARCHAR}                           /* 页面连接地址 */ 
+                     ,#{descript,jdbcType=VARCHAR}                      /*  */ 
+                     ,#{column1,jdbcType=VARCHAR}                       /*  */ 
+                     ,#{column2,jdbcType=VARCHAR}                       /*  */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.website.entity.ColPage.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   col_page  	/* 页面栏目表 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="name != null">
+		    		 		/* 栏目名称 */ 
+	    		 			name = #{name,jdbcType=VARCHAR},
+						 </if>
+						 <if test="status != null">
+		    		 		/* 栏目是否可用  0为不可用, 1为可用 */ 
+	    		 			status = #{status,jdbcType=VARCHAR},
+						 </if>
+						 <if test="type != null">
+		    		 		/* 类型:1标签 2 页面 */ 
+	    		 			type = #{type,jdbcType=INTEGER},
+						 </if>
+						 <if test="sortnum != null">
+		    		 		/* 排序 */ 
+	    		 			sortnum = #{sortnum,jdbcType=INTEGER},
+						 </if>
+						 <if test="parentid != null">
+		    		 		/* 父ID */ 
+	    		 			parentid = #{parentid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="url != null">
+		    		 		/* 页面连接地址 */ 
+	    		 			url = #{url,jdbcType=VARCHAR},
+						 </if>
+						 <if test="descript != null">
+		    		 		/*  */ 
+	    		 			descript = #{descript,jdbcType=VARCHAR},
+						 </if>
+						 <if test="column1 != null">
+		    		 		/*  */ 
+	    		 			column1 = #{column1,jdbcType=VARCHAR},
+						 </if>
+						 <if test="column2 != null">
+		    		 		/*  */ 
+	    		 			column2 = #{column2,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.website.entity.ColPage.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="ColPage">
+		   SELECT   
+                   cp.id                            /* ID */ 
+                  ,cp.name                          /* 栏目名称 */ 
+                  ,cp.status                        /* 栏目是否可用  0为不可用, 1为可用 */ 
+                  ,cp.type                          /* 类型:1标签 2 页面 */ 
+                  ,cp.sortnum                       /* 排序 */ 
+                  ,cp.parentid                      /* 父ID */ 
+                  ,cp.url                           /* 页面连接地址 */ 
+                  ,cp.descript                      /*  */ 
+                  ,cp.column1                       /*  */ 
+                  ,cp.column2                       /*  */ 
+		   FROM   col_page      AS cp      /* 页面栏目表 */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.website.entity.ColPage.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM col_page 	/* 页面栏目表 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.website.entity.ColPage.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  col_page      AS cp      /* 页面栏目表 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.website.entity.ColPage.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="ColPage">
+		    SELECT 
+                   cp.id                            /* ID */ 
+                  ,cp.name                          /* 栏目名称 */ 
+                  ,cp.status                        /* 栏目是否可用  0为不可用, 1为可用 */ 
+                  ,cp.type                          /* 类型:1标签 2 页面 */ 
+                  ,cp.sortnum                       /* 排序 */ 
+                  ,cp.parentid                      /* 父ID */ 
+                  ,cp.url                           /* 页面连接地址 */ 
+                  ,cp.descript                      /*  */ 
+                  ,cp.column1                       /*  */ 
+                  ,cp.column2                       /*  */ 
+		FROM   	 col_page      AS cp      /* 页面栏目表 */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+	
+		<select id="queryColToTree" parameterType="Object"  resultMap="ColPage">
+		    SELECT  DISTINCT
+                   cp.id                            /* ID */ 
+                  ,cp.name                          /* 栏目名称 */ 
+                  ,cp.status                        /* 栏目是否可用  0为不可用, 1为可用 */ 
+                  ,cp.type                          /* 类型:1标签 2 页面 */ 
+                  ,cp.sortnum                       /* 排序 */ 
+                  ,cp.parentid                      /* 父ID */ 
+                  ,cp.url                           /* 页面连接地址 */ 
+                  ,cp.descript                      /*  */ 
+                  ,cp.column1                       /*  */ 
+                  ,cp.column2                       /*  */ 
+		FROM   	 col_page      AS cp      /* 页面栏目表 */ 
+		WHERE 1=1 and cp.status != 0
+	</select>
+	
+			<select id="queryNav" parameterType="Object"  resultMap="ColPage">
+		    SELECT  DISTINCT
+                   cp.id                            /* ID */ 
+                  ,cp.name                          /* 栏目名称 */ 
+                  ,cp.status                        /* 栏目是否可用  0为不可用, 1为可用 */ 
+                  ,cp.type                          /* 类型:1标签 2 页面 */ 
+                  ,cp.sortnum                       /* 排序 */ 
+                  ,cp.parentid                      /* 父ID */ 
+                  ,cp.url                           /* 页面连接地址 */ 
+                  ,cp.descript                      /*  */ 
+                  ,cp.column1                       /*  */ 
+                  ,cp.column2                       /*  */ 
+		FROM   	 col_page      AS cp      /* 页面栏目表 */ 
+		WHERE 1=1 and cp.status != 0  <if test="parentid != null and  parentid != ''" >
+		    		 		/* 父ID */ 
+	    		 		and 	parentid = #{parentid,jdbcType=VARCHAR}
+						 </if><if test="parentid == null or  parentid == ''" >
+		    		 		/* 父ID */ 
+	    		 		and 	(parentid = '' or parentid = null)
+						 </if>
+						 order by sortnum asc
+	</select>
+	
+</mapper>

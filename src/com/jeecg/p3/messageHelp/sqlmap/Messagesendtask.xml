@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.messageHelp.entity.Messagesendtask">
+
+	<!-- Result Map-->
+	<resultMap id="Messagesendtask" type="com.jeecg.p3.messageHelp.entity.Messagesendtask" >
+		<result column="id" property="id" jdbcType="INTEGER"/>
+		<result column="senduser" property="senduser" jdbcType="VARCHAR"/>
+		<result column="sendtime" property="sendtime" jdbcType="TIMESTAMP"/>
+		<result column="sendtype" property="sendtype" jdbcType="INTEGER"/>
+		<result column="isdelete" property="isdelete" jdbcType="INTEGER"/>
+		<result column="phonenum" property="phonenum" jdbcType="VARCHAR"/>
+		<result column="messagetype" property="messagetype" jdbcType="INTEGER"/>
+		<result column="messagetxt" property="messagetxt" jdbcType="VARCHAR"/>
+		<result column="messagesign" property="messagesign" jdbcType="VARCHAR"/>
+		<result column="messagetemplateid" property="messagetemplateid" jdbcType="INTEGER"/>
+		<result column="checkresult" property="checkresult" jdbcType="INTEGER"/>
+		<result column="attr1" property="attr1" jdbcType="VARCHAR"/>
+		<result column="attr2" property="attr2" jdbcType="VARCHAR"/>
+		<result column="attr3" property="attr3" jdbcType="VARCHAR"/>
+		<result column="attr4" property="attr4" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.senduser != null and query.senduser != ''" >
+	  		 		/*  */
+			    	AND m.senduser =  #{query.senduser,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.sendtime != null and query.sendtime != ''" >
+	  		 		/* 发送时间 */
+			    	AND m.sendtime =  #{query.sendtime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.sendtype != null" >
+	  		 		/* 0待发送 1发送成功  2发送失败 */
+			    	AND m.sendtype =  #{query.sendtype,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.isdelete != null" >
+	  		 		/* 0待发送 1发送成功  2发送失败 */
+			    	AND m.isdelete =  #{query.isdelete,jdbcType=INTEGER}
+				 </if>				 
+				 <if test="query.phonenum != null and query.phonenum != ''" >
+	  		 		/* 电话号码 */
+			    	AND m.phonenum =  #{query.phonenum,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.messagetype != null " >
+	  		 		/* 短信类型：0通知短信，1营销短信 */
+			    	AND m.messagetype =  #{query.messagetype,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.messagetxt != null and query.messagetxt != ''" >
+	  		 		/* 营销短信内容 */
+			    	AND m.messagetxt =  #{query.messagetxt,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.messagesign != null and query.messagesign != ''" >
+	  		 		/* 短信签名 */
+			    	AND m.messagesign =  #{query.messagesign,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.messagetemplateid != null " >
+	  		 		/*  */
+			    	AND m.messagetemplateid =  #{query.messagetemplateid,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.checkresult != null " >
+	  		 		/* 0未审核 1审核通过  2审核未通过 */
+			    	AND m.checkresult =  #{query.checkresult,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.attr1 != null and query.attr1 != ''" >
+	  		 		/*  */
+			    	AND m.attr1 =  #{query.attr1,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.attr2 != null and query.attr2 != ''" >
+	  		 		/*  */
+			    	AND m.attr2 =  #{query.attr2,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.attr3 != null and query.attr3 != ''" >
+	  		 		/*  */
+			    	AND m.attr3 =  #{query.attr3,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.attr4 != null and query.attr4 != ''" >
+	  		 		/*  */
+			    	AND m.attr4 =  #{query.attr4,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagesendtask.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object"   keyProperty="id" useGeneratedKeys="true">
+	  INSERT  INTO  messagesendtask   /*  */  
+					(	
+                      id                            /*  */ 
+                     ,senduser                      /*  */ 
+                     ,sendtime                      /* 发送时间 */ 
+                     ,sendtype                      /* 0待发送 1发送成功  2发送失败 */ 
+                     ,isdelete
+                     ,phonenum                      /* 电话号码 */ 
+                     ,messagetype                   /* 短信类型：0通知短信，1营销短信 */ 
+                     ,messagetxt                    /* 营销短信内容 */ 
+                     ,messagesign                   /* 短信签名 */ 
+                     ,messagetemplateid             /*  */ 
+                     ,checkresult                   /* 0未审核 1审核通过  2审核未通过 */ 
+                     ,attr1                         /*  */ 
+                     ,attr2                         /*  */ 
+                     ,attr3                         /*  */ 
+                     ,attr4                         /*  */ 
+					)
+			values (
+                      #{id,jdbcType=INTEGER}                            /*  */ 
+                     ,#{senduser,jdbcType=VARCHAR}                      /*  */ 
+                     ,#{sendtime,jdbcType=TIMESTAMP}                      /* 发送时间 */ 
+                     ,#{sendtype,jdbcType=INTEGER}                      /* 0待发送 1发送成功  2发送失败 */ 
+                     ,0
+                     ,#{phonenum,jdbcType=VARCHAR}                      /* 电话号码 */ 
+                     ,#{messagetype,jdbcType=INTEGER}                   /* 短信类型：0通知短信，1营销短信 */ 
+                     ,#{messagetxt,jdbcType=VARCHAR}                    /* 营销短信内容 */ 
+                     ,#{messagesign,jdbcType=VARCHAR}                   /* 短信签名 */ 
+                     ,#{messagetemplateid,jdbcType=INTEGER}             /*  */ 
+                     ,#{checkresult,jdbcType=INTEGER}                   /* 0未审核 1审核通过  2审核未通过 */ 
+                     ,#{attr1,jdbcType=VARCHAR}                         /*  */ 
+                     ,#{attr2,jdbcType=VARCHAR}                         /*  */ 
+                     ,#{attr3,jdbcType=VARCHAR}                         /*  */ 
+                     ,#{attr4,jdbcType=VARCHAR}                         /*  */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagesendtask.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   messagesendtask  	/*  */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="senduser != null">
+		    		 		/*  */ 
+	    		 			senduser = #{senduser,jdbcType=VARCHAR},
+						 </if>
+						 <if test="sendtime != null">
+		    		 		/* 发送时间 */ 
+	    		 			sendtime = #{sendtime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="sendtype != null">
+		    		 		/* 0待发送 1发送成功  2发送失败 */ 
+	    		 			sendtype = #{sendtype,jdbcType=INTEGER},
+						 </if>
+						 <if test="isdelete != null">
+		    		 		/* 0未删 1已删 */ 
+	    		 			isdelete = #{isdelete,jdbcType=INTEGER},
+						 </if>						 
+						 <if test="phonenum != null">
+		    		 		/* 电话号码 */ 
+	    		 			phonenum = #{phonenum,jdbcType=VARCHAR},
+						 </if>
+						 <if test="messagetype != null">
+		    		 		/* 短信类型：0通知短信，1营销短信 */ 
+	    		 			messagetype = #{messagetype,jdbcType=INTEGER},
+						 </if>
+						 <if test="messagetxt != null">
+		    		 		/* 营销短信内容 */ 
+	    		 			messagetxt = #{messagetxt,jdbcType=VARCHAR},
+						 </if>
+						 <if test="messagesign != null">
+		    		 		/* 短信签名 */ 
+	    		 			messagesign = #{messagesign,jdbcType=VARCHAR},
+						 </if>
+						 <if test="messagetemplateid != null">
+		    		 		/*  */ 
+	    		 			messagetemplateid = #{messagetemplateid,jdbcType=INTEGER},
+						 </if>
+						 <if test="checkresult != null">
+		    		 		/* 0未审核 1审核通过  2审核未通过 */ 
+	    		 			checkresult = #{checkresult,jdbcType=INTEGER},
+						 </if>
+						 <if test="attr1 != null">
+		    		 		/*  */ 
+	    		 			attr1 = #{attr1,jdbcType=VARCHAR},
+						 </if>
+						 <if test="attr2 != null">
+		    		 		/*  */ 
+	    		 			attr2 = #{attr2,jdbcType=VARCHAR},
+						 </if>
+						 <if test="attr3 != null">
+		    		 		/*  */ 
+	    		 			attr3 = #{attr3,jdbcType=VARCHAR},
+						 </if>
+						 <if test="attr4 != null">
+		    		 		/*  */ 
+	    		 			attr4 = #{attr4,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagesendtask.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Messagesendtask">
+		   SELECT   
+                   m.id                            /*  */ 
+                  ,m.senduser                      /*  */ 
+                  ,m.sendtime                      /* 发送时间 */ 
+                  ,m.sendtype                      /* 0待发送 1发送成功  2发送失败 */ 
+                  ,m.isdelete
+                  ,m.phonenum                      /* 电话号码 */ 
+                  ,m.messagetype                   /* 短信类型：0通知短信，1营销短信 */ 
+                  ,m.messagetxt                    /* 营销短信内容 */ 
+                  ,m.messagesign                   /* 短信签名 */ 
+                  ,m.messagetemplateid             /*  */ 
+                  ,m.checkresult                   /* 0未审核 1审核通过  2审核未通过 */ 
+                  ,m.attr1                         /*  */ 
+                  ,m.attr2                         /*  */ 
+                  ,m.attr3                         /*  */ 
+                  ,m.attr4                         /*  */ 
+		   FROM   messagesendtask      AS m      /*  */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagesendtask.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM messagesendtask 	/*  */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagesendtask.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  messagesendtask      AS m      /*  */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagesendtask.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Messagesendtask">
+		    SELECT 
+                   m.id                            /*  */ 
+                  ,m.senduser                      /*  */ 
+                  ,m.sendtime                      /* 发送时间 */ 
+                  ,m.sendtype                      /* 0待发送 1发送成功  2发送失败 */ 
+                  ,m.isdelete
+                  , length(m.phonenum)-length(replace(m.phonenum ,',','')) +1 as  phonenum                      /* 电话号码 */ 
+                  ,m.messagetype                   /* 短信类型：0通知短信，1营销短信 */ 
+                  ,m.messagetxt                    /* 营销短信内容 */ 
+                  ,m.messagesign                   /* 短信签名 */ 
+                  ,m.messagetemplateid             /*  */ 
+                  ,m.checkresult                   /* 0未审核 1审核通过  2审核未通过 */ 
+                  ,m.attr1                         /*  */ 
+                  ,m.attr2                         /*  */ 
+                  ,m.attr3                         /*  */ 
+                  ,m.attr4                         /*  */ 
+		FROM   	 messagesendtask      AS m      /*  */ 
+		WHERE 1=1 
+		   <include refid="wherecontation"/> order by id desc
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+			  
+	</select>
+	
+	 	<!--
+	方法名称: getPendingTaskList
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagesendtask.getPendingTaskList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="getPendingTaskList" parameterType="Object"  resultMap="Messagesendtask">
+		    SELECT 
+                   m.id                            /*  */ 
+                  ,m.senduser                      /*  */ 
+                  ,m.sendtime                      /* 发送时间 */ 
+                  ,m.sendtype                      /* 0待发送 1发送成功  2发送失败 */ 
+                  ,m.isdelete
+                  ,m.messagetype                   /* 短信类型：0通知短信，1营销短信 */ 
+                  ,m.messagetxt                    /* 营销短信内容 */ 
+                  ,m.messagesign                   /* 短信签名 */ 
+                  ,m.messagetemplateid             /*  */ 
+                  ,m.checkresult                   /* 0未审核 1审核通过  2审核未通过 */ 
+                  ,m.attr1                         /*  */ 
+                  ,m.attr2                         /*  */ 
+                  ,m.attr3                         /*  */ 
+                  ,m.attr4                         /*  */ 
+		FROM   	 messagesendtask      AS m      /*  */ 
+		WHERE checkresult=#{checkresult} and sendtype=#{sendtype}  and attr4=#{attr4} and <![CDATA[  timestamp(date(sysdate()))<=sendtime<= ]]>  #{sendtime} and isdelete !=1
+
+	</select>
+	
+	
+</mapper>

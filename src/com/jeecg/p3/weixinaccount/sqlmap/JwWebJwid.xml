@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.weixinaccount.entity.JwWebJwid">
+
+	<!-- Result Map-->
+	<resultMap id="JwWebJwid" type="com.jeecg.p3.weixinaccount.entity.JwWebJwid" >
+		<result column="id" property="id" jdbcType="VARCHAR"/>
+		<result column="jwid" property="jwid" jdbcType="VARCHAR"/>
+		<result column="name" property="name" jdbcType="VARCHAR"/>
+		<result column="application_type" property="applicationType" jdbcType="VARCHAR"/>
+		<result column="accounttoken" property="accounttoken" jdbcType="VARCHAR"/>
+		<result column="accountnumber" property="accountnumber" jdbcType="VARCHAR"/>
+		<result column="accountemail" property="accountemail" jdbcType="VARCHAR"/>
+		<result column="accountdesc" property="accountdesc" jdbcType="VARCHAR"/>
+		<result column="accountaccesstoken" property="accountaccesstoken" jdbcType="VARCHAR"/>
+		<result column="accountappid" property="accountappid" jdbcType="VARCHAR"/>
+		<result column="accountappsecret" property="accountappsecret" jdbcType="VARCHAR"/>
+		<result column="ADDTOEKNTIME" property="addtoekntime" jdbcType="TIMESTAMP"/>
+		<result column="USERNAME" property="username" jdbcType="VARCHAR"/>
+		<result column="apiticket" property="apiticket" jdbcType="VARCHAR"/>
+		<result column="apiticketttime" property="apiticketttime" jdbcType="TIMESTAMP"/>
+		<result column="jsapiticket" property="jsapiticket" jdbcType="VARCHAR"/>
+		<result column="jsapitickettime" property="jsapitickettime" jdbcType="TIMESTAMP"/>
+		<result column="accounttype" property="accounttype" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.jwid != null and query.jwid != ''" >
+	  		 		/* 公众号原始ID */
+			    	AND jwj.jwid =  #{query.jwid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.name != null and query.name != ''" >
+	  		 		/* 公众号账号中文名称 */
+			    	AND jwj.name =  #{query.name,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.applicationType != null and query.applicationType != ''" >
+	  		 		/* 应用类型 */
+			    	AND jwj.application_type =  #{query.applicationType,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.accounttoken != null and query.accounttoken != ''" >
+	  		 		/* 公众号Token */
+			    	AND jwj.accounttoken =  #{query.accounttoken,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.accountnumber != null and query.accountnumber != ''" >
+	  		 		/* 公众号英文名称 */
+			    	AND jwj.accountnumber =  #{query.accountnumber,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.accountemail != null and query.accountemail != ''" >
+	  		 		/* 公众号电子邮箱 */
+			    	AND jwj.accountemail =  #{query.accountemail,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.accountdesc != null and query.accountdesc != ''" >
+	  		 		/* 公众号描述 */
+			    	AND jwj.accountdesc =  #{query.accountdesc,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.accountaccesstoken != null and query.accountaccesstoken != ''" >
+	  		 		/*  */
+			    	AND jwj.accountaccesstoken =  #{query.accountaccesstoken,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.accountappid != null and query.accountappid != ''" >
+	  		 		/* 公众号APPID */
+			    	AND jwj.accountappid =  #{query.accountappid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.accountappsecret != null and query.accountappsecret != ''" >
+	  		 		/* 公众号APP密钥 */
+			    	AND jwj.accountappsecret =  #{query.accountappsecret,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.addtoekntime != null and query.addtoekntime != ''" >
+	  		 		/*  */
+			    	AND jwj.ADDTOEKNTIME =  #{query.addtoekntime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.username != null and query.username != ''" >
+	  		 		/*  */
+			    	AND jwj.USERNAME =  #{query.username,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.apiticket != null and query.apiticket != ''" >
+	  		 		/*  */
+			    	AND jwj.apiticket =  #{query.apiticket,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.apiticketttime != null and query.apiticketttime != ''" >
+	  		 		/*  */
+			    	AND jwj.apiticketttime =  #{query.apiticketttime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.jsapiticket != null and query.jsapiticket != ''" >
+	  		 		/*  */
+			    	AND jwj.jsapiticket =  #{query.jsapiticket,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.jsapitickettime != null and query.jsapitickettime != ''" >
+	  		 		/*  */
+			    	AND jwj.jsapitickettime =  #{query.jsapitickettime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.accounttype != null and query.accounttype != ''" >
+	  		 		/* 公众号类型   */
+			    	AND jwj.accounttype =  #{query.accounttype,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.weixinaccount.entity.JwWebJwid.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  jw_web_jwid   /* 微信公众号字典表 */  
+					(	
+                      id                            /*  */ 
+                     ,jwid                          /* 公众号原始ID */ 
+                     ,name                          /* 公众号账号中文名称 */ 
+                     ,application_type              /* 应用类型 */ 
+                     ,accounttoken                  /* 公众号Token */ 
+                     ,accountnumber                 /* 公众号英文名称 */ 
+                     ,accountemail                  /* 公众号电子邮箱 */ 
+                     ,accountdesc                   /* 公众号描述 */ 
+                     ,accountaccesstoken            /*  */ 
+                     ,accountappid                  /* 公众号APPID */ 
+                     ,accountappsecret              /* 公众号APP密钥 */ 
+                     ,ADDTOEKNTIME                  /*  */ 
+                     ,USERNAME                      /*  */ 
+                     ,apiticket                     /*  */ 
+                     ,apiticketttime                /*  */ 
+                     ,jsapiticket                   /*  */ 
+                     ,jsapitickettime               /*  */ 
+                     ,accounttype                   /* 公众号类型   */ 
+					)
+			values (
+                      #{id,jdbcType=VARCHAR}                            /*  */ 
+                     ,#{jwid,jdbcType=VARCHAR}                          /* 公众号原始ID */ 
+                     ,#{name,jdbcType=VARCHAR}                          /* 公众号账号中文名称 */ 
+                     ,#{applicationType,jdbcType=VARCHAR}               /* 应用类型 */ 
+                     ,#{accounttoken,jdbcType=VARCHAR}                  /* 公众号Token */ 
+                     ,#{accountnumber,jdbcType=VARCHAR}                 /* 公众号英文名称 */ 
+                     ,#{accountemail,jdbcType=VARCHAR}                  /* 公众号电子邮箱 */ 
+                     ,#{accountdesc,jdbcType=VARCHAR}                   /* 公众号描述 */ 
+                     ,#{accountaccesstoken,jdbcType=VARCHAR}            /*  */ 
+                     ,#{accountappid,jdbcType=VARCHAR}                  /* 公众号APPID */ 
+                     ,#{accountappsecret,jdbcType=VARCHAR}              /* 公众号APP密钥 */ 
+                     ,#{addtoekntime,jdbcType=TIMESTAMP}                  /*  */ 
+                     ,#{username,jdbcType=VARCHAR}                      /*  */ 
+                     ,#{apiticket,jdbcType=VARCHAR}                     /*  */ 
+                     ,#{apiticketttime,jdbcType=TIMESTAMP}                /*  */ 
+                     ,#{jsapiticket,jdbcType=VARCHAR}                   /*  */ 
+                     ,#{jsapitickettime,jdbcType=TIMESTAMP}               /*  */ 
+                     ,#{accounttype,jdbcType=VARCHAR}                   /* 公众号类型   */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.weixinaccount.entity.JwWebJwid.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   jw_web_jwid  	/* 微信公众号字典表 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="jwid != null">
+		    		 		/* 公众号原始ID */ 
+	    		 			jwid = #{jwid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="name != null">
+		    		 		/* 公众号账号中文名称 */ 
+	    		 			name = #{name,jdbcType=VARCHAR},
+						 </if>
+						 <if test="applicationType != null">
+		    		 		/* 应用类型 */ 
+	    		 			application_type = #{applicationType,jdbcType=VARCHAR},
+						 </if>
+						 <if test="accounttoken != null">
+		    		 		/* 公众号Token */ 
+	    		 			accounttoken = #{accounttoken,jdbcType=VARCHAR},
+						 </if>
+						 <if test="accountnumber != null">
+		    		 		/* 公众号英文名称 */ 
+	    		 			accountnumber = #{accountnumber,jdbcType=VARCHAR},
+						 </if>
+						 <if test="accountemail != null">
+		    		 		/* 公众号电子邮箱 */ 
+	    		 			accountemail = #{accountemail,jdbcType=VARCHAR},
+						 </if>
+						 <if test="accountdesc != null">
+		    		 		/* 公众号描述 */ 
+	    		 			accountdesc = #{accountdesc,jdbcType=VARCHAR},
+						 </if>
+						 <if test="accountaccesstoken != null">
+		    		 		/*  */ 
+	    		 			accountaccesstoken = #{accountaccesstoken,jdbcType=VARCHAR},
+						 </if>
+						 <if test="accountappid != null">
+		    		 		/* 公众号APPID */ 
+	    		 			accountappid = #{accountappid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="accountappsecret != null">
+		    		 		/* 公众号APP密钥 */ 
+	    		 			accountappsecret = #{accountappsecret,jdbcType=VARCHAR},
+						 </if>
+						 <if test="addtoekntime != null">
+		    		 		/*  */ 
+	    		 			ADDTOEKNTIME = #{addtoekntime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="username != null">
+		    		 		/*  */ 
+	    		 			USERNAME = #{username,jdbcType=VARCHAR},
+						 </if>
+						 <if test="apiticket != null">
+		    		 		/*  */ 
+	    		 			apiticket = #{apiticket,jdbcType=VARCHAR},
+						 </if>
+						 <if test="apiticketttime != null">
+		    		 		/*  */ 
+	    		 			apiticketttime = #{apiticketttime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="jsapiticket != null">
+		    		 		/*  */ 
+	    		 			jsapiticket = #{jsapiticket,jdbcType=VARCHAR},
+						 </if>
+						 <if test="jsapitickettime != null">
+		    		 		/*  */ 
+	    		 			jsapitickettime = #{jsapitickettime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="accounttype != null">
+		    		 		/* 公众号类型   */ 
+	    		 			accounttype = #{accounttype,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.weixinaccount.entity.JwWebJwid.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="JwWebJwid">
+		   SELECT   
+                   jwj.id                            /*  */ 
+                  ,jwj.jwid                          /* 公众号原始ID */ 
+                  ,jwj.name                          /* 公众号账号中文名称 */ 
+                  ,jwj.application_type              /* 应用类型 */ 
+                  ,jwj.accounttoken                  /* 公众号Token */ 
+                  ,jwj.accountnumber                 /* 公众号英文名称 */ 
+                  ,jwj.accountemail                  /* 公众号电子邮箱 */ 
+                  ,jwj.accountdesc                   /* 公众号描述 */ 
+                  ,jwj.accountaccesstoken            /*  */ 
+                  ,jwj.accountappid                  /* 公众号APPID */ 
+                  ,jwj.accountappsecret              /* 公众号APP密钥 */ 
+                  ,jwj.ADDTOEKNTIME                  /*  */ 
+                  ,jwj.USERNAME                      /*  */ 
+                  ,jwj.apiticket                     /*  */ 
+                  ,jwj.apiticketttime                /*  */ 
+                  ,jwj.jsapiticket                   /*  */ 
+                  ,jwj.jsapitickettime               /*  */ 
+                  ,jwj.accounttype                   /* 公众号类型   */ 
+		   FROM   jw_web_jwid      AS jwj      /* 微信公众号字典表 */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+		<select id="getByUsername" parameterType="Object"  resultMap="JwWebJwid">
+		   SELECT   
+                   jwj.id                            /*  */ 
+                  ,jwj.jwid                          /* 公众号原始ID */ 
+                  ,jwj.name                          /* 公众号账号中文名称 */ 
+                  ,jwj.application_type              /* 应用类型 */ 
+                  ,jwj.accounttoken                  /* 公众号Token */ 
+                  ,jwj.accountnumber                 /* 公众号英文名称 */ 
+                  ,jwj.accountemail                  /* 公众号电子邮箱 */ 
+                  ,jwj.accountdesc                   /* 公众号描述 */ 
+                  ,jwj.accountaccesstoken            /*  */ 
+                  ,jwj.accountappid                  /* 公众号APPID */ 
+                  ,jwj.accountappsecret              /* 公众号APP密钥 */ 
+                  ,jwj.ADDTOEKNTIME                  /*  */ 
+                  ,jwj.USERNAME                      /*  */ 
+                  ,jwj.apiticket                     /*  */ 
+                  ,jwj.apiticketttime                /*  */ 
+                  ,jwj.jsapiticket                   /*  */ 
+                  ,jwj.jsapitickettime               /*  */ 
+                  ,jwj.accounttype                   /* 公众号类型   */ 
+		   FROM   jw_web_jwid      AS jwj      /* 微信公众号字典表 */ 
+		   WHERE
+				USERNAME = #{username}				/* 序号 */ 
+	</select>
+	
+			<select id="getByJWid" parameterType="Object"  resultMap="JwWebJwid">
+		   SELECT   
+                   jwj.id                            /*  */ 
+                  ,jwj.jwid                          /* 公众号原始ID */ 
+                  ,jwj.name                          /* 公众号账号中文名称 */ 
+                  ,jwj.application_type              /* 应用类型 */ 
+                  ,jwj.accounttoken                  /* 公众号Token */ 
+                  ,jwj.accountnumber                 /* 公众号英文名称 */ 
+                  ,jwj.accountemail                  /* 公众号电子邮箱 */ 
+                  ,jwj.accountdesc                   /* 公众号描述 */ 
+                  ,jwj.accountaccesstoken            /*  */ 
+                  ,jwj.accountappid                  /* 公众号APPID */ 
+                  ,jwj.accountappsecret              /* 公众号APP密钥 */ 
+                  ,jwj.ADDTOEKNTIME                  /*  */ 
+                  ,jwj.USERNAME                      /*  */ 
+                  ,jwj.apiticket                     /*  */ 
+                  ,jwj.apiticketttime                /*  */ 
+                  ,jwj.jsapiticket                   /*  */ 
+                  ,jwj.jsapitickettime               /*  */ 
+                  ,jwj.accounttype                   /* 公众号类型   */ 
+		   FROM   jw_web_jwid      AS jwj      /* 微信公众号字典表 */ 
+		   WHERE
+				jwid = #{jwid}				/* 序号 */ 
+	</select>
+	
+	
+		<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.weixinaccount.entity.JwWebJwid.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="getByAddTicketTime" parameterType="Object"  resultMap="JwWebJwid">
+		   SELECT   
+                   jwj.id                            /*  */ 
+                  ,jwj.jwid                          /* 公众号原始ID */ 
+                  ,jwj.name                          /* 公众号账号中文名称 */ 
+                  ,jwj.application_type              /* 应用类型 */ 
+                  ,jwj.accounttoken                  /* 公众号Token */ 
+                  ,jwj.accountnumber                 /* 公众号英文名称 */ 
+                  ,jwj.accountemail                  /* 公众号电子邮箱 */ 
+                  ,jwj.accountdesc                   /* 公众号描述 */ 
+                  ,jwj.accountaccesstoken            /*  */ 
+                  ,jwj.accountappid                  /* 公众号APPID */ 
+                  ,jwj.accountappsecret              /* 公众号APP密钥 */ 
+                  ,jwj.ADDTOEKNTIME                  /*  */ 
+                  ,jwj.USERNAME                      /*  */ 
+                  ,jwj.apiticket                     /*  */ 
+                  ,jwj.apiticketttime                /*  */ 
+                  ,jwj.jsapiticket                   /*  */ 
+                  ,jwj.jsapitickettime               /*  */ 
+                  ,jwj.accounttype                   /* 公众号类型   */ 
+		   FROM   jw_web_jwid      AS jwj      /* 微信公众号字典表 */ 
+		   WHERE 
+				ADDTOEKNTIME &lt;   #{addtoekntime}
+	</select>
+	
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.weixinaccount.entity.JwWebJwid.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM jw_web_jwid 	/* 微信公众号字典表 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.weixinaccount.entity.JwWebJwid.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  jw_web_jwid      AS jwj      /* 微信公众号字典表 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.weixinaccount.entity.JwWebJwid.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="JwWebJwid">
+		    SELECT 
+                   jwj.id                            /*  */ 
+                  ,jwj.jwid                          /* 公众号原始ID */ 
+                  ,jwj.name                          /* 公众号账号中文名称 */ 
+                  ,jwj.application_type              /* 应用类型 */ 
+                  ,jwj.accounttoken                  /* 公众号Token */ 
+                  ,jwj.accountnumber                 /* 公众号英文名称 */ 
+                  ,jwj.accountemail                  /* 公众号电子邮箱 */ 
+                  ,jwj.accountdesc                   /* 公众号描述 */ 
+                  ,jwj.accountaccesstoken            /*  */ 
+                  ,jwj.accountappid                  /* 公众号APPID */ 
+                  ,jwj.accountappsecret              /* 公众号APP密钥 */ 
+                  ,jwj.ADDTOEKNTIME                  /*  */ 
+                  ,jwj.USERNAME                      /*  */ 
+                  ,jwj.apiticket                     /*  */ 
+                  ,jwj.apiticketttime                /*  */ 
+                  ,jwj.jsapiticket                   /*  */ 
+                  ,jwj.jsapitickettime               /*  */ 
+                  ,jwj.accounttype                   /* 公众号类型   */ 
+		FROM   	 jw_web_jwid      AS jwj      /* 微信公众号字典表 */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+</mapper>

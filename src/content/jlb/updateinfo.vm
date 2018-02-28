@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="Keywords" content="友房网">
+    <meta name="description" content="友房网">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>友房网</title>
+    <link href="$!{basePath}/content/jlb/css/registernew.css" rel="stylesheet" type="text/css">
+  </head>
+<body>
+	<!--提示弹出层 begin-->
+		<div class="fwmyd_bg" id="fydDIV" style="display: none;">
+		</div>
+	<!--提示弹出层 end-->
+	<div class="header">
+    <div class="headerwrap">
+		<div class="goback">
+			<a href="javascript:history.go(-1)"><img src="$!{basePath}/content/jlb/img/goback.png" border="0" title="返回上一页"></a>
+		</div>
+		<div class="reglogo">
+					<!--<a href="" class="logo" boss="source"></a>-->
+		</div>
+		<div class="linkright">
+		</div>
+	</div>
+  </div>
+  <div class="regCon">
+    <div class="hd">
+    	<!-- 2351 -->
+      <h1 class="biaoti">修改资料</h1>
+      			#if("$!{vipuser}" eq "true")
+	    			<img src="$!{basePath}/content/jlb/img/vip.png" class="vipage2">
+	    		#end
+		    </div>
+    <div class="bd">
+      <div id="reg-s1" style="display:block;">
+        <form method="post" id="regForm">
+          <ul>      
+							<li class="clearfix">
+				  <span class="txt3">&nbsp;&nbsp;&nbsp;会员编号：&nbsp;&nbsp;$!{code}</span>
+				</li>
+			            <li class="clearfix">
+            	<span class="txt2"><span class="xinghao">*</span>姓名：</span>
+            	<input type="text" class="ipt wd240" value="$!{user.realname}" name="realname" id="realname" disabled="disabled">
+            </li>
+			<li class="clearfix">
+				<span class="txt2"><span class="xinghao">*</span>性别：</span>
+				<input type="radio" class="" value="1" name="sex" #if("$!{user.sex}" eq "1")checked="true"#end>男
+				<input type="radio" class="" value="2" name="sex"  #if("$!{user.sex}" eq "2")checked="true"#end>女
+			</li>
+			<li class="clearfix">
+            	<span class="txt2">昵称：</span>
+            	<input type="text" class="ipt wd240" value="$!{user.nickname}" name="nickname" id="nickname" disabled="disabled">
+            </li>
+			<li class="clearfix">
+            	<span class="txt2">职业：</span>
+            	<input type="text" class="ipt wd240" value="$!{user.profession}" name="profession" id="profession">
+            </li>
+			 <li class="clearfix">
+            	<span class="txt2">联系地址：</span>
+            	<input type="text" class="ipt wd240" value="$!{user.addr}" name="addr" id="addr" >
+            </li>
+	        
+          </ul>
+            <div class="clearfix">
+              <input name="submit" type="submit" id="dosubmit" value="保存修改" class="btn-doc btn-solid register-submit fll">
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<div class="dbdh">
+	<span class="footer1">
+		<a href="$!{basePath}/jlb/tomember.html">
+			<img src="$!{basePath}/content/jlb/img/foot_1off.png">
+			<p>首页</p>
+		</a>
+	</span>
+	<span class="footer2">
+		<a href="$!{basePath}/jlb/hotlist.html">
+			<img src="$!{basePath}/content/jlb/img/foot_2off.png">
+			<p>会员活动</p>
+		</a>
+	</span>
+	<span class="footer3">
+		<a href="$!{basePath}/jlb/tovip.html">
+			<img src="$!{basePath}/content/jlb/img/foot_3.png">
+			<p class="pink">个人中心</p>
+		</a>
+	</span>
+  </div>
+</body>
+<script>
+var serverroot="$!{basePath}";
+</script>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/jquery.min.js"></script> 
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/tip.js"></script>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/updateinfo.js"></script>
+
+</html>

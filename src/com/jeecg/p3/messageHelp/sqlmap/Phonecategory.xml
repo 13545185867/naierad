@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.messageHelp.entity.Phonecategory">
+
+	<!-- Result Map-->
+	<resultMap id="Phonecategory" type="com.jeecg.p3.messageHelp.entity.Phonecategory" >
+		<result column="id" property="id" jdbcType="INTEGER"/>
+		<result column="phonebookid" property="phonebookid" jdbcType="INTEGER"/>
+		<result column="phonecategoryid" property="phonecategoryid" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.phonebookid != null and query.phonebookid != ''" >
+	  		 		/*  */
+			    	AND p.phonebookid =  #{query.phonebookid,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.phonecategoryid != null and query.phonecategoryid != ''" >
+	  		 		/*  */
+			    	AND p.phonecategoryid =  #{query.phonecategoryid,jdbcType=INTEGER}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.messageHelp.entity.Phonecategory.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  phonecategory   /*  */  
+					(	
+                      id                            /*  */ 
+                     ,phonebookid                   /*  */ 
+                     ,phonecategoryid               /*  */ 
+					)
+			values (
+                      #{id,jdbcType=INTEGER}                            /*  */ 
+                     ,#{phonebookid,jdbcType=INTEGER}                   /*  */ 
+                     ,#{phonecategoryid,jdbcType=INTEGER}               /*  */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.messageHelp.entity.Phonecategory.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   phonecategory  	/*  */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="phonebookid != null">
+		    		 		/*  */ 
+	    		 			phonebookid = #{phonebookid,jdbcType=INTEGER},
+						 </if>
+						 <if test="phonecategoryid != null">
+		    		 		/*  */ 
+	    		 			phonecategoryid = #{phonecategoryid,jdbcType=INTEGER},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.messageHelp.entity.Phonecategory.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Phonecategory">
+		   SELECT   
+                   p.id                            /*  */ 
+                  ,p.phonebookid                   /*  */ 
+                  ,p.phonecategoryid               /*  */ 
+		   FROM   phonecategory      AS p      /*  */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.messageHelp.entity.Phonecategory.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM phonecategory 	/*  */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.messageHelp.entity.Phonecategory.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  phonecategory      AS p      /*  */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.messageHelp.entity.Phonecategory.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Phonecategory">
+		    SELECT 
+                   p.id                            /*  */ 
+                  ,p.phonebookid                   /*  */ 
+                  ,p.phonecategoryid               /*  */ 
+		FROM   	 phonecategory      AS p      /*  */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+</mapper>

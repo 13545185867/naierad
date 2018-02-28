@@ -1,0 +1,76 @@
+#parse("content/base/back/common/macro.vm")
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+	#foreach($!{roleid} in $!{roleIds})
+	#if("$!{roleid}" eq "00") #set($admin = true) #end
+	#end
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<form role="form" class="form-inline" action="$!{basePath}/order/back/order/list.html" method="post"  id="formSubmit">
+				<div  class="col-md-10" style="width:100%">
+								<div class="panel panel-default">
+								  <div class="panel-heading">我的订单列表</div>
+								  <div class="panel-body">
+								  		<div class="search">
+															 <div class="form-group col-sm-3">
+															    <label for="paystatus" class="control-label col-sm-3 line34">支付状态</label>
+															     <div class="col-sm-8">
+															      <select name="paystatus" id="paystatus"  value="$!{order.paystatus}" class="form-control" > 
+													      				<option value="" >请选择</option>
+													      				<option value="0" >未支付</option>
+													      				<option value="1" >支付成功</option>
+													      				<option value="2" >支付失败</option>
+													      	  		</select>
+															  	</div>
+															 </div>
+															 
+
+											  <button type="submit" class="btn btn-primary">搜  索</button>
+											  <div class="clearfix"></div>
+								  		</div>
+								  		<div id="legend">
+								        </div>
+								        <table class="table table-striped">
+									        <thead>
+													<th>服务名称</th>
+													<th>订单生成时间</th>
+													<th>订单过期时间</th>
+													<th>订单价格</th>
+													<th>支付状态</th>
+													<th>支付时间</th>
+						                			<th>操作</th>
+									        </thead>
+									        <tobody>
+									    	  #if($!{pageInfos})
+								                #foreach($!{info} in $!{pageInfos})
+									            	<tr>			
+																	<td>$!{info.ordercol0}</td>
+																	<td>$!dateTool.format("yyyy-MM-dd HH:mm:ss",$!{info.createtime})</td>
+																	<td>$!dateTool.format("yyyy-MM-dd HH:mm:ss",$!{info.expiretime})</td>
+																	<td>$!{info.price}元</td>
+																	<td>#if("$!{info.paystatus}" eq 0)未支付#else #if("$!{info.paystatus}" eq 1)支付成功 #else支付失败#end #end</td>
+																	<td>$!dateTool.format("yyyy-MM-dd HH:mm:ss",$!{info.paytime})</td>
+										                <td class="last">
+							                			<a href="javascript:delData('$!{basePath}/order/back/order/doDelete.html?id=$!{info.id}')">删除</a>
+							                			 </td>
+									           		</tr>
+									             #end
+									    	 #end
+									         </tobody>
+									    </table>
+										<div class="text-right">
+											<!--公用翻页代码-->
+							                #set($attr='formSubmit')
+							            	#showPageList($pageInfos $attr)
+							                <!--END公用翻页代码-->
+										</div>
+								  </div>	
+								</div>
+				</div>  
+				</form>
+		</div>
+	</div>
+</body>
+</html>

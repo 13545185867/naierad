@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">编辑</div>
+				<div class="panel-body">
+					<form class="form-horizontal" role="form" id="dailogForm" action="$!{basePath}/messageHelp/back/messagesendtask/doEdit.html" method="POST">
+						 <input type="hidden" id="btn_sub" class="btn_sub" />
+						 <input type="hidden" value="$!{messagesendtask.id}" name="id" id="id" />
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;"></label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{messagesendtask.senduser}" name="senduser" id="senduser" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">发送时间</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!dateTool.format("yyyy-MM-dd",$!{messagesendtask.sendtime})" name="sendtime" id="sendtime" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">0待发送 1发送成功  2发送失败</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{messagesendtask.sendtype}" name="sendtype" id="sendtype" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">电话号码</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{messagesendtask.phonenum}" name="phonenum" id="phonenum" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">短信类型：0通知短信，1营销短信</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{messagesendtask.messagetype}" name="messagetype" id="messagetype" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">营销短信内容</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{messagesendtask.messagetxt}" name="messagetxt" id="messagetxt" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">短信签名</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{messagesendtask.messagesign}" name="messagesign" id="messagesign" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;"></label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{messagesendtask.messagetemplateid}" name="messagetemplateid" id="messagetemplateid" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">0未审核 1审核通过  2审核未通过</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{messagesendtask.checkresult}" name="checkresult" id="checkresult" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;"></label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{messagesendtask.attr1}" name="attr1" id="attr1" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;"></label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{messagesendtask.attr2}" name="attr2" id="attr2" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;"></label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{messagesendtask.attr3}" name="attr3" id="attr3" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;"></label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{messagesendtask.attr4}" name="attr4" id="attr4" class="form-control"/>
+												    </div>
+												</div>
+									<div class="form-group mno">
+											<div class="col-sm-offset-1 col-sm-6">
+												<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/messageHelp/back/messagesendtask/list.html')">返回</button>
+	        									<button type="button" class="btn btn-primary" id="formSubmit">提交</button>
+        									 </div>
+        							</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="$!{basePath}/plug-in/js/Validform_v5.3.2.js"></script> 
+<script type="text/javascript" src="$!{basePath}/plug-in/js/forminit.p3.js"></script>  

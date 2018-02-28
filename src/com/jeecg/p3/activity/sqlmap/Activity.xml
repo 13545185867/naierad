@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.activity.entity.Activity">
+
+	<!-- Result Map-->
+	<resultMap id="Activity" type="com.jeecg.p3.activity.entity.Activity" >
+		<result column="id" property="id" jdbcType="VARCHAR"/>
+		<result column="title" property="title" jdbcType="VARCHAR"/>
+		<result column="addr" property="addr" jdbcType="VARCHAR"/>
+		<result column="totalpepole" property="totalpepole" jdbcType="INTEGER"/>
+		<result column="remainpepole" property="remainpepole" jdbcType="INTEGER"/>
+		<result column="isdelete" property="isdelete" jdbcType="VARCHAR"/>
+		<result column="endtime" property="endtime" jdbcType="TIMESTAMP"/>
+		<result column="activitytime" property="activitytime" jdbcType="TIMESTAMP"/>
+		<result column="content" property="content" jdbcType="VARCHAR"/>
+		<result column="isvipview" property="isvipview" jdbcType="VARCHAR"/>
+		<result column="isvipparty" property="isvipparty" jdbcType="VARCHAR"/>
+		<result column="createtime" property="createtime" jdbcType="TIMESTAMP"/>
+		<result column="creatuser" property="creatuser" jdbcType="VARCHAR"/>
+		<result column="ruletip" property="ruletip" jdbcType="VARCHAR"/>
+		<result column="areaid" property="areaid" jdbcType="INTEGER"/>
+		<result column="viewcount" property="viewcount" jdbcType="INTEGER"/>
+		<result column="leadpic" property="leadpic" jdbcType="VARCHAR"/>
+		<result column="leadpicviewtype" property="leadpicviewtype" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.title != null and query.title != ''" >
+	  		 		/* 活动标题 */
+			    	AND a.title like   concat('%',#{query.title,jdbcType=VARCHAR},'%')
+				 </if>
+				 <if test="query.addr != null and query.addr != ''" >
+	  		 		/* 活动地址 */
+			    	AND a.addr like   concat('%',#{query.addr,jdbcType=VARCHAR},'%')
+				 </if>
+				 <if test="query.totalpepole != null and query.totalpepole != ''" >
+	  		 		/* 限定人数 */
+			    	AND a.totalpepole =  #{query.totalpepole,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.remainpepole != null and query.remainpepole != ''" >
+	  		 		/* 剩余名额 */
+			    	AND a.remainpepole =  #{query.remainpepole,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.isdelete != null and query.isdelete != ''" >
+	  		 		/* 是否已删除 */
+			    	AND a.isdelete =  #{query.isdelete,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.endtime != null and query.endtime != ''" >
+	  		 		/* 报名截止时间 */
+			    	AND a.endtime =  #{query.endtime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.activitytime != null and query.activitytime != ''" >
+	  		 		/* 报名截止时间 */
+			    	AND a.activitytime =  #{query.activitytime,jdbcType=TIMESTAMP}
+				 </if>				 
+				 
+				 <if test="query.content != null and query.content != ''" >
+	  		 		/* 活动内容 */
+			    	AND a.content like concat('%',#{query.content,jdbcType=VARCHAR},'%')
+				 </if>
+				 <if test="query.isvipview != null and query.isvipview != ''" >
+	  		 		/* 是否VIP才能查看 */
+			    	AND a.isvipview =  #{query.isvipview,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.isvipparty != null and query.isvipparty != ''" >
+	  		 		/* 是否VIP才能参加 */
+			    	AND a.isvipparty =  #{query.isvipparty,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.createtime != null and query.createtime != ''" >
+	  		 		/*  */
+			    	AND a.createtime =  #{query.createtime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.creatuser != null and query.creatuser != ''" >
+	  		 		/*  */
+			    	AND a.creatuser =  #{query.creatuser,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.ruletip != null and query.ruletip != ''" >
+	  		 		/* 活动要求 */
+			    	AND a.ruletip =  #{query.ruletip,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.areaid != null and query.areaid != ''" >
+	  		 		/* 所属区域ID */
+			    	AND a.areaid =  #{query.areaid,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.leadpic != null and query.leadpic != ''" >
+	  		 		/* 主题图片 */
+			    	AND a.leadpic =  #{query.leadpic,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.leadpicviewtype != null and query.leadpicviewtype != ''" >
+	  		 		/* 主题图显示方式（0为小图，1为大图） */
+			    	AND a.leadpicviewtype =  #{query.leadpicviewtype,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.activity.entity.Activity.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  activity   /* 会员活动 */  
+					(	
+                      id                            /*  */ 
+                     ,title                         /* 活动标题 */ 
+                     ,addr                          /* 活动地址 */ 
+                     ,totalpepole                   /* 限定人数 */ 
+                     ,remainpepole                  /* 剩余名额 */ 
+                     ,isdelete                      /* 是否已删除 */ 
+                     ,endtime                       /* 报名截止时间 */ 
+                     ,activitytime
+                     ,content                       /* 活动内容 */ 
+                     ,isvipview                     /* 是否VIP才能查看 */ 
+                     ,isvipparty                    /* 是否VIP才能参加 */ 
+                     ,createtime                    /*  */ 
+                     ,creatuser                     /*  */ 
+                     ,ruletip                       /* 活动要求 */ 
+                     ,areaid                        /* 所属区域ID */ 
+                     ,leadpic                       /* 主题图片 */ 
+                     ,leadpicviewtype               /* 主题图显示方式（0为小图，1为大图） */ 
+					)
+			values (
+                      #{id,jdbcType=VARCHAR}                            /*  */ 
+                     ,#{title,jdbcType=VARCHAR}                         /* 活动标题 */ 
+                     ,#{addr,jdbcType=VARCHAR}                          /* 活动地址 */ 
+                     ,#{totalpepole,jdbcType=INTEGER}                   /* 限定人数 */ 
+                     ,#{remainpepole,jdbcType=INTEGER}                  /* 剩余名额 */ 
+                     ,#{isdelete,jdbcType=VARCHAR}                      /* 是否已删除 */ 
+                     ,#{endtime,jdbcType=TIMESTAMP}                       /* 报名截止时间 */ 
+                     ,#{activitytime,jdbcType=TIMESTAMP} 
+                     ,#{content,jdbcType=VARCHAR}                       /* 活动内容 */ 
+                     ,#{isvipview,jdbcType=VARCHAR}                     /* 是否VIP才能查看 */ 
+                     ,#{isvipparty,jdbcType=VARCHAR}                    /* 是否VIP才能参加 */ 
+                     ,#{createtime,jdbcType=TIMESTAMP}                    /*  */ 
+                     ,#{creatuser,jdbcType=VARCHAR}                     /*  */ 
+                     ,#{ruletip,jdbcType=VARCHAR}                       /* 活动要求 */ 
+                     ,#{areaid,jdbcType=INTEGER}                        /* 所属区域ID */ 
+                     ,#{leadpic,jdbcType=VARCHAR}                       /* 主题图片 */ 
+                     ,#{leadpicviewtype,jdbcType=VARCHAR}               /* 主题图显示方式（0为小图，1为大图） */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.activity.entity.Activity.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   activity  	/* 会员活动 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="title != null">
+		    		 		/* 活动标题 */ 
+	    		 			title = #{title,jdbcType=VARCHAR},
+						 </if>
+						 <if test="addr != null">
+		    		 		/* 活动地址 */ 
+	    		 			addr = #{addr,jdbcType=VARCHAR},
+						 </if>
+						 <if test="totalpepole != null">
+		    		 		/* 限定人数 */ 
+	    		 			totalpepole = #{totalpepole,jdbcType=INTEGER},
+						 </if>
+						 <if test="remainpepole != null">
+		    		 		/* 剩余名额 */ 
+	    		 			remainpepole = #{remainpepole,jdbcType=INTEGER},
+						 </if>
+						 <if test="isdelete != null">
+		    		 		/* 是否已删除 */ 
+	    		 			isdelete = #{isdelete,jdbcType=VARCHAR},
+						 </if>
+						 <if test="endtime != null">
+		    		 		/* 报名截止时间 */ 
+	    		 			endtime = #{endtime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="activitytime != null">
+		    		 		/* 报名截止时间 */ 
+	    		 			activitytime = #{activitytime,jdbcType=TIMESTAMP},
+						 </if>						 
+						 <if test="content != null">
+		    		 		/* 活动内容 */ 
+	    		 			content = #{content,jdbcType=VARCHAR},
+						 </if>
+						 <if test="isvipview != null">
+		    		 		/* 是否VIP才能查看 */ 
+	    		 			isvipview = #{isvipview,jdbcType=VARCHAR},
+						 </if>
+						 <if test="isvipparty != null">
+		    		 		/* 是否VIP才能参加 */ 
+	    		 			isvipparty = #{isvipparty,jdbcType=VARCHAR},
+						 </if>
+						 <if test="createtime != null">
+		    		 		/*  */ 
+	    		 			createtime = #{createtime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="ruletip != null">
+		    		 		/* 活动要求 */ 
+	    		 			ruletip = #{ruletip,jdbcType=VARCHAR},
+						 </if>
+						 <if test="areaid != null">
+		    		 		/* 所属区域ID */ 
+	    		 			areaid = #{areaid,jdbcType=INTEGER},
+						 </if>
+						 <if test="leadpic != null">
+		    		 		/* 主题图片 */ 
+	    		 			leadpic = #{leadpic,jdbcType=VARCHAR},
+						 </if>
+						 <if test="leadpicviewtype != null">
+		    		 		/* 主题图显示方式（0为小图，1为大图） */ 
+	    		 			leadpicviewtype = #{leadpicviewtype,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}	and creatuser = #{creatuser}	/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.activity.entity.Activity.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Activity">
+ SELECT   
+                   a.id                            /*  */ 
+                  ,a.title                         /* 活动标题 */ 
+                  ,a.addr                          /* 活动地址 */ 
+                  ,a.totalpepole                   /* 限定人数 */ 
+                  ,a.remainpepole                  /* 剩余名额 */ 
+                  ,a.isdelete                      /* 是否已删除 */ 
+                  ,a.endtime                       /* 报名截止时间 */ 
+                  ,a.activitytime
+                  ,a.content                       /* 活动内容 */ 
+                  ,a.isvipview                     /* 是否VIP才能查看 */ 
+                  ,a.isvipparty                    /* 是否VIP才能参加 */ 
+                  ,a.createtime                    /*  */ 
+                  ,a.creatuser                     /*  */ 
+                  ,a.ruletip                       /* 活动要求 */ 
+                  ,a.areaid                        /* 所属区域ID */ 
+                  ,a.leadpic                       /* 主题图片 */ 
+                  ,a.leadpicviewtype               /* 主题图显示方式（0为小图，1为大图） */
+                  ,v.viewcount
+                  
+		   FROM   activity      AS a      /* 会员活动 */  left join viewcount v on a.id = v.resourceid
+		   WHERE
+				a.id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.activity.entity.Activity.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM activity 	/* 会员活动 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.activity.entity.Activity.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  activity      AS a      /* 会员活动 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.activity.entity.Activity.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Activity">
+		    SELECT 
+                   a.id                            /*  */ 
+                  ,a.title                         /* 活动标题 */ 
+                  ,a.addr                          /* 活动地址 */ 
+                  ,a.totalpepole                   /* 限定人数 */ 
+                  ,a.remainpepole                  /* 剩余名额 */ 
+                  ,a.isdelete                      /* 是否已删除 */ 
+                  ,a.endtime                       /* 报名截止时间 */ 
+                  ,a.activitytime
+                  ,a.content                       /* 活动内容 */ 
+                  ,a.isvipview                     /* 是否VIP才能查看 */ 
+                  ,a.isvipparty                    /* 是否VIP才能参加 */ 
+                  ,a.createtime                    /*  */ 
+                  ,a.creatuser                     /*  */ 
+                  ,a.ruletip                       /* 活动要求 */ 
+                  ,a.areaid                        /* 所属区域ID */ 
+                  ,a.leadpic                       /* 主题图片 */ 
+                  ,a.leadpicviewtype               /* 主题图显示方式（0为小图，1为大图） */ 
+		FROM   	 activity      AS a      /* 会员活动 */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/> order by createtime desc
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+</mapper>

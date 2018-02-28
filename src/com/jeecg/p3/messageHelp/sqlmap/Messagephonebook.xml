@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.messageHelp.entity.Messagephonebook">
+
+	<!-- Result Map-->
+	<resultMap id="Messagephonebook" type="com.jeecg.p3.messageHelp.entity.Messagephonebook" >
+		<result column="id" property="id" jdbcType="INTEGER"/>
+		<result column="username" property="username" jdbcType="VARCHAR"/>
+		<result column="useraddr" property="useraddr" jdbcType="VARCHAR"/>
+		<result column="birthday" property="birthday" jdbcType="TIMESTAMP"/>
+		<result column="memberday" property="memberday" jdbcType="TIMESTAMP"/>
+		<result column="creatuser" property="creatuser" jdbcType="VARCHAR"/>
+		<result column="status" property="status" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.username != null and query.username != ''" >
+	  		 		/* 用户姓名 */
+			    	AND m.username =  #{query.username,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.useraddr != null and query.useraddr != ''" >
+	  		 		/* 用户联系地址 */
+			    	AND m.useraddr =  #{query.useraddr,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.birthday != null and query.birthday != ''" >
+	  		 		/* 生日 */
+			    	AND m.birthday =  #{query.birthday,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.memberday != null and query.memberday != ''" >
+	  		 		/* 会员日 */
+			    	AND m.memberday =  #{query.memberday,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.creatuser != null and query.creatuser != ''" >
+	  		 		/* 创建人 */
+			    	AND m.creatuser =  #{query.creatuser,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.status != null and query.status != ''" >
+	  		 		/* 0 不可用 1可用) */
+			    	AND m.status =  #{query.status,jdbcType=INTEGER}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagephonebook.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  messagephonebook   /*  */  
+					(	
+                      id                            /*  */ 
+                     ,username                      /* 用户姓名 */ 
+                     ,useraddr                      /* 用户联系地址 */ 
+                     ,birthday                      /* 生日 */ 
+                     ,memberday                     /* 会员日 */ 
+                     ,creatuser                     /* 创建人 */ 
+                     ,status                        /* 0 不可用 1可用) */ 
+					)
+			values (
+                      #{id,jdbcType=INTEGER}                            /*  */ 
+                     ,#{username,jdbcType=VARCHAR}                      /* 用户姓名 */ 
+                     ,#{useraddr,jdbcType=VARCHAR}                      /* 用户联系地址 */ 
+                     ,#{birthday,jdbcType=TIMESTAMP}                      /* 生日 */ 
+                     ,#{memberday,jdbcType=TIMESTAMP}                     /* 会员日 */ 
+                     ,#{creatuser,jdbcType=VARCHAR}                     /* 创建人 */ 
+                     ,#{status,jdbcType=INTEGER}                        /* 0 不可用 1可用) */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagephonebook.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   messagephonebook  	/*  */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="username != null">
+		    		 		/* 用户姓名 */ 
+	    		 			username = #{username,jdbcType=VARCHAR},
+						 </if>
+						 <if test="useraddr != null">
+		    		 		/* 用户联系地址 */ 
+	    		 			useraddr = #{useraddr,jdbcType=VARCHAR},
+						 </if>
+						 <if test="birthday != null">
+		    		 		/* 生日 */ 
+	    		 			birthday = #{birthday,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="memberday != null">
+		    		 		/* 会员日 */ 
+	    		 			memberday = #{memberday,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="creatuser != null">
+		    		 		/* 创建人 */ 
+	    		 			creatuser = #{creatuser,jdbcType=VARCHAR},
+						 </if>
+						 <if test="status != null">
+		    		 		/* 0 不可用 1可用) */ 
+	    		 			status = #{status,jdbcType=INTEGER},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagephonebook.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Messagephonebook">
+		   SELECT   
+                   m.id                            /*  */ 
+                  ,m.username                      /* 用户姓名 */ 
+                  ,m.useraddr                      /* 用户联系地址 */ 
+                  ,m.birthday                      /* 生日 */ 
+                  ,m.memberday                     /* 会员日 */ 
+                  ,m.creatuser                     /* 创建人 */ 
+                  ,m.status                        /* 0 不可用 1可用) */ 
+		   FROM   messagephonebook      AS m      /*  */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagephonebook.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM messagephonebook 	/*  */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagephonebook.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  messagephonebook      AS m      /*  */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagephonebook.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Messagephonebook">
+		    SELECT 
+                   m.id                            /*  */ 
+                  ,m.username                      /* 用户姓名 */ 
+                  ,m.useraddr                      /* 用户联系地址 */ 
+                  ,m.birthday                      /* 生日 */ 
+                  ,m.memberday                     /* 会员日 */ 
+                  ,m.creatuser                     /* 创建人 */ 
+                  ,m.status                        /* 0 不可用 1可用) */ 
+		FROM   	 messagephonebook      AS m      /*  */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+</mapper>

@@ -1,0 +1,174 @@
+#parse("content/base/back/common/macromobile.vm")
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="Keywords" content="友房网">
+    <meta name="description" content="友房网">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>友房网</title>
+    <link href="$!{basePath}/content/jlb/css/registernew.css" rel="stylesheet" type="text/css">
+    <link href="$!{basePath}/plug-in/css/bootstrap.css" rel="stylesheet">
+    <link href="$!{basePath}/plug-in/css/style.css" rel="stylesheet">
+    <link href="$!{basePath}/plug-in/css/zTreeStyle/zTreeStyle.css" type="text/css" rel="stylesheet"/>
+	<link href="$!{basePath}/plug-in/css/mycss/kongjian.css" rel="stylesheet">
+
+##    引入js文件
+    <script type="text/javascript" src="$!{basePath}/plug-in/js/iFrameResize.js"></script>
+	<script type="text/javascript" src="$!{basePath}/plug-in/js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="$!{basePath}/plug-in/js/respond.min.js"></script>
+	<script type="text/javascript" src="$!{basePath}/plug-in/js/bootstrap.js"></script>
+	<script type="text/javascript" src="$!{basePath}/plug-in/js/common.js"></script>
+	<script type="text/javascript" src="$!{basePath}/plug-in/js/jquery.form.js"></script>
+	<script type="text/javascript" src="$!{basePath}/plug-in/js/scrollNav.js"></script>
+	<script type="text/javascript" src="$!{basePath}/plug-in/js/My97DatePicker/WdatePicker.js" language="javascript"></script>
+    
+     <style>
+		ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+		ol,ul,li{list-style:none;}
+		.regCon{background-color: #f6f6f6;border: 0px;}
+		.list-detail.on{margin: 10px;}
+		.list-detail .rm-btn{position:absolute;top:0;right:0;height:100%;color:#fff;background:#ff3201;width:56px;font-size:15px;text-align:center;-webkit-transform:translateX(56px);-moz-transform:translateX(56px);-ms-transform:translateX(56px);-o-transform:translateX(56px);transform:translateX(56px);-webkit-transition:-webkit-transform 300ms;-moz-transition:-moz-transform 300ms;-o-transition:-o-transform 300ms;transition:transform 300ms}
+		.list-detail .list-info{background-color:#fff;padding:0 15px;border:1px solid rgba(229,229,229,0.5);-webkit-transform:translateX(0);-moz-transform:translateX(0);-ms-transform:translateX(0);-o-transform:translateX(0);transform:translateX(0);-webkit-transition:-webkit-transform 300ms;-moz-transition:-moz-transform 300ms;-o-transition:-o-transform 300ms;transition:transform 300ms;position:relative;overflow:hidden;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}
+		.list-detail .list-info .icon::before{color:#888;margin:0 3px}
+		.list-detail .list-info .share{position:absolute;left:0;top:0;font-size:12px;line-height:1.5;width:70px;color:#fff!important;background:#38ac65;text-align:center;-webkit-transform:rotate(-45deg) translate3d(-19px,-19px,0) scale(0.7);-moz-transform:rotate(-45deg) translate3d(-19px,-19px,0) scale(0.7);transform:rotate(-45deg) translate3d(-19px,-19px,0) scale(0.7)}
+		@media(min-width:320px){.list-detail .list-info .city-info{width:190px}
+		}
+		.list-detail .list-info .city-info{-webkit-box-flex:3;-webkit-flex:3;-moz-box-flex:3;-ms-flex:3;flex:3;font-family:黑简细;font-size:16px;color:#333}
+		.list-detail .list-info .city-info span {overflow: hidden;word-break: keep-all;white-space: nowrap;text-overflow: ellipsis;display:block; width:90%;}
+		.list-detail .list-info .i-plane::before{font-family:mf;font-size:20px;vertical-align:middle;color:#00a8ba;margin:0;display:inline-block}
+		.list-detail .list-info .i-plane.from-pln::before{-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}
+		.list-detail .list-info .i-plane.to-pln::before{-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}
+		.list-detail .list-info.list-dark p,.list-detail .list-info.list-dark span,.list-detail .list-info.list-dark i,.list-detail .list-info.list-dark .icon::before{color:#999}
+		.list-detail .list-info.list-dark i{border-color:#999}
+		.list-detail .list-info.list-dark .i-plane::before{color:#bfbfbf}
+		.list-detail .list-info.list-orange .order-status{color:#f60}
+		.list-detail .list-info.list-blue .order-status{color:#009875;}
+		.list-detail .item{border-bottom:1px solid #eceff3}
+		.list-detail .item:last-of-type{border-bottom:0}
+		.list-detail .item-stop{color:#888}
+		.list-detail .info-title{height:44px;line-height:44px;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		}
+		.list-detail .info-title .order-status{text-align:right;font-family:黑简中;font-size:16px}
+		.list-detail .info-body ul{padding-top:5px}
+		.list-detail .info-body li{padding:10px 0 0;font-size:11px}
+		.list-detail .info-body .info-order{padding:15px 0;font-family:黑简细;font-size:12px;color:#888}
+		.list-detail .info-body .info-order .price{float:right;font-family:"Helvetica Neue Light";font-size:12px;color:#888}
+		.list-detail .info-body .info-order .price .icon::before{margin-right:0}
+		.list-detail .info-body .item-normal{margin-right:4px;font-family:"Helvetica Neue Light";font-size:14px;color:#333;
+		overflow: hidden;
+	    text-overflow: ellipsis;
+	    display: -webkit-box;
+	    -webkit-box-orient: vertical;
+	    -webkit-line-clamp: 2;
+		}
+		.list-detail .info-body .add-day{width:32px;color:#ff8205;font-size:12px;margin-left:2px}
+		.list-detail .info-body .item-cz{font-family:黑简细;font-size:14px;color:#333}
+		.list-detail .info-more{text-align:right;padding:9px 0}
+		.list-detail .info-more .order-tip{display:inline-block;height:44px;line-height:44px;margin:-9px 0;width:100%;text-align:left;font-family:黑简细;font-size:12px;color:#333}
+	</style>
+  </head>
+<body>
+	<!--提示弹出层 begin-->
+		<div class="fwmyd_bg" id="fydDIV" style="display: none;">
+		</div>
+	<!--提示弹出层 end-->
+	<div class="header" style="margin-bottom: 0px; height: 48px;line-height: 48px;">
+	<div class="headerwrap">
+		<div class="goback">
+			<a href="javascript:history.go(-1)"><img src="$!{basePath}/content/jlb/img/goback.png" border="0" title="返回上一页"></a>
+		</div>
+		<div class="reglogo">
+					<!--<a href="" class="logo" boss="source"></a>-->
+		</div>
+		<div class="linkright">
+		</div>
+	</div>
+  </div>
+  <div class="regCon">
+    <div class="hd">
+	  	
+      <h1 class="biaoti">活动记录</h1>
+      			#if("$!{vipuser}" eq "true")
+	    			<img src="$!{basePath}/content/jlb/img/vip.png" class="vipage2">
+	    		#end
+		    </div>
+    <div class="page__bd">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+            			<form role="form" class="form-inline" action="$!{basePath}/jlb/bookedlist.html" method="post"  id="formSubmit">
+  #if($!{pageInfos})
+	 #foreach($!{info} in $!{pageInfos})
+	<div class="list-detail on" >
+		<div class="an-wrap">            
+            <div class="list-info list-blue j_tag3 2"  >
+            <a href="$!{basePath}/$!{info.deatilurl}" class="article_link clearfix">
+				<div class="info-title item">
+					
+					<p class="city-info i-plane from-pln ellipsis">
+						<span>$!{info.activitytitle}</span>
+	                </p>
+					<!-- <p class="order-status">
+						未参加	
+					</p> -->
+				</div>
+				<div class="info-body item">
+					<ul>
+						<li class="ellipsis">
+							<span class="item-normal"></span>					
+						</li>
+					</ul>
+					<div class="info-order">
+						<span>报名时间: $!dateTool.format("yyyy-MM-dd HH:mm:ss",$!{info.booktime})</span>
+						<span class="price"><span class="icon i-yen">报名人数：$!{info.bookpersoncount}</span></span>		
+					</div>
+				</div>
+			</a>
+			</div>
+		</div>
+	</div>
+    #end
+ #end
+
+										<div class="text-center">
+											<!--公用翻页代码-->
+							                #set($attr='formSubmit')
+							            	#showPageListMobile($pageInfos $attr)
+							                <!--END公用翻页代码-->
+										</div>
+</form>
+			
+        </div>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="footer-w">
+      <span class="zbj"></span>
+    </div>
+  </div>
+  <div class="dbdh">
+	<span class="footer1">
+		<a href="$!{basePath}/jlb/tomember.html">
+			<img src="$!{basePath}/content/jlb/img/foot_1off.png">
+			<p>首页</p>
+		</a>
+	</span>
+	<span class="footer2">
+		<a href="$!{basePath}/jlb/hotlist.html">
+			<img src="$!{basePath}/content/jlb/img/foot_2off.png">
+			<p>会员活动</p>
+		</a>
+	</span>
+	<span class="footer3">
+		<a href="$!{basePath}/jlb/tovip.html">
+			<img src="$!{basePath}/content/jlb/img/foot_3off.png">
+			<p>个人中心</p>
+		</a>
+	</span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+#parse("content/base/back/common/macro.vm")
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	#foreach($!{roleid} in $!{roleIds})
+	#if("$!{roleid}" eq "00") #set($admin = true) #end
+	#end
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<form role="form" class="form-inline" action="$!{basePath}/messageHelp/back/messagesendtask/list.html" method="post"  id="formSubmit">
+				<div  class="col-md-10" style="width:100%">
+								<div class="panel panel-default">
+								  <div class="panel-heading">短信群发任务列表</div>
+								  <div class="panel-body">
+								  		<div class="search">
+															 <div class="form-group col-sm-3">
+															    <label for="sendtype" class="control-label col-sm-3 line34">发送状态</label>
+															     <div class="col-sm-8">
+															     <select name="sendtype" id="sendtype"  value="$!{messagesendtask.sendtype}" class="form-control" > 
+													      				<option value="" >请选择</option>
+													      				<option value="0" >待发送</option>
+													      				<option value="1" >发送成功</option>
+													      				<option value="2" >发送失败</option>
+													      	  		</select>
+															  	</div>
+															 </div>
+															
+															 <div class="form-group col-sm-3">
+															    <label for="messagetype" class="control-label col-sm-3 line34">短信类型</label>
+															     <div class="col-sm-8">
+															     	<select name="messagetype" id="messagetype"  value="$!{messagesendtask.messagetype}" class="form-control" > 
+													      				<option value="" >请选择</option>
+													      				<option value="0" >通知短信</option>
+													      				<option value="1" >推广短信</option>
+													      	  		</select>
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="checkresult" class="control-label col-sm-3 line34">审核状态</label>
+															     <div class="col-sm-8">
+															  	<select name="checkresult" id="checkresult"  value="$!{messagesendtask.checkresult}" class="form-control" > 
+													      				<option value="" >请选择</option>
+													      				<option value="0" >未审核</option>
+													      				<option value="1" >审核通过</option>
+													      				<option value="1" >审核未通过</option>
+													      	  		</select>
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="attr4" class="control-label col-sm-3 line34">发送设置</label>
+															     <div class="col-sm-8">
+															    <select name="attr4" id="attr4"  value="$!{messagesendtask.attr4}" class="form-control" > 
+													      				<option value="" >请选择</option>
+													      				<option value="0" >立即发送</option>
+													      				<option value="1" >定时发送</option>
+													      	  		</select>
+															  	</div>
+															 </div>
+											  <button type="submit" class="btn btn-primary">搜  索</button>
+											  <div class="clearfix"></div>
+								  		</div>
+								  		<div id="legend">
+								          <legend  class="le"><button type="button" class="btn btn-primary" onclick="doUrl('$!{basePath}/messageHelp/back/messagesendtask/toAdd.html')" >新增</button></legend> 
+								        </div>
+								        <table class="table table-striped">
+									        <thead>
+									        		<th>短信类型</th>
+													<th>短信内容</th>
+													<th>发送设置</th>
+													<th>发送时间</th>
+													<th>号码数量</th>
+													<th>短信签名</th>
+													<th>审核状态</th>
+													<th>发送状态</th>
+						                			<th>操作</th>
+									        </thead>
+									        <tobody>
+									    	  #if($!{pageInfos})
+								                #foreach($!{info} in $!{pageInfos})
+								                					<td>#if("$!{info.messagetype}" eq 1)推广短信 #else 短信通知 #end</td>
+																	<td style="width:50%">$!{info.messagetxt}</td>
+																	<td>#if("$!{info.attr4}"== "1")定时发送 #else 立即发送 #end</td>
+																	<td>$!dateTool.format("yyyy-MM-dd HH:mm:ss",$!{info.sendtime})</td>
+																	<td>$!{info.phonenum}个</td>
+																	<td>$!{info.messagesign}</td>
+																	<td>#if("$!{info.checkresult}" eq 0)待审#else #if("$!{info.checkresult}" eq 1)通过 #else未通过#end #end</td>
+																	<td>#if("$!{info.sendtype}" eq 0)待发#else #if("$!{info.sendtype}" eq 1)成功 #else 失败#end #end</td>
+										                <td class="last">
+							                			#if("$!{admin}" eq true)<a href="javascript:doUrl('$!{basePath}/messageHelp/back/messagesendtask/toEdit.html?id=$!{info.id}')" >编辑</a>#end
+							                			<a href="javascript:delData('$!{basePath}/messageHelp/back/messagesendtask/doDelete.html?id=$!{info.id}')">删除</a>
+							                			<a href="javascript:doUrl('$!{basePath}/messageHelp/back/messagesendtask/toDetail.html?id=$!{info.id}')">详情</a>
+						                				</td>
+									           		</tr>
+									             #end
+									    	 #end
+									         </tobody>
+									    </table>
+										<div class="text-right">
+											<!--公用翻页代码-->
+							                #set($attr='formSubmit')
+							            	#showPageList($pageInfos $attr)
+							                <!--END公用翻页代码-->
+										</div>
+								  </div>	
+								</div>
+				</div>  
+				</form>
+		</div>
+	</div>
+</body>
+</html>

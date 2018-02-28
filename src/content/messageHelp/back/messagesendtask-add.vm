@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">新增</div>
+				#if("$!{isbuyed}" eq false) 付费服务，请先购买方可使用！#end
+				
+					<div class="panel-body" id="app">
+						<form class="form-horizontal" role="form" id="dailogForm" action="$!{basePath}/messageHelp/back/messagesendtask/doAdd.html" method="POST">
+					  		<input type="hidden" id="btn_sub" class="btn_sub" />
+					  		<div class="form-group mno">
+<label for="messagetype" class="col-sm-2 control-label" style="text-align: left;"> 
+</label> 
+<div class="alert  alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert"
+                    aria-hidden="true">
+                &times;
+            </button>
+           推广短信 预计需要四个小时完成审核 ，审核时间：周一至周日9:30-18:30(法定节假日顺延)<br>
+           不能发送催收/贷款/维权/彩票/色情/暴力/借款/中奖/抽奖/党政/涉嫌违法违纪及宗教类短信，违者将被依法追究法律责任！
+</div>
+</div>
+<div class="form-group mno">
+<label for="messagetype" class="col-sm-2 control-label" style="text-align:left;">短信类型</label>
+<div class="col-sm-8">
+    <label class="radio-inline">
+      <input  type="radio" name="messagetype" id="messagetype" value="1" #if("$!{messagesendtask.messagetype}"== "1") checked #end checked  @click="fn(1)" >推广短信(需要审核)
+    </label>
+    <label class="radio-inline">
+        <input type="radio" name="messagetype" id="messagetype" value="0" #if("$!{messagesendtask.messagetype}"== "0") checked #end    @click="fn(0)">通知短信(无需审核)
+    </label>
+</div>
+</div>
+										<div v-if="ShowTongzhi">
+																							<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">短信模板：</label>
+													    <div class="col-sm-8">
+													    <input type="hidden" name="messagetemplateid" id="messagetemplateid" v-model="selectedrow">
+													     <input length="30" type="text" value=""  v-model="selectedname" class="form-control" style="width:250px;display:inline;" placeholder="点击后方按钮选择模板" disabled>
+								 <button class="btn btn-info " data-toggle="modal" data-target="#myModal">点击选择</button></div>
+													</div>  
+														<div class="form-group mno" >
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;" >称呼</label>
+													    <div class="col-sm-8">
+													      <input type="text" value="$!{messagesendtask.attr1}" name="attr1" id="attr1" class="form-control" style=" width:250px;"  placeholder="{name}" v-model="name" datatype="*"/>
+													    </div>
+													</div>
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left">商品或服务</label>
+													    <div class="col-sm-8">
+													      <input type="text" value="$!{messagesendtask.attr2}" name="attr2" id="attr2" class="form-control" style=" width:250px;"  placeholder="{service}"  v-model="service" datatype="*"/>
+													    </div>
+													</div>
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;" >联系方式</label>
+													    <div class="col-sm-8">
+													      <input type="text" value="$!{messagesendtask.attr3}" name="attr3" id="attr3" class="form-control" style=" width:250px;"  placeholder="{tel}"  v-model="tel" datatype="*"/>
+													    </div>
+													</div>
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">短信内容预览</label>
+													    <div class="col-sm-8">
+													      <textarea type="text" value="$!{messagesendtask.messagetxt}" :value="messtxt[0]+name+messtxt[1]+service+messtxt[2]+tel+messtxt[3]" name="messagetxt"  id="messagetxt" class="form-control" rows="4" maxlength="100"  height="100%" width="100%" datatype="*"/></textarea>
+													    </div>
+													    
+													     
+													</div>
+										</div>
+										<div v-else>
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">短信签名</label>
+													    <div class="col-sm-8">
+													      <input type="text" value="$!{messagesendtask.messagesign}" name="messagesign" id="messagesign" class="form-control" datatype="*" />
+													    </div>
+													</div>
+													
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">营销短信内容</label>
+													    <div class="col-sm-8">
+													    <textarea  class="form-control"  name="messagetxt"   id="messagetxt" placeholder="短信内容" rows="4" type="text" maxlength="5000" height="100%" width="100%" datatype="*"></textarea>
+													    </div>
+													</div>
+										</div>
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">电话号码</label>
+													    <div class="col-sm-8">
+													       <div id="fileQueue" style="width:200px;"></div>   
+													    <input type="file" name="uploadify" id="uploadify" />   													    
+													    </div>
+													</div>
+
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;"> </label>
+													    <div class="col-sm-8">
+													      <textarea  class="form-control"  name="phonenum"   id="phonenum" placeholder="手机号码，请用逗号隔开，例如：18600132346,18600132346" rows="4" type="text" maxlength="12000" height="100%" width="100%" datatype="/^1[7358]\d{9}(?:\,1[7358]\d{9})*$/"></textarea>
+													    </div>
+													</div>
+													<div class="form-group mno">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;"> </label>
+													    <div class="col-sm-8">
+													 *请上传txt、xlsx格式，<a  target="_blank" href="$!{basePath}/template/example.zip">下载范例</a></br>
+													*单次任务最多可上传1000个号码，超过限制请分为多次任务 
+													    </div>
+													</div>
+													<div class="form-group mno">
+													    <label for="attr4" class="col-sm-2 control-label" style="text-align:left;">发送设置</label>
+													      <div class="col-sm-8">
+												<div class="btn-group">
+												    <label class="radio-inline">
+												        <input type="radio"  id="attr4" name="attr4" value="0"  checked  @click="sendType(0)">立即发送
+												    </label>
+												    <label class="radio-inline">
+												        <input type="radio" id="attr4" name="attr4" value="1"  @click="sendType(1)">定时发送
+												    </label>
+												</div>
+													    </div>
+													</div>
+													<div class="form-group mno" v-if="ShowSendTime">
+													    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">发送时间</label>
+													    <div class="col-sm-8">
+													      <input type="text" value="$!dateTool.format("yyyy-MM-dd",$!{messagesendtask.sendtime})" name="sendtime" id="sendtime" class="form-control" style="width:250px;" datatype="*" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"/>
+													    </div>
+												</div>
+														 
+										<div class="form-group mno">
+											<div class="col-sm-offset-1 col-sm-6">
+												<button type="button" class="btn btn-default" style="margin-left:50%;" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/messageHelp/back/messagesendtask/list.html')">返回</button>
+	        									<button type="button" class="btn btn-primary" id="formSubmit">提交</button>
+        									 </div>
+        								</div>
+						</form>
+						
+						<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					请选择短信模板
+				</h4>
+			</div>
+			<div class="modal-body">
+				<tablist :pagesize="pagesize" :selectednav="selectednav" :selectedrow="selectedrow" :selectedname="selectedname" :messagetxt="messagetxt" :showmodal="showmodal" 
+				:selectedcateid="selectedcateid" :categroylist="categroylist" :tabconlist="tabconlist"  :selectlist="selectlist" >
+				</tablist>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal">
+					确定
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
+<script type="text/javascript" src="$!{basePath}/plug-in/js/Validform_v5.3.2.js"></script> 
+<script type="text/javascript" src="$!{basePath}/plug-in/js/forminit.p3.js"></script> 
+<script src="$!{basePath}/content/system/js/jquery.uploadify.min.js" type="text/javascript"></script>
+<script src="$!{basePath}/content/js/vue.min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="$!{basePath}/content/system/css/uploadify.css">
+<script type="text/template" id="tablist">
+	<div>
+	<ul id="myTab" class="nav nav-tabs">
+		<li v-for="(value, index) in categroylist"  v-bind:class="{active: index == selectednav }" >
+			<a href="#" @click="selectnav(index)">
+				 {{value.dictname}}
+			</a>
+		</li>
+	</ul>
+	<ul class="list-group">
+	    <li class="list-group-item"  v-for="(value, index) in selectlist" v-on:click="selectrow(index)">
+	        <label class="radio-inline" >
+	  			<input type="radio" name="optionsRadios" id="optionsRadios2" v-bind:value="value.id" v-model="selectedrow" >
+			{{value.templatecontent}}
+			</label> 
+			
+		</li>
+	</ul>
+	</div>
+</script>
+<script>
+var serverroot="$!{basePath}";
+$(function(){
+    $("#uploadify").uploadify({  
+        'swf'            : '$!{basePath}/content/system/js/uploadify.swf',  
+        'uploader'       : '$!{basePath}/system/back/jwSystemProject/doUpload.html',
+        'queueID'        : 'fileQueue',  
+        'auto'           : true,  
+        'multi'          : true,  
+        'buttonCursor'   : 'hand',  
+        'fileObjName'    : 'file',  
+        'buttonText'     : '导入号码',  
+        'height'         : '25',  
+        'progressData'   : 'percentage',  
+        'fileTypeDesc'   : '支持格式:txt/xls/xlsx.',    
+        'fileTypeExts': '*.txt;*.xls;*.xlsx',//允许的格式         
+        onUploadStart : function(file) {
+
+        },
+        onUploadSuccess  : function(file,data,response) {  
+            //设置图片预览  
+            var a =  JSON.parse(data);
+            var phonenum =  $("#phonenum").val();
+            if(phonenum !=null && phonenum !=""){
+           		$("#phonenum").val(phonenum+","+a.obj);
+            }else{
+            	$("#phonenum").val(a.obj);
+            }
+        }  
+    });  
+});
+</script>
+<script src="$!{basePath}/content/js/messagesend.js" type="text/javascript"></script>

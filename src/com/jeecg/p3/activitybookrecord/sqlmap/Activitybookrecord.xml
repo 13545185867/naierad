@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.activitybookrecord.entity.Activitybookrecord">
+
+	<!-- Result Map-->
+	<resultMap id="Activitybookrecord" type="com.jeecg.p3.activitybookrecord.entity.Activitybookrecord" >
+		<result column="id" property="id" jdbcType="INTEGER"/>
+		<result column="activityid" property="activityid" jdbcType="VARCHAR"/>
+		<result column="activitytitle" property="activitytitle" jdbcType="VARCHAR"/>
+		<result column="deatilurl" property="deatilurl" jdbcType="VARCHAR"/>
+		<result column="booktime" property="booktime" jdbcType="TIMESTAMP"/>
+		<result column="bookpersoncount" property="bookpersoncount" jdbcType="INTEGER"/>
+		<result column="openid" property="openid" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.activityid != null and query.activityid != ''" >
+	  		 		/*  */
+			    	AND a.activityid =  #{query.activityid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.activitytitle != null and query.activitytitle != ''" >
+	  		 		/*  */
+			    	AND a.activitytitle =  #{query.activitytitle,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.deatilurl != null and query.deatilurl != ''" >
+	  		 		/*  */
+			    	AND a.deatilurl =  #{query.deatilurl,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.booktime != null and query.booktime != ''" >
+	  		 		/* 报名时间 */
+			    	AND a.booktime =  #{query.booktime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.bookpersoncount != null and query.bookpersoncount != ''" >
+	  		 		/* 报名人数 */
+			    	AND a.bookpersoncount =  #{query.bookpersoncount,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.openid != null and query.openid != ''" >
+	  		 		/*  */
+			    	AND a.openid =  #{query.openid,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.activitybookrecord.entity.Activitybookrecord.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  activitybookrecord   /* 活动报名记录 */  
+					(	
+                      id                            /*  */ 
+                     ,activityid                    /*  */ 
+                     ,activitytitle                 /*  */ 
+                     ,deatilurl                     /*  */ 
+                     ,booktime                      /* 报名时间 */ 
+                     ,bookpersoncount               /* 报名人数 */ 
+                     ,openid                        /*  */ 
+					)
+			values (
+                      #{id,jdbcType=INTEGER}                            /*  */ 
+                     ,#{activityid,jdbcType=VARCHAR}                    /*  */ 
+                     ,#{activitytitle,jdbcType=VARCHAR}                 /*  */ 
+                     ,#{deatilurl,jdbcType=VARCHAR}                     /*  */ 
+                     ,#{booktime,jdbcType=TIMESTAMP}                      /* 报名时间 */ 
+                     ,#{bookpersoncount,jdbcType=INTEGER}               /* 报名人数 */ 
+                     ,#{openid,jdbcType=VARCHAR}                        /*  */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.activitybookrecord.entity.Activitybookrecord.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   activitybookrecord  	/* 活动报名记录 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="activityid != null">
+		    		 		/*  */ 
+	    		 			activityid = #{activityid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="activitytitle != null">
+		    		 		/*  */ 
+	    		 			activitytitle = #{activitytitle,jdbcType=VARCHAR},
+						 </if>
+						 <if test="deatilurl != null">
+		    		 		/*  */ 
+	    		 			deatilurl = #{deatilurl,jdbcType=VARCHAR},
+						 </if>
+						 <if test="booktime != null">
+		    		 		/* 报名时间 */ 
+	    		 			booktime = #{booktime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="bookpersoncount != null">
+		    		 		/* 报名人数 */ 
+	    		 			bookpersoncount = #{bookpersoncount,jdbcType=INTEGER},
+						 </if>
+						 <if test="openid != null">
+		    		 		/*  */ 
+	    		 			openid = #{openid,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.activitybookrecord.entity.Activitybookrecord.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Activitybookrecord">
+		   SELECT   
+                   a.id                            /*  */ 
+                  ,a.activityid                    /*  */ 
+                  ,a.activitytitle                 /*  */ 
+                  ,a.deatilurl                     /*  */ 
+                  ,a.booktime                      /* 报名时间 */ 
+                  ,a.bookpersoncount               /* 报名人数 */ 
+                  ,a.openid                        /*  */ 
+		   FROM   activitybookrecord      AS a      /* 活动报名记录 */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.activitybookrecord.entity.Activitybookrecord.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM activitybookrecord 	/* 活动报名记录 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.activitybookrecord.entity.Activitybookrecord.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  activitybookrecord      AS a      /* 活动报名记录 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.activitybookrecord.entity.Activitybookrecord.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Activitybookrecord">
+		    SELECT 
+                   a.id                            /*  */ 
+                  ,a.activityid                    /*  */ 
+                  ,a.activitytitle                 /*  */ 
+                  ,a.deatilurl                     /*  */ 
+                  ,a.booktime                      /* 报名时间 */ 
+                  ,a.bookpersoncount               /* 报名人数 */ 
+                  ,a.openid                        /*  */ 
+		FROM   	 activitybookrecord      AS a      /* 活动报名记录 */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+		<select id="queryBookedPageList" parameterType="Object"  resultMap="Activitybookrecord">
+		    SELECT 
+                   a.id                            /*  */ 
+                  ,a.activityid                    /*  */ 
+                  ,u.realname as activitytitle                 /*  */ 
+                  ,u.headpic as deatilurl                     /*  */ 
+                  ,a.booktime                      /* 报名时间 */ 
+                  ,a.bookpersoncount               /* 报名人数 */ 
+                  ,u.mobile as openid                        /*  */ 
+		FROM   	 activitybookrecord      AS a      /* 活动报名记录 */  left join userinfo as u on a.openid = u.openid
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+		<select id="queryListCount" parameterType="Object"  resultType="java.lang.Integer">
+		    SELECT count(*)
+		FROM   	 activitybookrecord      AS a      /* 活动报名记录 */ 
+		WHERE activityid = #{activityid} and  openid = #{openid}
+	</select>
+	
+			<select id="queryList" parameterType="Object"    resultMap="Activitybookrecord">
+		    SELECT                    a.id                            /*  */ 
+                  ,a.activityid                    /*  */ 
+                  ,a.activitytitle                 /*  */ 
+                  ,a.deatilurl                     /*  */ 
+                  ,a.booktime                      /* 报名时间 */ 
+                  ,a.bookpersoncount               /* 报名人数 */ 
+                  ,a.openid                        /*  */ 
+		FROM   	 activitybookrecord      AS a      /* 活动报名记录 */ 
+		WHERE activityid = #{activityid} and  openid = #{openid}
+	</select>
+	
+	
+</mapper>

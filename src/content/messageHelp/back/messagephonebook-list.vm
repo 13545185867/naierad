@@ -1,0 +1,99 @@
+#parse("content/base/back/common/macro.vm")
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<form role="form" class="form-inline" action="$!{basePath}/messageHelp/back/messagephonebook/list.html" method="post"  id="formSubmit">
+				<div  class="col-md-10" style="width:100%">
+								<div class="panel panel-default">
+								  <div class="panel-heading">砍价活动配置列表</div>
+								  <div class="panel-body">
+								  		<div class="search">
+															 <div class="form-group col-sm-3">
+															    <label for="username" class="control-label col-sm-3 line34">用户姓名</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="username" id="username" value="$!{messagephonebook.username}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="useraddr" class="control-label col-sm-3 line34">用户联系地址</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="useraddr" id="useraddr" value="$!{messagephonebook.useraddr}" class="form-control">
+															  	</div>
+															 </div>
+															<div class="form-group col-sm-3">
+															    <label for="birthday" class="control-label col-sm-3 line34">生日</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="birthday" id="birthday" value="$!dateTool.format('yyyy-MM-dd',$!{messagephonebook.birthday})" class="form-control">
+															  	</div>
+															 </div>
+															<div class="form-group col-sm-3">
+															    <label for="memberday" class="control-label col-sm-3 line34">会员日</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="memberday" id="memberday" value="$!dateTool.format('yyyy-MM-dd',$!{messagephonebook.memberday})" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="creatuser" class="control-label col-sm-3 line34">创建人</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="creatuser" id="creatuser" value="$!{messagephonebook.creatuser}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="status" class="control-label col-sm-3 line34">0 不可用 1可用)</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="status" id="status" value="$!{messagephonebook.status}" class="form-control">
+															  	</div>
+															 </div>
+											  <button type="submit" class="btn btn-primary">搜  索</button>
+											  <div class="clearfix"></div>
+								  		</div>
+								  		<div id="legend">
+								          <legend  class="le"><button type="button" class="btn btn-primary" onclick="doUrl('$!{basePath}/messageHelp/back/messagephonebook/toAdd.html')" >新增</button></legend> 
+								        </div>
+								        <table class="table table-striped">
+									        <thead>
+													<th>用户姓名</th>
+													<th>用户联系地址</th>
+													<th>生日</th>
+													<th>会员日</th>
+													<th>创建人</th>
+													<th>0 不可用 1可用)</th>
+						                			<th>操作</th>
+									        </thead>
+									        <tobody>
+									    	  #if($!{pageInfos})
+								                #foreach($!{info} in $!{pageInfos})
+									            	<tr>			
+																	<td>$!{info.username}</td>
+																	<td>$!{info.useraddr}</td>
+																	<td>$!dateTool.format("yyyy-MM-dd",$!{info.birthday})</td>
+																	<td>$!dateTool.format("yyyy-MM-dd",$!{info.memberday})</td>
+																	<td>$!{info.creatuser}</td>
+																	<td>$!{info.status}</td>
+										                <td class="last">
+							                			<a href="javascript:doUrl('$!{basePath}/messageHelp/back/messagephonebook/toEdit.html?id=$!{info.id}')" >编辑</a>
+							                			<a href="javascript:delData('$!{basePath}/messageHelp/back/messagephonebook/doDelete.html?id=$!{info.id}')">删除</a>
+							                			<a href="javascript:doUrl('$!{basePath}/messageHelp/back/messagephonebook/toDetail.html?id=$!{info.id}')">详情</a>
+						                				</td>
+									           		</tr>
+									             #end
+									    	 #end
+									         </tobody>
+									    </table>
+										<div class="text-right">
+											<!--公用翻页代码-->
+							                #set($attr='formSubmit')
+							            	#showPageList($pageInfos $attr)
+							                <!--END公用翻页代码-->
+										</div>
+								  </div>	
+								</div>
+				</div>  
+				</form>
+		</div>
+	</div>
+</body>
+</html>

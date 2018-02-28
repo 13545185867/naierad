@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.website.entity.ColContent">
+
+	<!-- Result Map-->
+	<resultMap id="ColContent" type="com.jeecg.p3.website.entity.ColContent" >
+		<result column="id" property="id" jdbcType="INTEGER"/>
+		<result column="col_id" property="colId" jdbcType="INTEGER"/>
+		<result column="title" property="title" jdbcType="VARCHAR"/>
+		<result column="content" property="content" jdbcType="VARCHAR"/>
+		<result column="descipt" property="descipt" jdbcType="VARCHAR"/>
+		<result column="createdate" property="createdate" jdbcType="TIMESTAMP"/>
+		<result column="status" property="status" jdbcType="INTEGER"/>
+		<result column="source" property="source" jdbcType="VARCHAR"/>
+		<result column="creatuser" property="creatuser" jdbcType="VARCHAR"/>
+		<result column="leadpic" property="leadpic" jdbcType="VARCHAR"/>
+		<result column="col_con1" property="colCon1" jdbcType="VARCHAR"/>
+		<result column="col_con2" property="colCon2" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.colId != null and query.colId != ''" >
+	  		 		/*  */
+			    	AND cc.col_id =  #{query.colId,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.title != null and query.title != ''" >
+	  		 		/* 标题 */
+			    	AND cc.title =  #{query.title,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.content != null and query.content != ''" >
+	  		 		/* 内容 */
+			    	AND cc.content =  #{query.content,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.descipt != null and query.descipt != ''" >
+	  		 		/* 描述 */
+			    	AND cc.descipt =  #{query.descipt,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.createdate != null and query.createdate != ''" >
+	  		 		/* 创建时间 */
+			    	AND cc.createdate =  #{query.createdate,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.status != null and query.status != ''" >
+	  		 		/* 0 不可用 ,1 为可用 */
+			    	AND cc.status =  #{query.status,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.source != null and query.source != ''" >
+	  		 		/* 来源 */
+			    	AND cc.source =  #{query.source,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.creatuser != null and query.creatuser != ''" >
+	  		 		/*  */
+			    	AND cc.creatuser =  #{query.creatuser,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.leadpic != null and query.leadpic != ''" >
+	  		 		/* 主题缩略图 */
+			    	AND cc.leadpic =  #{query.leadpic,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.colCon1 != null and query.colCon1 != ''" >
+	  		 		/*  */
+			    	AND cc.col_con1 =  #{query.colCon1,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.colCon2 != null and query.colCon2 != ''" >
+	  		 		/*  */
+			    	AND cc.col_con2 =  #{query.colCon2,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.website.entity.ColContent.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  col_content   /* 栏目内容表 */  
+					(	
+                      id                            /* 内容ID */ 
+                     ,col_id                        /*  */ 
+                     ,title                         /* 标题 */ 
+                     ,content                       /* 内容 */ 
+                     ,descipt                       /* 描述 */ 
+                     ,createdate                    /* 创建时间 */ 
+                     ,status                        /* 0 不可用 ,1 为可用 */ 
+                     ,source                        /* 来源 */ 
+                     ,creatuser                     /*  */ 
+                     ,leadpic                       /* 主题缩略图 */ 
+                     ,col_con1                      /*  */ 
+                     ,col_con2                      /*  */ 
+					)
+			values (
+                      #{id,jdbcType=INTEGER}                            /* 内容ID */ 
+                     ,#{colId,jdbcType=INTEGER}                         /*  */ 
+                     ,#{title,jdbcType=VARCHAR}                         /* 标题 */ 
+                     ,#{content,jdbcType=VARCHAR}                       /* 内容 */ 
+                     ,#{descipt,jdbcType=VARCHAR}                       /* 描述 */ 
+                     ,#{createdate,jdbcType=TIMESTAMP}                    /* 创建时间 */ 
+                     ,#{status,jdbcType=INTEGER}                        /* 0 不可用 ,1 为可用 */ 
+                     ,#{source,jdbcType=VARCHAR}                        /* 来源 */ 
+                     ,#{creatuser,jdbcType=VARCHAR}                     /*  */ 
+                     ,#{leadpic,jdbcType=VARCHAR}                       /* 主题缩略图 */ 
+                     ,#{colCon1,jdbcType=VARCHAR}                       /*  */ 
+                     ,#{colCon2,jdbcType=VARCHAR}                       /*  */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.website.entity.ColContent.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   col_content  	/* 栏目内容表 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="colId != null">
+		    		 		/*  */ 
+	    		 			col_id = #{colId,jdbcType=INTEGER},
+						 </if>
+						 <if test="title != null">
+		    		 		/* 标题 */ 
+	    		 			title = #{title,jdbcType=VARCHAR},
+						 </if>
+						 <if test="content != null">
+		    		 		/* 内容 */ 
+	    		 			content = #{content,jdbcType=VARCHAR},
+						 </if>
+						 <if test="descipt != null">
+		    		 		/* 描述 */ 
+	    		 			descipt = #{descipt,jdbcType=VARCHAR},
+						 </if>
+						 <if test="createdate != null">
+		    		 		/* 创建时间 */ 
+	    		 			createdate = #{createdate,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="status != null">
+		    		 		/* 0 不可用 ,1 为可用 */ 
+	    		 			status = #{status,jdbcType=INTEGER},
+						 </if>
+						 <if test="source != null">
+		    		 		/* 来源 */ 
+	    		 			source = #{source,jdbcType=VARCHAR},
+						 </if>
+						 <if test="creatuser != null">
+		    		 		/*  */ 
+	    		 			creatuser = #{creatuser,jdbcType=VARCHAR},
+						 </if>
+						 <if test="leadpic != null">
+		    		 		/* 主题缩略图 */ 
+	    		 			leadpic = #{leadpic,jdbcType=VARCHAR},
+						 </if>
+						 <if test="colCon1 != null">
+		    		 		/*  */ 
+	    		 			col_con1 = #{colCon1,jdbcType=VARCHAR},
+						 </if>
+						 <if test="colCon2 != null">
+		    		 		/*  */ 
+	    		 			col_con2 = #{colCon2,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.website.entity.ColContent.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="ColContent">
+		   SELECT   
+                   cc.id                            /* 内容ID */ 
+                  ,cc.col_id                        /*  */ 
+                  ,cc.title                         /* 标题 */ 
+                  ,cc.content                       /* 内容 */ 
+                  ,cc.descipt                       /* 描述 */ 
+                  ,cc.createdate                    /* 创建时间 */ 
+                  ,cc.status                        /* 0 不可用 ,1 为可用 */ 
+                  ,cc.source                        /* 来源 */ 
+                  ,cc.creatuser                     /*  */ 
+                  ,cc.leadpic                       /* 主题缩略图 */ 
+                  ,cc.col_con1                      /*  */ 
+                  ,cc.col_con2                      /*  */ 
+		   FROM   col_content      AS cc      /* 栏目内容表 */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.website.entity.ColContent.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM col_content 	/* 栏目内容表 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.website.entity.ColContent.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  col_content      AS cc      /* 栏目内容表 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.website.entity.ColContent.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="ColContent">
+		    SELECT 
+                   cc.id                            /* 内容ID */ 
+                  ,cc.col_id                        /*  */ 
+                  ,cc.title                         /* 标题 */ 
+                  ,cc.content                       /* 内容 */ 
+                  ,cc.descipt                       /* 描述 */ 
+                  ,cc.createdate                    /* 创建时间 */ 
+                  ,cc.status                        /* 0 不可用 ,1 为可用 */ 
+                  ,cc.source                        /* 来源 */ 
+                  ,cc.creatuser                     /*  */ 
+                  ,cc.leadpic                       /* 主题缩略图 */ 
+                  ,cc.col_con1                      /*  */ 
+                  ,cc.col_con2                      /*  */ 
+		FROM   	 col_content      AS cc      /* 栏目内容表 */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/> order by createdate desc
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+</mapper>

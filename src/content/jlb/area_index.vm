@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="Keywords" content="友房网">
+    <meta name="description" content="友房网">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>友房网</title>
+    <link href="$!{basePath}/content/jlb/css/registernew.css" rel="stylesheet" type="text/css">
+  </head>
+<body>
+	<!--提示弹出层 begin-->
+		<div class="fwmyd_bg" id="fydDIV" style="display: none;">
+		</div>
+	<!--提示弹出层 end-->
+	  <div class="header">
+     <div class="headerwrap">
+		<div class="goback">
+			<a href="javascript:history.go(-1)"><img src="$!{basePath}/content/jlb/img/goback.png" border="0" title="返回上一页"></a>
+		</div>
+       <div class="reglogo">
+       			<!--<a href="" class="logo" boss="source"></a>-->
+       </div>
+       <div class="linkright">
+       </div>
+    </div>
+  </div>
+
+    <div class="topicture">
+	#if("${vipuser}" eq "true")
+	#else
+    <div  class="syffcwhy">
+	  <a href="javascript:void(0);" onclick="show_protocol();return false;">您是非付费会员，点击成为付费会员>></a>
+    </div>
+    #end
+  </div>
+ 
+  <br>
+  <div class="regCon">
+    <div class="hd">
+      <h1 class="biaoti redian">会员活动</h1>
+	  <p class="gengduo"><a href="$!{basePath}/jlb/areaMoreList.html?areaid=$!{areaid}&type=0">更多&gt;&gt;</a></p>
+    </div>
+    <div class="page__bd">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+  #if($!{actInfos})
+    #foreach($!{info} in $!{actInfos})
+	#if($!{info.leadpic} eq "")
+	<a href="$!{basePath}/jlb/activitydetail.html?id=$!{info.id}" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">$!{info.title}</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a>
+	#end
+	#if(  "$!{info.leadpic}" ne ""  && $!{info.leadpicviewtype} eq "0" )
+				<a href="$!{basePath}/jlb/activitydetail.html?id=$!{info.id}" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__hd">	
+							<img class="weui-media-box__thumb" src="$!{basePath}/upload/img/jlb/$!{info.leadpic}" alt="">	
+						</div>									
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">$!{info.title}</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+				</a>
+	#end
+
+	#if( "$!{info.leadpic}" ne "" && $!{info.leadpicviewtype} eq "1" )
+				<a href="$!{basePath}/jlb/activitydetail.html?id=$!{info.id}" class="article_link clearfix">
+					<h3 class="dotdot line3 ">
+						$!{info.title}
+					</h3>
+					<div class="list_img_holder_large ">
+						<img src="$!{basePath}/upload/img/jlb/$!{info.leadpic}">
+					</div>
+				</a>
+	#end
+
+    #end
+ #end
+     </div>
+        </div>
+    </div>
+  </div>
+  <br>
+  
+  <div class="regCon">
+    <div class="hd">
+      <h1 class="biaoti redian">会员通知</h1>
+	  <p class="gengduo"><a href="$!{basePath}/jlb/areaMoreList.html?areaid=$!{areaid}&type=3">更多&gt;&gt;</a></p>
+    </div>
+    <div class="page__bd">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+               #foreach($!{info} in $!{noticeInfos})	
+				 <a href="$!{basePath}/jlb/tonoticeDetail.html?id=$!{info.id}" class="weui-media-box 		weui-media-box_appmsg">
+										<div class="weui-media-box__bd">
+											<h4 class="weui-media-box__title"><font color="#009875">&nbsp;[$!{info.createuser}]&nbsp;$!{info.title}</font></h4>
+										</div>
+				</a>
+	#end
+     </div>
+        </div>
+    </div>
+  </div>
+  <br>
+<!-- 在线选房 -->
+<!-- 1 -->
+ <div class="regCon">
+    <div class="hd">
+      <h1 class="biaoti">在线选房</h1>
+	  <p class="gengduo"><a href="#">更多&gt;&gt;</a></p>
+    </div>
+    <div class="page__bd">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+				<a href="#" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">万科城市之光垫资房源，每套借款八成120万</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a><a href="#" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">房主借款250万，昌平区北街花园136平</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a><a href="#" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">房主借款200万，海淀区甘家口52.9平</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a>            </div>
+        </div>
+    </div>
+  </div>
+  <br>
+  
+    <br>
+  <div class="regCon">
+    <div class="hd">
+      <h1 class="biaoti redian">活动视频</h1>
+	  <p class="gengduo"><a href="$!{basePath}/jlb/areaMoreList.html?areaid=$!{areaid}&type=2">更多&gt;&gt;</a></p>
+    </div>
+    <div class="page__bd">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+  #if($!{vedioInfos})
+    #foreach($!{info} in $!{vedioInfos})
+	#if($!{info.leadpic} eq "")
+	<a href="$!{basePath}/jlb/tonoticeDetail.html?id=$!{info.id}" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">$!{info.title}</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a>
+	#end
+	#if(  "$!{info.leadpic}" ne ""  && $!{info.leadpicviewtype} eq "0" )
+				<a href="$!{basePath}/jlb/tonoticeDetail.html?id=$!{info.id}" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__hd">	
+							<img class="weui-media-box__thumb" src="$!{basePath}/upload/img/jlb/$!{info.leadpic}" alt="">	
+						</div>									
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">$!{info.title}</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+				</a>
+	#end
+
+	#if( "$!{info.leadpic}" ne "" && $!{info.leadpicviewtype} eq "1" )
+				<a href="$!{basePath}/jlb/tonoticeDetail.html?id=$!{info.id}" class="article_link clearfix">
+					<h3 class="dotdot line3 ">
+						$!{info.title}
+					</h3>
+					<div class="list_img_holder_large ">
+						<img src="$!{basePath}/upload/img/jlb/$!{info.leadpic}">
+					</div>
+				</a>
+	#end
+
+    #end
+ #end
+     </div>
+        </div>
+    </div>
+  </div>
+  <br>
+  
+  
+   <div class="regCon">
+    <div class="hd">
+      <h1 class="biaoti">抵押房源</h1>
+	  <p class="gengduo"><a href="#">更多&gt;&gt;</a></p>
+    </div>
+    <div class="page__bd">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+				<a href="#" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">万科城市之光垫资房源，每套借款八成120万</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a><a href="#" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">房主借款250万，昌平区北街花园136平</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a><a href="#" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">房主借款200万，海淀区甘家口52.9平</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a>            </div>
+        </div>
+    </div>
+  </div>
+  <br>
+  
+   <div class="regCon">
+    <div class="hd">
+      <h1 class="biaoti">转让房源</h1>
+	  <p class="gengduo"><a href="#">更多&gt;&gt;</a></p>
+    </div>
+    <div class="page__bd">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+				<a href="#" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">万科城市之光垫资房源，每套借款八成120万</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a><a href="#" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">房主借款250万，昌平区北街花园136平</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a><a href="#" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">房主借款200万，海淀区甘家口52.9平</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a>            </div>
+        </div>
+    </div>
+  </div>
+  <br>
+<!-- 2 -->
+
+
+ <div class="regCon">
+    <div class="hd">
+      <h1 class="biaoti redian">热门文章</h1>
+	  <p class="gengduo"><a href="$!{basePath}/jlb/areaMoreList.html?areaid=$!{areaid}&type=1">更多&gt;&gt;</a></p>
+    </div>
+    <div class="page__bd">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+               #foreach($!{info} in $!{newsInfos})	
+				 <a href="$!{basePath}/jlb/tonoticeDetail.html?id=$!{info.id}" class="weui-media-box 		weui-media-box_appmsg">
+										<div class="weui-media-box__bd">
+											<h4 class="weui-media-box__title"><font color="#009875">$!{info.title}</font></h4>
+										</div>
+				</a>
+	#end
+     </div>
+        </div>
+    </div>
+  </div>
+  <br>
+	
+	   <div class="regCon">
+    <div class="hd">
+      <h1 class="biaoti">楼盘团购</h1>
+	  <p class="gengduo"><a href="#">更多&gt;&gt;</a></p>
+    </div>
+    <div class="page__bd">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+				<a href="#" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">万科城市之光垫资房源，每套借款八成120万</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a><a href="#" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">房主借款250万，昌平区北街花园136平</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a><a href="#" class="weui-media-box weui-media-box_appmsg">
+						<div class="weui-media-box__bd">
+							<h4 class="weui-media-box__title">房主借款200万，海淀区甘家口52.9平</h4>
+							<p class="weui-media-box__desc"></p>
+						</div>
+					</a>            </div>
+        </div>
+    </div>
+  </div>
+  <br>
+
+
+
+  <div id="footer">
+    <div class="footer-w">
+      <span class="zbj"></span>
+    </div>
+  </div>
+
+  <div class="dbdh">
+	<span class="footer1">
+		<a href="$!{basePath}/jlb/tomember.html">
+			<img src="$!{basePath}/content/jlb/img/foot_1.png">
+			<p class="pink">首页</p>
+		</a>
+	</span>
+	<span class="footer2">
+		<a href="$!{basePath}/jlb/hotlist.html">
+			<img src="$!{basePath}/content/jlb/img/foot_2off.png">
+			<p>会员活动</p>
+		</a>
+	</span>
+	<span class="footer3">
+		<a href="$!{basePath}/jlb/tovip.html">
+			<img src="$!{basePath}/content/jlb/img/foot_3off.png">
+			<p>个人中心</p>
+		</a>
+	</span>
+  </div>
+</body>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/jquery.min.js"></script> 
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/tip.js"></script>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/dialog.js"></script>
+<link href="$!{basePath}/content/jlb/css/dialog_simp.css" rel="stylesheet" type="text/css" />
+<script>
+
+if (isWeixin()) {
+	$("#guanb").show();	
+}
+function show_protocol() {
+	window.location.href="$!{basePath}/content/jlb/memberruletip.html";
+}
+//判断是否在微信中打开
+function isWeixin() {
+	var ua = navigator.userAgent.toLowerCase();
+	if (ua.match(/MicroMessenger/i) == "micromessenger") {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function turnoff(obj){
+	$("#"+obj).hide();	
+}
+</script>
+</html>

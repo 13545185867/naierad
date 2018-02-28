@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.userinfo.entity.Userinfo">
+
+	<!-- Result Map-->
+	<resultMap id="Userinfo" type="com.jeecg.p3.userinfo.entity.Userinfo" >
+		<result column="id" property="id" jdbcType="VARCHAR"/>
+		<result column="openid" property="openid" jdbcType="VARCHAR"/>
+		<result column="headpic" property="headpic" jdbcType="VARCHAR"/>
+		<result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+		<result column="province" property="province" jdbcType="VARCHAR"/>
+		<result column="city" property="city" jdbcType="VARCHAR"/>
+		<result column="sex" property="sex" jdbcType="VARCHAR"/>
+		<result column="country" property="country" jdbcType="VARCHAR"/>
+		<result column="subscribe" property="subscribe" jdbcType="VARCHAR"/>
+		<result column="subscribe_time" property="subscribeTime" jdbcType="TIMESTAMP"/>
+		<result column="realname" property="realname" jdbcType="VARCHAR"/>
+		<result column="addr" property="addr" jdbcType="VARCHAR"/>
+		<result column="code" property="code" jdbcType="INTEGER"/>
+		<result column="profession" property="profession" jdbcType="VARCHAR"/>
+		<result column="createtime" property="createtime" jdbcType="TIMESTAMP"/>
+		<result column="mobile" property="mobile" jdbcType="VARCHAR"/>
+		<result column="iskf" property="iskf" jdbcType="VARCHAR"/>
+		<result column="status" property="status" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+		<resultMap id="Vipinfo" type="com.jeecg.p3.userservice.entity.Vipinfo" >
+		<result column="id" property="id" jdbcType="VARCHAR"/>
+		<result column="openid" property="openid" jdbcType="VARCHAR"/>
+		<result column="headpic" property="headpic" jdbcType="VARCHAR"/>
+		<result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+		<result column="province" property="province" jdbcType="VARCHAR"/>
+		<result column="city" property="city" jdbcType="VARCHAR"/>
+		<result column="sex" property="sex" jdbcType="VARCHAR"/>
+		<result column="country" property="country" jdbcType="VARCHAR"/>
+		<result column="subscribe" property="subscribe" jdbcType="VARCHAR"/>
+		<result column="subscribe_time" property="subscribeTime" jdbcType="TIMESTAMP"/>
+		<result column="realname" property="realname" jdbcType="VARCHAR"/>
+		<result column="addr" property="addr" jdbcType="VARCHAR"/>
+		<result column="code" property="code" jdbcType="INTEGER"/>
+		<result column="profession" property="profession" jdbcType="VARCHAR"/>
+		<result column="createtime" property="createtime" jdbcType="TIMESTAMP"/>
+		<result column="mobile" property="mobile" jdbcType="VARCHAR"/>
+		<result column="iskf" property="iskf" jdbcType="VARCHAR"/>
+		<result column="status" property="status" jdbcType="VARCHAR"/>
+		<result column="userid" property="userid" jdbcType="VARCHAR"/>
+		<result column="serviceid" property="serviceid" jdbcType="INTEGER"/>
+		<result column="starttime" property="starttime" jdbcType="TIMESTAMP"/>
+		<result column="endtime" property="endtime" jdbcType="TIMESTAMP"/>
+		<result column="createcount" property="createcount" jdbcType="INTEGER"/>
+		<result column="userservicecol0" property="userservicecol0" jdbcType="VARCHAR"/>
+		<result column="userservicecol1" property="userservicecol1" jdbcType="VARCHAR"/>
+		<result column="userservicecol2" property="userservicecol2" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.openid != null and query.openid != ''" >
+	  		 		/* 微信ID */
+			    	AND u.openid =  #{query.openid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.headpic != null and query.headpic != ''" >
+	  		 		/* 图像 */
+			    	AND u.headpic =  #{query.headpic,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.nickname != null and query.nickname != ''" >
+	  		 		/* 微信名称 */
+			    	AND u.nickname =  #{query.nickname,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.province != null and query.province != ''" >
+	  		 		/* 省份 */
+			    	AND u.province =  #{query.province,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.city != null and query.city != ''" >
+	  		 		/* 城市 */
+			    	AND u.city =  #{query.city,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.sex != null and query.sex != ''" >
+	  		 		/* 性别 */
+			    	AND u.sex =  #{query.sex,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.country != null and query.country != ''" >
+	  		 		/* 国家 */
+			    	AND u.country =  #{query.country,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.subscribe != null and query.subscribe != ''" >
+	  		 		/* 关注状态  */
+			    	AND u.subscribe =  #{query.subscribe,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.subscribeTime != null and query.subscribeTime != ''" >
+	  		 		/* 关注公众号时间 */
+			    	AND u.subscribe_time =  #{query.subscribeTime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.realname != null and query.realname != ''" >
+	  		 		/* 真实姓名 */
+			    	AND u.realname =  #{query.realname,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.addr != null and query.addr != ''" >
+	  		 		/* 联系地址 */
+			    	AND u.addr =  #{query.addr,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.code != null and query.code != ''" >
+	  		 		/* 会员编号 */
+			    	AND u.code =  #{query.code,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.profession != null and query.profession != ''" >
+	  		 		/* 职业 */
+			    	AND u.profession =  #{query.profession,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.createtime != null and query.createtime != ''" >
+	  		 		/*  */
+			    	AND u.createtime =  #{query.createtime,jdbcType=TIMESTAMP}
+				 </if>
+				 <if test="query.mobile != null and query.mobile != ''" >
+	  		 		/* 手机号码 */
+			    	AND u.mobile =  #{query.mobile,jdbcType=VARCHAR}
+				 </if>
+				 				 <if test="query.iskf != null and query.iskf != ''" >
+	  		 		/* 手机号码 */
+			    	AND u.iskf =  #{query.iskf,jdbcType=VARCHAR}
+				 </if>
+				 				 <if test="query.status != null and query.status != ''" >
+	  		 		/* 手机号码 */
+			    	AND u.status =  #{query.status,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.userinfo.entity.Userinfo.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object"  keyProperty="id" useGeneratedKeys="true">
+	  INSERT  INTO  userinfo   /*  */  
+					(	
+                      id                            /*  */ 
+                     ,openid                        /* 微信ID */ 
+                     ,headpic                       /* 图像 */ 
+                     ,nickname                      /* 微信名称 */ 
+                     ,province                      /* 省份 */ 
+                     ,city                          /* 城市 */ 
+                     ,sex                           /* 性别 */ 
+                     ,country                       /* 国家 */ 
+                     ,subscribe                     /* 关注状态  */ 
+                     ,subscribe_time                /* 关注公众号时间 */ 
+                     ,realname                      /* 真实姓名 */ 
+                     ,addr                          /* 联系地址 */ 
+                     ,code                          /* 会员编号 */ 
+                     ,profession                    /* 职业 */ 
+                     ,createtime                    /*  */ 
+                     ,mobile                        /* 手机号码 */ 
+                     ,iskf
+                     ,status
+					)
+			values (
+                      #{id,jdbcType=VARCHAR}                            /*  */ 
+                     ,#{openid,jdbcType=VARCHAR}                        /* 微信ID */ 
+                     ,#{headpic,jdbcType=VARCHAR}                       /* 图像 */ 
+                     ,#{nickname,jdbcType=VARCHAR}                      /* 微信名称 */ 
+                     ,#{province,jdbcType=VARCHAR}                      /* 省份 */ 
+                     ,#{city,jdbcType=VARCHAR}                          /* 城市 */ 
+                     ,#{sex,jdbcType=VARCHAR}                           /* 性别 */ 
+                     ,#{country,jdbcType=VARCHAR}                       /* 国家 */ 
+                     ,#{subscribe,jdbcType=VARCHAR}                     /* 关注状态  */ 
+                     ,#{subscribeTime,jdbcType=TIMESTAMP}                 /* 关注公众号时间 */ 
+                     ,#{realname,jdbcType=VARCHAR}                      /* 真实姓名 */ 
+                     ,#{addr,jdbcType=VARCHAR}                          /* 联系地址 */ 
+                     ,#{code,jdbcType=INTEGER}                          /* 会员编号 */ 
+                     ,#{profession,jdbcType=VARCHAR}                    /* 职业 */ 
+                     ,#{createtime,jdbcType=TIMESTAMP}                    /*  */ 
+                     ,#{mobile,jdbcType=VARCHAR}                        /* 手机号码 */ 
+                                          ,#{iskf,jdbcType=VARCHAR}                        /* 手机号码 */ 
+                                                               ,#{status,jdbcType=VARCHAR}                        /* 手机号码 */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.userinfo.entity.Userinfo.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   userinfo  	/*  */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="openid != null">
+		    		 		/* 微信ID */ 
+	    		 			openid = #{openid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="headpic != null">
+		    		 		/* 图像 */ 
+	    		 			headpic = #{headpic,jdbcType=VARCHAR},
+						 </if>
+						 <if test="nickname != null">
+		    		 		/* 微信名称 */ 
+	    		 			nickname = #{nickname,jdbcType=VARCHAR},
+						 </if>
+						 <if test="province != null">
+		    		 		/* 省份 */ 
+	    		 			province = #{province,jdbcType=VARCHAR},
+						 </if>
+						 <if test="city != null">
+		    		 		/* 城市 */ 
+	    		 			city = #{city,jdbcType=VARCHAR},
+						 </if>
+						 <if test="sex != null">
+		    		 		/* 性别 */ 
+	    		 			sex = #{sex,jdbcType=VARCHAR},
+						 </if>
+						 <if test="country != null">
+		    		 		/* 国家 */ 
+	    		 			country = #{country,jdbcType=VARCHAR},
+						 </if>
+						 <if test="subscribe != null">
+		    		 		/* 关注状态  */ 
+	    		 			subscribe = #{subscribe,jdbcType=VARCHAR},
+						 </if>
+						 <if test="subscribeTime != null">
+		    		 		/* 关注公众号时间 */ 
+	    		 			subscribe_time = #{subscribeTime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="realname != null">
+		    		 		/* 真实姓名 */ 
+	    		 			realname = #{realname,jdbcType=VARCHAR},
+						 </if>
+						 <if test="addr != null">
+		    		 		/* 联系地址 */ 
+	    		 			addr = #{addr,jdbcType=VARCHAR},
+						 </if>
+						 <if test="code != null">
+		    		 		/* 会员编号 */ 
+	    		 			code = #{code,jdbcType=INTEGER},
+						 </if>
+						 <if test="profession != null">
+		    		 		/* 职业 */ 
+	    		 			profession = #{profession,jdbcType=VARCHAR},
+						 </if>
+						 <if test="createtime != null">
+		    		 		/*  */ 
+	    		 			createtime = #{createtime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="mobile != null">
+		    		 		/* 手机号码 */ 
+	    		 			mobile = #{mobile,jdbcType=VARCHAR},
+						 </if>
+						 						 <if test="iskf != null">
+		    		 		/* 手机号码 */ 
+	    		 			iskf = #{iskf,jdbcType=VARCHAR},
+						 </if>
+						 						 <if test="status != null">
+		    		 		/* 手机号码 */ 
+	    		 			status = #{status,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+		 <update id="updateByopenid" parameterType="Object" >
+	  UPDATE   userinfo  	/*  */
+	  			<trim   prefix="SET" suffixOverrides="," >
+
+						 <if test="headpic != null">
+		    		 		/* 图像 */ 
+	    		 			headpic = #{headpic,jdbcType=VARCHAR},
+						 </if>
+						 <if test="nickname != null">
+		    		 		/* 微信名称 */ 
+	    		 			nickname = #{nickname,jdbcType=VARCHAR},
+						 </if>
+						 <if test="province != null">
+		    		 		/* 省份 */ 
+	    		 			province = #{province,jdbcType=VARCHAR},
+						 </if>
+						 <if test="city != null">
+		    		 		/* 城市 */ 
+	    		 			city = #{city,jdbcType=VARCHAR},
+						 </if>
+						 <if test="sex != null">
+		    		 		/* 性别 */ 
+	    		 			sex = #{sex,jdbcType=VARCHAR},
+						 </if>
+						 <if test="country != null">
+		    		 		/* 国家 */ 
+	    		 			country = #{country,jdbcType=VARCHAR},
+						 </if>
+						 <if test="subscribe != null">
+		    		 		/* 关注状态  */ 
+	    		 			subscribe = #{subscribe,jdbcType=VARCHAR},
+						 </if>
+						 <if test="subscribeTime != null">
+		    		 		/* 关注公众号时间 */ 
+	    		 			subscribe_time = #{subscribeTime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="realname != null">
+		    		 		/* 真实姓名 */ 
+	    		 			realname = #{realname,jdbcType=VARCHAR},
+						 </if>
+						 <if test="addr != null">
+		    		 		/* 联系地址 */ 
+	    		 			addr = #{addr,jdbcType=VARCHAR},
+						 </if>
+						 <if test="code != null">
+		    		 		/* 会员编号 */ 
+	    		 			code = #{code,jdbcType=INTEGER},
+						 </if>
+						 <if test="profession != null">
+		    		 		/* 职业 */ 
+	    		 			profession = #{profession,jdbcType=VARCHAR},
+						 </if>
+						 <if test="createtime != null">
+		    		 		/*  */ 
+	    		 			createtime = #{createtime,jdbcType=TIMESTAMP},
+						 </if>
+						 <if test="mobile != null">
+		    		 		/* 手机号码 */ 
+	    		 			mobile = #{mobile,jdbcType=VARCHAR},
+						 </if>
+						 						 						 <if test="iskf != null">
+		    		 		/* 手机号码 */ 
+	    		 			iskf = #{iskf,jdbcType=VARCHAR},
+						 </if>
+						 						 <if test="status != null">
+		    		 		/* 手机号码 */ 
+	    		 			status = #{status,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		openid = #{openid}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.userinfo.entity.Userinfo.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Userinfo">
+		   SELECT   
+                   u.id                            /*  */ 
+                  ,u.openid                        /* 微信ID */ 
+                  ,u.headpic                       /* 图像 */ 
+                  ,u.nickname                      /* 微信名称 */ 
+                  ,u.province                      /* 省份 */ 
+                  ,u.city                          /* 城市 */ 
+                  ,u.sex                           /* 性别 */ 
+                  ,u.country                       /* 国家 */ 
+                  ,u.subscribe                     /* 关注状态  */ 
+                  ,u.subscribe_time                /* 关注公众号时间 */ 
+                  ,u.realname                      /* 真实姓名 */ 
+                  ,u.addr                          /* 联系地址 */ 
+                  ,u.code                          /* 会员编号 */ 
+                  ,u.profession                    /* 职业 */ 
+                  ,u.createtime                    /*  */ 
+                  ,u.mobile                        /* 手机号码 */ 
+                  ,u.iskf
+                  ,u.status
+		   FROM   userinfo      AS u      /*  */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	
+		<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.userinfo.entity.Userinfo.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="getByOpenId" parameterType="Object"  resultMap="Userinfo">
+		   SELECT   
+                   u.id                            /*  */ 
+                  ,u.openid                        /* 微信ID */ 
+                  ,u.headpic                       /* 图像 */ 
+                  ,u.nickname                      /* 微信名称 */ 
+                  ,u.province                      /* 省份 */ 
+                  ,u.city                          /* 城市 */ 
+                  ,u.sex                           /* 性别 */ 
+                  ,u.country                       /* 国家 */ 
+                  ,u.subscribe                     /* 关注状态  */ 
+                  ,u.subscribe_time                /* 关注公众号时间 */ 
+                  ,u.realname                      /* 真实姓名 */ 
+                  ,u.addr                          /* 联系地址 */ 
+                  ,u.code                          /* 会员编号 */ 
+                  ,u.profession                    /* 职业 */ 
+                  ,u.createtime                    /*  */ 
+                  ,u.mobile                        /* 手机号码 */ 
+                  ,u.iskf
+                  ,u.status
+		   FROM   userinfo      AS u      /*  */ 
+		   WHERE
+				openid = #{openid}				/* 序号 */ 
+	</select>
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.userinfo.entity.Userinfo.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM userinfo 	/*  */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.userinfo.entity.Userinfo.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  userinfo      AS u      /*  */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.userinfo.entity.Userinfo.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Userinfo">
+		    SELECT 
+                   u.id                            /*  */ 
+                  ,u.openid                        /* 微信ID */ 
+                  ,u.headpic                       /* 图像 */ 
+                  ,u.nickname                      /* 微信名称 */ 
+                  ,u.province                      /* 省份 */ 
+                  ,u.city                          /* 城市 */ 
+                  ,u.sex                           /* 性别 */ 
+                  ,u.country                       /* 国家 */ 
+                  ,u.subscribe                     /* 关注状态  */ 
+                  ,u.subscribe_time                /* 关注公众号时间 */ 
+                  ,u.realname                      /* 真实姓名 */ 
+                  ,u.addr                          /* 联系地址 */ 
+                  ,u.code                          /* 会员编号 */ 
+                  ,u.profession                    /* 职业 */ 
+                  ,u.createtime                    /*  */ 
+                  ,u.mobile                        /* 手机号码 */ 
+                  ,u.iskf
+                  ,u.status
+		FROM   	 userinfo      AS u      /*  */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+		<select id="queryList" parameterType="Object"  resultMap="Userinfo">
+		    SELECT 
+                   u.id                            /*  */ 
+                  ,u.openid                        /* 微信ID */ 
+                  ,u.headpic                       /* 图像 */ 
+                  ,u.nickname                      /* 微信名称 */ 
+                  ,u.province                      /* 省份 */ 
+                  ,u.city                          /* 城市 */ 
+                  ,u.sex                           /* 性别 */ 
+                  ,u.country                       /* 国家 */ 
+                  ,u.subscribe                     /* 关注状态  */ 
+                  ,u.subscribe_time                /* 关注公众号时间 */ 
+                  ,u.realname                      /* 真实姓名 */ 
+                  ,u.addr                          /* 联系地址 */ 
+                  ,u.code                          /* 会员编号 */ 
+                  ,u.profession                    /* 职业 */ 
+                  ,u.createtime                    /*  */ 
+                  ,u.mobile                        /* 手机号码 */ 
+                  ,u.iskf
+                  ,u.status
+		FROM   	 userinfo      AS u      /*  */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+	</select>
+	
+	
+		<select id="queryVip" parameterType="Object"  resultMap="Vipinfo">
+		    SELECT 
+                   u.id                            /*  */ 
+                  ,u.openid                        /* 微信ID */ 
+                  ,u.headpic                       /* 图像 */ 
+                  ,u.nickname                      /* 微信名称 */ 
+                  ,u.province                      /* 省份 */ 
+                  ,u.city                          /* 城市 */ 
+                  ,u.sex                           /* 性别 */ 
+                  ,u.country                       /* 国家 */ 
+                  ,u.subscribe                     /* 关注状态  */ 
+                  ,u.subscribe_time                /* 关注公众号时间 */ 
+                  ,u.realname                      /* 真实姓名 */ 
+                  ,u.addr                          /* 联系地址 */ 
+                  ,u.code                          /* 会员编号 */ 
+                  ,u.profession                    /* 职业 */ 
+                  ,u.createtime                    /*  */ 
+                  ,u.mobile                        /* 手机号码 */ 
+                  ,u.iskf
+                  ,u.status
+                  ,us.*
+		FROM   	 userinfo      AS u      /*  */  left join userservice us on u.openid=us.userid
+		WHERE  us.userservicecol0 = #{query.userservicecol0,jdbcType=VARCHAR} and <![CDATA[ (us.starttime<= timestamp(date(sysdate()))<=us.endtime  or us.createcount > 0 )]]>
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+	
+			<select id="countVip" resultType="java.lang.Integer" parameterType="Object">
+		    SELECT count(*)
+		FROM   	 userinfo      AS u      /*  */  left join userservice us on u.openid=us.userid
+		WHERE  us.userservicecol0 = #{query.userservicecol0,jdbcType=VARCHAR} and <![CDATA[ (us.starttime<= timestamp(date(sysdate()))<=us.endtime  or us.createcount > 0 )]]>
+		   <include refid="wherecontation"/>
+	</select>
+	
+</mapper>

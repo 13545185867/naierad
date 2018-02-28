@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.dicttype.entity.Dicttype">
+
+	<!-- Result Map-->
+	<resultMap id="Dicttype" type="com.jeecg.p3.dicttype.entity.Dicttype" >
+		<result column="id" property="id" jdbcType="INTEGER"/>
+		<result column="typename" property="typename" jdbcType="VARCHAR"/>
+		<result column="dicttypecol0" property="dicttypecol0" jdbcType="VARCHAR"/>
+		<result column="dicttypecol1" property="dicttypecol1" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.typename != null and query.typename != ''" >
+	  		 		/* 类型名称 */
+			    	AND d.typename =  #{query.typename,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.dicttypecol0 != null and query.dicttypecol0 != ''" >
+	  		 		/*  */
+			    	AND d.dicttypecol0 =  #{query.dicttypecol0,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.dicttypecol1 != null and query.dicttypecol1 != ''" >
+	  		 		/*  */
+			    	AND d.dicttypecol1 =  #{query.dicttypecol1,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.dicttype.entity.Dicttype.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  dicttype   /* 数据字典类型表 */  
+					(	
+                      typename                      /* 类型名称 */ 
+                     ,dicttypecol0                  /*  */ 
+                     ,dicttypecol1                  /*  */ 
+					)
+			values (
+                      #{typename,jdbcType=VARCHAR}                      /* 类型名称 */ 
+                     ,#{dicttypecol0,jdbcType=VARCHAR}                  /*  */ 
+                     ,#{dicttypecol1,jdbcType=VARCHAR}                  /*  */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.dicttype.entity.Dicttype.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   dicttype  	/* 数据字典类型表 */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="typename != null">
+		    		 		/* 类型名称 */ 
+	    		 			typename = #{typename,jdbcType=VARCHAR},
+						 </if>
+						 <if test="dicttypecol0 != null">
+		    		 		/*  */ 
+	    		 			dicttypecol0 = #{dicttypecol0,jdbcType=VARCHAR},
+						 </if>
+						 <if test="dicttypecol1 != null">
+		    		 		/*  */ 
+	    		 			dicttypecol1 = #{dicttypecol1,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.dicttype.entity.Dicttype.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Dicttype">
+		   SELECT   
+                   d.id                            /* 类型ID */ 
+                  ,d.typename                      /* 类型名称 */ 
+                  ,d.dicttypecol0                  /*  */ 
+                  ,d.dicttypecol1                  /*  */ 
+		   FROM   dicttype      AS d      /* 数据字典类型表 */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.dicttype.entity.Dicttype.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM dicttype 	/* 数据字典类型表 */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.dicttype.entity.Dicttype.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  dicttype      AS d      /* 数据字典类型表 */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.dicttype.entity.Dicttype.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Dicttype">
+		    SELECT 
+                   d.id                            /* 类型ID */ 
+                  ,d.typename                      /* 类型名称 */ 
+                  ,d.dicttypecol0                  /*  */ 
+                  ,d.dicttypecol1                  /*  */ 
+		FROM   	 dicttype      AS d      /* 数据字典类型表 */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+</mapper>

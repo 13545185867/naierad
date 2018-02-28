@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">编辑</div>
+				<div class="panel-body">
+					<form class="form-horizontal" role="form" id="dailogForm" action="$!{basePath}/appmodel/back/appmodel/doEdit.html" method="POST">
+						 <input type="hidden" id="btn_sub" class="btn_sub" />
+						 <input type="hidden" value="$!{appmodel.id}" name="id" id="id" />
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">排序</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{appmodel.apporder}" name="apporder" id="apporder" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">模块标签</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{appmodel.tag}" name="tag" id="tag" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">模块代码</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{appmodel.code}" name="code" id="code" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">模块所属类型ID</label>
+												    <div class="col-sm-8">
+												       <select name="dictinfoid" id="dictinfoid"  value="$!{appmodel.dictinfoid}" class="form-control" >
+												       	#if($!{pageInfos})
+											                #foreach($!{info} in $!{pageInfos})
+											               	 <option value="$!{info.id}" #if($!{info.id} eq $!{appmodel.dictinfoid})selected#end>$!{info.dictname}</option>
+												             #end
+											    	 	#end
+												      
+												      </select>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">活动新增地址</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{appmodel.newacturl}" name="newacturl" id="newacturl" class="form-control"/>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">模块是否启用</label>
+												    <div class="col-sm-8">
+												      	  <select name="active" id="active"  value="$!{appmodel.active}" class="form-control" >
+												      		<option value="0" #if("0" == "$!{appmodel.active}")selected#end>否</option>
+												      		<option value="1" #if("1" == "$!{appmodel.active}")selected#end>是</option>
+												      </select>
+												    </div>
+												</div>
+												<div class="form-group mno">
+												    <label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">模块名称</label>
+												    <div class="col-sm-8">
+												      <input type="text" value="$!{appmodel.appname}" name="appname" id="appname" class="form-control"/>
+												    </div>
+												</div>
+									<div class="form-group mno">
+											<div class="col-sm-offset-1 col-sm-6">
+												<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/appmodel/back/appmodel/list.html')">返回</button>
+	        									<button type="button" class="btn btn-primary" id="formSubmit">提交</button>
+        									 </div>
+        							</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="$!{basePath}/plug-in/js/Validform_v5.3.2.js"></script> 
+<script type="text/javascript" src="$!{basePath}/plug-in/js/forminit.p3.js"></script>  

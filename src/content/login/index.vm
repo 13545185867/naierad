@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="百花网络科技后台管理系统">  
+<meta name="keywords" content="百花网络科技后台管理系统">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>百花网络科技后台管理系统</title> 
+<link rel="icon" href=" " type="image/x-icon">
+<link rel="stylesheet" href="$!{basePath}/login_reg_files/jquery-ui-1.10.0.custom.min.css">
+<link rel="stylesheet" href="$!{basePath}/login_reg_files/newlogin.css"><style>
+.rightWrap .user_name, .rightWrap .input_code {
+	min-width: 260px;
+}
+.wrapper{
+	min-width: inherit;
+}
+.rightWrap .input_tel_code{
+ display:block;
+  height: 42px;
+  line-height: 42px;
+  border: 1px solid #ddd;;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 0 10px;
+  width:150px;
+  color: #343D47;
+  background:#fff;
+  margin-top:20px;
+}
+
+.rightWrap .input_tel_code:focus{
+  border-color:#5796ff!important;
+}
+</style>
+<script>
+var serverroot = "$!{basePath}";
+</script>
+<script type="text/javascript" src="$!{basePath}/login_reg_files/jquery-1.7.2.min.js "></script>
+<script type="text/javascript" src="$!{basePath}/login_reg_files/jquery.cookie.min.js "></script>
+<script type="text/javascript" src="$!{basePath}/login_reg_files/jquery.deparam.js "></script>
+<script type="text/javascript" src="$!{basePath}/login_reg_files/login.js "></script>
+ 
+ 
+</head>
+<body>
+	<div class="wrapper">
+		<div class="left_img" ></div>
+	    <a class="pageLogo" href="http://www.byhua.com"></a>
+		<div class="right_content" style="background-color: #fff;">
+			<p id="chrome_download_tips" style="position: absolute;bottom: 15px;text-align: center;width: 100%;color: 
+
+#000;font-size: 13px;display: none;">为了更好的体验，建议使用<a href="https://www.baidu.com/s?wd=chrome" target="blank">Chrome浏览器
+
+</a></p>
+		    <ul class="right_nav">
+		    	<li class="active"><a href="javascript:;">登录</a></li>
+		    	<li style="position: relative;">
+		    	 <!--	<a href="$!{basePath}/qrLogin/reg.html">注册</a>-->
+		    		
+		    	</li>
+		    </ul>
+		    <div class="rightWrap">
+		    	<ul class="login_tab">
+			    	<li class="active"><a href="javascript:;">快速登录</a></li>
+			    	<li><a href="javascript:;">账号密码登录</a></li>
+			    </ul>
+		    
+			   <!-- 二维码登录 -->
+			   
+			   <div class="code_login">
+			   <input type="hidden" name="uuid" id="uuid" value="$!{uuid}">
+			   		<div class="cl_box">
+						<img alt="二维码" id="codel-img" src="$!{basePath}/qrcode/getQRCode.html?url=$!{url}">
+						<p id="code_tip">您还没有绑定，请使用帐号绑定登录！</p>
+					</div>
+					<p class="code_txt" id="tip">微信扫一扫，安全方便</p>
+					
+			   </div>
+			   <!-- 一般登录 -->
+			   <div class="general_login login-tel-success" style="display: none;">
+				   	<form id="loginForm" class="ui-buttonset" action="$!{basePath}/system/checklogin.html" 
+
+method="post">
+				      <input class="user_name" type="text" id="signin-username" placeholder="用户名" checktype="user_name" 
+
+maxlength="16" name="username">
+				      <input class="input_code" type="password" id="signin-password" placeholder="密码" 
+
+checktype="password" maxlength="16" name="password">
+				       <div class="forgetPsw">
+                         <div class="clear" style="float:left;margin-left:-8px;">
+                           				<label class="checkbox"> 
+				<input type="checkbox" id="rememberme" name="rememberme"  onchange="javascript:setCheckbox(this);" />下次自
+
+动登录 </label>
+                         </div>
+				       	<a href="javascript:;" class="loginforgetpsw" style="float:right;">忘记密码&gt;&gt;</a>
+				       	</div>
+				      <button id="signin-btn" type="submit" title="提交" class="login">登 录</button>
+				   	</form>
+			   </div>
+			   <!-- 验证短信 -->
+			    <div class="general_login login-tel-yanzheng" style="display: none;">
+			    		<div style="margin-top: 30px;">
+			    			<p style="text-align: center; font-size: 14px;">请用安全手机号<span class="bandTel"></span>
+
+获取短信验证码登录</p>
+			    		</div>
+			    		<div style="overflow: hidden;">
+			   	    <input style="float: left;width: 139px;" class="input_tel_code">
+			   	    <button class="tel-verification-code" style="float: left; margin-top: 20px; width: 110px; height: 
+
+42px;line-height:42px;margin-left: 10px;font-size: 16px; background-color: rgb(25, 174, 255); border: 0; color: #FFF;">获取验证码</button>
+			    		</div>
+			   	    <button style="margin-top: 45px;" id="signin-btn-yanzheng" title="提交" class="login">登 录</button>
+			   	     <p class="forgetPsw"><a href="javascript:;" class="loginnottelcode" style="float:right;">收不到短信验
+
+证码？</a></p>
+			    </div>
+			    
+			    <div class="right_bottom">
+			    	<!--<a class="back_index" href="http://youyu.weijuju.com/">返回首页</a>-->
+			    	
+			    </div>
+			</div>
+		</div>
+	</div>
+	<div id="cli_dialog_div"></div>
+	<div id="cover"></div>
+	<div class="showTips showPswTips">
+	     <div class="tipstitle"><p>找回密码</p></div>
+	     <p class="tipscontent">请联系客服热线：13545185867,重新设置密码。</p>
+	     <a href="javascript:void(0);" class="confirmtips">确定</a>
+	</div>
+	<div class="showTips showCodeTips">
+	     <div class="tipstitle"><p>为什么收不到短信验证码</p></div>
+	     <p class="tipscontent">1、短信可能被手机安全软件拦截</p>
+	     <p class="tipscontent">2、手机暂无信号或欠费停机</p>
+	     <p class="tipscontent">3、当前手机号与绑定手机号不一致</p>
+	     <p class="tipscontent" style="margin-top: 20px;">请可以使用手机扫二维码登录，或联系客服：</p>
+	     <p class="tipscontent" style="margin-top: 0;">400-7888-925</p>
+	     <a href="javascript:void(0);" class="confirmtips">确定</a>
+	</div>
+
+<script type="text/javascript">
+ 
+$(".tel-verification-code").on('click',function(){
+	$('.tel-verification-code').attr('disabled',true);
+	$('.tel-verification-code').css('background', 'rgb(161, 161, 161)');
+	//verificationCode();
+});
+
+</script>
+
+ 
+<script>
+/*第一次读取最新通知*/
+  setTimeout(function() {
+             Push();
+           },
+        200);
+      /*30轮询读取函数*/
+        setInterval(function() {
+            Push();
+    },
+        3000);
+
+/*请求函数的ajax*/
+
+function Push() {
+	 	var uuid = $("#uuid").val();
+	 	//$('#addOrUpdateModal .modal-body').html(""); 
+		jQuery.ajax({
+	      url: serverroot+"/qrLogin/getUUID.html",
+	      cache: false,
+	      data:{
+	      	 uuid:uuid
+	      },
+		  dataType: "json",
+		  type:"post",
+			success : function(data){
+				if(data.success){	
+				$("#tip").text("正在登录验证中，请稍候！");	
+					 window.location.href=serverroot+"/qrLogin/autoLogin.html?uuid="+uuid;
+				}else{
+					
+				}
+			},  
+	        error: function(data, status, e){  
+	        $("#tip").text("验证失败，请刷新网页，重新在试！");
+	       }
+	    });
+}
+if(self!=top) top.location=self.location
+</script>
+</body></html>

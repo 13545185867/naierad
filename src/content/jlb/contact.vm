@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="format-detection" content="telephone=yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<link href="$!{basePath}/content/jlb/css/style.css" rel="stylesheet" />
+    <link href="$!{basePath}/content/jlb/css/regmob.css" rel="stylesheet" />
+	<style type="text/css">
+    .header .goback img{width: 24px;height:24px;transform: translateY(-50%);-webkit-transform: translateY(-50%);position: relative;top: 50%;margin-left: 8px;}
+	</style>
+	<script>
+  var fromopen = '';//1表示主动发起新窗口模式打开
+</script>	
+<title>友房网在线留言</title>
+</head>
+<body>
+	<!--提示弹出层 begin-->
+	<div class="fwmyd_bg" id="fydDIV" style="display:none;">
+	</div>
+	<!--提示弹出层 end-->
+	<div id="wrap" class="wrap" style="height:100%;position:absolute;width:100%;top:0;left:0;">  
+		<header id="header" class="header" data-value="FF6552" style="z-index:121;">
+						<span style="-webkit-transform: translateY(-50%);left:0;" class="goback" onclick="history_go(1)"><img style="-webkit-transform: translateY(-50%);" src="$!{basePath}/content/jlb/img/back1.png"/></span>
+			         
+		</header>
+	<!-- 留言部分开始 -->
+	<div id="message" >
+		<div class="header" style="background: #009875;height:44px;" data-value="e20f77" >
+            		</div>
+		<div class="bodyer">
+			<form action="#" id="contactForm" >
+			<p>请选择客服人员</p>
+			#if($!{userlist})
+				#foreach($!{user} in $!{userlist})
+					<input type="radio" class="" value="$!{user.openid}"  #if("$velocityCount" eq "1")checked="true" #end name="toopenid" id="$!{user.openid}">
+					<label for="$!{user.openid}"><img align="middle" src="$!{user.headpic}" style="border-radius: 50px;width:55px;height:55px;">
+					</label> 
+				#end
+			#end
+		<p>请留言：</p>
+				<textarea class="abox" placeholder="我有问题想要咨询，请与我联系！（必填）" id="messagetext" name="messagetext" maxlength="100" ></textarea>
+				<p>请留下您的称呼</p>
+<input class="nbox" type="text" placeholder="称呼（必填）" id="name"  name="name" maxlength="12" />
+                <p>请留下您的联系电话</p>
+                        <input name="mobile" class="tbox" type="text" placeholder="手机号码（必填）" id="mobile"  maxlength="11"  />
+                               <p class="btnbar"><input name="submit" type="submit" id="dosubmit" value="提交留言" style="background:#009875;width: 100%;padding: 0;border-width:0px;height:40px;"  class="comm-btn-focus  "/></p></form>
+			<small class="p-text1">友房网</small>
+            <small class="p-text2">联系电话：<a href="tel:13545185867">13545185867</a></small>
+		</div>
+	</div>
+	<script>
+	var serverroot = "$!{basePath}";
+	</script>
+	<!-- 留言部分结束 -->
+	<script type="text/javascript" src="$!{basePath}/content/jlb/js/jquery.min.js"></script> 
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/tip.js"></script>
+<script type="text/javascript" src="$!{basePath}/content/jlb/js/contact.js"></script>
+    <script>
+	function window_close(){
+		stop_uc=1;
+		if(fromopen){
+			try{
+				var windowCnt = window.localStorage["windows_"+company_id];
+				if(windowCnt != undefined && parseInt(windowCnt) > 0) 
+					window.localStorage["windows_"+company_id] = parseInt(windowCnt) - 1;
+			}catch(e){
+				var windowCnt = getCookie("windows_"+company_id);
+				if(windowCnt != "" && parseInt(windowCnt) > 0) 
+					setCookie("windows_"+company_id,parseInt(windowCnt) - 1,3600*24);
+			}
+			
+		}
+		window.close();
+		//var is_ios = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //判断是否为ios手机
+		//if(is_ios){
+			setTimeout(function(){
+				history.go(-1);
+			},100);
+		//}
+	}
+
+	function history_go(type){
+		stop_uc=1;
+		//var immediately_end = "0";
+		//if(immediately_end && type)	closeLink();
+		if(fromopen){
+			try{
+				var windowCnt = window.localStorage["windows_"+company_id];
+				if(windowCnt != undefined && parseInt(windowCnt) > 0) 
+					window.localStorage["windows_"+company_id] = parseInt(windowCnt) - 1;
+			}catch(e){
+				var windowCnt = getCookie("windows_"+company_id);
+				if(windowCnt != "" && parseInt(windowCnt) > 0) 
+					setCookie("windows_"+company_id,parseInt(windowCnt) - 1,3600*24);
+			}
+			
+		}
+		history.go(-1);
+		setTimeout(function(){
+			window.close();
+		},100);
+	}
+	 
+    </script>
+</body>
+</html>

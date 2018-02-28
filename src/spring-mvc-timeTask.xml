@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd"
+	default-autowire="byName" default-lazy-init="false">
+	<context:component-scan base-package="org.jeecgframework.core.timer" />
+	 <context:component-scan base-package="com.jeecg.p3.oauth2.task" />
+
+	<!-- 定时任务配置 scheduler 方式 注解 暂时不支持动态更新 -->
+	<task:executor id="executor" pool-size="5" />
+	<task:scheduler id="scheduler" pool-size="10" />
+	<task:annotation-driven executor="executor"
+		scheduler="scheduler" />
+	<!-- 定时任务配置 quartz 可配置到管理界面 --> 
+	<bean id="weixinAccountTokenTask" class="com.jeecg.p3.oauth2.task.WeixinAccountTokenTask"></bean>
+	
+	<bean id="ProductSendMessageTime" class="com.jeecg.p3.oauth2.task.ProductSendMessageTime"></bean>
+	
+	<!-- 自动重置微信Token -->
+	<bean id="autoResetWeixinTokenJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="weixinAccountTokenTask" />
+		<property name="targetMethod" value="autoResetToken" />
+		<property name="concurrent" value="false" />
+	</bean>
+	
+		<bean id="autoProductSendMessageTimer"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="ProductSendMessageTime" />
+		<property name="targetMethod" value="productTimer" />
+		<property name="concurrent" value="false" />
+	</bean>
+
+	<bean id="autoResetWeixinTokenCronTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="autoResetWeixinTokenJob" />
+		<property name="cronExpression" value="0 0/1 * * * ?" />
+		<!-- 定时任务调度器 从数据 库表t_s_timetask中查询是否有定时任务，如果有就按表中的定时器执行 is_start必须为1-->
+	</bean>
+	
+	<bean id="autoProductSendMessageTimerCronTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="autoProductSendMessageTimer" />
+		<property name="cronExpression" value="0 0/1 * * * ?" />
+		<!-- 定时任务调度器 从数据 库表t_s_timetask中查询是否有定时任务，如果有就按表中的定时器执行 is_start必须为1-->
+	</bean>
+
+	<!-- 定时任务调度器 -->
+	<bean id="schedulerFactory" lazy-init="false" autowire="no"
+		class="org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				 <!-- 重置Token -->
+				 <ref bean="autoResetWeixinTokenCronTrigger" />
+				 <ref bean="autoProductSendMessageTimerCronTrigger" />
+			</list>
+		</property>
+	</bean>
+
+</beans>

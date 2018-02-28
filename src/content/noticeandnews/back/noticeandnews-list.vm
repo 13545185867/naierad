@@ -1,0 +1,119 @@
+#parse("content/base/back/common/macro.vm")
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<form role="form" class="form-inline" action="$!{basePath}/noticeandnews/back/noticeandnews/list.html" method="post"  id="formSubmit">
+				<div  class="col-md-10" style="width:100%">
+								<div class="panel panel-default">
+								  <div class="panel-heading">资讯与公告列表</div>
+								  <div class="panel-body">
+								  		<div class="search">
+															 <div class="form-group col-sm-3">
+															    <label for="areaid" class="control-label col-sm-3 line34">所属区域</label>
+															     <div class="col-sm-8">
+															    	<select name="areaid" id="areaid"  value="$!{noticeandnews.areaid}" class="form-control" >
+													      <option value="" >请选择文章所属板块</option>
+													       	#if($!{areaInfos})
+													                #foreach($!{info} in $!{areaInfos})
+													               	 <option value="$!{info.dictcode}" #if($!{info.id} eq $!{noticeandnews.areaid})selected#end>$!{info.dictname}</option>
+														             #end
+													    	 	#end
+													      </select>
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="title" class="control-label col-sm-3 line34">标题</label>
+															     <div class="col-sm-8">
+															    <input type="text" name="title" id="title" value="$!{noticeandnews.title}" class="form-control">
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="isdelete" class="control-label col-sm-3 line34">是否删除</label>
+															     <div class="col-sm-8">
+															    <select name="isdelete" id="isdelete"  value="$!{noticeandnews.isdelete}" class="form-control" >
+															    <option value="" >请选择是否已删除</option>
+															    <option value="0" #if('0' eq $!{noticeandnews.isdelete})selected#end>未删除</option>
+															    <option value="1" #if('1' eq $!{noticeandnews.isdelete})selected#end>已删除</option>
+															    </select>
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="isvipview" class="control-label col-sm-3 line34">查看权限</label>
+															     <div class="col-sm-8">
+															    	<select name="isvipview" id="isvipview"  value="$!{noticeandnews.isvipview}" class="form-control" >
+															    <option value="" >根据查看权限进行查询</option>
+															    <option value="0" #if('0' eq $!{noticeandnews.isvipview})selected#end>所有会员有可查看</option>
+															    <option value="1" #if('1' eq $!{noticeandnews.isvipview})selected#end>只有VIP才可查看</option>
+															    </select>
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="isvipparty" class="control-label col-sm-3 line34">参与权限</label>
+															     <div class="col-sm-8">
+															    <select name="isvipparty" id="isvipparty"  value="$!{noticeandnews.isvipparty}" class="form-control" >
+															    <option value="" >根据参加权限进行查询</option>
+															    <option value="0" #if('0' eq $!{noticeandnews.isvipparty})selected#end>所有会员有可参加</option>
+															    <option value="1" #if('1' eq $!{noticeandnews.isvipparty})selected#end>只有VIP才可参加</option>
+															    </select>
+															  	</div>
+															 </div>
+															 <div class="form-group col-sm-3">
+															    <label for="type" class="control-label col-sm-3 line34">类型</label>
+															     <div class="col-sm-8">
+															     <select name="type" id="type"  value="$!{noticeandnews.type}" class="form-control" >
+													       <option value="" >请选择文章类型</option>
+													      	#if($!{typeInfos})
+													                #foreach($!{info} in $!{typeInfos})
+													               	 <option value="$!{info.dictcode}"  #if($!{info.id} eq $!{noticeandnews.type})selected#end>$!{info.dictname}</option>
+														             #end
+													    	 	#end
+													    	</select>
+															  	</div>
+															 </div>
+											  <button type="submit" class="btn btn-primary">搜  索</button>
+											  <div class="clearfix"></div>
+								  		</div>
+								  		<div id="legend">
+								          <legend  class="le"><button type="button" class="btn btn-primary" onclick="doUrl('$!{basePath}/noticeandnews/back/noticeandnews/toAdd.html')" >新增</button></legend> 
+								        </div>
+								        <table class="table table-striped">
+									        <thead>
+													<th>标题</th>
+													<th>创建时间</th>
+													<th>类型</th>
+						                			<th>操作</th>
+									        </thead>
+									        <tobody>
+									    	  #if($!{pageInfos})
+								                #foreach($!{info} in $!{pageInfos})
+									            	<tr>			
+																	<td>$!{info.title}</td>
+																	<td>$!dateTool.format("yyyy-MM-dd",$!{info.createtime})</td>
+																	<td>#if($!{info.type} eq "1")文章#else #if($!{info.type} eq "2")视频#else通知公告#end #end</td>
+										                <td class="last">
+							                			<a href="javascript:doUrl('$!{basePath}/noticeandnews/back/noticeandnews/toEdit.html?id=$!{info.id}')" >编辑</a>
+							                			<a href="javascript:delData('$!{basePath}/noticeandnews/back/noticeandnews/doDel.html?id=$!{info.id}')">删除</a>
+							                			<a href="javascript:doUrl('$!{basePath}/noticeandnews/back/noticeandnews/toDetail.html?id=$!{info.id}')">详情</a>
+						                				</td>
+									           		</tr>
+									             #end
+									    	 #end
+									         </tobody>
+									    </table>
+										<div class="text-right">
+											<!--公用翻页代码-->
+							                #set($attr='formSubmit')
+							            	#showPageList($pageInfos $attr)
+							                <!--END公用翻页代码-->
+										</div>
+								  </div>	
+								</div>
+				</div>  
+				</form>
+		</div>
+	</div>
+</body>
+</html>

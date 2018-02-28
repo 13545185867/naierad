@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.jeecg.p3.messageHelp.entity.Messagetemplate">
+
+	<!-- Result Map-->
+	<resultMap id="Messagetemplate" type="com.jeecg.p3.messageHelp.entity.Messagetemplate" >
+		<result column="id" property="id" jdbcType="INTEGER"/>
+		<result column="alimessagesinid" property="alimessagesinid" jdbcType="VARCHAR"/>
+		<result column="alimessagetempid" property="alimessagetempid" jdbcType="VARCHAR"/>
+		<result column="templatename" property="templatename" jdbcType="VARCHAR"/>
+		<result column="isdelete" property="isdelete" jdbcType="INTEGER"/>
+		<result column="type" property="type" jdbcType="INTEGER"/>
+		<result column="messagetemplatecol" property="messagetemplatecol" jdbcType="VARCHAR"/>
+		<result column="templatecontent" property="templatecontent" jdbcType="VARCHAR"/>
+		<result column="attr1" property="attr1" jdbcType="VARCHAR"/>
+		<result column="attr2" property="attr2" jdbcType="VARCHAR"/>
+		<result column="attr3" property="attr3" jdbcType="VARCHAR"/>
+		<result column="attr4" property="attr4" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- 查询条件 -->
+	<sql id="wherecontation">
+		<trim  suffixOverrides="," >
+				 <if test="query.alimessagesinid != null and query.alimessagesinid != ''" >
+	  		 		/* 阿里短信签名ID */
+			    	AND m.alimessagesinid =  #{query.alimessagesinid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.alimessagetempid != null and query.alimessagetempid != ''" >
+	  		 		/* 阿里短信模板ID */
+			    	AND m.alimessagetempid =  #{query.alimessagetempid,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.templatename != null and query.templatename != ''" >
+	  		 		/* 创建时间 */
+			    	AND m.templatename =  #{query.templatename,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.isdelete != null " >
+	  		 		/* 是否已删除0,1代表已删除 */
+			    	AND m.isdelete =  #{query.isdelete,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.type != null " >
+	  		 		/* 0通知短信
+1营销短信 */
+			    	AND m.type =  #{query.type,jdbcType=INTEGER}
+				 </if>
+				 <if test="query.messagetemplatecol != null and query.messagetemplatecol != ''" >
+	  		 		/*  */
+			    	AND m.messagetemplatecol =  #{query.messagetemplatecol,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.templatecontent != null and query.templatecontent != ''" >
+	  		 		/*  */
+			    	AND m.templatecontent =  #{query.templatecontent,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.attr1 != null and query.attr1 != ''" >
+	  		 		/*  */
+			    	AND m.attr1 =  #{query.attr1,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.attr2 != null and query.attr2 != ''" >
+	  		 		/*  */
+			    	AND m.attr2 =  #{query.attr2,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.attr3 != null and query.attr3 != ''" >
+	  		 		/*  */
+			    	AND m.attr3 =  #{query.attr3,jdbcType=VARCHAR}
+				 </if>
+				 <if test="query.attr4 != null and query.attr4 != ''" >
+	  		 		/*  */
+			    	AND m.attr4 =  #{query.attr4,jdbcType=VARCHAR}
+				 </if>
+		</trim>
+	</sql>
+
+	<!--
+	方法名称: insert
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagetemplate.insert
+	开发信息: 
+	处理信息: 保存信息
+	-->
+	<insert id="insert" parameterType="Object" >
+	  INSERT  INTO  messagetemplate   /*  */  
+					(	
+                      id                            /* 短信内容ID */ 
+                     ,alimessagesinid               /* 阿里短信签名ID */ 
+                     ,alimessagetempid              /* 阿里短信模板ID */ 
+                     ,templatename                  /* 创建时间 */ 
+                     ,isdelete                      /* 是否已删除0,1代表已删除 */ 
+                     ,type                          /* 0通知短信
+1营销短信 */ 
+                     ,messagetemplatecol            /*  */ 
+                     ,templatecontent               /*  */ 
+                     ,attr1                         /*  */ 
+                     ,attr2                         /*  */ 
+                     ,attr3                         /*  */ 
+                     ,attr4                         /*  */ 
+					)
+			values (
+                      #{id,jdbcType=INTEGER}                            /* 短信内容ID */ 
+                     ,#{alimessagesinid,jdbcType=VARCHAR}               /* 阿里短信签名ID */ 
+                     ,#{alimessagetempid,jdbcType=VARCHAR}              /* 阿里短信模板ID */ 
+                     ,#{templatename,jdbcType=VARCHAR}                  /* 创建时间 */ 
+                     ,#{isdelete,jdbcType=INTEGER}                      /* 是否已删除0,1代表已删除 */ 
+                     ,#{type,jdbcType=INTEGER}                          /* 0通知短信
+1营销短信 */ 
+                     ,#{messagetemplatecol,jdbcType=VARCHAR}            /*  */ 
+                     ,#{templatecontent,jdbcType=VARCHAR}               /*  */ 
+                     ,#{attr1,jdbcType=VARCHAR}                         /*  */ 
+                     ,#{attr2,jdbcType=VARCHAR}                         /*  */ 
+                     ,#{attr3,jdbcType=VARCHAR}                         /*  */ 
+                     ,#{attr4,jdbcType=VARCHAR}                         /*  */ 
+					)
+	</insert>
+
+	
+	<!--
+	方法名称: update
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagetemplate.update
+	开发信息: 
+	处理信息: 修改信息
+	-->  
+	 <update id="update" parameterType="Object" >
+	  UPDATE   messagetemplate  	/*  */
+	  			<trim   prefix="SET" suffixOverrides="," >
+						 <if test="alimessagesinid != null">
+		    		 		/* 阿里短信签名ID */ 
+	    		 			alimessagesinid = #{alimessagesinid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="alimessagetempid != null">
+		    		 		/* 阿里短信模板ID */ 
+	    		 			alimessagetempid = #{alimessagetempid,jdbcType=VARCHAR},
+						 </if>
+						 <if test="templatename != null">
+		    		 		/* 创建时间 */ 
+	    		 			templatename = #{templatename,jdbcType=VARCHAR},
+						 </if>
+						 <if test="isdelete != null">
+		    		 		/* 是否已删除0,1代表已删除 */ 
+	    		 			isdelete = #{isdelete,jdbcType=INTEGER},
+						 </if>
+						 <if test="type != null">
+		    		 		/* 0通知短信
+1营销短信 */ 
+	    		 			type = #{type,jdbcType=INTEGER},
+						 </if>
+						 <if test="messagetemplatecol != null">
+		    		 		/*  */ 
+	    		 			messagetemplatecol = #{messagetemplatecol,jdbcType=VARCHAR},
+						 </if>
+						 <if test="templatecontent != null">
+		    		 		/*  */ 
+	    		 			templatecontent = #{templatecontent,jdbcType=VARCHAR},
+						 </if>
+						 <if test="attr1 != null">
+		    		 		/*  */ 
+	    		 			attr1 = #{attr1,jdbcType=VARCHAR},
+						 </if>
+						 <if test="attr2 != null">
+		    		 		/*  */ 
+	    		 			attr2 = #{attr2,jdbcType=VARCHAR},
+						 </if>
+						 <if test="attr3 != null">
+		    		 		/*  */ 
+	    		 			attr3 = #{attr3,jdbcType=VARCHAR},
+						 </if>
+						 <if test="attr4 != null">
+		    		 		/*  */ 
+	    		 			attr4 = #{attr4,jdbcType=VARCHAR},
+						 </if>
+	  	  		</trim>
+				WHERE
+	  	 		 		id = #{id}		/* 序号 */ 
+	 </update>
+	
+	<!--
+	方法名称: get
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagetemplate.get
+	开发信息: 
+	处理信息: 根据主键查询记录
+	-->
+	<select id="get" parameterType="Object"  resultMap="Messagetemplate">
+		   SELECT   
+                   m.id                            /* 短信内容ID */ 
+                  ,m.alimessagesinid               /* 阿里短信签名ID */ 
+                  ,m.alimessagetempid              /* 阿里短信模板ID */ 
+                  ,m.templatename                  /* 创建时间 */ 
+                  ,m.isdelete                      /* 是否已删除0,1代表已删除 */ 
+                  ,m.type                          /* 0通知短信
+1营销短信 */ 
+                  ,m.messagetemplatecol            /*  */ 
+                  ,m.templatecontent               /*  */ 
+                  ,m.attr1                         /*  */ 
+                  ,m.attr2                         /*  */ 
+                  ,m.attr3                         /*  */ 
+                  ,m.attr4                         /*  */ 
+		   FROM   messagetemplate      AS m      /*  */ 
+		   WHERE
+				id = #{id}				/* 序号 */ 
+	</select>
+	
+	<!--
+	方法名称: delete
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagetemplate.delete
+	开发信息: 
+	处理信息: 删除记录
+	-->
+	<delete id="delete" parameterType="Object">
+		DELETE 	FROM messagetemplate 	/*  */  
+		WHERE 
+			id = #{id}					/* 序号 */ 
+	</delete>
+	
+	<!--
+	方法名称: count
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagetemplate.count
+	开发信息: 
+	处理信息: 列表总数
+	-->
+	<select id="count" resultType="java.lang.Integer"  parameterType="Object">
+		SELECT count(*)  FROM  messagetemplate      AS m      /*  */ 
+		 WHERE 1=1
+		    <include refid="wherecontation"/>
+	</select>
+  	
+  	<!--
+	方法名称: queryPageList
+	调用路径: com.jeecg.p3.messageHelp.entity.Messagetemplate.queryPageList
+	开发信息: 
+	处理信息: 列表
+	-->
+	<select id="queryPageList" parameterType="Object"  resultMap="Messagetemplate">
+		    SELECT 
+                   m.id                            /* 短信内容ID */ 
+                  ,m.alimessagesinid               /* 阿里短信签名ID */ 
+                  ,m.alimessagetempid              /* 阿里短信模板ID */ 
+                  ,m.templatename                  /* 创建时间 */ 
+                  ,m.isdelete                      /* 是否已删除0,1代表已删除 */ 
+                  ,m.type                          /* 0通知短信
+1营销短信 */ 
+                  ,m.messagetemplatecol            /*  */ 
+                  ,m.templatecontent               /*  */ 
+                  ,m.attr1                         /*  */ 
+                  ,m.attr2                         /*  */ 
+                  ,m.attr3                         /*  */ 
+                  ,m.attr4                         /*  */ 
+		FROM   	 messagetemplate      AS m      /*  */ 
+		WHERE 1=1
+		   <include refid="wherecontation"/>
+		LIMIT  #{startRow}  		/* 开始序号 */ 
+			  ,#{pageSize}		/* 每页显示条数 */ 
+	</select>
+	
+</mapper>
